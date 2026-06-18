@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>堅実株ナビ｜FP流スクリーナー</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap');
+
+  :root {
+    --navy: #1a2744;
+    --navy-light: #243460;
+    --gold: #c8a96e;
+    --gold-light: #e8d5a3;
+    --cream: #f8f5ef;
+    --white: #ffffff;
+    --text: #1a2744;
+    --text-muted: #6b7a99;
+    --green: #2a7a4f;
+    --green-light: #e8f5ee;
+    --red: #c0392b;
+    --red-light: #fdf0ee;
+    --border: #e2ddd5;
+    --shadow: 0 4px 24px rgba(26,39,68,0.10);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  header {
+    background: var(--navy);
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .logo {
+    font-family: 'Noto Serif JP', serif;
+    color: var(--gold);
+    font-size: 18px;
+    letter-spacing: 0.05em;
+  }
+
+  .logo span {
+    color: var(--white);
+    font-size: 11px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+    display: block;
+    letter-spacing: 0.15em;
+  }
+
+  .header-badge {
+    background: var(--gold);
+    color: var(--navy);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 2px;
+    letter-spacing: 0.1em;
+  }
+
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    padding: 64px 32px 56px;
+    text-align: center;
+  }
+
+  .hero-eyebrow {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-family: 'Noto Serif JP', serif;
+    color: var(--white);
+    font-size: 36px;
+    line-height: 1.4;
+    margin-bottom: 16px;
+  }
+
+  .hero h1 em { color: var(--gold); font-style: normal; }
+
+  .hero-sub {
+    color: rgba(255,255,255,0.7);
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 32px;
+  }
+
+  .update-info {
+    display: inline-block;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(200,169,110,0.3);
+    color: var(--gold-light);
+    font-size: 12px;
+    padding: 6px 16px;
+    border-radius: 20px;
+  }
+
+  /* STRATEGY TABS */
+  .strategy-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 48px 32px 32px;
+  }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+
+  .strategy-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  .strategy-card {
+    background: var(--white);
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .strategy-card:hover { border-color: var(--gold); box-shadow: var(--shadow); }
+  .strategy-card.active { border-color: var(--navy); background: var(--navy); }
+  .strategy-card.active .s-name { color: var(--gold); }
+  .strategy-card.active .s-desc { color: rgba(255,255,255,0.7); }
+  .strategy-card.active .s-tag { background: rgba(200,169,110,0.2); color: var(--gold-light); }
+
+  .s-icon { font-size: 24px; margin-bottom: 10px; }
+  .s-name { font-family: 'Noto Serif JP', serif; font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+  .s-desc { font-size: 12px; color: var(--text-muted); line-height: 1.6; margin-bottom: 12px; }
+  .s-tag { display: inline-block; background: var(--cream); color: var(--text-muted); font-size: 10px; padding: 3px 8px; border-radius: 2px; }
+
+  /* FILE UPLOAD */
+  .upload-box {
+    background: var(--white);
+    border: 2px dashed var(--border);
+    border-radius: 8px;
+    padding: 32px;
+    text-align: center;
+    margin-bottom: 24px;
+    transition: border-color 0.2s;
+  }
+
+  .upload-box:hover { border-color: var(--gold); }
+  .upload-box p { font-size: 14px; color: var(--text-muted); margin-bottom: 16px; }
+
+  .upload-btn {
+    background: var(--navy);
+    color: var(--white);
+    border: none;
+    padding: 10px 24px;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: pointer;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 700;
+  }
+
+  .upload-status {
+    margin-top: 12px;
+    font-size: 12px;
+    color: var(--green);
+    display: none;
+  }
+
+  /* RUN BUTTON */
+  .run-btn {
+    width: 100%;
+    background: var(--navy);
+    color: var(--white);
+    border: none;
+    padding: 16px;
+    font-size: 15px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+    letter-spacing: 0.1em;
+    transition: background 0.2s;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .run-btn:hover { background: var(--navy-light); }
+  .run-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  /* RESULTS */
+  .results-section { max-width: 900px; margin: 0 auto; padding: 0 32px 64px; }
+
+  .results-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  .results-count { font-size: 13px; color: var(--text-muted); }
+  .results-count strong { font-size: 22px; color: var(--navy); font-family: 'Noto Serif JP', serif; }
+
+  .data-source {
+    font-size: 11px;
+    color: var(--text-muted);
+    background: var(--green-light);
+    padding: 4px 10px;
+    border-radius: 2px;
+    color: var(--green);
+  }
+
+  .stock-list { display: flex; flex-direction: column; gap: 12px; }
+
+  .stock-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px 24px;
+    transition: box-shadow 0.2s;
+  }
+
+  .stock-card:hover { box-shadow: var(--shadow); }
+
+  .stock-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 14px;
+  }
+
+  .stock-name { font-family: 'Noto Serif JP', serif; font-size: 17px; font-weight: 700; color: var(--navy); }
+  .stock-meta { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+  .score-block { text-align: right; }
+  .score-label { font-size: 10px; color: var(--text-muted); letter-spacing: 0.1em; }
+  .score-val { font-size: 28px; font-weight: 700; color: var(--navy); line-height: 1; font-family: 'Noto Serif JP', serif; }
+  .score-val span { font-size: 13px; color: var(--text-muted); }
+
+  .fp-indicators {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .fp-item { background: var(--cream); border-radius: 4px; padding: 10px 12px; }
+  .fp-item-label { font-size: 10px; color: var(--text-muted); margin-bottom: 4px; }
+  .fp-item-val { font-size: 15px; font-weight: 700; color: var(--navy); }
+  .fp-item-comment { font-size: 10px; color: var(--green); margin-top: 2px; }
+  .fp-item-comment.warn { color: var(--red); }
+  .fp-item-comment.neutral { color: var(--text-muted); }
+
+  .fp-plain {
+    font-size: 12px;
+    color: var(--text-muted);
+    background: var(--green-light);
+    padding: 8px 12px;
+    border-radius: 4px;
+    line-height: 1.6;
+    border-left: 3px solid var(--green);
+  }
+
+  .stock-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+  }
+
+  .disclaimer-tag { font-size: 10px; color: var(--text-muted); }
+
+  .watchlist-btn {
+    background: none;
+    border: 1px solid var(--border);
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    color: var(--text-muted);
+    font-family: 'Noto Sans JP', sans-serif;
+    transition: all 0.15s;
+  }
+
+  .watchlist-btn:hover { border-color: var(--navy); color: var(--navy); }
+  .watchlist-btn.added { background: var(--navy); border-color: var(--navy); color: var(--white); }
+
+  /* LOCK */
+  .lock-card {
+    background: var(--white);
+    border: 1px dashed var(--border);
+    border-radius: 8px;
+    padding: 28px 24px;
+    text-align: center;
+    color: var(--text-muted);
+    margin-top: 12px;
+  }
+
+  .lock-card .lock-icon { font-size: 28px; margin-bottom: 8px; }
+  .lock-card p { font-size: 13px; margin-bottom: 16px; }
+
+  .upgrade-btn {
+    background: var(--gold);
+    color: var(--navy);
+    border: none;
+    padding: 10px 24px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+
+  /* LOADING */
+  .loading-overlay { display: none; text-align: center; padding: 48px; color: var(--text-muted); font-size: 13px; }
+  .spinner { width: 32px; height: 32px; border: 3px solid var(--border); border-top-color: var(--navy); border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 16px; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .disclaimer {
+    max-width: 900px;
+    margin: 0 auto 32px;
+    padding: 0 32px;
+    font-size: 11px;
+    color: var(--text-muted);
+    line-height: 1.8;
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
+    display: none;
+  }
+
+  @media (max-width: 640px) {
+    .strategy-cards { grid-template-columns: 1fr; }
+    .fp-indicators { grid-template-columns: repeat(2, 1fr); }
+    .hero h1 { font-size: 26px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    堅実株ナビ
+    <span>FP流スクリーナー｜実データ版</span>
+  </div>
+  <div class="header-badge">β版</div>
+</header>
+
+<div class="hero">
+  <div class="hero-eyebrow">FP監修 ／ 日本株スクリーニング</div>
+  <h1>「長く持てる株」を、<br><em>FPの目線</em>で探す</h1>
+  <p class="hero-sub">財務の健全性・配当の安定性・割安度を、わかりやすい言葉で確認できます</p>
+  <div class="update-info" id="updateInfo">データ未読込</div>
+</div>
+
+<div class="strategy-section">
+  <div class="section-label">STEP 1 ／ JSONデータを読み込む</div>
+
+  <div class="upload-box">
+    <p>📂 Pythonスクリプトで生成した <strong>screening_result.json</strong> を選択してください</p>
+    <input type="file" id="jsonFile" accept=".json" style="display:none" onchange="loadJSON(this)">
+    <button class="upload-btn" onclick="document.getElementById('jsonFile').click()">
+      ファイルを選択
+    </button>
+    <div class="upload-status" id="uploadStatus">✅ データ読み込み完了！</div>
+  </div>
+
+  <div class="section-label">STEP 2 ／ 戦略を選ぶ</div>
+  <div class="strategy-cards">
+    <div class="strategy-card active" onclick="selectStrategy('dividend')">
+      <div class="s-icon">🏦</div>
+      <div class="s-name">堅実配当型</div>
+      <div class="s-desc">連続増配・財務安定の銘柄を重視。長期保有で配当を積み上げたい方向け。</div>
+      <div class="s-tag">初心者におすすめ</div>
+    </div>
+    <div class="strategy-card" onclick="selectStrategy('solid')">
+      <div class="s-icon">🏛️</div>
+      <div class="s-name">財務優良型</div>
+      <div class="s-desc">借金が少なく・稼ぐ力が強い企業に絞る。不況に強い銘柄を探したい方向け。</div>
+      <div class="s-tag">スタンダードプラン</div>
+    </div>
+    <div class="strategy-card" onclick="selectStrategy('growth')">
+      <div class="s-icon">🌱</div>
+      <div class="s-name">成長×安定型</div>
+      <div class="s-desc">売上が伸びながら財務も健全な企業を探す。中長期の成長を狙いたい方向け。</div>
+      <div class="s-tag">スタンダードプラン</div>
+    </div>
+  </div>
+
+  <button class="run-btn" onclick="runScreening()" id="runBtn">
+    <span>🔍</span>
+    スクリーニングを実行する
+  </button>
+</div>
+
+<div class="results-section">
+  <div class="loading-overlay" id="loading">
+    <div class="spinner"></div>
+    データを分析中…
+  </div>
+
+  <div id="results" style="display:none">
+    <div class="results-header">
+      <div class="results-count">
+        <strong id="count">0</strong> 件 該当
+        <div class="data-source" id="dataSource">実データ</div>
+      </div>
+    </div>
+    <div class="stock-list" id="stockList"></div>
+    <div class="lock-card" id="lockCard" style="display:none">
+      <div class="lock-icon">🔒</div>
+      <p>より多くの銘柄はスタンダードプランで表示されます<br>（月額 ¥980 で全銘柄・LINE通知が使えます）</p>
+      <button class="upgrade-btn">14日間 無料で試す</button>
+    </div>
+  </div>
+</div>
+
+<div class="disclaimer" id="disc">
+  【免責事項】本サービスは投資情報の提供を目的としており、特定の銘柄への投資を推奨するものではありません。掲載されているデータは参考情報であり、その正確性・完全性を保証するものではありません。投資判断および売買はご自身の責任において行ってください。
+</div>
+
+<script>
+let loadedData = null;
+let currentStrategy = 'dividend';
+
+function loadJSON(input) {
+  const file = input.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    try {
+      loadedData = JSON.parse(e.target.result);
+      document.getElementById('uploadStatus').style.display = 'block';
+      document.getElementById('uploadStatus').textContent = `✅ ${loadedData.count}銘柄のデータを読み込みました（${loadedData.updated}）`;
+      document.getElementById('updateInfo').textContent = `最終更新：${loadedData.updated}`;
+    } catch(err) {
+      alert('JSONファイルの読み込みに失敗しました。');
+    }
+  };
+  reader.readAsText(file, 'utf-8');
+}
+
+function selectStrategy(key) {
+  currentStrategy = key;
+  document.querySelectorAll('.strategy-card').forEach((c, i) => {
+    c.classList.toggle('active', ['dividend','solid','growth'][i] === key);
+  });
+  document.getElementById('results').style.display = 'none';
+  document.getElementById('disc').style.display = 'none';
+}
+
+function getFPComment(stock) {
+  const comments = [];
+  if (stock.pbr <= 1.0) comments.push('資産価値より割安');
+  else if (stock.pbr <= 1.5) comments.push('適正な割安水準');
+  if (stock.roe >= 15) comments.push('稼ぐ力が非常に強い');
+  else if (stock.roe >= 10) comments.push('稼ぐ力が優秀');
+  if (stock.dividend_yield >= 3.5) comments.push('高配当で魅力的');
+  else if (stock.dividend_yield >= 2.5) comments.push('安定した配当水準');
+  return comments.join('・') || '財務条件を満たす銘柄';
+}
+
+function runScreening() {
+  const loading = document.getElementById('loading');
+  const results = document.getElementById('results');
+
+  loading.style.display = 'block';
+  results.style.display = 'none';
+
+  setTimeout(() => {
+    loading.style.display = 'none';
+    results.style.display = 'block';
+    document.getElementById('disc').style.display = 'block';
+
+    let stocks = [];
+
+    if (loadedData && loadedData.stocks) {
+      // 実データを使用
+      stocks = loadedData.stocks;
+      document.getElementById('dataSource').textContent = `実データ（${loadedData.updated}）`;
+    } else {
+      // サンプルデータ（フォールバック）
+      stocks = getSampleData();
+      document.getElementById('dataSource').textContent = 'サンプルデータ';
+    }
+
+    // 戦略別フィルタリング
+    let filtered = filterByStrategy(stocks, currentStrategy);
+
+    document.getElementById('count').textContent = filtered.length;
+
+    const displayStocks = filtered.slice(0, 5);
+    const remainCount = filtered.length - 5;
+
+    const list = document.getElementById('stockList');
+    list.innerHTML = displayStocks.map(s => `
+      <div class="stock-card">
+        <div class="stock-card-top">
+          <div>
+            <div class="stock-name">${s.name} <span style="font-size:13px;color:var(--text-muted);font-family:'Noto Sans JP';">${s.ticker}</span></div>
+            <div class="stock-meta">${s.sector || ''}　FPスコア ${s.score}/100</div>
+          </div>
+          <div class="score-block">
+            <div class="score-label">FPスコア</div>
+            <div class="score-val">${s.score}<span>/100</span></div>
+          </div>
+        </div>
+
+        <div class="fp-indicators">
+          <div class="fp-item">
+            <div class="fp-item-label">配当利回り</div>
+            <div class="fp-item-val">${s.dividend_yield ? s.dividend_yield + '%' : 'N/A'}</div>
+            <div class="fp-item-comment ${s.dividend_yield >= 3 ? '' : 'neutral'}">${s.dividend_yield >= 3.5 ? '高配当' : s.dividend_yield >= 2 ? '安定水準' : '要確認'}</div>
+          </div>
+          <div class="fp-item">
+            <div class="fp-item-label">割安度（PBR）</div>
+            <div class="fp-item-val">${s.pbr ? s.pbr + '倍' : 'N/A'}</div>
+            <div class="fp-item-comment ${s.pbr && s.pbr <= 1.5 ? '' : 'neutral'}">${s.pbr <= 1.0 ? '資産より割安' : s.pbr <= 1.5 ? '適正水準' : 'やや高め'}</div>
+          </div>
+          <div class="fp-item">
+            <div class="fp-item-label">稼ぐ力（ROE）</div>
+            <div class="fp-item-val">${s.roe ? s.roe + '%' : 'N/A'}</div>
+            <div class="fp-item-comment ${s.roe >= 10 ? '' : 'neutral'}">${s.roe >= 15 ? '非常に優秀' : s.roe >= 8 ? '合格水準' : '要確認'}</div>
+          </div>
+          <div class="fp-item">
+            <div class="fp-item-label">現在値</div>
+            <div class="fp-item-val">${s.price ? '¥' + s.price.toLocaleString() : 'N/A'}</div>
+            <div class="fp-item-comment neutral">株価</div>
+          </div>
+        </div>
+
+        <div class="fp-plain">💡 ${getFPComment(s)}</div>
+
+        <div class="stock-card-footer">
+          <span class="disclaimer-tag">※投資推奨ではありません。判断・売買はご自身で。</span>
+          <button class="watchlist-btn" onclick="toggleWatch(this)">＋ 気になる</button>
+        </div>
+      </div>
+    `).join('');
+
+    const lockCard = document.getElementById('lockCard');
+    if (remainCount > 0) {
+      lockCard.style.display = 'block';
+      lockCard.querySelector('p').innerHTML = `残り <strong>${remainCount}件</strong> はスタンダードプランで表示されます<br>（月額 ¥980 で全銘柄・LINE通知が使えます）`;
+    } else {
+      lockCard.style.display = 'none';
+    }
+
+    results.scrollIntoView({behavior:'smooth', block:'start'});
+  }, 1500);
+}
+
+function filterByStrategy(stocks, strategy) {
+  if (strategy === 'dividend') {
+    return stocks.filter(s => s.dividend_yield >= 2.0 || s.roe >= 8);
+  } else if (strategy === 'solid') {
+    return stocks.filter(s => s.roe >= 8 && s.pbr && s.pbr <= 2.0);
+  } else {
+    return stocks.filter(s => s.roe >= 10);
+  }
+}
+
+function getSampleData() {
+  return [
+    { ticker:'4452.T', name:'花王', sector:'化学', price:4820, pbr:1.21, roe:12.3, dividend_yield:3.4, score:90 },
+    { ticker:'9432.T', name:'NTT', sector:'通信', price:156, pbr:1.23, roe:10.0, dividend_yield:3.7, score:80 },
+    { ticker:'9433.T', name:'KDDI', sector:'通信', price:4890, pbr:2.05, roe:14.0, dividend_yield:3.1, score:80 },
+  ];
+}
+
+function toggleWatch(btn) {
+  btn.classList.toggle('added');
+  btn.textContent = btn.classList.contains('added') ? '✓ 追加済み' : '＋ 気になる';
+}
+</script>
+</body>
+</html>

@@ -1,6 +1,7 @@
 import yfinance as yf
 import json
 import time
+import os
 
 STOCKS = [
     "4452.T",  # 花王
@@ -34,13 +35,11 @@ def get_stock_data(ticker):
         roe = info.get("returnOnEquity", None)
         div = info.get("dividendYield", None)
         
-        # 配当利回りの修正：yfinanceは既にパーセント表記の場合がある
-        # 値が1以上なら既にパーセント、1未満なら100倍する
         if div:
             if div > 1:
-                div_pct = round(div, 2)  # 既にパーセント表記
+                div_pct = round(div, 2)
             else:
-                div_pct = round(div * 100, 2)  # 小数→パーセント変換
+                div_pct = round(div * 100, 2)
         else:
             div_pct = None
 
@@ -129,14 +128,12 @@ def main():
         "stocks": results
     }
     
-    import os
-    desktop = os.path.join(os.path.expanduser("~"), "OneDrive", "デスクトップ")
-    output_path = os.path.join(desktop, "screening_result.json")
+    output_path = "screening_result.json"
     
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
     
-    print(f"\n結果をデスクトップに保存しました: screening_result.json")
+    print(f"\n結果を保存しました: {output_path}")
 
 if __name__ == "__main__":
     main()

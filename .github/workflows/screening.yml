@@ -1,0 +1,35 @@
+name: Daily Stock Screening
+
+on:
+  schedule:
+    - cron: '0 21 * * *'
+  workflow_dispatch:
+
+jobs:
+  screening:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: install
+        run: |
+          pip install yfinance
+
+      - name: run screening
+        run: |
+          python screening.py
+
+      - name: commit and push
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add screening_result.json
+          git diff --quiet && git diff --staged --quiet || git commit -m "Update screening result"
+          git push

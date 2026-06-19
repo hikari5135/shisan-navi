@@ -375,19 +375,23 @@
   <div class="hero-eyebrow">FP監修 ／ 日本株スクリーニング</div>
   <h1>「長く持てる株」を、<br><em>FPの目線</em>で探す</h1>
   <p class="hero-sub">財務の健全性・配当の安定性・割安度を、わかりやすい言葉で確認できます</p>
-  <div class="update-info" id="updateInfo">データ未読込</div>
+  <div class="update-info" id="updateInfo">最新データを読み込み中...</div>
 </div>
 
 <div class="strategy-section">
-  <div class="section-label">STEP 1 ／ JSONデータを読み込む</div>
+  <div class="section-label">最新データ ／ 毎日自動更新（GitHub Actions）</div>
 
-  <div class="upload-box">
-    <p>📂 Pythonスクリプトで生成した <strong>screening_result.json</strong> を選択してください</p>
+  <div class="upload-box" id="autoStatusBox">
+    <p id="autoStatusText">📡 GitHubから最新の株価データを自動取得しています…</p>
+    <div class="upload-status" id="uploadStatus">✅ データ読み込み完了！</div>
+  </div>
+
+  <div class="upload-box" style="margin-top:12px;" id="manualUploadBox">
+    <p>📂 手動でJSONファイルを読み込みたい場合はこちら</p>
     <input type="file" id="jsonFile" accept=".json" style="display:none" onchange="loadJSON(this)">
     <button class="upload-btn" onclick="document.getElementById('jsonFile').click()">
       ファイルを選択
     </button>
-    <div class="upload-status" id="uploadStatus">✅ データ読み込み完了！</div>
   </div>
 
   <div class="section-label">STEP 2 ／ 戦略を選ぶ</div>
@@ -447,6 +451,30 @@
 <script>
 let loadedData = null;
 let currentStrategy = 'dividend';
+
+// GitHubから最新のscreening_result.jsonを自動取得
+const GITHUB_JSON_URL = 'https://raw.githubusercontent.com/hikari5135/shisan-navi/main/screening_result.json';
+
+async function fetchLatestData() {
+  const statusText = document.getElementById('autoStatusText');
+  const uploadStatus = document.getElementById('uploadStatus');
+  try {
+    const res = await fetch(GITHUB_JSON_URL + '?t=' + Date.now()); // キャッシュ回避
+    if (!res.ok) throw new Error('取得失敗');
+    const data = await res.json();
+    loadedData = data;
+    statusText.textContent = `✅ 最新データを自動取得しました（${data.updated}）`;
+    uploadStatus.style.display = 'block';
+    uploadStatus.textContent = `✅ ${data.count}銘柄のデータを自動読み込みしました`;
+    document.getElementById('updateInfo').textContent = `最終更新：${data.updated}（自動更新）`;
+  } catch (err) {
+    statusText.textContent = '⚠️ 自動取得に失敗しました。サンプルデータを使用するか、手動でファイルを選択してください。';
+    document.getElementById('updateInfo').textContent = 'サンプルデータ表示中';
+  }
+}
+
+// ページ読み込み時に自動実行
+window.addEventListener('DOMContentLoaded', fetchLatestData);
 
 function loadJSON(input) {
   const file = input.files[0];

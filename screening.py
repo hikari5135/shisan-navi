@@ -270,6 +270,67 @@ def send_line_broadcast(message):
         print(f"LINE通知の送信中にエラーが発生しました: {e}")
 
 
+def run_backtest(strategy_results, strategy_key, years=5, sample_size=10):
+    """
+    簡易バックテスト：現在の条件を満たした銘柄のうち上位サンプルについて、
+    過去N年間の株価推移を取得し、日経平均・TOPIXと比較する。
+
+    【重要な制約（生存バイアス）】
+    現在存在する銘柄のみを対象としているため、過去N年間に上場廃止・
+    業績悪化で除外された銘柄は含まれない。そのため実際のリターンより
+    やや良く見える可能性がある「参考値」である。
+    """
+    sample = strategy_results[:sample_size]
+    if not sample:
+        return None
+
+    period = f"{years}y"
+    stock_returns = []
+
+    for s in sample:
+        try:
+            hist = yf.Ticker(s["ticker"]).history(period=period)
+            if hist.empty or len(hist) < 2:
+                continue
+            start_price = hist["Close"].iloc[0]
+            end_price = hist["Close"].iloc[-1]
+            if start_price <= 0:
+                continue
+            ret_pct = round((end_price / start_price - 1) * 100, 1)
+            stock_returns.append({"ticker": s["ticker"], "name": s["name"], "return_pct": ret_pct})
+        except Exception as e:
+            print(f"バックテスト取得エラー: {s['ticker']} - {e}")
+            continue
+
+    if not stock_returns:
+        return None
+
+    avg_return = round(sum(r["return_pct"] for r in stock_returns) / len(stock_returns), 1)
+
+    # ベンチマーク取得（日経平均・TOPIX）
+    benchmarks = {}
+    for label, ticker in [("nikkei225", "^N225"), ("topix", "^TOPX")]:
+        try:
+            hist = yf.Ticker(ticker).history(period=period)
+            if not hist.empty and len(hist) >= 2:
+                start = hist["Close"].iloc[0]
+                end = hist["Close"].iloc[-1]
+                benchmarks[label] = round((end / start - 1) * 100, 1)
+        except Exception as e:
+            print(f"ベンチマーク取得エラー: {ticker} - {e}")
+
+    return {
+        "strategy": strategy_key,
+        "years": years,
+        "sample_size": len(stock_returns),
+        "avg_return_pct": avg_return,
+        "benchmark_nikkei225_pct": benchmarks.get("nikkei225"),
+        "benchmark_topix_pct": benchmarks.get("topix"),
+        "stocks": stock_returns,
+        "disclaimer": "現在の条件を満たす上位銘柄のみを対象とした参考値です。過去に上場廃止・条件外となった銘柄は含まれないため、実際の運用成績とは異なります。"
+    }
+
+
 def main():
     print("日本株データを取得しています...")
     print(f"対象銘柄数: {len(STOCKS)}")
@@ -294,6 +355,33 @@ def main():
     print(f"財務優良型: {len(solid_results)}銘柄")
     print(f"成長×安定型: {len(growth_results)}銘柄")
 
+    print("-" * 50)
+    print("バックテストを実行中（過去5年・上位10銘柄サンプル）...")
+    print("※株価APIへの負荷軽減のため、週1回（月曜日）のみ実行します")
+
+    import datetime
+    is_monday = datetime.datetime.now().weekday() == 0  # 0=月曜日
+
+    backtest_dividend = None
+    if is_monday:
+        backtest_dividend = run_backtest(dividend_results, "dividend", years=5, sample_size=10)
+        if backtest_dividend:
+            print(f"バックテスト完了: 平均リターン {backtest_dividend['avg_return_pct']}% "
+                  f"(日経225: {backtest_dividend['benchmark_nikkei225_pct']}%)")
+    else:
+        print("本日は月曜日ではないためバックテストをスキップします（既存の値を維持）")
+
+    # 既存のscreening_result.jsonからバックテスト結果を引き継ぐ（月曜以外の日のため）
+    existing_backtest = None
+    try:
+        with open("screening_result.json", "r", encoding="utf-8") as f:
+            existing = json.load(f)
+            existing_backtest = existing.get("backtest")
+    except (FileNotFoundError, json.JSONDecodeError):
+        existing_backtest = None
+
+    final_backtest = backtest_dividend if backtest_dividend else existing_backtest
+
     output = {
         "updated": time.strftime("%Y-%m-%d %H:%M"),
         "total_stocks_scanned": len(stocks_data),
@@ -302,6 +390,7 @@ def main():
             "solid": {"name": "財務優良型", "count": len(solid_results), "stocks": solid_results},
             "growth": {"name": "成長×安定型", "count": len(growth_results), "stocks": growth_results},
         },
+        "backtest": final_backtest,
         "strategy": "堅実配当型",
         "count": len(dividend_results),
         "stocks": dividend_results,

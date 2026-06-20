@@ -327,6 +327,22 @@
   .unlock-error { color: var(--red); font-size: 12px; margin-top: 10px; }
   .unlock-cta { display: block; margin-top: 18px; font-size: 12px; color: var(--gold); text-decoration: underline; }
 
+  /* BACKTEST */
+  .backtest-box {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px 24px;
+    margin-top: 16px;
+  }
+  .backtest-title { font-family: 'Noto Serif JP', serif; font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 16px; }
+  .backtest-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 14px; }
+  .backtest-col { background: var(--cream); border-radius: 8px; padding: 14px; text-align: center; }
+  .backtest-col-label { font-size: 11px; color: var(--text-muted); margin-bottom: 6px; }
+  .backtest-col-val { font-size: 22px; font-weight: 700; color: var(--green); font-family: 'Noto Serif JP', serif; }
+  .backtest-col-val.muted { color: var(--text-muted); }
+  .backtest-disclaimer { font-size: 10px; color: var(--text-muted); line-height: 1.7; }
+
   /* RESULTS */
   .results-section { max-width: 900px; margin: 0 auto; padding: 0 32px 64px; }
 
@@ -592,6 +608,25 @@
     <span>🔍</span>
     スクリーニングを実行する
   </button>
+
+  <div class="backtest-box" id="backtestBox" style="display:none;">
+    <div class="backtest-title">📈 過去5年の参考実績（堅実配当型）</div>
+    <div class="backtest-row">
+      <div class="backtest-col">
+        <div class="backtest-col-label">堅実配当型 上位銘柄</div>
+        <div class="backtest-col-val" id="btStrategyVal">-</div>
+      </div>
+      <div class="backtest-col">
+        <div class="backtest-col-label">日経平均</div>
+        <div class="backtest-col-val muted" id="btNikkeiVal">-</div>
+      </div>
+      <div class="backtest-col">
+        <div class="backtest-col-label">TOPIX</div>
+        <div class="backtest-col-val muted" id="btTopixVal">-</div>
+      </div>
+    </div>
+    <p class="backtest-disclaimer" id="btDisclaimer"></p>
+  </div>
 </div>
 
 <div class="results-section">
@@ -689,10 +724,32 @@ async function fetchLatestData() {
     uploadStatus.style.display = 'block';
     uploadStatus.textContent = `✅ ${data.count}銘柄のデータを自動読み込みしました`;
     document.getElementById('updateInfo').textContent = `最終更新：${data.updated}（自動更新）`;
+    renderBacktest(data.backtest);
   } catch (err) {
     statusText.textContent = '⚠️ 自動取得に失敗しました。サンプルデータを使用するか、手動でファイルを選択してください。';
     document.getElementById('updateInfo').textContent = 'サンプルデータ表示中';
   }
+}
+
+function renderBacktest(backtest) {
+  const box = document.getElementById('backtestBox');
+  if (!backtest) {
+    box.style.display = 'none';
+    return;
+  }
+  box.style.display = 'block';
+  document.getElementById('btStrategyVal').textContent =
+    (backtest.avg_return_pct >= 0 ? '+' : '') + backtest.avg_return_pct + '%';
+  document.getElementById('btNikkeiVal').textContent =
+    backtest.benchmark_nikkei225_pct !== null && backtest.benchmark_nikkei225_pct !== undefined
+      ? (backtest.benchmark_nikkei225_pct >= 0 ? '+' : '') + backtest.benchmark_nikkei225_pct + '%'
+      : 'N/A';
+  document.getElementById('btTopixVal').textContent =
+    backtest.benchmark_topix_pct !== null && backtest.benchmark_topix_pct !== undefined
+      ? (backtest.benchmark_topix_pct >= 0 ? '+' : '') + backtest.benchmark_topix_pct + '%'
+      : 'N/A';
+  document.getElementById('btDisclaimer').textContent =
+    `※過去${backtest.years}年・上位${backtest.sample_size}銘柄のサンプルによる参考値です。${backtest.disclaimer}`;
 }
 
 // ページ読み込み時に自動実行

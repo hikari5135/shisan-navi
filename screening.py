@@ -2,29 +2,92 @@ import yfinance as yf
 import json
 import time
 
+# 業種バランスを意識した50銘柄
 STOCKS = [
-    "4452.T",  # 花王
+    # 通信
     "9432.T",  # NTT
     "9433.T",  # KDDI
-    "8593.T",  # 三菱HCキャピタル
-    "4063.T",  # 信越化学
-    "7974.T",  # 任天堂
-    "6758.T",  # ソニー
-    "4502.T",  # 武田薬品
+    "9434.T",  # ソフトバンク
+
+    # 金融
     "8306.T",  # 三菱UFJ
     "8316.T",  # 三井住友FG
-    "7203.T",  # トヨタ
-    "6861.T",  # キーエンス
-    "4519.T",  # 中外製薬
-    "8035.T",  # 東京エレクトロン
-    "6367.T",  # ダイキン
-    "9984.T",  # ソフトバンクG
-    "6954.T",  # ファナック
-    "4568.T",  # 第一三共
-    "7751.T",  # キヤノン
-    "8058.T",  # 三菱商事
-]
+    "8411.T",  # みずほFG
+    "8766.T",  # 東京海上HD
+    "8591.T",  # オリックス
+    "8593.T",  # 三菱HCキャピタル
 
+    # 商社
+    "8058.T",  # 三菱商事
+    "8001.T",  # 伊藤忠商事
+    "8031.T",  # 三井物産
+    "8053.T",  # 住友商事
+
+    # 自動車・輸送機器
+    "7203.T",  # トヨタ
+    "7267.T",  # ホンダ
+    "7201.T",  # 日産自動車
+    "6902.T",  # デンソー
+
+    # 電機・精密機器
+    "6758.T",  # ソニー
+    "6861.T",  # キーエンス
+    "6954.T",  # ファナック
+    "7751.T",  # キヤノン
+    "6981.T",  # 村田製作所
+    "6594.T",  # ニデック
+
+    # 化学・素材
+    "4063.T",  # 信越化学
+    "4452.T",  # 花王
+    "3407.T",  # 旭化成
+    "4901.T",  # 富士フイルム
+
+    # 医薬品
+    "4502.T",  # 武田薬品
+    "4519.T",  # 中外製薬
+    "4568.T",  # 第一三共
+    "4523.T",  # エーザイ
+
+    # 半導体・電子部品
+    "8035.T",  # 東京エレクトロン
+    "6723.T",  # ルネサスエレクトロニクス
+    "6857.T",  # アドバンテスト
+
+    # 小売・サービス
+    "9983.T",  # ファーストリテイリング
+    "3382.T",  # セブン&アイHD
+    "9984.T",  # ソフトバンクG
+
+    # 食品
+    "2502.T",  # アサヒグループHD
+    "2914.T",  # JT
+
+    # 不動産
+    "8801.T",  # 三井不動産
+    "8802.T",  # 三菱地所
+
+    # 鉄道・運輸
+    "9020.T",  # JR東日本
+    "9022.T",  # JR東海
+
+    # 機械・空調
+    "6367.T",  # ダイキン
+    "6301.T",  # コマツ
+
+    # ゲーム・エンタメ
+    "7974.T",  # 任天堂
+    "9697.T",  # カプコン
+
+    # 建設
+    "1801.T",  # 大成建設
+
+    # 電力・インフラ
+    "9501.T",  # 東京電力HD
+
+    # 鉄鋼
+    "5401.T",  # 日本製鉄
+]
 
 def get_stock_data(ticker):
     """yfinanceから財務指標を取得"""
@@ -35,19 +98,16 @@ def get_stock_data(ticker):
         pbr = info.get("priceToBook", None)
         roe = info.get("returnOnEquity", None)
         div = info.get("dividendYield", None)
-        debt_to_equity = info.get("debtToEquity", None)  # 負債資本比率(%)
-        operating_margin = info.get("operatingMargins", None)  # 営業利益率
-        revenue_growth = info.get("revenueGrowth", None)  # 売上成長率(前年比)
-        current_ratio = info.get("currentRatio", None)  # 流動比率
+        debt_to_equity = info.get("debtToEquity", None)
+        operating_margin = info.get("operatingMargins", None)
+        revenue_growth = info.get("revenueGrowth", None)
+        current_ratio = info.get("currentRatio", None)
 
-        # 配当利回りの正規化（1超ならすでに%、それ以外は100倍）
         if div:
             div_pct = round(div, 2) if div > 1 else round(div * 100, 2)
         else:
             div_pct = None
 
-        # 自己資本比率の簡易推定
-        # debtToEquity(%) から逆算: 自己資本比率 ≈ 100 / (1 + D/E/100)
         equity_ratio = None
         if debt_to_equity is not None:
             try:
@@ -76,7 +136,6 @@ def get_stock_data(ticker):
 
 
 def screen_dividend(stock):
-    """堅実配当型: 配当利回り3%以上・PBR1.5倍以下・ROE8%以上"""
     pbr_ok = bool(stock["pbr"] and stock["pbr"] <= 2.0)
     roe_ok = bool(stock["roe"] and stock["roe"] >= 8.0)
     div_ok = bool(stock["dividend_yield"] and stock["dividend_yield"] >= 2.0)
@@ -100,7 +159,6 @@ def screen_dividend(stock):
 
 
 def screen_solid(stock):
-    """財務優良型: 自己資本比率高め・ROE8%以上・営業利益率10%以上"""
     equity_ok = bool(stock["equity_ratio"] and stock["equity_ratio"] >= 40.0)
     roe_ok = bool(stock["roe"] and stock["roe"] >= 8.0)
     margin_ok = bool(stock["operating_margin"] and stock["operating_margin"] >= 10.0)
@@ -127,7 +185,6 @@ def screen_solid(stock):
 
 
 def screen_growth(stock):
-    """成長×安定型: 売上成長・ROE10%以上・PBR1.5倍以下・自己資本比率40%以上"""
     growth_ok = bool(stock["revenue_growth"] and stock["revenue_growth"] > 0)
     roe_ok = bool(stock["roe"] and stock["roe"] >= 10.0)
     pbr_ok = bool(stock["pbr"] and stock["pbr"] <= 3.0)
@@ -191,6 +248,7 @@ def main():
 
     output = {
         "updated": time.strftime("%Y-%m-%d %H:%M"),
+        "total_stocks_scanned": len(stocks_data),
         "strategies": {
             "dividend": {
                 "name": "堅実配当型",
@@ -208,7 +266,6 @@ def main():
                 "stocks": growth_results,
             },
         },
-        # 後方互換のため従来形式も残す（堅実配当型のみ）
         "strategy": "堅実配当型",
         "count": len(dividend_results),
         "stocks": dividend_results,
@@ -219,6 +276,7 @@ def main():
         json.dump(output, f, ensure_ascii=False, indent=2)
 
     print(f"\n結果を保存しました: {output_path}")
+    print(f"スキャン対象: {len(STOCKS)}銘柄 / 取得成功: {len(stocks_data)}銘柄")
 
 
 if __name__ == "__main__":

@@ -360,7 +360,7 @@ def main():
     print("※株価APIへの負荷軽減のため、週1回（月曜日）のみ実行します")
 
     import datetime
-    is_monday = datetime.datetime.now().weekday() == 0  # 0=月曜日
+    is_monday = True  # ★テスト用：強制的に実行する（本番は datetime.datetime.now().weekday() == 0 に戻すこと）
 
     backtest_dividend = None
     if is_monday:

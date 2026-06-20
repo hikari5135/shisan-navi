@@ -1,6 +1,9 @@
 import yfinance as yf
 import json
 import time
+import os
+import urllib.request
+import urllib.error
 
 # 日経225 全銘柄（できる限り網羅）
 STOCKS = [
@@ -206,6 +209,67 @@ def run_screening(stocks_data, screen_func):
     return results
 
 
+def build_line_message(dividend_results, solid_results, growth_results, updated):
+    """LINE通知用のメッセージ本文を作成（堅実配当型の上位5銘柄を中心に）"""
+    lines = []
+    lines.append("📊 資産形成ナビ｜本日のスクリーニング結果")
+    lines.append(f"（{updated} 更新）")
+    lines.append("")
+    lines.append("🏦 堅実配当型 TOP5")
+
+    top5 = dividend_results[:5]
+    if not top5:
+        lines.append("該当銘柄なし")
+    else:
+        for i, s in enumerate(top5, 1):
+            name = s.get("name", s["ticker"])
+            score = s.get("score", 0)
+            div = s.get("dividend_yield")
+            roe = s.get("roe")
+            div_text = f"配当{div}%" if div is not None else "配当N/A"
+            roe_text = f"ROE{roe}%" if roe is not None else "ROE N/A"
+            lines.append(f"{i}. {name}（{s['ticker']}）FPスコア{score} ／ {div_text}・{roe_text}")
+
+    lines.append("")
+    lines.append(f"財務優良型：{len(solid_results)}銘柄該当")
+    lines.append(f"成長×安定型：{len(growth_results)}銘柄該当")
+    lines.append("")
+    lines.append("👇 全銘柄・カスタム条件はこちら")
+    lines.append("https://shisan-navi.vercel.app")
+    lines.append("")
+    lines.append("※投資推奨ではありません。判断・売買はご自身の責任で行ってください。")
+
+    return "\n".join(lines)
+
+
+def send_line_broadcast(message):
+    """LINE Messaging APIでブロードキャスト配信する"""
+    token = os.environ.get("LINE_CHANNEL_ACCESS_TOKEN")
+    if not token:
+        print("LINE_CHANNEL_ACCESS_TOKEN が設定されていないため、LINE通知をスキップします")
+        return
+
+    url = "https://api.line.me/v2/bot/message/broadcast"
+    body = {
+        "messages": [
+            {"type": "text", "text": message}
+        ]
+    }
+    data = json.dumps(body).encode("utf-8")
+    req = urllib.request.Request(url, data=data, method="POST")
+    req.add_header("Content-Type", "application/json")
+    req.add_header("Authorization", f"Bearer {token}")
+
+    try:
+        with urllib.request.urlopen(req) as res:
+            print(f"LINE通知を送信しました（ステータス: {res.status}）")
+    except urllib.error.HTTPError as e:
+        body_text = e.read().decode("utf-8", errors="ignore")
+        print(f"LINE通知の送信に失敗しました: {e.code} {body_text}")
+    except Exception as e:
+        print(f"LINE通知の送信中にエラーが発生しました: {e}")
+
+
 def main():
     print("日本株データを取得しています...")
     print(f"対象銘柄数: {len(STOCKS)}")
@@ -248,6 +312,10 @@ def main():
 
     print(f"\n結果を保存しました")
     print(f"スキャン対象: {len(STOCKS)}銘柄 / 取得成功: {len(stocks_data)}銘柄")
+
+    # LINE通知（毎日1回、堅実配当型TOP5などをブロードキャスト配信）
+    message = build_line_message(dividend_results, solid_results, growth_results, output["updated"])
+    send_line_broadcast(message)
 
 
 if __name__ == "__main__":

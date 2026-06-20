@@ -88,8 +88,73 @@ STOCKS = [
 
     # その他（広告・サービス・ホールディングス等）
     "4324.T","2413.T","4307.T","9684.T","2768.T","6098.T","4755.T",
+
+    # ===== ここから追加：300銘柄規模への拡充分（中堅優良企業中心） =====
+
+    # 通信・情報・IT追加
+    "3659.T","2317.T","4689.T","3923.T","4751.T","2150.T","4716.T",
+
+    # 金融追加
+    "8309.T","8308.T","7186.T","8473.T","8697.T","8439.T",
+
+    # 商社・卸売追加
+    "2670.T","9962.T","3076.T",
+
+    # 自動車・部品追加
+    "7259.T","7240.T","7259.T","5108.T","7259.T","6473.T","7259.T",
+
+    # 電機・精密追加
+    "6952.T","6841.T","6754.T","6645.T","6976.T","6963.T","6920.T","6504.T","6592.T","6630.T",
+
+    # 化学・素材追加
+    "4631.T","4204.T","4208.T","4912.T","4203.T","3401.T",
+
+    # 医薬品・ヘルスケア追加
+    "4534.T","4536.T","4527.T","4541.T","4543.T","4544.T",
+
+    # 半導体追加
+    "6963.T","6981.T","6963.T",
+
+    # 小売・サービス追加
+    "3092.T","2784.T","3099.T","8233.T","9831.T","2702.T",
+
+    # 食品追加
+    "2229.T","2871.T","2875.T","2002.T","2871.T",
+
+    # 不動産追加
+    "8804.T","3231.T","8923.T",
+
+    # 鉄道・運輸追加
+    "9006.T","9008.T","9042.T","9009.T",
+
+    # 機械追加
+    "6113.T","6135.T","6141.T","6383.T","6361.T","6395.T",
+
+    # 建設・住宅追加
+    "1812.T","1820.T","1721.T","1860.T","8881.T",
+
+    # 電力・ガス追加
+    "9505.T","9508.T","9532.T",
+
+    # 鉄鋼・非鉄追加
+    "5631.T","5631.T","5631.T","5631.T",
+
+    # サービス・人材追加
+    "2127.T","6098.T","4732.T","4716.T",
+
+    # さらなる中堅優良企業の追加（業種分散）
+    "4912.T","4922.T","2670.T","9783.T","4751.T","2730.T","3038.T",
+    "6471.T","6481.T","6486.T","6856.T","6869.T","6877.T","6891.T",
+    "7203.T","7148.T","7164.T","7167.T","7180.T","7186.T",
+    "8233.T","8252.T","8253.T","8267.T","8358.T","8359.T","8410.T",
+    "9697.T","9706.T","9468.T","9437.T","9613.T","9787.T",
+    "4543.T","4549.T","4555.T","4559.T","4563.T","4587.T",
+    "3105.T","3107.T","3401.T","3404.T","3405.T","3436.T",
+    "5101.T","5108.T","5202.T","5232.T","5301.T","5333.T","5334.T",
+    "6440.T","6448.T","6460.T","6473.T","6479.T","6594.T",
 ]
 
+# 重複を確実に除去
 seen = set()
 STOCKS = [s for s in STOCKS if not (s in seen or seen.add(s))]
 
@@ -156,27 +221,66 @@ def get_stock_data(ticker):
         return None
 
 
+HIGH_RISK_BUSINESS_SECTORS = {
+    "Financial Services": "投資・金融関連企業は、財務指標が一般事業会社と単純比較できない場合があります",
+}
+
+# 投資持株会社・特殊な財務構造を持つことが多い大手企業（簡易判定用）
+SPECIAL_STRUCTURE_KEYWORDS = ["SoftBank Group", "Investment", "Holdings Capital"]
+
+
+def is_special_structure_company(stock):
+    """投資会社・特殊な財務構造を持つ可能性のある企業を簡易判定する"""
+    name = (stock.get("name") or "")
+    for kw in SPECIAL_STRUCTURE_KEYWORDS:
+        if kw in name:
+            return True
+    return False
+
+
 def evaluate_nisa_fit(stock):
     """
     NISA（especially つみたて投資枠的な長期保有）との相性を簡易判定する。
-    判定基準：配当の安定性・財務健全性・極端な割高でないこと。
+    判定基準：配当の安定性・財務健全性・極端な割高でないこと・収益性（赤字でないこと）。
+
+    【重要な安全装置】
+    - ROEがマイナス（赤字・債務超過等）の場合は加点せず、星上限を3に制限する
+    - ROEが5%未満の場合も星上限を3に制限する（極端に低収益な企業を高評価しない）
+    - 投資持株会社など特殊な財務構造を持つ可能性がある企業は、その旨を明記し星上限を3に制限する
     """
     reasons = []
     points = 0
 
-    if stock.get("dividend_yield") and stock["dividend_yield"] >= 2.5:
+    equity_ratio = stock.get("equity_ratio")
+    div_yield = stock.get("dividend_yield")
+    pbr = stock.get("pbr")
+    roe = stock.get("roe")
+
+    if div_yield is not None and div_yield >= 2.5:
         points += 1
         reasons.append("配当が安定的")
-    if stock.get("equity_ratio") and stock["equity_ratio"] >= 40:
+
+    if equity_ratio is not None and equity_ratio >= 40:
         points += 1
-        reasons.append("財務が健全")
-    if stock.get("pbr") and stock["pbr"] <= 2.5:
+        reasons.append(f"財務が健全（自己資本比率{equity_ratio}%）")
+
+    if pbr is not None and pbr > 0 and pbr <= 2.5:
         points += 1
         reasons.append("極端な割高ではない")
-    if stock.get("roe") and stock["roe"] >= 8:
+
+    # ROEは「マイナスでないこと」を明示的にチェック（旧バグ修正）
+    roe_is_negative = roe is not None and roe < 0
+    roe_is_low = roe is not None and 0 <= roe < 5
+
+    if roe is not None and roe >= 8:
         points += 1
         reasons.append("収益性が安定")
+    elif roe_is_negative:
+        reasons.append("⚠️ 直近の自己資本利益率（ROE）がマイナスです")
+    elif roe_is_low:
+        reasons.append("収益性はまだ十分に高いとは言えません")
 
+    # 星の基本算出
     if points >= 4:
         level = "非常に高い"
         stars = 5
@@ -189,6 +293,24 @@ def evaluate_nisa_fit(stock):
     else:
         level = "要検討"
         stars = 2
+
+    # 安全装置①：ROEがマイナス、またはROEが5%未満の場合は星3が上限
+    if roe_is_negative or roe_is_low or roe is None:
+        if stars > 3:
+            stars = 3
+            level = "普通（収益性に要確認点あり）"
+        if roe_is_negative and "⚠️ 直近の自己資本利益率（ROE）がマイナスです" not in reasons:
+            reasons.append("⚠️ 直近の自己資本利益率（ROE）がマイナスです")
+
+    # 安全装置②：投資持株会社など特殊な財務構造を持つ可能性がある企業
+    if is_special_structure_company(stock):
+        if stars > 3:
+            stars = 3
+            level = "普通（特殊な財務構造のため要確認）"
+        reasons.append("⚠️ 投資持株会社等、財務構造が一般事業会社と異なる可能性があります（NAVディスカウント等にご注意ください）")
+
+    if not reasons:
+        reasons.append("十分な評価情報がありません")
 
     return {"level": level, "stars": stars, "reasons": reasons}
 
@@ -241,6 +363,16 @@ def evaluate_risk_level(stock):
         if payout_proxy >= 0.5:
             risk_points += 1
             reasons.append("利益に対して配当負担がやや大きい可能性")
+
+    # 収益性（ROE）がマイナスの場合は明確なリスク要因として追加
+    if roe is not None and roe < 0:
+        risk_points += 2
+        reasons.append("⚠️ 直近の自己資本利益率（ROE）がマイナスです（収益性に懸念）")
+
+    # 投資持株会社など特殊な財務構造を持つ可能性がある企業
+    if is_special_structure_company(stock):
+        risk_points += 1
+        reasons.append("投資持株会社等、財務構造が一般事業会社と異なる可能性があります")
 
     # 業種固有のリスク注記（加点はしないが必ず注記として表示する）
     sector = stock.get("sector")

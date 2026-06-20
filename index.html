@@ -656,7 +656,7 @@
   </button>
 
   <div class="backtest-box" id="backtestBox" style="display:none;">
-    <div class="backtest-title">📊 バックテスト結果（参考値）</div>
+    <div class="backtest-title">📊 参考シミュレーション（投資助言ではありません）</div>
 
     <div class="backtest-condition">
       <div class="backtest-condition-label">適用条件</div>
@@ -669,7 +669,7 @@
 
     <div class="backtest-row" id="btRow">
       <div class="backtest-col">
-        <div class="backtest-col-label">条件該当銘柄（年率換算）</div>
+        <div class="backtest-col-label">条件を満たす銘柄群（参考・年率換算）</div>
         <div class="backtest-col-val" id="btStrategyVal">-</div>
       </div>
       <div class="backtest-col">
@@ -837,7 +837,7 @@ function renderBacktest(backtest) {
   }
 
   document.getElementById('btDisclaimer').textContent =
-    `現在の条件を満たす上位${sampleSize}銘柄のサンプルに基づく参考値です。${backtest.disclaimer || ''}`;
+    `現在の条件を満たす上位${sampleSize}銘柄を対象とした参考シミュレーションです。本シミュレーションは特定の銘柄や運用成果を推奨・保証するものではなく、投資助言ではありません。${backtest.disclaimer || ''}`;
 }
 
 // ページ読み込み時に自動実行

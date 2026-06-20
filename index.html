@@ -503,15 +503,98 @@ function selectStrategy(key) {
   document.getElementById('disc').style.display = 'none';
 }
 
-function getFPComment(stock) {
+function getFPComment(stock, strategy) {
   const comments = [];
-  if (stock.pbr <= 1.0) comments.push('資産価値より割安');
-  else if (stock.pbr <= 1.5) comments.push('適正な割安水準');
-  if (stock.roe >= 15) comments.push('稼ぐ力が非常に強い');
-  else if (stock.roe >= 10) comments.push('稼ぐ力が優秀');
-  if (stock.dividend_yield >= 3.5) comments.push('高配当で魅力的');
-  else if (stock.dividend_yield >= 2.5) comments.push('安定した配当水準');
+  if (strategy === 'solid') {
+    if (stock.equity_ratio >= 55) comments.push('財務がとても安全');
+    else if (stock.equity_ratio >= 40) comments.push('財務が安定');
+    if (stock.operating_margin >= 15) comments.push('利益率が非常に高い');
+    else if (stock.operating_margin >= 10) comments.push('利益率が優秀');
+    if (stock.roe >= 12) comments.push('稼ぐ力が強い');
+  } else if (strategy === 'growth') {
+    if (stock.revenue_growth >= 10) comments.push('売上が力強く成長');
+    else if (stock.revenue_growth > 0) comments.push('売上が成長中');
+    if (stock.roe >= 15) comments.push('稼ぐ力が非常に強い');
+    if (stock.equity_ratio >= 40) comments.push('財務も健全');
+  } else {
+    if (stock.pbr <= 1.0) comments.push('資産価値より割安');
+    else if (stock.pbr <= 1.5) comments.push('適正な割安水準');
+    if (stock.roe >= 15) comments.push('稼ぐ力が非常に強い');
+    else if (stock.roe >= 10) comments.push('稼ぐ力が優秀');
+    if (stock.dividend_yield >= 3.5) comments.push('高配当で魅力的');
+    else if (stock.dividend_yield >= 2.5) comments.push('安定した配当水準');
+  }
   return comments.join('・') || '財務条件を満たす銘柄';
+}
+
+function getIndicatorsHTML(s, strategy) {
+  if (strategy === 'solid') {
+    return `
+      <div class="fp-item">
+        <div class="fp-item-label">財務の安全度</div>
+        <div class="fp-item-val">${s.equity_ratio ? s.equity_ratio + '%' : 'N/A'}</div>
+        <div class="fp-item-comment ${s.equity_ratio >= 40 ? '' : 'neutral'}">${s.equity_ratio >= 55 ? '非常に安全' : s.equity_ratio >= 40 ? '安全水準' : '要確認'}</div>
+      </div>
+      <div class="fp-item">
+        <div class="fp-item-label">営業利益率</div>
+        <div class="fp-item-val">${s.operating_margin ? s.operating_margin + '%' : 'N/A'}</div>
+        <div class="fp-item-comment ${s.operating_margin >= 10 ? '' : 'neutral'}">${s.operating_margin >= 15 ? '非常に高い' : s.operating_margin >= 10 ? '合格水準' : '要確認'}</div>
+      </div>
+      <div class="fp-item">
+        <div class="fp-item-label">稼ぐ力（ROE）</div>
+        <div class="fp-item-val">${s.roe ? s.roe + '%' : 'N/A'}</div>
+        <div class="fp-item-comment ${s.roe >= 10 ? '' : 'neutral'}">${s.roe >= 15 ? '非常に優秀' : s.roe >= 8 ? '合格水準' : '要確認'}</div>
+      </div>
+      <div class="fp-item">
+        <div class="fp-item-label">現在値</div>
+        <div class="fp-item-val">${s.price ? '¥' + s.price.toLocaleString() : 'N/A'}</div>
+        <div class="fp-item-comment neutral">株価</div>
+      </div>`;
+  } else if (strategy === 'growth') {
+    return `
+      <div class="fp-item">
+        <div class="fp-item-label">売上成長率</div>
+        <div class="fp-item-val">${s.revenue_growth !== null && s.revenue_growth !== undefined ? s.revenue_growth + '%' : 'N/A'}</div>
+        <div class="fp-item-comment ${s.revenue_growth > 0 ? '' : 'neutral'}">${s.revenue_growth >= 10 ? '力強い成長' : s.revenue_growth > 0 ? '成長中' : '要確認'}</div>
+      </div>
+      <div class="fp-item">
+        <div class="fp-item-label">稼ぐ力（ROE）</div>
+        <div class="fp-item-val">${s.roe ? s.roe + '%' : 'N/A'}</div>
+        <div class="fp-item-comment ${s.roe >= 10 ? '' : 'neutral'}">${s.roe >= 15 ? '非常に優秀' : '合格水準'}</div>
+      </div>
+      <div class="fp-item">
+        <div class="fp-item-label">割安度（PBR）</div>
+        <div class="fp-item-val">${s.pbr ? s.pbr + '倍' : 'N/A'}</div>
+        <div class="fp-item-comment neutral">${s.pbr <= 1.5 ? '割安水準' : 'やや高め'}</div>
+      </div>
+      <div class="fp-item">
+        <div class="fp-item-label">現在値</div>
+        <div class="fp-item-val">${s.price ? '¥' + s.price.toLocaleString() : 'N/A'}</div>
+        <div class="fp-item-comment neutral">株価</div>
+      </div>`;
+  } else {
+    return `
+      <div class="fp-item">
+        <div class="fp-item-label">配当利回り</div>
+        <div class="fp-item-val">${s.dividend_yield ? s.dividend_yield + '%' : 'N/A'}</div>
+        <div class="fp-item-comment ${s.dividend_yield >= 3 ? '' : 'neutral'}">${s.dividend_yield >= 3.5 ? '高配当' : s.dividend_yield >= 2 ? '安定水準' : '要確認'}</div>
+      </div>
+      <div class="fp-item">
+        <div class="fp-item-label">割安度（PBR）</div>
+        <div class="fp-item-val">${s.pbr ? s.pbr + '倍' : 'N/A'}</div>
+        <div class="fp-item-comment ${s.pbr && s.pbr <= 1.5 ? '' : 'neutral'}">${s.pbr <= 1.0 ? '資産より割安' : s.pbr <= 1.5 ? '適正水準' : 'やや高め'}</div>
+      </div>
+      <div class="fp-item">
+        <div class="fp-item-label">稼ぐ力（ROE）</div>
+        <div class="fp-item-val">${s.roe ? s.roe + '%' : 'N/A'}</div>
+        <div class="fp-item-comment ${s.roe >= 10 ? '' : 'neutral'}">${s.roe >= 15 ? '非常に優秀' : s.roe >= 8 ? '合格水準' : '要確認'}</div>
+      </div>
+      <div class="fp-item">
+        <div class="fp-item-label">現在値</div>
+        <div class="fp-item-val">${s.price ? '¥' + s.price.toLocaleString() : 'N/A'}</div>
+        <div class="fp-item-comment neutral">株価</div>
+      </div>`;
+  }
 }
 
 function runScreening() {
@@ -526,20 +609,22 @@ function runScreening() {
     results.style.display = 'block';
     document.getElementById('disc').style.display = 'block';
 
-    let stocks = [];
+    let filtered = [];
 
-    if (loadedData && loadedData.stocks) {
-      // 実データを使用
-      stocks = loadedData.stocks;
+    if (loadedData && loadedData.strategies && loadedData.strategies[currentStrategy]) {
+      // 新形式：3戦略すべて実データ
+      const strategyData = loadedData.strategies[currentStrategy];
+      filtered = strategyData.stocks;
+      document.getElementById('dataSource').textContent = `実データ（${loadedData.updated}）`;
+    } else if (loadedData && loadedData.stocks) {
+      // 旧形式（堅実配当型のみ実データ）へのフォールバック
+      filtered = filterByStrategy(loadedData.stocks, currentStrategy);
       document.getElementById('dataSource').textContent = `実データ（${loadedData.updated}）`;
     } else {
-      // サンプルデータ（フォールバック）
-      stocks = getSampleData();
+      // サンプルデータ（完全フォールバック）
+      filtered = filterByStrategy(getSampleData(), currentStrategy);
       document.getElementById('dataSource').textContent = 'サンプルデータ';
     }
-
-    // 戦略別フィルタリング
-    let filtered = filterByStrategy(stocks, currentStrategy);
 
     document.getElementById('count').textContent = filtered.length;
 
@@ -561,29 +646,10 @@ function runScreening() {
         </div>
 
         <div class="fp-indicators">
-          <div class="fp-item">
-            <div class="fp-item-label">配当利回り</div>
-            <div class="fp-item-val">${s.dividend_yield ? s.dividend_yield + '%' : 'N/A'}</div>
-            <div class="fp-item-comment ${s.dividend_yield >= 3 ? '' : 'neutral'}">${s.dividend_yield >= 3.5 ? '高配当' : s.dividend_yield >= 2 ? '安定水準' : '要確認'}</div>
-          </div>
-          <div class="fp-item">
-            <div class="fp-item-label">割安度（PBR）</div>
-            <div class="fp-item-val">${s.pbr ? s.pbr + '倍' : 'N/A'}</div>
-            <div class="fp-item-comment ${s.pbr && s.pbr <= 1.5 ? '' : 'neutral'}">${s.pbr <= 1.0 ? '資産より割安' : s.pbr <= 1.5 ? '適正水準' : 'やや高め'}</div>
-          </div>
-          <div class="fp-item">
-            <div class="fp-item-label">稼ぐ力（ROE）</div>
-            <div class="fp-item-val">${s.roe ? s.roe + '%' : 'N/A'}</div>
-            <div class="fp-item-comment ${s.roe >= 10 ? '' : 'neutral'}">${s.roe >= 15 ? '非常に優秀' : s.roe >= 8 ? '合格水準' : '要確認'}</div>
-          </div>
-          <div class="fp-item">
-            <div class="fp-item-label">現在値</div>
-            <div class="fp-item-val">${s.price ? '¥' + s.price.toLocaleString() : 'N/A'}</div>
-            <div class="fp-item-comment neutral">株価</div>
-          </div>
+          ${getIndicatorsHTML(s, currentStrategy)}
         </div>
 
-        <div class="fp-plain">💡 ${getFPComment(s)}</div>
+        <div class="fp-plain">💡 ${getFPComment(s, currentStrategy)}</div>
 
         <div class="stock-card-footer">
           <span class="disclaimer-tag">※投資推奨ではありません。判断・売買はご自身で。</span>

@@ -180,10 +180,25 @@ def evaluate_nisa_fit(stock):
     return {"level": level, "stars": stars, "reasons": reasons}
 
 
+SECTOR_RISK_NOTES = {
+    "Industrials": "景気変動・燃料費や原材料費の影響を受けやすい業種です",
+    "Real Estate": "金利上昇・不動産市況の影響を受けやすい業種です",
+    "Financial Services": "金利動向・市場変動・自然災害（保険）の影響を受けやすい業種です",
+    "Consumer Cyclical": "景気動向や個人消費の変化の影響を受けやすい業種です",
+    "Basic Materials": "原材料価格・為替変動の影響を受けやすい業種です",
+    "Energy": "資源価格・地政学リスクの影響を受けやすい業種です",
+    "Technology": "技術革新の速さや競争環境の変化が大きい業種です",
+    "Communication Services": "規制動向や競争環境の変化の影響を受けやすい業種です",
+    "Utilities": "規制・燃料価格の影響を受けやすい一方、比較的安定した業種です",
+    "Healthcare": "薬価改定や規制動向の影響を受けやすい業種です",
+    "Consumer Defensive": "比較的景気の影響を受けにくい安定した業種です",
+}
+
+
 def evaluate_risk_level(stock):
     """
     リスク評価（信号機方式）。
-    ベータ値（市場感応度）・財務健全性・配当性向の高さなどから簡易判定する。
+    ベータ値（市場感応度）・財務健全性・配当性向・業種特性などから簡易判定する。
     """
     reasons = []
     risk_points = 0  # 高いほどリスクが高い
@@ -214,6 +229,16 @@ def evaluate_risk_level(stock):
             risk_points += 1
             reasons.append("利益に対して配当負担がやや大きい可能性")
 
+    # 業種固有のリスク注記（加点はしないが必ず注記として表示する）
+    sector = stock.get("sector")
+    sector_note = SECTOR_RISK_NOTES.get(sector)
+    if sector_note:
+        # Consumer Defensive / Utilities は「安定業種」のため減点（リスクを下げる）扱いにはしないが、
+        # それ以外はリスク要因として1点加算する
+        if sector not in ("Consumer Defensive",):
+            risk_points += 1
+        reasons.append(f"【業種特性】{sector_note}")
+
     if risk_points >= 3:
         level = "高"
         color = "red"
@@ -231,22 +256,43 @@ def evaluate_risk_level(stock):
 
 
 
+def linear_score(value, pass_line, excellent_line, max_score, higher_is_better=True):
+    """
+    値を「合格ライン」〜「優秀ライン」の間で線形補間し、0〜max_scoreの連続値にする。
+    - value が合格ラインに届かない場合は0点
+    - value が優秀ラインに到達/超過した場合はmax_score（ただし100点連発を避けるため
+      run_screening側でさらに緩やかな圧縮をかける）
+    """
+    if value is None:
+        return 0
+    if higher_is_better:
+        if value < pass_line:
+            return 0
+        if value >= excellent_line:
+            ratio = 1.0
+        else:
+            ratio = (value - pass_line) / (excellent_line - pass_line)
+    else:
+        if value > pass_line:
+            return 0
+        if value <= excellent_line:
+            ratio = 1.0
+        else:
+            ratio = (pass_line - value) / (pass_line - excellent_line)
+    return round(max_score * ratio, 1)
+
+
 def screen_dividend(stock):
     pbr_ok = bool(stock["pbr"] and stock["pbr"] <= 2.0)
     roe_ok = bool(stock["roe"] and stock["roe"] >= 8.0)
     div_ok = bool(stock["dividend_yield"] and stock["dividend_yield"] >= 2.0)
 
-    pbr_score = 0
-    roe_score = 0
-    div_score = 0
-    if pbr_ok:
-        pbr_score = 34 if stock["pbr"] <= 1.5 else 25
-    if roe_ok:
-        roe_score = 33 if stock["roe"] >= 12 else 25
-    if div_ok:
-        div_score = 33 if stock["dividend_yield"] >= 3.0 else 25
+    # 合格ライン → 優秀ライン の間でなめらかに採点（優秀ラインはかなり高めに設定し、満点を希少にする）
+    pbr_score = linear_score(stock["pbr"], pass_line=2.0, excellent_line=0.6, max_score=34, higher_is_better=False)
+    roe_score = linear_score(stock["roe"], pass_line=8.0, excellent_line=22.0, max_score=33, higher_is_better=True)
+    div_score = linear_score(stock["dividend_yield"], pass_line=2.0, excellent_line=5.5, max_score=33, higher_is_better=True)
 
-    score = pbr_score + roe_score + div_score
+    score = round(pbr_score + roe_score + div_score, 1)
     breakdown = [
         {"label": "割安度（PBR）", "score": pbr_score, "max": 34},
         {"label": "稼ぐ力（ROE）", "score": roe_score, "max": 33},
@@ -261,20 +307,12 @@ def screen_solid(stock):
     margin_ok = bool(stock["operating_margin"] and stock["operating_margin"] >= 10.0)
     current_ok = bool(stock["current_ratio"] and stock["current_ratio"] >= 1.2)
 
-    equity_score = 0
-    roe_score = 0
-    margin_score = 0
-    current_score = 0
-    if equity_ok:
-        equity_score = 30 if stock["equity_ratio"] >= 55 else 22
-    if roe_ok:
-        roe_score = 30 if stock["roe"] >= 12 else 22
-    if margin_ok:
-        margin_score = 25 if stock["operating_margin"] >= 15 else 18
-    if current_ok:
-        current_score = 15
+    equity_score = linear_score(stock["equity_ratio"], pass_line=40.0, excellent_line=75.0, max_score=30, higher_is_better=True)
+    roe_score = linear_score(stock["roe"], pass_line=8.0, excellent_line=22.0, max_score=30, higher_is_better=True)
+    margin_score = linear_score(stock["operating_margin"], pass_line=10.0, excellent_line=30.0, max_score=25, higher_is_better=True)
+    current_score = linear_score(stock["current_ratio"], pass_line=1.2, excellent_line=2.5, max_score=15, higher_is_better=True)
 
-    score = equity_score + roe_score + margin_score + current_score
+    score = round(equity_score + roe_score + margin_score + current_score, 1)
     breakdown = [
         {"label": "財務の安全度（自己資本比率）", "score": equity_score, "max": 30},
         {"label": "稼ぐ力（ROE）", "score": roe_score, "max": 30},
@@ -290,20 +328,12 @@ def screen_growth(stock):
     pbr_ok = bool(stock["pbr"] and stock["pbr"] <= 3.0)
     equity_ok = bool(stock["equity_ratio"] and stock["equity_ratio"] >= 40.0)
 
-    growth_score = 0
-    roe_score = 0
-    pbr_score = 0
-    equity_score = 0
-    if growth_ok:
-        growth_score = 30 if stock["revenue_growth"] >= 10 else 22
-    if roe_ok:
-        roe_score = 30 if stock["roe"] >= 15 else 22
-    if pbr_ok:
-        pbr_score = 20
-    if equity_ok:
-        equity_score = 20
+    growth_score = linear_score(stock["revenue_growth"], pass_line=0.0, excellent_line=25.0, max_score=30, higher_is_better=True)
+    roe_score = linear_score(stock["roe"], pass_line=10.0, excellent_line=25.0, max_score=30, higher_is_better=True)
+    pbr_score = linear_score(stock["pbr"], pass_line=3.0, excellent_line=1.0, max_score=20, higher_is_better=False)
+    equity_score = linear_score(stock["equity_ratio"], pass_line=40.0, excellent_line=70.0, max_score=20, higher_is_better=True)
 
-    score = growth_score + roe_score + pbr_score + equity_score
+    score = round(growth_score + roe_score + pbr_score + equity_score, 1)
     breakdown = [
         {"label": "売上成長率", "score": growth_score, "max": 30},
         {"label": "稼ぐ力（ROE）", "score": roe_score, "max": 30},

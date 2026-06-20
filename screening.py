@@ -213,7 +213,7 @@ def get_stock_data(ticker):
             "market_cap": info.get("marketCap", 0),
             "beta": round(beta, 2) if beta else None,
         }
-        data["nisa_fit"] = evaluate_nisa_fit(data)
+        # リスク評価は財務指標のみで決まるため先に計算しておく
         data["risk_level"] = evaluate_risk_level(data)
         return data
     except Exception as e:
@@ -238,15 +238,20 @@ def is_special_structure_company(stock):
     return False
 
 
-def evaluate_nisa_fit(stock):
+def evaluate_nisa_fit(stock, fp_score=None, risk_level_result=None):
     """
     NISA（especially つみたて投資枠的な長期保有）との相性を簡易判定する。
     判定基準：配当の安定性・財務健全性・極端な割高でないこと・収益性（赤字でないこと）。
 
-    【重要な安全装置】
-    - ROEがマイナス（赤字・債務超過等）の場合は加点せず、星上限を3に制限する
-    - ROEが5%未満の場合も星上限を3に制限する（極端に低収益な企業を高評価しない）
-    - 投資持株会社など特殊な財務構造を持つ可能性がある企業は、その旨を明記し星上限を3に制限する
+    【重要：他の評価指標との整合性】
+    星評価は以下の3つの上限のうち、最も厳しいものが適用される。
+    - ROEがマイナス／5%未満、または投資持株会社等 → 星3が上限
+    - リスク評価が「高」 → 星4が上限
+    - リスク評価が「中」 → 星4が上限
+    - FPスコアが低い場合 → FPスコアに応じた上限を適用
+      （90点以上:★5／80点台:★4／70点台:★4／60点台:★3／60点未満:★2）
+    これにより「リスク高なのにNISA適性5」「FPスコアが低いのに星が高い」
+    といった矛盾した表示を防ぐ。
     """
     reasons = []
     points = 0
@@ -268,7 +273,6 @@ def evaluate_nisa_fit(stock):
         points += 1
         reasons.append("極端な割高ではない")
 
-    # ROEは「マイナスでないこと」を明示的にチェック（旧バグ修正）
     roe_is_negative = roe is not None and roe < 0
     roe_is_low = roe is not None and 0 <= roe < 5
 
@@ -280,34 +284,77 @@ def evaluate_nisa_fit(stock):
     elif roe_is_low:
         reasons.append("収益性はまだ十分に高いとは言えません")
 
-    # 星の基本算出
+    # 星の基本算出（素点ベース）
     if points >= 4:
-        level = "非常に高い"
         stars = 5
     elif points == 3:
-        level = "高い"
         stars = 4
     elif points == 2:
-        level = "普通"
         stars = 3
     else:
-        level = "要検討"
         stars = 2
 
-    # 安全装置①：ROEがマイナス、またはROEが5%未満の場合は星3が上限
+    # ---- 上限①：ROE・特殊構造企業による制限（星3まで） ----
+    structure_cap_applied = False
     if roe_is_negative or roe_is_low or roe is None:
         if stars > 3:
             stars = 3
-            level = "普通（収益性に要確認点あり）"
+        structure_cap_applied = True
         if roe_is_negative and "⚠️ 直近の自己資本利益率（ROE）がマイナスです" not in reasons:
             reasons.append("⚠️ 直近の自己資本利益率（ROE）がマイナスです")
 
-    # 安全装置②：投資持株会社など特殊な財務構造を持つ可能性がある企業
     if is_special_structure_company(stock):
         if stars > 3:
             stars = 3
-            level = "普通（特殊な財務構造のため要確認）"
+        structure_cap_applied = True
         reasons.append("⚠️ 投資持株会社等、財務構造が一般事業会社と異なる可能性があります（NAVディスカウント等にご注意ください）")
+
+    # ---- 上限②：リスク評価による制限（指摘①への対応） ----
+    risk_cap_applied = False
+    if risk_level_result:
+        risk_lv = risk_level_result.get("level")
+        if risk_lv == "高":
+            if stars > 4:
+                stars = 4
+            risk_cap_applied = True
+            reasons.append("⚠️ リスク評価が「高」のため、星評価を調整しています")
+        elif risk_lv == "中":
+            if stars > 4:
+                stars = 4
+
+    # ---- 上限③：FPスコアによる制限（指摘②への対応） ----
+    score_cap_applied = False
+    if fp_score is not None:
+        if fp_score >= 90:
+            score_cap = 5
+        elif fp_score >= 80:
+            score_cap = 4
+        elif fp_score >= 70:
+            score_cap = 4
+        elif fp_score >= 60:
+            score_cap = 3
+        else:
+            score_cap = 2
+        if stars > score_cap:
+            stars = score_cap
+            score_cap_applied = True
+
+    # 最終的なレベル表示（上限が適用された場合は理由を明示）
+    if stars >= 5:
+        level = "非常に高い"
+    elif stars == 4:
+        level = "高い"
+    elif stars == 3:
+        level = "普通"
+    else:
+        level = "要検討"
+
+    if structure_cap_applied and "（収益性・財務構造を考慮）" not in level:
+        level += "（収益性・財務構造を考慮）"
+    elif risk_cap_applied and "（リスク評価を考慮）" not in level:
+        level += "（リスク評価を考慮）"
+    elif score_cap_applied and "（総合スコアを考慮）" not in level:
+        level += "（総合スコアを考慮）"
 
     if not reasons:
         reasons.append("十分な評価情報がありません")
@@ -498,6 +545,9 @@ def run_screening(stocks_data, screen_func):
             entry = dict(stock)
             entry["score"] = score
             entry["score_breakdown"] = breakdown
+            # FPスコアとリスク評価が確定した後にNISA適性を計算する
+            # （他の評価指標との整合性を保つため）
+            entry["nisa_fit"] = evaluate_nisa_fit(entry, fp_score=score, risk_level_result=entry.get("risk_level"))
             results.append(entry)
     results.sort(key=lambda x: x["score"], reverse=True)
     return results

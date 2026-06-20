@@ -379,6 +379,9 @@
   .risk-box.risk-low { background: var(--green-light); }
   .risk-box.risk-mid { background: #fff9e6; }
   .risk-box.risk-high { background: var(--red-light); }
+  .risk-detail { font-size: 10px; color: var(--text-muted); line-height: 1.6; margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--border); }
+  .risk-toggle { font-size: 10px; color: var(--navy); cursor: pointer; margin-top: 4px; font-weight: 700; }
+  .risk-toggle:hover { text-decoration: underline; }
 
   @media (max-width: 600px) {
     .extra-info-row { grid-template-columns: 1fr; }
@@ -953,17 +956,36 @@ function getNisaAndRiskHTML(s) {
   if (s.risk_level) {
     const colorClass = s.risk_level.color === 'red' ? 'risk-high' : (s.risk_level.color === 'yellow' ? 'risk-mid' : 'risk-low');
     const icon = s.risk_level.color === 'red' ? '🔴' : (s.risk_level.color === 'yellow' ? '🟡' : '🟢');
-    const reasonsText = s.risk_level.reasons.length ? s.risk_level.reasons.join('・') : '';
+    const allReasons = s.risk_level.reasons || [];
+    // 最初の1つだけを要約として見せ、残りは「詳細を見る」で展開する
+    const summaryReason = allReasons.length ? allReasons[0] : '';
+    const restReasons = allReasons.slice(1);
+    const uid = 'risk_' + s.ticker.replace('.', '_');
+
     html += `
       <div class="extra-box risk-box ${colorClass}">
         <div class="extra-box-title">⚖️ リスク評価</div>
         <div class="extra-box-main">${icon} ${s.risk_level.level}</div>
-        <div class="extra-box-sub">${reasonsText}</div>
+        <div class="extra-box-sub">${summaryReason}</div>
+        ${restReasons.length ? `
+          <div class="risk-detail" id="${uid}" style="display:none;">
+            ${restReasons.map(r => `・${r}`).join('<br>')}
+          </div>
+          <div class="risk-toggle" onclick="toggleRiskDetail('${uid}', this)">詳細を見る ▼</div>
+        ` : ''}
       </div>`;
   }
 
   html += '</div>';
   return html;
+}
+
+function toggleRiskDetail(uid, el) {
+  const detail = document.getElementById(uid);
+  if (!detail) return;
+  const isHidden = detail.style.display === 'none';
+  detail.style.display = isHidden ? 'block' : 'none';
+  el.textContent = isHidden ? '詳細を閉じる ▲' : '詳細を見る ▼';
 }
 
 function getIndicatorsHTML(s, strategy) {

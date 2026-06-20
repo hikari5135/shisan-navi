@@ -339,9 +339,24 @@
   .backtest-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 14px; }
   .backtest-col { background: var(--cream); border-radius: 8px; padding: 14px; text-align: center; }
   .backtest-col-label { font-size: 11px; color: var(--text-muted); margin-bottom: 6px; }
-  .backtest-col-val { font-size: 22px; font-weight: 700; color: var(--green); font-family: 'Noto Serif JP', serif; }
+  .backtest-condition { margin-bottom: 10px; }
+  .backtest-condition-label { font-size: 10px; color: var(--text-muted); margin-bottom: 2px; }
+  .backtest-condition-text { font-size: 13px; color: var(--navy); font-weight: 500; }
+  .backtest-col-val { font-size: 17px; font-weight: 700; color: var(--text); font-family: 'Noto Serif JP', serif; }
   .backtest-col-val.muted { color: var(--text-muted); }
+  .backtest-warning { background: var(--red-light); color: var(--red); font-size: 12px; font-weight: 700; padding: 8px 12px; border-radius: 4px; margin: 14px 0 8px; text-align: center; }
   .backtest-disclaimer { font-size: 10px; color: var(--text-muted); line-height: 1.7; }
+
+  .universe-note {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 12px 16px;
+    font-size: 11px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
 
   /* RESULTS */
   .results-section { max-width: 900px; margin: 0 auto; padding: 0 32px 64px; }
@@ -541,6 +556,10 @@
     </button>
   </div>
 
+  <div class="universe-note">
+    📋 対象銘柄について：日経225採用銘柄を中心に、業種バランスを考慮して選定した銘柄群（約150〜210銘柄）をスキャンしています。東証上場全銘柄（約4,000銘柄）を網羅したものではありません。
+  </div>
+
   <div class="section-label">STEP 2 ／ 戦略を選ぶ</div>
   <div class="strategy-cards">
     <div class="strategy-card active" onclick="selectStrategy('dividend')">
@@ -610,20 +629,34 @@
   </button>
 
   <div class="backtest-box" id="backtestBox" style="display:none;">
-    <div class="backtest-title">📈 過去5年の参考実績（堅実配当型）</div>
+    <div class="backtest-title">📊 バックテスト結果（参考値）</div>
+
+    <div class="backtest-condition">
+      <div class="backtest-condition-label">適用条件</div>
+      <div class="backtest-condition-text" id="btCondition">配当利回り2%以上・PBR2.0倍以下・ROE8%以上（堅実配当型）</div>
+    </div>
+    <div class="backtest-condition">
+      <div class="backtest-condition-label">対象期間</div>
+      <div class="backtest-condition-text" id="btPeriod">-</div>
+    </div>
+
     <div class="backtest-row">
       <div class="backtest-col">
-        <div class="backtest-col-label">堅実配当型 上位銘柄</div>
+        <div class="backtest-col-label">条件該当銘柄（年率換算）</div>
         <div class="backtest-col-val" id="btStrategyVal">-</div>
       </div>
       <div class="backtest-col">
-        <div class="backtest-col-label">日経平均</div>
+        <div class="backtest-col-label">日経平均（年率換算）</div>
         <div class="backtest-col-val muted" id="btNikkeiVal">-</div>
       </div>
       <div class="backtest-col">
-        <div class="backtest-col-label">TOPIX</div>
+        <div class="backtest-col-label">TOPIX（年率換算）</div>
         <div class="backtest-col-val muted" id="btTopixVal">-</div>
       </div>
+    </div>
+
+    <div class="backtest-warning">
+      ⚠️ これは将来の運用成果を示唆・保証するものではありません
     </div>
     <p class="backtest-disclaimer" id="btDisclaimer"></p>
   </div>
@@ -738,18 +771,34 @@ function renderBacktest(backtest) {
     return;
   }
   box.style.display = 'block';
-  document.getElementById('btStrategyVal').textContent =
-    (backtest.avg_return_pct >= 0 ? '+' : '') + backtest.avg_return_pct + '%';
-  document.getElementById('btNikkeiVal').textContent =
-    backtest.benchmark_nikkei225_pct !== null && backtest.benchmark_nikkei225_pct !== undefined
-      ? (backtest.benchmark_nikkei225_pct >= 0 ? '+' : '') + backtest.benchmark_nikkei225_pct + '%'
-      : 'N/A';
-  document.getElementById('btTopixVal').textContent =
-    backtest.benchmark_topix_pct !== null && backtest.benchmark_topix_pct !== undefined
-      ? (backtest.benchmark_topix_pct >= 0 ? '+' : '') + backtest.benchmark_topix_pct + '%'
-      : 'N/A';
+
+  // 累積リターン(%) を年率換算（CAGR）に変換: (1+r)^(1/years) - 1
+  function toAnnualized(totalPct, years) {
+    if (totalPct === null || totalPct === undefined || !years) return null;
+    const total = totalPct / 100;
+    const annual = Math.pow(1 + total, 1 / years) - 1;
+    return Math.round(annual * 1000) / 10; // 小数1桁
+  }
+
+  const years = backtest.years || 5;
+  const sampleSize = backtest.sample_size || 0;
+
+  const annualStrategy = toAnnualized(backtest.avg_return_pct, years);
+  const annualNikkei = toAnnualized(backtest.benchmark_nikkei225_pct, years);
+  const annualTopix = toAnnualized(backtest.benchmark_topix_pct, years);
+
+  function fmt(v) {
+    return (v === null || v === undefined) ? 'N/A' : `年率 約${v >= 0 ? '+' : ''}${v}%`;
+  }
+
+  document.getElementById('btCondition').textContent =
+    `配当利回り2%以上・PBR2.0倍以下・ROE8%以上（堅実配当型・上位${sampleSize}銘柄サンプル）`;
+  document.getElementById('btPeriod').textContent = `過去${years}年間`;
+  document.getElementById('btStrategyVal').textContent = fmt(annualStrategy);
+  document.getElementById('btNikkeiVal').textContent = fmt(annualNikkei);
+  document.getElementById('btTopixVal').textContent = fmt(annualTopix);
   document.getElementById('btDisclaimer').textContent =
-    `※過去${backtest.years}年・上位${backtest.sample_size}銘柄のサンプルによる参考値です。${backtest.disclaimer}`;
+    `現在の条件を満たす上位${sampleSize}銘柄のサンプルに基づく参考値です。${backtest.disclaimer || ''}`;
 }
 
 // ページ読み込み時に自動実行

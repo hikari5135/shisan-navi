@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-20 22:05",
+  "updated": "2026-06-20 22:17",
   "total_stocks_scanned": 211,
   "strategies": {
     "dividend": {
@@ -3258,7 +3258,7 @@
           "operating_margin": 4.35,
           "revenue_growth": 3.4,
           "current_ratio": 2.26,
-          "market_cap": 537698369536,
+          "market_cap": 537962414080,
           "beta": -0.1,
           "nisa_fit": {
             "level": "高い",
@@ -4745,7 +4745,7 @@
           "operating_margin": 4.97,
           "revenue_growth": 12.0,
           "current_ratio": 0.74,
-          "market_cap": 943743434752,
+          "market_cap": 948109967360,
           "beta": 0.1,
           "nisa_fit": {
             "level": "高い",
@@ -5283,7 +5283,7 @@
           "operating_margin": 12.18,
           "revenue_growth": 6.1,
           "current_ratio": 2.11,
-          "market_cap": 5802584702976,
+          "market_cap": 5852687237120,
           "beta": 0.98,
           "nisa_fit": {
             "level": "非常に高い",
@@ -8557,7 +8557,7 @@
           "operating_margin": 7.88,
           "revenue_growth": 11.1,
           "current_ratio": 3.29,
-          "market_cap": 1426868535296,
+          "market_cap": 1426871025664,
           "beta": 0.05,
           "nisa_fit": {
             "level": "普通",
@@ -9202,7 +9202,7 @@
           "operating_margin": 12.18,
           "revenue_growth": 6.1,
           "current_ratio": 2.11,
-          "market_cap": 5802584702976,
+          "market_cap": 5852687237120,
           "beta": 0.98,
           "nisa_fit": {
             "level": "非常に高い",
@@ -13816,7 +13816,7 @@
           "operating_margin": 4.97,
           "revenue_growth": 12.0,
           "current_ratio": 0.74,
-          "market_cap": 943743434752,
+          "market_cap": 948109967360,
           "beta": 0.1,
           "nisa_fit": {
             "level": "高い",
@@ -17729,7 +17729,7 @@
           "operating_margin": 4.35,
           "revenue_growth": 3.4,
           "current_ratio": 2.26,
-          "market_cap": 537698369536,
+          "market_cap": 537962414080,
           "beta": -0.1,
           "nisa_fit": {
             "level": "高い",
@@ -17839,7 +17839,7 @@
           "operating_margin": 12.18,
           "revenue_growth": 6.1,
           "current_ratio": 2.11,
-          "market_cap": 5802584702976,
+          "market_cap": 5852687237120,
           "beta": 0.98,
           "nisa_fit": {
             "level": "非常に高い",
@@ -18543,7 +18543,7 @@
           "operating_margin": 7.88,
           "revenue_growth": 11.1,
           "current_ratio": 3.29,
-          "market_cap": 1426868535296,
+          "market_cap": 1426871025664,
           "beta": 0.05,
           "nisa_fit": {
             "level": "普通",
@@ -20272,7 +20272,7 @@
           "operating_margin": 4.97,
           "revenue_growth": 12.0,
           "current_ratio": 0.74,
-          "market_cap": 943743434752,
+          "market_cap": 948109967360,
           "beta": 0.1,
           "nisa_fit": {
             "level": "高い",
@@ -25091,7 +25091,7 @@
       "operating_margin": 4.35,
       "revenue_growth": 3.4,
       "current_ratio": 2.26,
-      "market_cap": 537698369536,
+      "market_cap": 537962414080,
       "beta": -0.1,
       "nisa_fit": {
         "level": "高い",
@@ -26578,7 +26578,7 @@
       "operating_margin": 4.97,
       "revenue_growth": 12.0,
       "current_ratio": 0.74,
-      "market_cap": 943743434752,
+      "market_cap": 948109967360,
       "beta": 0.1,
       "nisa_fit": {
         "level": "高い",
@@ -27116,7 +27116,7 @@
       "operating_margin": 12.18,
       "revenue_growth": 6.1,
       "current_ratio": 2.11,
-      "market_cap": 5802584702976,
+      "market_cap": 5852687237120,
       "beta": 0.98,
       "nisa_fit": {
         "level": "非常に高い",

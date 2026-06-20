@@ -212,6 +212,50 @@
   .run-btn:hover { background: var(--navy-light); }
   .run-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
+  /* CUSTOM PANEL */
+  .custom-panel {
+    background: var(--white);
+    border: 2px solid var(--gold);
+    border-radius: 10px;
+    margin-bottom: 24px;
+    overflow: hidden;
+  }
+  .custom-panel-inner { padding: 24px; }
+  .custom-title { font-family: 'Noto Serif JP', serif; font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 20px; }
+  .custom-row { margin-bottom: 22px; }
+  .custom-row:last-of-type { margin-bottom: 12px; }
+  .custom-row-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .custom-label { font-size: 13px; color: var(--text); font-weight: 500; }
+  .custom-val { font-size: 15px; color: var(--navy); font-weight: 700; font-family: 'Noto Serif JP', serif; background: var(--cream); padding: 2px 12px; border-radius: 12px; }
+  .custom-slider {
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 6px;
+    border-radius: 3px;
+    background: var(--border);
+    outline: none;
+  }
+  .custom-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--gold);
+    border: 3px solid var(--navy);
+    cursor: pointer;
+  }
+  .custom-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--gold);
+    border: 3px solid var(--navy);
+    cursor: pointer;
+  }
+  .custom-hint { font-size: 11px; color: var(--text-muted); margin-top: 8px; }
+
   /* RESULTS */
   .results-section { max-width: 900px; margin: 0 auto; padding: 0 32px 64px; }
 
@@ -414,6 +458,47 @@
       <div class="s-desc">売上が伸びながら財務も健全な企業を探す。中長期の成長を狙いたい方向け。</div>
       <div class="s-tag">スタンダードプラン</div>
     </div>
+    <div class="strategy-card" onclick="selectStrategy('custom')">
+      <div class="s-icon">🎛️</div>
+      <div class="s-name">カスタム条件</div>
+      <div class="s-desc">PBR・ROE・配当利回り・自己資本比率を自分で設定。自分だけの戦略を作る。</div>
+      <div class="s-tag" style="background:rgba(200,169,110,0.2);color:#b8860b;">プロプラン</div>
+    </div>
+  </div>
+
+  <div class="custom-panel" id="customPanel" style="display:none;">
+    <div class="custom-panel-inner">
+      <div class="custom-title">🎛️ カスタム条件を設定</div>
+      <div class="custom-row">
+        <div class="custom-row-head">
+          <span class="custom-label">配当利回り（最低ライン）</span>
+          <span class="custom-val" id="valDiv">2.0%</span>
+        </div>
+        <input type="range" class="custom-slider" id="sldDiv" min="0" max="6" step="0.1" value="2.0" oninput="updateCustomLabel('Div','%')">
+      </div>
+      <div class="custom-row">
+        <div class="custom-row-head">
+          <span class="custom-label">割安度 PBR（最大ライン）</span>
+          <span class="custom-val" id="valPbr">2.0倍</span>
+        </div>
+        <input type="range" class="custom-slider" id="sldPbr" min="0.5" max="5" step="0.1" value="2.0" oninput="updateCustomLabel('Pbr','倍')">
+      </div>
+      <div class="custom-row">
+        <div class="custom-row-head">
+          <span class="custom-label">稼ぐ力 ROE（最低ライン）</span>
+          <span class="custom-val" id="valRoe">8.0%</span>
+        </div>
+        <input type="range" class="custom-slider" id="sldRoe" min="0" max="30" step="0.5" value="8.0" oninput="updateCustomLabel('Roe','%')">
+      </div>
+      <div class="custom-row">
+        <div class="custom-row-head">
+          <span class="custom-label">財務の安全度 自己資本比率（最低ライン）</span>
+          <span class="custom-val" id="valEquity">30.0%</span>
+        </div>
+        <input type="range" class="custom-slider" id="sldEquity" min="0" max="80" step="1" value="30" oninput="updateCustomLabel('Equity','%')">
+      </div>
+      <p class="custom-hint">※すべての条件を同時に満たす銘柄が表示されます。条件を緩めるほど該当銘柄が増えます。</p>
+    </div>
   </div>
 
   <button class="run-btn" onclick="runScreening()" id="runBtn">
@@ -497,10 +582,36 @@ function loadJSON(input) {
 function selectStrategy(key) {
   currentStrategy = key;
   document.querySelectorAll('.strategy-card').forEach((c, i) => {
-    c.classList.toggle('active', ['dividend','solid','growth'][i] === key);
+    c.classList.toggle('active', ['dividend','solid','growth','custom'][i] === key);
   });
+  document.getElementById('customPanel').style.display = (key === 'custom') ? 'block' : 'none';
   document.getElementById('results').style.display = 'none';
   document.getElementById('disc').style.display = 'none';
+}
+
+function updateCustomLabel(name, unit) {
+  const slider = document.getElementById('sld' + name);
+  const label = document.getElementById('val' + name);
+  label.textContent = parseFloat(slider.value).toFixed(1) + unit;
+}
+
+function getCustomConditions() {
+  return {
+    minDiv: parseFloat(document.getElementById('sldDiv').value),
+    maxPbr: parseFloat(document.getElementById('sldPbr').value),
+    minRoe: parseFloat(document.getElementById('sldRoe').value),
+    minEquity: parseFloat(document.getElementById('sldEquity').value),
+  };
+}
+
+function filterByCustom(stocks, cond) {
+  return stocks.filter(s => {
+    const divOk = !cond.minDiv || (s.dividend_yield !== null && s.dividend_yield !== undefined && s.dividend_yield >= cond.minDiv);
+    const pbrOk = !s.pbr || s.pbr <= cond.maxPbr;
+    const roeOk = !cond.minRoe || (s.roe !== null && s.roe !== undefined && s.roe >= cond.minRoe);
+    const equityOk = !cond.minEquity || (s.equity_ratio !== null && s.equity_ratio !== undefined && s.equity_ratio >= cond.minEquity);
+    return divOk && pbrOk && roeOk && equityOk;
+  }).map(s => ({ ...s, score: 100 })); // カスタムは全条件一致なので満点表示
 }
 
 function getFPComment(stock, strategy) {
@@ -611,7 +722,25 @@ function runScreening() {
 
     let filtered = [];
 
-    if (loadedData && loadedData.strategies && loadedData.strategies[currentStrategy]) {
+    // 全銘柄プールを取得（カスタム条件で使う）
+    function getAllStocksPool() {
+      if (loadedData && loadedData.strategies && loadedData.strategies.dividend) {
+        // 3戦略の銘柄を統合し重複排除（カスタムは全銘柄から条件で絞るため）
+        const all = {};
+        Object.values(loadedData.strategies).forEach(strat => {
+          strat.stocks.forEach(s => { all[s.ticker] = s; });
+        });
+        return Object.values(all);
+      }
+      return loadedData && loadedData.stocks ? loadedData.stocks : getSampleData();
+    }
+
+    if (currentStrategy === 'custom') {
+      const cond = getCustomConditions();
+      const pool = getAllStocksPool();
+      filtered = filterByCustom(pool, cond);
+      document.getElementById('dataSource').textContent = loadedData ? `実データ（${loadedData.updated}）` : 'サンプルデータ';
+    } else if (loadedData && loadedData.strategies && loadedData.strategies[currentStrategy]) {
       // 新形式：3戦略すべて実データ
       const strategyData = loadedData.strategies[currentStrategy];
       filtered = strategyData.stocks;

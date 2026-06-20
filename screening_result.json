@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-20 11:24",
+  "updated": "2026-06-20 12:36",
   "total_stocks_scanned": 211,
   "strategies": {
     "dividend": {
@@ -13,7 +13,7 @@
           "price": 6342.0,
           "pbr": 1.09,
           "roe": 15.77,
-          "dividend_yield": 3.2,
+          "dividend_yield": 3.15,
           "equity_ratio": 87.6,
           "operating_margin": 11.92,
           "revenue_growth": 11.7,
@@ -913,7 +913,7 @@
           "price": 3278.0,
           "pbr": 1.66,
           "roe": 11.91,
-          "dividend_yield": 2.97,
+          "dividend_yield": 2.93,
           "equity_ratio": null,
           "operating_margin": 39.53,
           "revenue_growth": null,
@@ -993,7 +993,7 @@
           "operating_margin": 12.18,
           "revenue_growth": 6.1,
           "current_ratio": 2.11,
-          "market_cap": 5852687237120,
+          "market_cap": 5802584702976,
           "score": 90
         },
         {
@@ -1033,7 +1033,7 @@
           "price": 7194.0,
           "pbr": 2.49,
           "roe": 18.7,
-          "dividend_yield": 3.36,
+          "dividend_yield": 3.41,
           "equity_ratio": 96.0,
           "operating_margin": 37.65,
           "revenue_growth": -4.5,
@@ -1048,7 +1048,7 @@
           "price": 1412.5,
           "pbr": 0.47,
           "roe": -2.85,
-          "dividend_yield": 4.86,
+          "dividend_yield": 4.96,
           "equity_ratio": 46.8,
           "operating_margin": -17.28,
           "revenue_growth": 8.6,
@@ -1413,7 +1413,7 @@
           "operating_margin": 4.35,
           "revenue_growth": 3.4,
           "current_ratio": 2.26,
-          "market_cap": 537962414080,
+          "market_cap": 537698369536,
           "score": 80
         },
         {
@@ -2088,7 +2088,7 @@
           "operating_margin": 4.97,
           "revenue_growth": 12.0,
           "current_ratio": 0.74,
-          "market_cap": 948109967360,
+          "market_cap": 943743434752,
           "score": 70
         },
         {
@@ -2494,7 +2494,7 @@
           "price": 6342.0,
           "pbr": 1.09,
           "roe": 15.77,
-          "dividend_yield": 3.2,
+          "dividend_yield": 3.15,
           "equity_ratio": 87.6,
           "operating_margin": 11.92,
           "revenue_growth": 11.7,
@@ -2769,7 +2769,7 @@
           "operating_margin": 12.18,
           "revenue_growth": 6.1,
           "current_ratio": 2.11,
-          "market_cap": 5852687237120,
+          "market_cap": 5802584702976,
           "score": 110
         },
         {
@@ -2854,7 +2854,7 @@
           "price": 7194.0,
           "pbr": 2.49,
           "roe": 18.7,
-          "dividend_yield": 3.36,
+          "dividend_yield": 3.41,
           "equity_ratio": 96.0,
           "operating_margin": 37.65,
           "revenue_growth": -4.5,
@@ -3124,7 +3124,7 @@
           "price": 2336.5,
           "pbr": 3.48,
           "roe": null,
-          "dividend_yield": 70.0,
+          "dividend_yield": 68.0,
           "equity_ratio": 77.1,
           "operating_margin": 15.49,
           "revenue_growth": null,
@@ -3549,7 +3549,7 @@
           "operating_margin": 7.88,
           "revenue_growth": 11.1,
           "current_ratio": 3.29,
-          "market_cap": 1426871025664,
+          "market_cap": 1426868535296,
           "score": 85
         },
         {
@@ -4039,7 +4039,7 @@
           "price": 3278.0,
           "pbr": 1.66,
           "roe": 11.91,
-          "dividend_yield": 2.97,
+          "dividend_yield": 2.93,
           "equity_ratio": null,
           "operating_margin": 39.53,
           "revenue_growth": null,
@@ -4224,7 +4224,7 @@
           "operating_margin": 4.97,
           "revenue_growth": 12.0,
           "current_ratio": 0.74,
-          "market_cap": 948109967360,
+          "market_cap": 943743434752,
           "score": 50
         },
         {
@@ -4270,7 +4270,7 @@
           "price": 6342.0,
           "pbr": 1.09,
           "roe": 15.77,
-          "dividend_yield": 3.2,
+          "dividend_yield": 3.15,
           "equity_ratio": 87.6,
           "operating_margin": 11.92,
           "revenue_growth": 11.7,
@@ -4545,7 +4545,7 @@
           "operating_margin": 7.88,
           "revenue_growth": 11.1,
           "current_ratio": 3.29,
-          "market_cap": 1426871025664,
+          "market_cap": 1426868535296,
           "score": 110
         },
         {
@@ -4770,7 +4770,7 @@
           "operating_margin": 12.18,
           "revenue_growth": 6.1,
           "current_ratio": 2.11,
-          "market_cap": 5852687237120,
+          "market_cap": 5802584702976,
           "score": 100
         },
         {
@@ -4990,7 +4990,7 @@
           "price": 7194.0,
           "pbr": 2.49,
           "roe": 18.7,
-          "dividend_yield": 3.36,
+          "dividend_yield": 3.41,
           "equity_ratio": 96.0,
           "operating_margin": 37.65,
           "revenue_growth": -4.5,
@@ -5205,7 +5205,7 @@
           "operating_margin": 4.97,
           "revenue_growth": 12.0,
           "current_ratio": 0.74,
-          "market_cap": 948109967360,
+          "market_cap": 943743434752,
           "score": 85
         },
         {
@@ -5425,7 +5425,7 @@
           "price": 1412.5,
           "pbr": 0.47,
           "roe": -2.85,
-          "dividend_yield": 4.86,
+          "dividend_yield": 4.96,
           "equity_ratio": 46.8,
           "operating_margin": -17.28,
           "revenue_growth": 8.6,
@@ -5910,7 +5910,7 @@
           "operating_margin": 4.35,
           "revenue_growth": 3.4,
           "current_ratio": 2.26,
-          "market_cap": 537962414080,
+          "market_cap": 537698369536,
           "score": 75
         },
         {
@@ -6426,6 +6426,67 @@
       ]
     }
   },
+  "backtest": {
+    "strategy": "dividend",
+    "years": 5,
+    "sample_size": 10,
+    "avg_return_pct": 209.8,
+    "benchmark_nikkei225_pct": 154.4,
+    "benchmark_topix_pct": null,
+    "stocks": [
+      {
+        "ticker": "8630.T",
+        "name": "Sompo Holdings, Inc.",
+        "return_pct": 468.5
+      },
+      {
+        "ticker": "8725.T",
+        "name": "MS&AD Insurance Group Holdings, Inc.",
+        "return_pct": 441.5
+      },
+      {
+        "ticker": "9201.T",
+        "name": "Japan Airlines Co., Ltd.",
+        "return_pct": 23.7
+      },
+      {
+        "ticker": "1925.T",
+        "name": "Daiwa House Industry Co., Ltd.",
+        "return_pct": 65.9
+      },
+      {
+        "ticker": "1928.T",
+        "name": "Sekisui House, Ltd.",
+        "return_pct": 86.0
+      },
+      {
+        "ticker": "9432.T",
+        "name": "NTT, Inc.",
+        "return_pct": 50.1
+      },
+      {
+        "ticker": "8354.T",
+        "name": "Fukuoka Financial Group, Inc.",
+        "return_pct": 342.8
+      },
+      {
+        "ticker": "8593.T",
+        "name": "Mitsubishi HC Capital Inc.",
+        "return_pct": 176.7
+      },
+      {
+        "ticker": "8604.T",
+        "name": "Nomura Holdings, Inc.",
+        "return_pct": 211.1
+      },
+      {
+        "ticker": "8601.T",
+        "name": "Daiwa Securities Group Inc.",
+        "return_pct": 231.7
+      }
+    ],
+    "disclaimer": "現在の条件を満たす上位銘柄のみを対象とした参考値です。過去に上場廃止・条件外となった銘柄は含まれないため、実際の運用成績とは異なります。"
+  },
   "strategy": "堅実配当型",
   "count": 153,
   "stocks": [
@@ -6436,7 +6497,7 @@
       "price": 6342.0,
       "pbr": 1.09,
       "roe": 15.77,
-      "dividend_yield": 3.2,
+      "dividend_yield": 3.15,
       "equity_ratio": 87.6,
       "operating_margin": 11.92,
       "revenue_growth": 11.7,
@@ -7336,7 +7397,7 @@
       "price": 3278.0,
       "pbr": 1.66,
       "roe": 11.91,
-      "dividend_yield": 2.97,
+      "dividend_yield": 2.93,
       "equity_ratio": null,
       "operating_margin": 39.53,
       "revenue_growth": null,
@@ -7416,7 +7477,7 @@
       "operating_margin": 12.18,
       "revenue_growth": 6.1,
       "current_ratio": 2.11,
-      "market_cap": 5852687237120,
+      "market_cap": 5802584702976,
       "score": 90
     },
     {
@@ -7456,7 +7517,7 @@
       "price": 7194.0,
       "pbr": 2.49,
       "roe": 18.7,
-      "dividend_yield": 3.36,
+      "dividend_yield": 3.41,
       "equity_ratio": 96.0,
       "operating_margin": 37.65,
       "revenue_growth": -4.5,
@@ -7471,7 +7532,7 @@
       "price": 1412.5,
       "pbr": 0.47,
       "roe": -2.85,
-      "dividend_yield": 4.86,
+      "dividend_yield": 4.96,
       "equity_ratio": 46.8,
       "operating_margin": -17.28,
       "revenue_growth": 8.6,
@@ -7836,7 +7897,7 @@
       "operating_margin": 4.35,
       "revenue_growth": 3.4,
       "current_ratio": 2.26,
-      "market_cap": 537962414080,
+      "market_cap": 537698369536,
       "score": 80
     },
     {
@@ -8511,7 +8572,7 @@
       "operating_margin": 4.97,
       "revenue_growth": 12.0,
       "current_ratio": 0.74,
-      "market_cap": 948109967360,
+      "market_cap": 943743434752,
       "score": 70
     },
     {

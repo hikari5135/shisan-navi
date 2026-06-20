@@ -309,7 +309,7 @@ def run_backtest(strategy_results, strategy_key, years=5, sample_size=10):
 
     # ベンチマーク取得（日経平均・TOPIX）
     benchmarks = {}
-    for label, ticker in [("nikkei225", "^N225"), ("topix", "^TOPX")]:
+    for label, ticker in [("nikkei225", "^N225"), ("topix", "1306.T")]:
         try:
             hist = yf.Ticker(ticker).history(period=period)
             if not hist.empty and len(hist) >= 2:
@@ -360,7 +360,7 @@ def main():
     print("※株価APIへの負荷軽減のため、週1回（月曜日）のみ実行します")
 
     import datetime
-    is_monday = True  # ★テスト用：強制的に実行する（本番は datetime.datetime.now().weekday() == 0 に戻すこと）
+    is_monday = datetime.datetime.now().weekday() == 0  # 0=月曜日（本番設定）
 
     backtest_dividend = None
     if is_monday:

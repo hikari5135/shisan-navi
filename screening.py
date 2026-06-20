@@ -240,18 +240,25 @@ def is_special_structure_company(stock):
 
 def evaluate_nisa_fit(stock, fp_score=None, risk_level_result=None):
     """
-    NISA（especially つみたて投資枠的な長期保有）との相性を簡易判定する。
+    「長期積立適性」を簡易判定する。
+    これは「企業評価スコア（FPスコア）」とは異なる、別の評価軸である。
+    FPスコアが企業の財務的な優秀さを表すのに対し、長期積立適性は
+    「値動きの安定性」「収益の継続性」「特殊な財務構造でないか」など、
+    “長期間にわたり積立で持ち続けやすいか” という観点を加味した指標。
+
+    そのため、FPスコアが非常に高い企業であっても、業績の振れ幅が大きい
+    業種（半導体・ハイテク等）やリスク評価が高い銘柄では、長期積立適性は
+    あえて控えめな評価になることがある。これは矛盾ではなく、評価軸が
+    異なることによる意図した結果である。
+
     判定基準：配当の安定性・財務健全性・極端な割高でないこと・収益性（赤字でないこと）。
 
-    【重要：他の評価指標との整合性】
+    【他の評価指標との関係】
     星評価は以下の3つの上限のうち、最も厳しいものが適用される。
     - ROEがマイナス／5%未満、または投資持株会社等 → 星3が上限
-    - リスク評価が「高」 → 星4が上限
-    - リスク評価が「中」 → 星4が上限
+    - リスク評価が「高」または「中」 → 星4が上限
     - FPスコアが低い場合 → FPスコアに応じた上限を適用
       （90点以上:★5／80点台:★4／70点台:★4／60点台:★3／60点未満:★2）
-    これにより「リスク高なのにNISA適性5」「FPスコアが低いのに星が高い」
-    といった矛盾した表示を防ぐ。
     """
     reasons = []
     points = 0
@@ -349,12 +356,14 @@ def evaluate_nisa_fit(stock, fp_score=None, risk_level_result=None):
     else:
         level = "要検討"
 
-    if structure_cap_applied and "（収益性・財務構造を考慮）" not in level:
-        level += "（収益性・財務構造を考慮）"
-    elif risk_cap_applied and "（リスク評価を考慮）" not in level:
-        level += "（リスク評価を考慮）"
-    elif score_cap_applied and "（総合スコアを考慮）" not in level:
-        level += "（総合スコアを考慮）"
+    # 注記：FPスコア（企業評価）が高くても、長期積立適性は別軸で
+    # 評価していることが伝わるよう理由欄にも明記する
+    if structure_cap_applied:
+        pass  # 既にreasonsに理由が追加済み
+    elif risk_cap_applied:
+        reasons.append("値動きの振れ幅が大きい可能性があるため、積立比率は抑えめが無難です")
+    elif score_cap_applied and fp_score is not None and fp_score < 60:
+        reasons.append("企業評価スコアが他行と比べてやや控えめなため、慎重な判断をおすすめします")
 
     if not reasons:
         reasons.append("十分な評価情報がありません")
@@ -535,6 +544,58 @@ def screen_growth(stock):
     return sum([growth_ok, roe_ok, equity_ok]) >= 2, score, breakdown
 
 
+SECTOR_VOLATILITY_NOTES = {
+    "Technology": "半導体・ハイテク関連企業のため業績変動は大きく、積立投資では比率を抑えることも検討したい銘柄です",
+    "Communication Services": "事業環境の変化が速い業種のため、業績の振れ幅にはご留意ください",
+    "Basic Materials": "市況（原材料価格・為替）の影響を受けやすく、業績変動が比較的大きい業種です",
+    "Energy": "資源価格の変動の影響を受けやすく、業績変動が比較的大きい業種です",
+    "Consumer Cyclical": "景気動向の影響を受けやすく、業績変動が比較的大きい業種です",
+    "Real Estate": "金利動向の影響を受けやすい業種です",
+    "Financial Services": "市場環境・金利動向の影響を受けやすい業種です",
+}
+
+
+def build_detailed_fp_comment(stock):
+    """
+    各銘柄について、財務指標と業種特性を踏まえた一文コメントを生成する。
+    例：「自己資本比率97.5%、ROE57.6%と非常に優秀な財務内容です。
+        一方で半導体関連企業のため業績変動は大きく、積立投資では
+        比率を抑えることも検討したい銘柄です。」
+    """
+    equity_ratio = stock.get("equity_ratio")
+    roe = stock.get("roe")
+    sector = stock.get("sector")
+
+    parts = []
+
+    # 前半：財務の良さを具体的な数値で
+    good_points = []
+    if equity_ratio is not None and equity_ratio >= 50:
+        good_points.append(f"自己資本比率{equity_ratio}%")
+    if roe is not None and roe >= 15:
+        good_points.append(f"ROE{roe}%")
+
+    if good_points:
+        parts.append(f"{('、'.join(good_points))}と非常に優秀な財務内容です。")
+    elif equity_ratio is not None or roe is not None:
+        detail = []
+        if equity_ratio is not None:
+            detail.append(f"自己資本比率{equity_ratio}%")
+        if roe is not None:
+            detail.append(f"ROE{roe}%")
+        parts.append(f"{('、'.join(detail))}という財務内容です。")
+
+    # 後半：業種特性の注記（ある場合のみ）
+    volatility_note = SECTOR_VOLATILITY_NOTES.get(sector)
+    if volatility_note:
+        parts.append(f"一方で{volatility_note}。")
+
+    if not parts:
+        return "財務データの一部が取得できなかったため、詳細な評価ができませんでした。"
+
+    return "".join(parts)
+
+
 def run_screening(stocks_data, screen_func):
     results = []
     for stock in stocks_data:
@@ -545,9 +606,10 @@ def run_screening(stocks_data, screen_func):
             entry = dict(stock)
             entry["score"] = score
             entry["score_breakdown"] = breakdown
-            # FPスコアとリスク評価が確定した後にNISA適性を計算する
+            # FPスコアとリスク評価が確定した後に長期積立適性を計算する
             # （他の評価指標との整合性を保つため）
             entry["nisa_fit"] = evaluate_nisa_fit(entry, fp_score=score, risk_level_result=entry.get("risk_level"))
+            entry["detailed_comment"] = build_detailed_fp_comment(entry)
             results.append(entry)
     results.sort(key=lambda x: x["score"], reverse=True)
     return results

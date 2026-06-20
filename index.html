@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>堅実株ナビ｜FP流スクリーナー</title>
+<title>堅実株ナビ｜NISA初心者のためのFP流株診断ツール</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap');
 
@@ -372,6 +372,7 @@
   .extra-info-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
   .extra-box { border-radius: 6px; padding: 10px 12px; border: 1px solid var(--border); }
   .extra-box-title { font-size: 10px; color: var(--text-muted); margin-bottom: 4px; }
+  .extra-box-title .title-sub { font-size: 9px; color: var(--text-muted); opacity: 0.7; }
   .extra-box-main { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
   .extra-box-main .stars { color: var(--gold); font-size: 11px; }
   .extra-box-sub { font-size: 10px; color: var(--text-muted); line-height: 1.5; }
@@ -542,7 +543,7 @@
 <header>
   <div class="logo">
     堅実株ナビ
-    <span>FP流スクリーナー｜実データ版</span>
+    <span>NISA初心者のためのFP流株診断ツール</span>
   </div>
   <div style="display:flex; align-items:center; gap:10px;">
     <button class="unlock-btn" id="unlockBtn" onclick="openUnlockModal()">🔓 アクセスコード入力</button>
@@ -564,7 +565,7 @@
 </div>
 
 <div class="hero">
-  <div class="hero-eyebrow">FP監修 ／ 日本株スクリーニング</div>
+  <div class="hero-eyebrow">NISA初心者のためのFP流株診断ツール</div>
   <h1>「長く持てる株」を、<br><em>FPの目線</em>で探す</h1>
   <p class="hero-sub">財務の健全性・配当の安定性・割安度を、わかりやすい言葉で確認できます</p>
   <div class="update-info" id="updateInfo">最新データを読み込み中...</div>
@@ -947,7 +948,7 @@ function getNisaAndRiskHTML(s) {
     const reasonsText = s.nisa_fit.reasons.length ? s.nisa_fit.reasons.join('・') : '';
     html += `
       <div class="extra-box nisa-box">
-        <div class="extra-box-title">📘 NISA適性</div>
+        <div class="extra-box-title">📘 長期積立適性<span class="title-sub">（企業評価スコアとは別の評価軸です）</span></div>
         <div class="extra-box-main">${s.nisa_fit.level} <span class="stars">${stars}</span></div>
         <div class="extra-box-sub">${reasonsText}</div>
       </div>`;
@@ -1132,7 +1133,7 @@ function runScreening() {
           ${getIndicatorsHTML(s, currentStrategy)}
         </div>
 
-        <div class="fp-plain">💡 ${getFPComment(s, currentStrategy)}</div>
+        <div class="fp-plain">📋 ${s.detailed_comment ? s.detailed_comment : getFPComment(s, currentStrategy)}</div>
 
         ${getNisaAndRiskHTML(s)}
 

@@ -256,6 +256,77 @@
   }
   .custom-hint { font-size: 11px; color: var(--text-muted); margin-top: 8px; }
 
+  /* UNLOCK */
+  .unlock-btn {
+    background: rgba(200,169,110,0.15);
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Noto Sans JP', sans-serif;
+    transition: all 0.15s;
+  }
+  .unlock-btn:hover { background: rgba(200,169,110,0.25); }
+  .unlock-btn.unlocked { background: var(--green); border-color: var(--green); color: var(--white); }
+
+  .unlock-modal {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(26,39,68,0.6);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .unlock-modal-inner {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 32px 28px;
+    max-width: 380px;
+    width: 100%;
+    position: relative;
+    text-align: center;
+  }
+  .unlock-modal-close {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    font-size: 22px;
+    color: var(--text-muted);
+    cursor: pointer;
+  }
+  .unlock-modal-icon { font-size: 32px; margin-bottom: 12px; }
+  .unlock-modal-title { font-family: 'Noto Serif JP', serif; font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
+  .unlock-modal-desc { font-size: 12px; color: var(--text-muted); line-height: 1.7; margin-bottom: 20px; }
+  .unlock-input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 14px;
+    margin-bottom: 14px;
+    box-sizing: border-box;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+  .unlock-submit-btn {
+    width: 100%;
+    background: var(--navy);
+    color: var(--white);
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+  .unlock-error { color: var(--red); font-size: 12px; margin-top: 10px; }
+  .unlock-cta { display: block; margin-top: 18px; font-size: 12px; color: var(--gold); text-decoration: underline; }
+
   /* RESULTS */
   .results-section { max-width: 900px; margin: 0 auto; padding: 0 32px 64px; }
 
@@ -412,8 +483,24 @@
     堅実株ナビ
     <span>FP流スクリーナー｜実データ版</span>
   </div>
-  <div class="header-badge">β版</div>
+  <div style="display:flex; align-items:center; gap:10px;">
+    <button class="unlock-btn" id="unlockBtn" onclick="openUnlockModal()">🔓 アクセスコード入力</button>
+    <div class="header-badge">β版</div>
+  </div>
 </header>
+
+<div class="unlock-modal" id="unlockModal" style="display:none;">
+  <div class="unlock-modal-inner">
+    <div class="unlock-modal-close" onclick="closeUnlockModal()">×</div>
+    <div class="unlock-modal-icon">🔓</div>
+    <div class="unlock-modal-title">アクセスコードを入力</div>
+    <p class="unlock-modal-desc">noteメンバーシップ「資産形成ナビ」にご加入の方は、メンバー限定記事に記載のコードを入力すると、全機能がアンロックされます。</p>
+    <input type="text" class="unlock-input" id="unlockInput" placeholder="アクセスコードを入力">
+    <button class="unlock-submit-btn" onclick="submitUnlockCode()">アンロックする</button>
+    <div class="unlock-error" id="unlockError" style="display:none;">コードが正しくありません</div>
+    <a href="https://note.com/fp3_pro" target="_blank" class="unlock-cta">まだ加入していない方はこちら（月額¥980）</a>
+  </div>
+</div>
 
 <div class="hero">
   <div class="hero-eyebrow">FP監修 ／ 日本株スクリーニング</div>
@@ -524,7 +611,7 @@
     <div class="lock-card" id="lockCard" style="display:none">
       <div class="lock-icon">🔒</div>
       <p>より多くの銘柄はスタンダードプランで表示されます<br>（月額 ¥980 で全銘柄・LINE通知が使えます）</p>
-      <button class="upgrade-btn">14日間 無料で試す</button>
+      <button class="upgrade-btn" onclick="openUnlockModal()">アクセスコードを入力する</button>
     </div>
   </div>
 </div>
@@ -535,6 +622,56 @@
 
 <script>
 let loadedData = null;
+
+// ===== アクセスコード（アンロック）機能 =====
+const UNLOCK_KEY = 'shisanNaviUnlocked';
+// メンバーシップ加入者向けのコード（noteのメンバー限定記事に記載）
+const VALID_UNLOCK_CODES = ['shisan2026', 'fp-member-980'];
+
+function isUnlocked() {
+  return localStorage.getItem(UNLOCK_KEY) === 'true';
+}
+
+function setUnlocked() {
+  localStorage.setItem(UNLOCK_KEY, 'true');
+}
+
+function refreshUnlockUI() {
+  const btn = document.getElementById('unlockBtn');
+  if (isUnlocked()) {
+    btn.textContent = '🔓 アンロック済み';
+    btn.classList.add('unlocked');
+  } else {
+    btn.textContent = '🔓 アクセスコード入力';
+    btn.classList.remove('unlocked');
+  }
+}
+
+function openUnlockModal() {
+  document.getElementById('unlockModal').style.display = 'flex';
+  document.getElementById('unlockError').style.display = 'none';
+}
+
+function closeUnlockModal() {
+  document.getElementById('unlockModal').style.display = 'none';
+}
+
+function submitUnlockCode() {
+  const input = document.getElementById('unlockInput').value.trim();
+  if (VALID_UNLOCK_CODES.includes(input)) {
+    setUnlocked();
+    refreshUnlockUI();
+    closeUnlockModal();
+    // 結果が表示中なら再描画してロック解除を反映
+    if (document.getElementById('results').style.display !== 'none') {
+      runScreening();
+    }
+  } else {
+    document.getElementById('unlockError').style.display = 'block';
+  }
+}
+
+window.addEventListener('DOMContentLoaded', refreshUnlockUI);
 let currentStrategy = 'dividend';
 
 // GitHubから最新のscreening_result.jsonを自動取得
@@ -757,8 +894,10 @@ function runScreening() {
 
     document.getElementById('count').textContent = filtered.length;
 
-    const displayStocks = filtered.slice(0, 5);
-    const remainCount = filtered.length - 5;
+    const unlocked = isUnlocked();
+    const displayLimit = unlocked ? filtered.length : 5;
+    const displayStocks = filtered.slice(0, displayLimit);
+    const remainCount = filtered.length - displayLimit;
 
     const list = document.getElementById('stockList');
     list.innerHTML = displayStocks.map(s => `
@@ -790,7 +929,7 @@ function runScreening() {
     const lockCard = document.getElementById('lockCard');
     if (remainCount > 0) {
       lockCard.style.display = 'block';
-      lockCard.querySelector('p').innerHTML = `残り <strong>${remainCount}件</strong> はスタンダードプランで表示されます<br>（月額 ¥980 で全銘柄・LINE通知が使えます）`;
+      lockCard.querySelector('p').innerHTML = `残り <strong>${remainCount}件</strong> はメンバーシップで表示されます<br>（月額 ¥980 で全銘柄・カスタム条件が使い放題）`;
     } else {
       lockCard.style.display = 'none';
     }

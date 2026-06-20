@@ -358,6 +358,33 @@
     margin-bottom: 24px;
   }
 
+  /* SCORE BREAKDOWN */
+  .score-breakdown { background: var(--cream); border-radius: 6px; padding: 12px 14px; margin-bottom: 14px; }
+  .score-breakdown-title { font-size: 11px; color: var(--text-muted); font-weight: 700; margin-bottom: 8px; }
+  .breakdown-row { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+  .breakdown-row:last-child { margin-bottom: 0; }
+  .breakdown-label { font-size: 11px; color: var(--text); width: 130px; flex-shrink: 0; }
+  .breakdown-bar-track { flex: 1; height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; }
+  .breakdown-bar-fill { height: 100%; background: var(--gold); border-radius: 3px; }
+  .breakdown-score { font-size: 11px; color: var(--text-muted); width: 40px; text-align: right; flex-shrink: 0; }
+
+  /* NISA / RISK */
+  .extra-info-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+  .extra-box { border-radius: 6px; padding: 10px 12px; border: 1px solid var(--border); }
+  .extra-box-title { font-size: 10px; color: var(--text-muted); margin-bottom: 4px; }
+  .extra-box-main { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+  .extra-box-main .stars { color: var(--gold); font-size: 11px; }
+  .extra-box-sub { font-size: 10px; color: var(--text-muted); line-height: 1.5; }
+  .nisa-box { background: #f0f6ff; }
+  .risk-box.risk-low { background: var(--green-light); }
+  .risk-box.risk-mid { background: #fff9e6; }
+  .risk-box.risk-high { background: var(--red-light); }
+
+  @media (max-width: 600px) {
+    .extra-info-row { grid-template-columns: 1fr; }
+    .breakdown-label { width: 100px; }
+  }
+
   /* RESULTS */
   .results-section { max-width: 900px; margin: 0 auto; padding: 0 32px 64px; }
 
@@ -881,6 +908,52 @@ function getFPComment(stock, strategy) {
   return comments.join('・') || '財務条件を満たす銘柄';
 }
 
+function getScoreBreakdownHTML(s) {
+  if (!s.score_breakdown || !s.score_breakdown.length) return '';
+  const items = s.score_breakdown.map(b => {
+    const pct = b.max > 0 ? Math.round((b.score / b.max) * 100) : 0;
+    return `
+      <div class="breakdown-row">
+        <div class="breakdown-label">${b.label}</div>
+        <div class="breakdown-bar-track">
+          <div class="breakdown-bar-fill" style="width:${pct}%"></div>
+        </div>
+        <div class="breakdown-score">${b.score}/${b.max}</div>
+      </div>`;
+  }).join('');
+  return `<div class="score-breakdown"><div class="score-breakdown-title">スコア内訳</div>${items}</div>`;
+}
+
+function getNisaAndRiskHTML(s) {
+  let html = '<div class="extra-info-row">';
+
+  if (s.nisa_fit) {
+    const stars = '★'.repeat(s.nisa_fit.stars) + '☆'.repeat(5 - s.nisa_fit.stars);
+    const reasonsText = s.nisa_fit.reasons.length ? s.nisa_fit.reasons.join('・') : '';
+    html += `
+      <div class="extra-box nisa-box">
+        <div class="extra-box-title">📘 NISA適性</div>
+        <div class="extra-box-main">${s.nisa_fit.level} <span class="stars">${stars}</span></div>
+        <div class="extra-box-sub">${reasonsText}</div>
+      </div>`;
+  }
+
+  if (s.risk_level) {
+    const colorClass = s.risk_level.color === 'red' ? 'risk-high' : (s.risk_level.color === 'yellow' ? 'risk-mid' : 'risk-low');
+    const icon = s.risk_level.color === 'red' ? '🔴' : (s.risk_level.color === 'yellow' ? '🟡' : '🟢');
+    const reasonsText = s.risk_level.reasons.length ? s.risk_level.reasons.join('・') : '';
+    html += `
+      <div class="extra-box risk-box ${colorClass}">
+        <div class="extra-box-title">⚖️ リスク評価</div>
+        <div class="extra-box-main">${icon} ${s.risk_level.level}</div>
+        <div class="extra-box-sub">${reasonsText}</div>
+      </div>`;
+  }
+
+  html += '</div>';
+  return html;
+}
+
 function getIndicatorsHTML(s, strategy) {
   if (strategy === 'solid') {
     return `
@@ -1019,11 +1092,15 @@ function runScreening() {
           </div>
         </div>
 
+        ${getScoreBreakdownHTML(s)}
+
         <div class="fp-indicators">
           ${getIndicatorsHTML(s, currentStrategy)}
         </div>
 
         <div class="fp-plain">💡 ${getFPComment(s, currentStrategy)}</div>
+
+        ${getNisaAndRiskHTML(s)}
 
         <div class="stock-card-footer">
           <span class="disclaimer-tag">※投資推奨ではありません。判断・売買はご自身で。</span>

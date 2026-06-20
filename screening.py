@@ -106,6 +106,7 @@ def get_stock_data(ticker):
         operating_margin = info.get("operatingMargins", None)
         revenue_growth = info.get("revenueGrowth", None)
         current_ratio = info.get("currentRatio", None)
+        beta = info.get("beta", None)
 
         if div:
             div_pct = round(div, 2) if div > 1 else round(div * 100, 2)
@@ -132,28 +133,126 @@ def get_stock_data(ticker):
             "revenue_growth": round(revenue_growth * 100, 2) if revenue_growth else None,
             "current_ratio": round(current_ratio, 2) if current_ratio else None,
             "market_cap": info.get("marketCap", 0),
+            "beta": round(beta, 2) if beta else None,
         }
+        data["nisa_fit"] = evaluate_nisa_fit(data)
+        data["risk_level"] = evaluate_risk_level(data)
         return data
     except Exception as e:
         print(f"エラー: {ticker} - {e}")
         return None
 
 
+def evaluate_nisa_fit(stock):
+    """
+    NISA（especially つみたて投資枠的な長期保有）との相性を簡易判定する。
+    判定基準：配当の安定性・財務健全性・極端な割高でないこと。
+    """
+    reasons = []
+    points = 0
+
+    if stock.get("dividend_yield") and stock["dividend_yield"] >= 2.5:
+        points += 1
+        reasons.append("配当が安定的")
+    if stock.get("equity_ratio") and stock["equity_ratio"] >= 40:
+        points += 1
+        reasons.append("財務が健全")
+    if stock.get("pbr") and stock["pbr"] <= 2.5:
+        points += 1
+        reasons.append("極端な割高ではない")
+    if stock.get("roe") and stock["roe"] >= 8:
+        points += 1
+        reasons.append("収益性が安定")
+
+    if points >= 4:
+        level = "非常に高い"
+        stars = 5
+    elif points == 3:
+        level = "高い"
+        stars = 4
+    elif points == 2:
+        level = "普通"
+        stars = 3
+    else:
+        level = "要検討"
+        stars = 2
+
+    return {"level": level, "stars": stars, "reasons": reasons}
+
+
+def evaluate_risk_level(stock):
+    """
+    リスク評価（信号機方式）。
+    ベータ値（市場感応度）・財務健全性・配当性向の高さなどから簡易判定する。
+    """
+    reasons = []
+    risk_points = 0  # 高いほどリスクが高い
+
+    beta = stock.get("beta")
+    if beta is not None:
+        if beta >= 1.3:
+            risk_points += 2
+            reasons.append("株価が市場平均より大きく変動しやすい（景気敏感）")
+        elif beta >= 1.0:
+            risk_points += 1
+            reasons.append("株価が市場平均並みに変動する")
+
+    equity_ratio = stock.get("equity_ratio")
+    if equity_ratio is not None:
+        if equity_ratio < 25:
+            risk_points += 2
+            reasons.append("自己資本比率が低く、借入への依存度が高い")
+        elif equity_ratio < 40:
+            risk_points += 1
+            reasons.append("自己資本比率がやや低め")
+
+    div_yield = stock.get("dividend_yield")
+    roe = stock.get("roe")
+    if div_yield is not None and roe is not None and roe > 0:
+        payout_proxy = div_yield / roe  # 簡易的な配当性向の代理指標
+        if payout_proxy >= 0.5:
+            risk_points += 1
+            reasons.append("利益に対して配当負担がやや大きい可能性")
+
+    if risk_points >= 3:
+        level = "高"
+        color = "red"
+    elif risk_points >= 1:
+        level = "中"
+        color = "yellow"
+    else:
+        level = "低"
+        color = "green"
+
+    if not reasons:
+        reasons.append("特筆すべきリスク要因は確認されませんでした")
+
+    return {"level": level, "color": color, "reasons": reasons}
+
+
+
 def screen_dividend(stock):
     pbr_ok = bool(stock["pbr"] and stock["pbr"] <= 2.0)
     roe_ok = bool(stock["roe"] and stock["roe"] >= 8.0)
     div_ok = bool(stock["dividend_yield"] and stock["dividend_yield"] >= 2.0)
-    score = 0
+
+    pbr_score = 0
+    roe_score = 0
+    div_score = 0
     if pbr_ok:
-        score += 30
-        if stock["pbr"] <= 1.5: score += 10
+        pbr_score = 34 if stock["pbr"] <= 1.5 else 25
     if roe_ok:
-        score += 30
-        if stock["roe"] >= 12: score += 10
+        roe_score = 33 if stock["roe"] >= 12 else 25
     if div_ok:
-        score += 30
-        if stock["dividend_yield"] >= 3.0: score += 10
-    return sum([pbr_ok, roe_ok, div_ok]) >= 2, score
+        div_score = 33 if stock["dividend_yield"] >= 3.0 else 25
+
+    score = pbr_score + roe_score + div_score
+    breakdown = [
+        {"label": "割安度（PBR）", "score": pbr_score, "max": 34},
+        {"label": "稼ぐ力（ROE）", "score": roe_score, "max": 33},
+        {"label": "配当利回り", "score": div_score, "max": 33},
+    ]
+    return sum([pbr_ok, roe_ok, div_ok]) >= 2, score, breakdown
 
 
 def screen_solid(stock):
@@ -161,19 +260,28 @@ def screen_solid(stock):
     roe_ok = bool(stock["roe"] and stock["roe"] >= 8.0)
     margin_ok = bool(stock["operating_margin"] and stock["operating_margin"] >= 10.0)
     current_ok = bool(stock["current_ratio"] and stock["current_ratio"] >= 1.2)
-    score = 0
+
+    equity_score = 0
+    roe_score = 0
+    margin_score = 0
+    current_score = 0
     if equity_ok:
-        score += 25
-        if stock["equity_ratio"] >= 55: score += 10
+        equity_score = 30 if stock["equity_ratio"] >= 55 else 22
     if roe_ok:
-        score += 25
-        if stock["roe"] >= 12: score += 10
+        roe_score = 30 if stock["roe"] >= 12 else 22
     if margin_ok:
-        score += 25
-        if stock["operating_margin"] >= 15: score += 5
+        margin_score = 25 if stock["operating_margin"] >= 15 else 18
     if current_ok:
-        score += 25
-    return sum([equity_ok, roe_ok, margin_ok]) >= 2, score
+        current_score = 15
+
+    score = equity_score + roe_score + margin_score + current_score
+    breakdown = [
+        {"label": "財務の安全度（自己資本比率）", "score": equity_score, "max": 30},
+        {"label": "稼ぐ力（ROE）", "score": roe_score, "max": 30},
+        {"label": "利益率（営業利益率）", "score": margin_score, "max": 25},
+        {"label": "短期支払能力（流動比率）", "score": current_score, "max": 15},
+    ]
+    return sum([equity_ok, roe_ok, margin_ok]) >= 2, score, breakdown
 
 
 def screen_growth(stock):
@@ -181,18 +289,28 @@ def screen_growth(stock):
     roe_ok = bool(stock["roe"] and stock["roe"] >= 10.0)
     pbr_ok = bool(stock["pbr"] and stock["pbr"] <= 3.0)
     equity_ok = bool(stock["equity_ratio"] and stock["equity_ratio"] >= 40.0)
-    score = 0
+
+    growth_score = 0
+    roe_score = 0
+    pbr_score = 0
+    equity_score = 0
     if growth_ok:
-        score += 25
-        if stock["revenue_growth"] >= 10: score += 10
+        growth_score = 30 if stock["revenue_growth"] >= 10 else 22
     if roe_ok:
-        score += 25
-        if stock["roe"] >= 15: score += 10
+        roe_score = 30 if stock["roe"] >= 15 else 22
     if pbr_ok:
-        score += 25
+        pbr_score = 20
     if equity_ok:
-        score += 25
-    return sum([growth_ok, roe_ok, equity_ok]) >= 2, score
+        equity_score = 20
+
+    score = growth_score + roe_score + pbr_score + equity_score
+    breakdown = [
+        {"label": "売上成長率", "score": growth_score, "max": 30},
+        {"label": "稼ぐ力（ROE）", "score": roe_score, "max": 30},
+        {"label": "割安度（PBR）", "score": pbr_score, "max": 20},
+        {"label": "財務の安全度（自己資本比率）", "score": equity_score, "max": 20},
+    ]
+    return sum([growth_ok, roe_ok, equity_ok]) >= 2, score, breakdown
 
 
 def run_screening(stocks_data, screen_func):
@@ -200,10 +318,11 @@ def run_screening(stocks_data, screen_func):
     for stock in stocks_data:
         if not stock:
             continue
-        qualifies, score = screen_func(stock)
+        qualifies, score, breakdown = screen_func(stock)
         if qualifies:
             entry = dict(stock)
             entry["score"] = score
+            entry["score_breakdown"] = breakdown
             results.append(entry)
     results.sort(key=lambda x: x["score"], reverse=True)
     return results

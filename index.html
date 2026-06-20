@@ -653,7 +653,7 @@ function runScreening() {
 
         <div class="stock-card-footer">
           <span class="disclaimer-tag">※投資推奨ではありません。判断・売買はご自身で。</span>
-          <button class="watchlist-btn" onclick="toggleWatch(this)">＋ 気になる</button>
+          <button class="watchlist-btn" data-ticker="${s.ticker}" onclick="toggleWatch(this, '${s.ticker}')">＋ 気になる</button>
         </div>
       </div>
     `).join('');
@@ -665,6 +665,8 @@ function runScreening() {
     } else {
       lockCard.style.display = 'none';
     }
+
+    applyWatchlistState();
 
     results.scrollIntoView({behavior:'smooth', block:'start'});
   }, 1500);
@@ -688,9 +690,52 @@ function getSampleData() {
   ];
 }
 
-function toggleWatch(btn) {
-  btn.classList.toggle('added');
-  btn.textContent = btn.classList.contains('added') ? '✓ 追加済み' : '＋ 気になる';
+// ===== お気に入り（気になる）機能の永続化 =====
+const WATCHLIST_KEY = 'shisanNaviWatchlist';
+
+function getWatchlist() {
+  try {
+    const raw = localStorage.getItem(WATCHLIST_KEY);
+    return raw ? JSON.parse(raw) : [];
+  } catch (e) {
+    return [];
+  }
+}
+
+function saveWatchlist(list) {
+  try {
+    localStorage.setItem(WATCHLIST_KEY, JSON.stringify(list));
+  } catch (e) {
+    console.warn('保存に失敗しました', e);
+  }
+}
+
+function toggleWatch(btn, ticker) {
+  let list = getWatchlist();
+  const isAdded = list.includes(ticker);
+
+  if (isAdded) {
+    list = list.filter(t => t !== ticker);
+    btn.classList.remove('added');
+    btn.textContent = '＋ 気になる';
+  } else {
+    list.push(ticker);
+    btn.classList.add('added');
+    btn.textContent = '✓ 追加済み';
+  }
+  saveWatchlist(list);
+}
+
+// カード描画時に、保存済みのお気に入り状態を反映する
+function applyWatchlistState() {
+  const list = getWatchlist();
+  document.querySelectorAll('.watchlist-btn[data-ticker]').forEach(btn => {
+    const ticker = btn.getAttribute('data-ticker');
+    if (list.includes(ticker)) {
+      btn.classList.add('added');
+      btn.textContent = '✓ 追加済み';
+    }
+  });
 }
 </script>
 </body>

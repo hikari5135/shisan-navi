@@ -109,7 +109,20 @@ def get_stock_data(ticker):
         beta = info.get("beta", None)
 
         if div:
-            div_pct = round(div, 2) if div > 1 else round(div * 100, 2)
+            # yfinanceのdividendYieldは基本的に小数表記（例: 0.032 = 3.2%）。
+            # まず小数として解釈し、妥当な範囲（0〜15%）に収まればそれを採用する。
+            as_decimal = div * 100
+            if 0 < as_decimal <= 15:
+                div_pct = round(as_decimal, 2)
+            elif 15 < as_decimal <= 100:
+                # 15%超〜100%は日本株の配当利回りとして非現実的。
+                # データ取得異常の可能性が高いため採用しない。
+                div_pct = None
+            elif 1 <= div <= 15:
+                # 既にパーセント表記で渡されているケース（値そのものが1〜15）
+                div_pct = round(div, 2)
+            else:
+                div_pct = None
         else:
             div_pct = None
 

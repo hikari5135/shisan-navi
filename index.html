@@ -667,7 +667,7 @@
       <div class="backtest-condition-text" id="btPeriod">-</div>
     </div>
 
-    <div class="backtest-row">
+    <div class="backtest-row" id="btRow">
       <div class="backtest-col">
         <div class="backtest-col-label">条件該当銘柄（年率換算）</div>
         <div class="backtest-col-val" id="btStrategyVal">-</div>
@@ -676,7 +676,7 @@
         <div class="backtest-col-label">日経平均（年率換算）</div>
         <div class="backtest-col-val muted" id="btNikkeiVal">-</div>
       </div>
-      <div class="backtest-col">
+      <div class="backtest-col" id="btTopixCol">
         <div class="backtest-col-label">TOPIX（年率換算）</div>
         <div class="backtest-col-val muted" id="btTopixVal">-</div>
       </div>
@@ -823,7 +823,19 @@ function renderBacktest(backtest) {
   document.getElementById('btPeriod').textContent = `過去${years}年間`;
   document.getElementById('btStrategyVal').textContent = fmt(annualStrategy);
   document.getElementById('btNikkeiVal').textContent = fmt(annualNikkei);
-  document.getElementById('btTopixVal').textContent = fmt(annualTopix);
+
+  const topixCol = document.getElementById('btTopixCol');
+  const btRow = document.getElementById('btRow');
+  if (annualTopix === null || annualTopix === undefined) {
+    // データ取得できなかった場合は項目自体を非表示にし、2列レイアウトに切り替える
+    topixCol.style.display = 'none';
+    btRow.style.gridTemplateColumns = 'repeat(2, 1fr)';
+  } else {
+    topixCol.style.display = 'block';
+    btRow.style.gridTemplateColumns = 'repeat(3, 1fr)';
+    document.getElementById('btTopixVal').textContent = fmt(annualTopix);
+  }
+
   document.getElementById('btDisclaimer').textContent =
     `現在の条件を満たす上位${sampleSize}銘柄のサンプルに基づく参考値です。${backtest.disclaimer || ''}`;
 }

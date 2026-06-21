@@ -787,7 +787,77 @@ def build_detailed_fp_comment(stock):
     return "".join(parts)
 
 
-def run_screening(stocks_data, screen_func):
+def calculate_sector_rankings(stocks_data):
+    """
+    全銘柄について、業種内（sector_display単位）での相対順位を計算する。
+    営業利益率は業種間で水準が大きく異なるため（半導体は高く、商社・銀行は低い等）、
+    業種内パーセンタイルで評価することで「その業種の中での優秀さ」を可視化する。
+
+    対象指標：営業利益率・ROE
+    戻り値：各銘柄のtickerをキーとした { ticker: {sector_percentile_margin, sector_percentile_roe, sector_count} }
+    """
+    from collections import defaultdict
+
+    # 業種ごとに銘柄をグルーピング
+    sector_groups = defaultdict(list)
+    for stock in stocks_data:
+        if not stock:
+            continue
+        sector = get_display_sector(stock)
+        sector_groups[sector].append(stock)
+
+    rankings = {}
+
+    for sector, members in sector_groups.items():
+        # 営業利益率でのパーセンタイル計算（値がある銘柄のみ対象）
+        margin_values = sorted(
+            [m["operating_margin"] for m in members if m.get("operating_margin") is not None]
+        )
+        roe_values = sorted(
+            [m["roe"] for m in members if m.get("roe") is not None]
+        )
+
+        for m in members:
+            ticker = m["ticker"]
+            entry = {"sector_count": len(members)}
+
+            margin = m.get("operating_margin")
+            if margin is not None and len(margin_values) >= 3:
+                # 自分より低い銘柄の割合 = パーセンタイル
+                rank = sum(1 for v in margin_values if v <= margin)
+                percentile = round((rank / len(margin_values)) * 100, 1)
+                entry["sector_percentile_margin"] = percentile
+            else:
+                entry["sector_percentile_margin"] = None
+
+            roe = m.get("roe")
+            if roe is not None and len(roe_values) >= 3:
+                rank = sum(1 for v in roe_values if v <= roe)
+                percentile = round((rank / len(roe_values)) * 100, 1)
+                entry["sector_percentile_roe"] = percentile
+            else:
+                entry["sector_percentile_roe"] = None
+
+            rankings[ticker] = entry
+
+    return rankings
+
+
+def get_sector_rank_label(percentile):
+    """パーセンタイルを分かりやすいラベルに変換する"""
+    if percentile is None:
+        return None
+    if percentile >= 90:
+        return "業種内トップクラス"
+    elif percentile >= 70:
+        return "業種内で上位"
+    elif percentile >= 40:
+        return "業種内で平均的"
+    else:
+        return "業種内では控えめ"
+
+
+def run_screening(stocks_data, screen_func, sector_rankings=None):
     results = []
     for stock in stocks_data:
         if not stock:
@@ -803,6 +873,18 @@ def run_screening(stocks_data, screen_func):
             # （他の評価指標との整合性を保つため）
             entry["nisa_fit"] = evaluate_nisa_fit(entry, fp_score=score, risk_level_result=entry.get("risk_level"))
             entry["detailed_comment"] = build_detailed_fp_comment(entry)
+
+            # 業種内ランキング情報を付与
+            if sector_rankings and entry["ticker"] in sector_rankings:
+                rank_info = sector_rankings[entry["ticker"]]
+                entry["sector_rank"] = {
+                    "percentile_margin": rank_info.get("sector_percentile_margin"),
+                    "percentile_roe": rank_info.get("sector_percentile_roe"),
+                    "sector_count": rank_info.get("sector_count"),
+                    "label_margin": get_sector_rank_label(rank_info.get("sector_percentile_margin")),
+                    "label_roe": get_sector_rank_label(rank_info.get("sector_percentile_roe")),
+                }
+
             results.append(entry)
     results.sort(key=lambda x: x["score"], reverse=True)
     return results
@@ -869,10 +951,29 @@ def send_line_broadcast(message):
         print(f"LINE通知の送信中にエラーが発生しました: {e}")
 
 
-def run_backtest(strategy_results, strategy_key, years=5, sample_size=10):
+def fetch_benchmark_returns(years):
+    """指定期間の日経平均・TOPIXのリターンを取得する（複数戦略で使い回すため独立関数化）"""
+    period = f"{years}y"
+    benchmarks = {}
+    for label, ticker in [("nikkei225", "^N225"), ("topix", "1306.T")]:
+        try:
+            hist = yf.Ticker(ticker).history(period=period)
+            if not hist.empty and len(hist) >= 2:
+                start = hist["Close"].iloc[0]
+                end = hist["Close"].iloc[-1]
+                benchmarks[label] = round((end / start - 1) * 100, 1)
+        except Exception as e:
+            print(f"ベンチマーク取得エラー({years}年): {ticker} - {e}")
+    return benchmarks
+
+
+def run_backtest(strategy_results, strategy_key, years=5, sample_size=10, benchmarks=None):
     """
     簡易バックテスト：現在の条件を満たした銘柄のうち上位サンプルについて、
     過去N年間の株価推移を取得し、日経平均・TOPIXと比較する。
+
+    benchmarksを渡すことで、同じ期間のベンチマーク取得を複数戦略で使い回せる
+    （API呼び出し削減のため）。
 
     【重要な制約（生存バイアス）】
     現在存在する銘柄のみを対象としているため、過去N年間に上場廃止・
@@ -906,17 +1007,8 @@ def run_backtest(strategy_results, strategy_key, years=5, sample_size=10):
 
     avg_return = round(sum(r["return_pct"] for r in stock_returns) / len(stock_returns), 1)
 
-    # ベンチマーク取得（日経平均・TOPIX）
-    benchmarks = {}
-    for label, ticker in [("nikkei225", "^N225"), ("topix", "1306.T")]:
-        try:
-            hist = yf.Ticker(ticker).history(period=period)
-            if not hist.empty and len(hist) >= 2:
-                start = hist["Close"].iloc[0]
-                end = hist["Close"].iloc[-1]
-                benchmarks[label] = round((end / start - 1) * 100, 1)
-        except Exception as e:
-            print(f"ベンチマーク取得エラー: {ticker} - {e}")
+    if benchmarks is None:
+        benchmarks = fetch_benchmark_returns(years)
 
     return {
         "strategy": strategy_key,
@@ -928,6 +1020,31 @@ def run_backtest(strategy_results, strategy_key, years=5, sample_size=10):
         "stocks": stock_returns,
         "disclaimer": "現在の条件を満たす上位銘柄のみを対象とした参考値です。過去に上場廃止・条件外となった銘柄は含まれないため、実際の運用成績とは異なります。"
     }
+
+
+def run_multi_backtest(dividend_results, solid_results, growth_results, periods=(1, 3, 5), sample_size=10):
+    """
+    3戦略 × 複数期間のバックテストをまとめて実行する。
+    戻り値の構造： { "dividend": {1: {...}, 3: {...}, 5: {...}}, "solid": {...}, "growth": {...} }
+    """
+    strategy_map = {
+        "dividend": dividend_results,
+        "solid": solid_results,
+        "growth": growth_results,
+    }
+
+    result = {"dividend": {}, "solid": {}, "growth": {}}
+
+    for years in periods:
+        print(f"  {years}年のベンチマークを取得中...")
+        benchmarks = fetch_benchmark_returns(years)
+        for strategy_key, strategy_results in strategy_map.items():
+            bt = run_backtest(strategy_results, strategy_key, years=years, sample_size=sample_size, benchmarks=benchmarks)
+            result[strategy_key][years] = bt
+            if bt:
+                print(f"  {strategy_key}（{years}年）: 平均{bt['avg_return_pct']}% / 日経{bt['benchmark_nikkei225_pct']}%")
+
+    return result
 
 
 def main():
@@ -944,29 +1061,35 @@ def main():
         time.sleep(0.4)
 
     print("-" * 50)
+    print("業種内ランキングを計算中...")
+    sector_rankings = calculate_sector_rankings(stocks_data)
+    print(f"対象業種数: {len(set(get_display_sector(s) for s in stocks_data if s))}")
+
+    print("-" * 50)
     print("3戦略でスクリーニング中...")
 
-    dividend_results = run_screening(stocks_data, screen_dividend)
-    solid_results = run_screening(stocks_data, screen_solid)
-    growth_results = run_screening(stocks_data, screen_growth)
+    dividend_results = run_screening(stocks_data, screen_dividend, sector_rankings)
+    solid_results = run_screening(stocks_data, screen_solid, sector_rankings)
+    growth_results = run_screening(stocks_data, screen_growth, sector_rankings)
 
     print(f"堅実配当型: {len(dividend_results)}銘柄")
     print(f"財務優良型: {len(solid_results)}銘柄")
     print(f"成長×安定型: {len(growth_results)}銘柄")
 
     print("-" * 50)
-    print("バックテストを実行中（過去5年・上位10銘柄サンプル）...")
+    print("バックテストを実行中（3戦略 × 過去1年/3年/5年・上位10銘柄サンプル）...")
     print("※株価APIへの負荷軽減のため、週1回（月曜日）のみ実行します")
 
     import datetime
     is_monday = datetime.datetime.now().weekday() == 0  # 0=月曜日（本番設定）
 
-    backtest_dividend = None
+    multi_backtest = None
     if is_monday:
-        backtest_dividend = run_backtest(dividend_results, "dividend", years=5, sample_size=10)
-        if backtest_dividend:
-            print(f"バックテスト完了: 平均リターン {backtest_dividend['avg_return_pct']}% "
-                  f"(日経225: {backtest_dividend['benchmark_nikkei225_pct']}%)")
+        multi_backtest = run_multi_backtest(
+            dividend_results, solid_results, growth_results,
+            periods=(1, 3, 5), sample_size=10
+        )
+        print("バックテスト完了")
     else:
         print("本日は月曜日ではないためバックテストをスキップします（既存の値を維持）")
 
@@ -975,11 +1098,16 @@ def main():
     try:
         with open("screening_result.json", "r", encoding="utf-8") as f:
             existing = json.load(f)
-            existing_backtest = existing.get("backtest")
+            existing_backtest = existing.get("backtest_multi")
     except (FileNotFoundError, json.JSONDecodeError):
         existing_backtest = None
 
-    final_backtest = backtest_dividend if backtest_dividend else existing_backtest
+    final_backtest_multi = multi_backtest if multi_backtest else existing_backtest
+
+    # 後方互換：既存UIが参照する「backtest」（堅実配当型・5年）も維持する
+    legacy_backtest = None
+    if final_backtest_multi and final_backtest_multi.get("dividend"):
+        legacy_backtest = final_backtest_multi["dividend"].get(5)
 
     output = {
         "updated": time.strftime("%Y-%m-%d %H:%M"),
@@ -989,7 +1117,8 @@ def main():
             "solid": {"name": "財務優良型", "count": len(solid_results), "stocks": solid_results},
             "growth": {"name": "成長×安定型", "count": len(growth_results), "stocks": growth_results},
         },
-        "backtest": final_backtest,
+        "backtest": legacy_backtest,
+        "backtest_multi": final_backtest_multi,
         "strategy": "堅実配当型",
         "count": len(dividend_results),
         "stocks": dividend_results,

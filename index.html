@@ -336,6 +336,22 @@
     margin-top: 16px;
   }
   .backtest-title { font-family: 'Noto Serif JP', serif; font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 16px; }
+  .backtest-tabs { margin-bottom: 16px; }
+  .backtest-tab-group { display: flex; align-items: center; gap: 6px; margin-bottom: 8px; flex-wrap: wrap; }
+  .backtest-tab-group-label { font-size: 10px; color: var(--text-muted); width: 32px; flex-shrink: 0; }
+  .backtest-tab {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 11px;
+    padding: 5px 12px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: var(--white);
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .backtest-tab:hover { border-color: var(--gold); }
+  .backtest-tab.active { background: var(--navy); border-color: var(--navy); color: var(--white); font-weight: 700; }
   .backtest-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 14px; }
   .backtest-col { background: var(--cream); border-radius: 8px; padding: 14px; text-align: center; }
   .backtest-col-label { font-size: 11px; color: var(--text-muted); margin-bottom: 6px; }
@@ -383,6 +399,22 @@
   .risk-detail { font-size: 10px; color: var(--text-muted); line-height: 1.6; margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--border); }
   .risk-toggle { font-size: 10px; color: var(--navy); cursor: pointer; margin-top: 4px; font-weight: 700; }
   .risk-toggle:hover { text-decoration: underline; }
+
+  /* SECTOR RANK */
+  .sector-rank-box { background: var(--cream); border-radius: 6px; padding: 12px 14px; margin-bottom: 14px; }
+  .sector-rank-title { font-size: 11px; color: var(--text-muted); font-weight: 700; margin-bottom: 10px; }
+  .sector-rank-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .sector-rank-row:last-of-type { margin-bottom: 6px; }
+  .sector-rank-label { font-size: 11px; color: var(--text); width: 90px; flex-shrink: 0; }
+  .sector-rank-bar-track { flex: 1; height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; position: relative; }
+  .sector-rank-bar-fill { height: 100%; background: linear-gradient(90deg, var(--gold), var(--navy)); border-radius: 4px; }
+  .sector-rank-text { font-size: 10px; color: var(--text-muted); width: 100px; text-align: right; flex-shrink: 0; }
+  .sector-rank-note { font-size: 9px; color: var(--text-muted); margin-top: 2px; }
+
+  @media (max-width: 600px) {
+    .sector-rank-label { width: 70px; }
+    .sector-rank-text { width: 80px; }
+  }
 
   @media (max-width: 600px) {
     .extra-info-row { grid-template-columns: 1fr; }
@@ -569,8 +601,8 @@
 
 <div class="hero">
   <div class="hero-eyebrow">NISA初心者のための株式データ整理ツール</div>
-  <h1>「何を買えばいいかわからない」を、<br><em>財務データの可視化</em>で整理</h1>
-  <p class="hero-sub">財務・配当・収益力に関する公開情報を自動で整理。データに基づき、ご自身で判断するための材料を提供します</p>
+  <h1>「何を買えばいいかわからない」を、<br><em>財務データの見える化</em>でサポート</h1>
+  <p class="hero-sub">財務・配当・収益力などの公開情報を自動で整理。企業分析の参考材料をわかりやすく提供します</p>
   <div class="update-info" id="updateInfo">最新データを読み込み中...</div>
 </div>
 
@@ -664,6 +696,21 @@
 
   <div class="backtest-box" id="backtestBox" style="display:none;">
     <div class="backtest-title">📊 参考シミュレーション（投資助言ではありません）</div>
+
+    <div class="backtest-tabs">
+      <div class="backtest-tab-group">
+        <span class="backtest-tab-group-label">戦略</span>
+        <button class="backtest-tab active" data-strategy="dividend" onclick="selectBacktestStrategy('dividend', this)">堅実配当型</button>
+        <button class="backtest-tab" data-strategy="solid" onclick="selectBacktestStrategy('solid', this)">財務優良型</button>
+        <button class="backtest-tab" data-strategy="growth" onclick="selectBacktestStrategy('growth', this)">成長×安定型</button>
+      </div>
+      <div class="backtest-tab-group">
+        <span class="backtest-tab-group-label">期間</span>
+        <button class="backtest-tab" data-years="1" onclick="selectBacktestYears(1, this)">1年</button>
+        <button class="backtest-tab" data-years="3" onclick="selectBacktestYears(3, this)">3年</button>
+        <button class="backtest-tab active" data-years="5" onclick="selectBacktestYears(5, this)">5年</button>
+      </div>
+    </div>
 
     <div class="backtest-condition">
       <div class="backtest-condition-label">適用条件</div>
@@ -803,42 +850,82 @@ async function fetchLatestData() {
       document.getElementById('universeNote').textContent =
         `📋 対象銘柄について：日経225採用銘柄を中心に、東証プライム市場から段階的に拡充中の銘柄群（現在${data.total_stocks_scanned}銘柄）をスキャンしています。東証上場全銘柄（約4,000銘柄）を網羅したものではありません。`;
     }
-    renderBacktest(data.backtest);
+    renderBacktest(data.backtest_multi || null);
   } catch (err) {
     statusText.textContent = '⚠️ 自動取得に失敗しました。サンプルデータを使用するか、手動でファイルを選択してください。';
     document.getElementById('updateInfo').textContent = 'サンプルデータ表示中';
   }
 }
 
-function renderBacktest(backtest) {
+let backtestMultiData = null;
+let currentBacktestStrategy = 'dividend';
+let currentBacktestYears = 5;
+
+const BACKTEST_CONDITIONS = {
+  dividend: '配当利回り2%以上・PBR2.0倍以下・ROE8%以上（堅実配当型）',
+  solid: '自己資本比率40%以上・ROE8%以上・営業利益率10%以上（財務優良型）',
+  growth: '売上成長率プラス・ROE10%以上・PBR3.0倍以下（成長×安定型）',
+};
+
+function renderBacktest(backtestMulti) {
   const box = document.getElementById('backtestBox');
-  if (!backtest) {
+  backtestMultiData = backtestMulti;
+  if (!backtestMulti) {
     box.style.display = 'none';
     return;
   }
   box.style.display = 'block';
+  renderBacktestPanel();
+}
+
+function selectBacktestStrategy(strategy, btn) {
+  currentBacktestStrategy = strategy;
+  document.querySelectorAll('.backtest-tab[data-strategy]').forEach(b => b.classList.toggle('active', b === btn));
+  renderBacktestPanel();
+}
+
+function selectBacktestYears(years, btn) {
+  currentBacktestYears = years;
+  document.querySelectorAll('.backtest-tab[data-years]').forEach(b => b.classList.toggle('active', b === btn));
+  renderBacktestPanel();
+}
+
+function renderBacktestPanel() {
+  if (!backtestMultiData) return;
+  const strategyData = backtestMultiData[currentBacktestStrategy];
+  const backtest = strategyData ? strategyData[currentBacktestYears] : null;
 
   // 累積リターン(%) を年率換算（CAGR）に変換: (1+r)^(1/years) - 1
   function toAnnualized(totalPct, years) {
     if (totalPct === null || totalPct === undefined || !years) return null;
     const total = totalPct / 100;
     const annual = Math.pow(1 + total, 1 / years) - 1;
-    return Math.round(annual * 1000) / 10; // 小数1桁
+    return Math.round(annual * 1000) / 10;
+  }
+  function fmt(v) {
+    return (v === null || v === undefined) ? 'N/A' : `年率 約${v >= 0 ? '+' : ''}${v}%`;
   }
 
-  const years = backtest.years || 5;
+  document.getElementById('btCondition').textContent =
+    BACKTEST_CONDITIONS[currentBacktestStrategy] || '-';
+
+  if (!backtest) {
+    document.getElementById('btPeriod').textContent = `過去${currentBacktestYears}年間（データ準備中）`;
+    document.getElementById('btStrategyVal').textContent = 'N/A';
+    document.getElementById('btNikkeiVal').textContent = 'N/A';
+    document.getElementById('btTopixVal').textContent = 'N/A';
+    document.getElementById('btDisclaimer').textContent =
+      'このパターンの参考シミュレーションはまだ準備中です。次回の月曜更新をお待ちください。';
+    return;
+  }
+
+  const years = backtest.years || currentBacktestYears;
   const sampleSize = backtest.sample_size || 0;
 
   const annualStrategy = toAnnualized(backtest.avg_return_pct, years);
   const annualNikkei = toAnnualized(backtest.benchmark_nikkei225_pct, years);
   const annualTopix = toAnnualized(backtest.benchmark_topix_pct, years);
 
-  function fmt(v) {
-    return (v === null || v === undefined) ? 'N/A' : `年率 約${v >= 0 ? '+' : ''}${v}%`;
-  }
-
-  document.getElementById('btCondition').textContent =
-    `配当利回り2%以上・PBR2.0倍以下・ROE8%以上（堅実配当型・上位${sampleSize}銘柄サンプル）`;
   document.getElementById('btPeriod').textContent = `過去${years}年間`;
   document.getElementById('btStrategyVal').textContent = fmt(annualStrategy);
   document.getElementById('btNikkeiVal').textContent = fmt(annualNikkei);
@@ -846,7 +933,6 @@ function renderBacktest(backtest) {
   const topixCol = document.getElementById('btTopixCol');
   const btRow = document.getElementById('btRow');
   if (annualTopix === null || annualTopix === undefined) {
-    // データ取得できなかった場合は項目自体を非表示にし、2列レイアウトに切り替える
     topixCol.style.display = 'none';
     btRow.style.gridTemplateColumns = 'repeat(2, 1fr)';
   } else {
@@ -1004,6 +1090,36 @@ function toggleRiskDetail(uid, el) {
   el.textContent = isHidden ? '詳細を閉じる ▲' : '詳細を見る ▼';
 }
 
+function getSectorRankHTML(s) {
+  const rank = s.sector_rank;
+  if (!rank || !rank.sector_count || rank.sector_count < 3) return '';
+
+  const items = [];
+  if (rank.percentile_margin !== null && rank.percentile_margin !== undefined) {
+    items.push({ label: '利益率', pct: rank.percentile_margin, text: rank.label_margin });
+  }
+  if (rank.percentile_roe !== null && rank.percentile_roe !== undefined) {
+    items.push({ label: '稼ぐ力（ROE）', pct: rank.percentile_roe, text: rank.label_roe });
+  }
+  if (!items.length) return '';
+
+  const bars = items.map(it => `
+    <div class="sector-rank-row">
+      <div class="sector-rank-label">${it.label}</div>
+      <div class="sector-rank-bar-track">
+        <div class="sector-rank-bar-fill" style="width:${it.pct}%"></div>
+      </div>
+      <div class="sector-rank-text">${it.text}</div>
+    </div>`).join('');
+
+  return `
+    <div class="sector-rank-box">
+      <div class="sector-rank-title">📊 業種内での位置づけ（同業種${rank.sector_count}社中）</div>
+      ${bars}
+      <div class="sector-rank-note">※同じ業種の銘柄同士で比較した相対的な位置です</div>
+    </div>`;
+}
+
 function getIndicatorsHTML(s, strategy) {
   if (strategy === 'solid') {
     return `
@@ -1149,6 +1265,8 @@ function runScreening() {
         </div>
 
         <div class="fp-plain"><span class="fp-plain-label">📋 財務データの特徴</span>${s.detailed_comment ? s.detailed_comment : getFPComment(s, currentStrategy)}</div>
+
+        ${getSectorRankHTML(s)}
 
         ${getNisaAndRiskHTML(s)}
 

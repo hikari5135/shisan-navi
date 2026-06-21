@@ -792,9 +792,12 @@ def calculate_sector_rankings(stocks_data):
     全銘柄について、業種内（sector_display単位）での相対順位を計算する。
     営業利益率は業種間で水準が大きく異なるため（半導体は高く、商社・銀行は低い等）、
     業種内パーセンタイルで評価することで「その業種の中での優秀さ」を可視化する。
+    あわせて「◯位/◯社」という具体的な順位も算出する（初心者にとって直感的なため）。
 
     対象指標：営業利益率・ROE
-    戻り値：各銘柄のtickerをキーとした { ticker: {sector_percentile_margin, sector_percentile_roe, sector_count} }
+    戻り値：各銘柄のtickerをキーとした
+      { ticker: {sector_percentile_margin, sector_rank_margin,
+                 sector_percentile_roe, sector_rank_roe, sector_count} }
     """
     from collections import defaultdict
 
@@ -809,13 +812,21 @@ def calculate_sector_rankings(stocks_data):
     rankings = {}
 
     for sector, members in sector_groups.items():
-        # 営業利益率でのパーセンタイル計算（値がある銘柄のみ対象）
-        margin_values = sorted(
-            [m["operating_margin"] for m in members if m.get("operating_margin") is not None]
+        # 営業利益率・ROEが取得できている銘柄のみを対象に、降順（高い方が1位）でランキング
+        margin_ranked = sorted(
+            [m for m in members if m.get("operating_margin") is not None],
+            key=lambda m: m["operating_margin"], reverse=True
         )
-        roe_values = sorted(
-            [m["roe"] for m in members if m.get("roe") is not None]
+        roe_ranked = sorted(
+            [m for m in members if m.get("roe") is not None],
+            key=lambda m: m["roe"], reverse=True
         )
+
+        margin_rank_map = {m["ticker"]: i + 1 for i, m in enumerate(margin_ranked)}
+        roe_rank_map = {m["ticker"]: i + 1 for i, m in enumerate(roe_ranked)}
+
+        margin_values = sorted([m["operating_margin"] for m in margin_ranked])
+        roe_values = sorted([m["roe"] for m in roe_ranked])
 
         for m in members:
             ticker = m["ticker"]
@@ -823,20 +834,27 @@ def calculate_sector_rankings(stocks_data):
 
             margin = m.get("operating_margin")
             if margin is not None and len(margin_values) >= 3:
-                # 自分より低い銘柄の割合 = パーセンタイル
                 rank = sum(1 for v in margin_values if v <= margin)
                 percentile = round((rank / len(margin_values)) * 100, 1)
                 entry["sector_percentile_margin"] = percentile
+                entry["sector_rank_margin"] = margin_rank_map.get(ticker)
+                entry["sector_rank_margin_total"] = len(margin_ranked)
             else:
                 entry["sector_percentile_margin"] = None
+                entry["sector_rank_margin"] = None
+                entry["sector_rank_margin_total"] = None
 
             roe = m.get("roe")
             if roe is not None and len(roe_values) >= 3:
                 rank = sum(1 for v in roe_values if v <= roe)
                 percentile = round((rank / len(roe_values)) * 100, 1)
                 entry["sector_percentile_roe"] = percentile
+                entry["sector_rank_roe"] = roe_rank_map.get(ticker)
+                entry["sector_rank_roe_total"] = len(roe_ranked)
             else:
                 entry["sector_percentile_roe"] = None
+                entry["sector_rank_roe"] = None
+                entry["sector_rank_roe_total"] = None
 
             rankings[ticker] = entry
 
@@ -883,6 +901,10 @@ def run_screening(stocks_data, screen_func, sector_rankings=None):
                     "sector_count": rank_info.get("sector_count"),
                     "label_margin": get_sector_rank_label(rank_info.get("sector_percentile_margin")),
                     "label_roe": get_sector_rank_label(rank_info.get("sector_percentile_roe")),
+                    "rank_margin": rank_info.get("sector_rank_margin"),
+                    "rank_margin_total": rank_info.get("sector_rank_margin_total"),
+                    "rank_roe": rank_info.get("sector_rank_roe"),
+                    "rank_roe_total": rank_info.get("sector_rank_roe_total"),
                 }
 
             results.append(entry)

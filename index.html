@@ -1224,10 +1224,16 @@ function getSectorRankHTML(s) {
 
   const items = [];
   if (rank.percentile_margin !== null && rank.percentile_margin !== undefined) {
-    items.push({ label: '利益率', pct: rank.percentile_margin, text: rank.label_margin });
+    const rankText = (rank.rank_margin && rank.rank_margin_total)
+      ? `${rank.rank_margin}位 / ${rank.rank_margin_total}社`
+      : rank.label_margin;
+    items.push({ label: '利益率', pct: rank.percentile_margin, text: rankText });
   }
   if (rank.percentile_roe !== null && rank.percentile_roe !== undefined) {
-    items.push({ label: '稼ぐ力（ROE）', pct: rank.percentile_roe, text: rank.label_roe });
+    const rankText = (rank.rank_roe && rank.rank_roe_total)
+      ? `${rank.rank_roe}位 / ${rank.rank_roe_total}社`
+      : rank.label_roe;
+    items.push({ label: '稼ぐ力（ROE）', pct: rank.percentile_roe, text: rankText });
   }
   if (!items.length) return '';
 
@@ -1244,7 +1250,7 @@ function getSectorRankHTML(s) {
     <div class="sector-rank-box">
       <div class="sector-rank-title">📊 業種内での位置づけ（同業種${rank.sector_count}社中）</div>
       ${bars}
-      <div class="sector-rank-note">※同じ業種の銘柄同士で比較した相対的な位置です</div>
+      <div class="sector-rank-note">※同じ業種の銘柄同士で比較した相対的な順位です</div>
     </div>`;
 }
 

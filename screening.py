@@ -214,6 +214,7 @@ def get_stock_data(ticker):
             "ticker": ticker,
             "name": info.get("longName", ticker),
             "sector": info.get("sector", "不明"),
+            "industry": info.get("industry", None),
             "price": info.get("currentPrice", 0),
             "pbr": round(pbr, 2) if pbr else None,
             "roe": round(roe * 100, 2) if roe else None,
@@ -397,6 +398,34 @@ SECTOR_RISK_NOTES = {
     "Consumer Defensive": "比較的景気の影響を受けにくい安定した業種です",
 }
 
+# industry（より詳細な業種）ベースの注記。sectorより優先して使う。
+# yfinance（米国基準のGICS分類）では日本の建設業が「Real Estate」セクターに
+# 分類されることがあるため、industryで実態に近い表記・注記に補正する。
+INDUSTRY_RISK_NOTES = {
+    "Engineering & Construction": "建設業の特性として、資材価格や工期の影響を受けやすい業種です",
+    "Real Estate Services": "不動産市況・金利動向の影響を受けやすい業種です",
+    "Real Estate—Development": "不動産開発を手がけており、金利・不動産市況の影響を受けやすい業種です",
+}
+
+# 表示用の日本語業種ラベル（industryをもとに、より実態に近い表記にする）
+INDUSTRY_DISPLAY_LABELS = {
+    "Engineering & Construction": "建設業",
+    "Real Estate Services": "不動産サービス業",
+    "Real Estate—Development": "不動産開発業",
+}
+
+
+def get_display_sector(stock):
+    """
+    表示用の業種名を決定する。
+    industry（詳細業種）に対応する日本語ラベルがあればそれを優先し、
+    なければsector（GICS大分類）をそのまま使う。
+    """
+    industry = stock.get("industry")
+    if industry and industry in INDUSTRY_DISPLAY_LABELS:
+        return INDUSTRY_DISPLAY_LABELS[industry]
+    return stock.get("sector", "不明")
+
 
 def evaluate_risk_level(stock):
     """
@@ -443,14 +472,19 @@ def evaluate_risk_level(stock):
         reasons.append("投資持株会社等、財務構造が一般事業会社と異なる可能性があります")
 
     # 業種固有のリスク注記（加点はしないが必ず注記として表示する）
+    # industry（詳細業種）の注記があればそちらを優先し、なければsectorの注記を使う
+    industry = stock.get("industry")
     sector = stock.get("sector")
+    industry_note = INDUSTRY_RISK_NOTES.get(industry) if industry else None
     sector_note = SECTOR_RISK_NOTES.get(sector)
-    if sector_note:
+
+    final_note = industry_note if industry_note else sector_note
+    if final_note:
         # Consumer Defensive / Utilities は「安定業種」のため減点（リスクを下げる）扱いにはしないが、
         # それ以外はリスク要因として1点加算する
         if sector not in ("Consumer Defensive",):
             risk_points += 1
-        reasons.append(f"【業種特性】{sector_note}")
+        reasons.append(f"【業種特性】{final_note}")
 
     if risk_points >= 3:
         level = "高"
@@ -618,6 +652,8 @@ def run_screening(stocks_data, screen_func):
             entry = dict(stock)
             entry["score"] = score
             entry["score_breakdown"] = breakdown
+            # 表示用の業種名（industryがあれば、より実態に近い表記に補正）
+            entry["sector_display"] = get_display_sector(entry)
             # FPスコアとリスク評価が確定した後に長期積立適性を計算する
             # （他の評価指標との整合性を保つため）
             entry["nisa_fit"] = evaluate_nisa_fit(entry, fp_score=score, risk_level_result=entry.get("risk_level"))

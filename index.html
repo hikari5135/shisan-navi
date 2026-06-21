@@ -589,8 +589,8 @@
     </button>
   </div>
 
-  <div class="universe-note">
-    📋 対象銘柄について：日経225採用銘柄を中心に、業種バランスを考慮して選定した銘柄群（約150〜210銘柄）をスキャンしています。東証上場全銘柄（約4,000銘柄）を網羅したものではありません。
+  <div class="universe-note" id="universeNote">
+    📋 対象銘柄について：日経225採用銘柄を中心に、東証プライム市場から段階的に拡充中の銘柄群をスキャンしています。東証上場全銘柄（約4,000銘柄）を網羅したものではありません。
   </div>
 
   <div class="section-label">STEP 2 ／ 戦略を選ぶ</div>
@@ -796,6 +796,10 @@ async function fetchLatestData() {
     uploadStatus.style.display = 'block';
     uploadStatus.textContent = `✅ ${data.count}銘柄のデータを自動読み込みしました`;
     document.getElementById('updateInfo').textContent = `最終更新：${data.updated}（自動更新）`;
+    if (data.total_stocks_scanned) {
+      document.getElementById('universeNote').textContent =
+        `📋 対象銘柄について：日経225採用銘柄を中心に、東証プライム市場から段階的に拡充中の銘柄群（現在${data.total_stocks_scanned}銘柄）をスキャンしています。東証上場全銘柄（約4,000銘柄）を網羅したものではありません。`;
+    }
     renderBacktest(data.backtest);
   } catch (err) {
     statusText.textContent = '⚠️ 自動取得に失敗しました。サンプルデータを使用するか、手動でファイルを選択してください。';
@@ -1127,7 +1131,7 @@ function runScreening() {
         <div class="stock-card-top">
           <div>
             <div class="stock-name">${s.name} <span style="font-size:13px;color:var(--text-muted);font-family:'Noto Sans JP';">${s.ticker}</span></div>
-            <div class="stock-meta">${s.sector || ''}　FPスコア ${s.score}/100</div>
+            <div class="stock-meta">${s.sector_display || s.sector || ''}　FPスコア ${s.score}/100</div>
           </div>
           <div class="score-block">
             <div class="score-label">FPスコア</div>

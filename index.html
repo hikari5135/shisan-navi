@@ -272,6 +272,117 @@
   .unlock-btn:hover { background: rgba(200,169,110,0.25); }
   .unlock-btn.unlocked { background: var(--green); border-color: var(--green); color: var(--white); }
 
+  /* PORTFOLIO */
+  .portfolio-btn {
+    position: relative;
+    background: var(--white);
+    border: 1px solid var(--border);
+    color: var(--navy);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Noto Sans JP', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.15s;
+  }
+  .portfolio-btn:hover { border-color: var(--navy); }
+  .portfolio-badge {
+    background: var(--gold);
+    color: var(--white);
+    font-size: 10px;
+    font-weight: 700;
+    min-width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+  }
+
+  .portfolio-modal {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(26,39,68,0.6);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .portfolio-modal-inner {
+    background: var(--white);
+    border-radius: 12px;
+    max-width: 480px;
+    width: 100%;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .portfolio-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 22px;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+  .portfolio-modal-title { font-family: 'Noto Serif JP', serif; font-size: 16px; font-weight: 700; color: var(--navy); }
+  .portfolio-modal-close { font-size: 24px; color: var(--text-muted); cursor: pointer; line-height: 1; }
+  .portfolio-modal-body { padding: 20px 22px; overflow-y: auto; }
+
+  .portfolio-empty { text-align: center; padding: 30px 10px; }
+  .portfolio-empty-icon { font-size: 36px; margin-bottom: 12px; }
+  .portfolio-empty p { font-size: 13px; color: var(--text-muted); line-height: 1.7; }
+
+  .portfolio-summary { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 14px; }
+
+  .portfolio-warning {
+    background: var(--red-light);
+    color: var(--red);
+    font-size: 12px;
+    padding: 10px 12px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    line-height: 1.6;
+  }
+
+  .portfolio-section { margin-bottom: 22px; }
+  .portfolio-section-title { font-size: 12px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+
+  .portfolio-sector-row { display: flex; align-items: center; gap: 8px; margin-bottom: 7px; }
+  .portfolio-sector-label { font-size: 11px; color: var(--text); width: 110px; flex-shrink: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .portfolio-sector-bar-track { flex: 1; height: 8px; background: var(--cream); border-radius: 4px; overflow: hidden; }
+  .portfolio-sector-bar-fill { height: 100%; background: var(--gold); border-radius: 4px; }
+  .portfolio-sector-count { font-size: 10px; color: var(--text-muted); width: 70px; text-align: right; flex-shrink: 0; }
+
+  .portfolio-risk-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .portfolio-risk-chip { font-size: 11px; padding: 5px 10px; border-radius: 14px; border: 1px solid; display: flex; align-items: center; gap: 5px; color: var(--text); }
+  .portfolio-risk-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+
+  .portfolio-item-list { display: flex; flex-direction: column; gap: 8px; }
+  .portfolio-item { display: flex; justify-content: space-between; align-items: center; background: var(--cream); border-radius: 6px; padding: 10px 12px; }
+  .portfolio-item-name { font-size: 12px; font-weight: 700; color: var(--navy); }
+  .portfolio-item-ticker { font-size: 10px; color: var(--text-muted); font-weight: 400; }
+  .portfolio-item-meta { font-size: 10px; color: var(--text-muted); margin-top: 2px; }
+  .portfolio-item-remove {
+    font-size: 11px;
+    color: var(--red);
+    background: none;
+    border: 1px solid var(--red);
+    border-radius: 12px;
+    padding: 4px 10px;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .portfolio-item-remove:hover { background: var(--red-light); }
+
+  .portfolio-disclaimer { font-size: 10px; color: var(--text-muted); line-height: 1.7; margin-top: 10px; }
+
   .unlock-modal {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
@@ -581,10 +692,24 @@
     <span>NISA初心者のための株式データ整理ツール</span>
   </div>
   <div style="display:flex; align-items:center; gap:10px;">
+    <button class="portfolio-btn" onclick="openPortfolioModal()">
+      📁 気になるリスト
+      <span class="portfolio-badge" id="portfolioBadge" style="display:none;">0</span>
+    </button>
     <button class="unlock-btn" id="unlockBtn" onclick="openUnlockModal()">🔓 アクセスコード入力</button>
     <div class="header-badge">β版</div>
   </div>
 </header>
+
+<div class="portfolio-modal" id="portfolioModal" style="display:none;">
+  <div class="portfolio-modal-inner">
+    <div class="portfolio-modal-header">
+      <div class="portfolio-modal-title">📁 気になるリスト</div>
+      <div class="portfolio-modal-close" onclick="closePortfolioModal()">×</div>
+    </div>
+    <div class="portfolio-modal-body" id="portfolioBody"></div>
+  </div>
+</div>
 
 <div class="unlock-modal" id="unlockModal" style="display:none;">
   <div class="unlock-modal-inner">
@@ -779,6 +904,8 @@
 
 <script>
 let loadedData = null;
+// 現在画面に表示中の銘柄データ（ティッカー→データ）。お気に入り登録時の詳細保存に使う。
+let displayedStocksMap = {};
 
 // ===== アクセスコード（アンロック）機能 =====
 const UNLOCK_KEY = 'shisanNaviUnlocked';
@@ -829,6 +956,7 @@ function submitUnlockCode() {
 }
 
 window.addEventListener('DOMContentLoaded', refreshUnlockUI);
+window.addEventListener('DOMContentLoaded', updatePortfolioBadge);
 let currentStrategy = 'dividend';
 
 // GitHubから最新のscreening_result.jsonを自動取得
@@ -1245,6 +1373,10 @@ function runScreening() {
     const remainCount = filtered.length - displayLimit;
 
     const list = document.getElementById('stockList');
+
+    // 表示中銘柄をマップに保存（お気に入り登録時の詳細データ保存に使う）
+    displayStocks.forEach(s => { displayedStocksMap[s.ticker] = s; });
+
     list.innerHTML = displayStocks.map(s => `
       <div class="stock-card">
         <div class="stock-card-top">
@@ -1272,7 +1404,7 @@ function runScreening() {
 
         <div class="stock-card-footer">
           <span class="disclaimer-tag">※投資推奨ではありません。判断・売買はご自身で。</span>
-          <button class="watchlist-btn" data-ticker="${s.ticker}" onclick="toggleWatch(this, '${s.ticker}')">＋ 気になる</button>
+          <button class="watchlist-btn" data-ticker="${s.ticker}" onclick="toggleWatch(this, '${s.ticker}', displayedStocksMap['${s.ticker}'])">＋ 気になる</button>
         </div>
       </div>
     `).join('');
@@ -1311,6 +1443,8 @@ function getSampleData() {
 
 // ===== お気に入り（気になる）機能の永続化 =====
 const WATCHLIST_KEY = 'shisanNaviWatchlist';
+// 銘柄の詳細情報（ポートフォリオ機能で使うため、ティッカーだけでなく中身も保存する）
+const WATCHLIST_DETAIL_KEY = 'shisanNaviWatchlistDetail';
 
 function getWatchlist() {
   try {
@@ -1329,7 +1463,24 @@ function saveWatchlist(list) {
   }
 }
 
-function toggleWatch(btn, ticker) {
+function getWatchlistDetail() {
+  try {
+    const raw = localStorage.getItem(WATCHLIST_DETAIL_KEY);
+    return raw ? JSON.parse(raw) : {};
+  } catch (e) {
+    return {};
+  }
+}
+
+function saveWatchlistDetail(detail) {
+  try {
+    localStorage.setItem(WATCHLIST_DETAIL_KEY, JSON.stringify(detail));
+  } catch (e) {
+    console.warn('詳細データの保存に失敗しました', e);
+  }
+}
+
+function toggleWatch(btn, ticker, stockData) {
   let list = getWatchlist();
   const isAdded = list.includes(ticker);
 
@@ -1337,12 +1488,31 @@ function toggleWatch(btn, ticker) {
     list = list.filter(t => t !== ticker);
     btn.classList.remove('added');
     btn.textContent = '＋ 気になる';
+
+    const detail = getWatchlistDetail();
+    delete detail[ticker];
+    saveWatchlistDetail(detail);
   } else {
     list.push(ticker);
     btn.classList.add('added');
     btn.textContent = '✓ 追加済み';
+
+    // 銘柄の詳細データ（ポートフォリオ表示に必要な最小限の情報）を保存
+    if (stockData) {
+      const detail = getWatchlistDetail();
+      detail[ticker] = {
+        name: stockData.name,
+        sector: stockData.sector_display || stockData.sector,
+        score: stockData.score,
+        risk_level: stockData.risk_level ? stockData.risk_level.level : null,
+        price: stockData.price,
+        addedAt: new Date().toISOString(),
+      };
+      saveWatchlistDetail(detail);
+    }
   }
   saveWatchlist(list);
+  updatePortfolioBadge();
 }
 
 // カード描画時に、保存済みのお気に入り状態を反映する
@@ -1355,6 +1525,150 @@ function applyWatchlistState() {
       btn.textContent = '✓ 追加済み';
     }
   });
+  updatePortfolioBadge();
+}
+
+// ===== ポートフォリオ機能 =====
+function updatePortfolioBadge() {
+  const list = getWatchlist();
+  const badge = document.getElementById('portfolioBadge');
+  if (!badge) return;
+  if (list.length > 0) {
+    badge.textContent = list.length;
+    badge.style.display = 'inline-flex';
+  } else {
+    badge.style.display = 'none';
+  }
+}
+
+function openPortfolioModal() {
+  const modal = document.getElementById('portfolioModal');
+  modal.style.display = 'flex';
+  renderPortfolio();
+}
+
+function closePortfolioModal() {
+  document.getElementById('portfolioModal').style.display = 'none';
+}
+
+function removeFromPortfolio(ticker) {
+  let list = getWatchlist().filter(t => t !== ticker);
+  saveWatchlist(list);
+  const detail = getWatchlistDetail();
+  delete detail[ticker];
+  saveWatchlistDetail(detail);
+
+  // メインの銘柄カードのボタン状態も更新
+  const btn = document.querySelector(`.watchlist-btn[data-ticker="${ticker}"]`);
+  if (btn) {
+    btn.classList.remove('added');
+    btn.textContent = '＋ 気になる';
+  }
+  updatePortfolioBadge();
+  renderPortfolio();
+}
+
+function renderPortfolio() {
+  const list = getWatchlist();
+  const detail = getWatchlistDetail();
+  const body = document.getElementById('portfolioBody');
+
+  if (list.length === 0) {
+    body.innerHTML = `
+      <div class="portfolio-empty">
+        <div class="portfolio-empty-icon">📭</div>
+        <p>まだ「気になる」銘柄が登録されていません。<br>銘柄カードの「＋ 気になる」ボタンから追加してみてください。</p>
+      </div>`;
+    return;
+  }
+
+  const items = list.map(ticker => detail[ticker] || { name: ticker, sector: '不明', score: null, risk_level: null, price: null });
+
+  // 業種ごとの集計
+  const sectorCounts = {};
+  items.forEach(it => {
+    const sector = it.sector || '不明';
+    sectorCounts[sector] = (sectorCounts[sector] || 0) + 1;
+  });
+  const sectorEntries = Object.entries(sectorCounts).sort((a, b) => b[1] - a[1]);
+  const maxSectorCount = sectorEntries.length ? sectorEntries[0][1] : 1;
+  const totalCount = items.length;
+
+  // 偏りチェック：最大業種が全体の50%を超えたら警告
+  const topSectorRatio = sectorEntries.length ? sectorEntries[0][1] / totalCount : 0;
+  const concentrationWarning = topSectorRatio >= 0.5 && totalCount >= 4;
+
+  // リスク分布の集計
+  const riskCounts = { '低': 0, '中': 0, '高': 0, '不明': 0 };
+  items.forEach(it => {
+    const lv = it.risk_level || '不明';
+    if (riskCounts[lv] !== undefined) riskCounts[lv]++;
+    else riskCounts['不明']++;
+  });
+
+  // --- 業種分散度セクション ---
+  const sectorHTML = sectorEntries.map(([sector, count]) => {
+    const pct = Math.round((count / maxSectorCount) * 100);
+    const share = Math.round((count / totalCount) * 100);
+    return `
+      <div class="portfolio-sector-row">
+        <div class="portfolio-sector-label">${sector}</div>
+        <div class="portfolio-sector-bar-track">
+          <div class="portfolio-sector-bar-fill" style="width:${pct}%"></div>
+        </div>
+        <div class="portfolio-sector-count">${count}件（${share}%）</div>
+      </div>`;
+  }).join('');
+
+  // --- リスク分布セクション ---
+  const riskColors = { '低': 'var(--green)', '中': '#d4a017', '高': 'var(--red)', '不明': 'var(--text-muted)' };
+  const riskHTML = Object.entries(riskCounts).filter(([,c]) => c > 0).map(([lv, c]) => {
+    const pct = Math.round((c / totalCount) * 100);
+    return `
+      <div class="portfolio-risk-chip" style="border-color:${riskColors[lv]};">
+        <span class="portfolio-risk-dot" style="background:${riskColors[lv]};"></span>
+        ${lv}リスク：${c}件（${pct}%）
+      </div>`;
+  }).join('');
+
+  // --- 銘柄一覧セクション ---
+  const listHTML = items.map((it, i) => {
+    const ticker = list[i];
+    return `
+      <div class="portfolio-item">
+        <div class="portfolio-item-main">
+          <div class="portfolio-item-name">${it.name || ticker} <span class="portfolio-item-ticker">${ticker}</span></div>
+          <div class="portfolio-item-meta">${it.sector || '不明'}${it.score !== null && it.score !== undefined ? ` ／ FPスコア${it.score}` : ''}${it.price ? ` ／ ¥${Number(it.price).toLocaleString()}` : ''}</div>
+        </div>
+        <button class="portfolio-item-remove" onclick="removeFromPortfolio('${ticker}')">削除</button>
+      </div>`;
+  }).join('');
+
+  body.innerHTML = `
+    <div class="portfolio-summary">登録銘柄数：${totalCount}件</div>
+
+    ${concentrationWarning ? `
+      <div class="portfolio-warning">
+        ⚠️ 「${sectorEntries[0][0]}」業種が全体の${Math.round(topSectorRatio*100)}%を占めています。業種が偏ると、その業種に固有のリスク（景気変動・規制変更等）の影響を受けやすくなります。
+      </div>` : ''}
+
+    <div class="portfolio-section">
+      <div class="portfolio-section-title">📊 業種の分散度</div>
+      ${sectorHTML}
+    </div>
+
+    <div class="portfolio-section">
+      <div class="portfolio-section-title">⚖️ リスクの分布</div>
+      <div class="portfolio-risk-chips">${riskHTML}</div>
+    </div>
+
+    <div class="portfolio-section">
+      <div class="portfolio-section-title">📋 登録銘柄一覧</div>
+      <div class="portfolio-item-list">${listHTML}</div>
+    </div>
+
+    <p class="portfolio-disclaimer">※これは登録銘柄の構成を整理して表示したものであり、ポートフォリオの最適化や投資配分を助言するものではありません。分散投資の判断材料としてご活用ください。</p>
+  `;
 }
 </script>
 </body>

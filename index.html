@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>堅実株ナビ｜NISA初心者のためのFP流株診断ツール</title>
+<title>堅実株ナビ｜NISA初心者のための株式データ整理ツール</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap');
 
@@ -461,6 +461,7 @@
     line-height: 1.6;
     border-left: 3px solid var(--green);
   }
+  .fp-plain-label { display: block; font-size: 10px; font-weight: 700; color: var(--green); margin-bottom: 4px; }
 
   .stock-card-footer {
     display: flex;
@@ -545,7 +546,7 @@
 <header>
   <div class="logo">
     堅実株ナビ
-    <span>NISA初心者のためのFP流株診断ツール</span>
+    <span>NISA初心者のための株式データ整理ツール</span>
   </div>
   <div style="display:flex; align-items:center; gap:10px;">
     <button class="unlock-btn" id="unlockBtn" onclick="openUnlockModal()">🔓 アクセスコード入力</button>
@@ -567,9 +568,9 @@
 </div>
 
 <div class="hero">
-  <div class="hero-eyebrow">NISA初心者のためのFP流株診断ツール</div>
-  <h1>「何を買えばいいかわからない」を、<br><em>FPの目線</em>で解決</h1>
-  <p class="hero-sub">財務・配当・収益力を自動で診断。長く持てる優良株をわかりやすく見つけられます</p>
+  <div class="hero-eyebrow">NISA初心者のための株式データ整理ツール</div>
+  <h1>「何を買えばいいかわからない」を、<br><em>財務データの可視化</em>で整理</h1>
+  <p class="hero-sub">財務・配当・収益力に関する公開情報を自動で整理。データに基づき、ご自身で判断するための材料を提供します</p>
   <div class="update-info" id="updateInfo">最新データを読み込み中...</div>
 </div>
 
@@ -724,7 +725,9 @@
 </div>
 
 <div class="disclaimer" id="disc">
-  【免責事項】本サービスは投資情報の提供を目的としており、特定の銘柄への投資を推奨するものではありません。掲載されているデータは参考情報であり、その正確性・完全性を保証するものではありません。投資判断および売買はご自身の責任において行ってください。
+  【重要なご案内】<br>
+  本サービスは、公開されている財務データを機械的に整理・表示する情報提供ツールです。投資助言業の登録を受けたものではなく、特定の銘柄の購入・売却を推奨または助言するものではありません。<br><br>
+  表示されるコメント・評価（長期積立適性・リスク評価等を含む）は、いずれも公開データに基づく客観的な特性の説明であり、個別の投資判断に対する助言ではありません。掲載データの正確性・完全性は保証されません。投資の最終判断はご自身の責任において行ってください。
 </div>
 
 <script>
@@ -1145,7 +1148,7 @@ function runScreening() {
           ${getIndicatorsHTML(s, currentStrategy)}
         </div>
 
-        <div class="fp-plain">📋 ${s.detailed_comment ? s.detailed_comment : getFPComment(s, currentStrategy)}</div>
+        <div class="fp-plain"><span class="fp-plain-label">📋 財務データの特徴</span>${s.detailed_comment ? s.detailed_comment : getFPComment(s, currentStrategy)}</div>
 
         ${getNisaAndRiskHTML(s)}
 

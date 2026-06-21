@@ -370,13 +370,16 @@ def evaluate_nisa_fit(stock, fp_score=None, risk_level_result=None):
         level = "要検討"
 
     # 注記：FPスコア（企業評価）が高くても、長期積立適性は別軸で
-    # 評価していることが伝わるよう理由欄にも明記する
+    # 評価していることが伝わるよう理由欄にも明記する。
+    # 【重要】行動を推奨する表現（〜が無難です／〜をおすすめします等）は
+    # 投資助言と受け取られるリスクがあるため使わず、客観的な事実・特性の
+    # 記述にとどめる。
     if structure_cap_applied:
         pass  # 既にreasonsに理由が追加済み
     elif risk_cap_applied:
-        reasons.append("値動きの振れ幅が大きい可能性があるため、積立比率は抑えめが無難です")
+        reasons.append("値動きの振れ幅が市場平均より大きい傾向が確認されています")
     elif score_cap_applied and fp_score is not None and fp_score < 60:
-        reasons.append("企業評価スコアが他行と比べてやや控えめなため、慎重な判断をおすすめします")
+        reasons.append("企業評価スコアは他の該当銘柄と比較して相対的に低い水準です")
 
     if not reasons:
         reasons.append("十分な評価情報がありません")
@@ -591,8 +594,8 @@ def screen_growth(stock):
 
 
 SECTOR_VOLATILITY_NOTES = {
-    "Technology": "半導体・ハイテク関連企業のため業績変動は大きく、積立投資では比率を抑えることも検討したい銘柄です",
-    "Communication Services": "事業環境の変化が速い業種のため、業績の振れ幅にはご留意ください",
+    "Technology": "半導体・ハイテク関連企業のため、業績変動が比較的大きい傾向があります",
+    "Communication Services": "事業環境の変化が速い業種のため、業績の振れ幅が比較的大きい傾向があります",
     "Basic Materials": "市況（原材料価格・為替）の影響を受けやすく、業績変動が比較的大きい業種です",
     "Energy": "資源価格の変動の影響を受けやすく、業績変動が比較的大きい業種です",
     "Consumer Cyclical": "景気動向の影響を受けやすく、業績変動が比較的大きい業種です",
@@ -604,9 +607,10 @@ SECTOR_VOLATILITY_NOTES = {
 def build_detailed_fp_comment(stock):
     """
     各銘柄について、財務指標と業種特性を踏まえた一文コメントを生成する。
-    例：「自己資本比率97.5%、ROE57.6%と非常に優秀な財務内容です。
-        一方で半導体関連企業のため業績変動は大きく、積立投資では
-        比率を抑えることも検討したい銘柄です。」
+    【重要】行動の推奨（〜が無難・〜を検討したい等）は投資助言と受け取られる
+    リスクがあるため使わず、客観的な財務データと業種特性の事実のみを記述する。
+    例：「自己資本比率97.5%、ROE57.6%という財務内容です。
+        半導体・ハイテク関連企業のため、業績変動が比較的大きい傾向があります。」
     """
     equity_ratio = stock.get("equity_ratio")
     roe = stock.get("roe")
@@ -622,19 +626,19 @@ def build_detailed_fp_comment(stock):
         good_points.append(f"ROE{roe}%")
 
     if good_points:
-        parts.append(f"{('、'.join(good_points))}と非常に優秀な財務内容です。")
+        parts.append(f"{('、'.join(good_points))}という財務データです。")
     elif equity_ratio is not None or roe is not None:
         detail = []
         if equity_ratio is not None:
             detail.append(f"自己資本比率{equity_ratio}%")
         if roe is not None:
             detail.append(f"ROE{roe}%")
-        parts.append(f"{('、'.join(detail))}という財務内容です。")
+        parts.append(f"{('、'.join(detail))}という財務データです。")
 
     # 後半：業種特性の注記（ある場合のみ）
     volatility_note = SECTOR_VOLATILITY_NOTES.get(sector)
     if volatility_note:
-        parts.append(f"一方で{volatility_note}。")
+        parts.append(f"{volatility_note}。")
 
     if not parts:
         return "財務データの一部が取得できなかったため、詳細な評価ができませんでした。"

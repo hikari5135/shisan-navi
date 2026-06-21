@@ -501,6 +501,8 @@
 
   .lock-card .lock-icon { font-size: 28px; margin-bottom: 8px; }
   .lock-card p { font-size: 13px; margin-bottom: 16px; }
+  .lock-benefits { list-style: none; text-align: left; max-width: 320px; margin: 0 auto 20px; padding: 0; }
+  .lock-benefits li { font-size: 12px; color: var(--text); padding: 5px 0; line-height: 1.5; }
 
   .upgrade-btn {
     background: var(--gold);
@@ -566,8 +568,8 @@
 
 <div class="hero">
   <div class="hero-eyebrow">NISA初心者のためのFP流株診断ツール</div>
-  <h1>「長く持てる株」を、<br><em>FPの目線</em>で探す</h1>
-  <p class="hero-sub">財務の健全性・配当の安定性・割安度を、わかりやすい言葉で確認できます</p>
+  <h1>「何を買えばいいかわからない」を、<br><em>FPの目線</em>で解決</h1>
+  <p class="hero-sub">財務・配当・収益力を自動で診断。長く持てる優良株をわかりやすく見つけられます</p>
   <div class="update-info" id="updateInfo">最新データを読み込み中...</div>
 </div>
 
@@ -709,8 +711,14 @@
     <div class="stock-list" id="stockList"></div>
     <div class="lock-card" id="lockCard" style="display:none">
       <div class="lock-icon">🔒</div>
-      <p>より多くの銘柄はスタンダードプランで表示されます<br>（月額 ¥980 で全銘柄・LINE通知が使えます）</p>
-      <button class="upgrade-btn" onclick="openUnlockModal()">アクセスコードを入力する</button>
+      <p id="lockCardText">より多くの銘柄はメンバーシップで表示されます</p>
+      <ul class="lock-benefits">
+        <li>✅ 全銘柄を表示（無料は5件まで）</li>
+        <li>✅ カスタム条件（PBR・ROEを自分で設定）が使い放題</li>
+        <li>✅ 長期積立適性・リスク評価・詳細コメントも全銘柄分閲覧可</li>
+        <li>✅ FP・宅建の有料note記事が読み放題</li>
+      </ul>
+      <button class="upgrade-btn" onclick="openUnlockModal()">月額¥980で全機能を見る</button>
     </div>
   </div>
 </div>
@@ -1147,7 +1155,7 @@ function runScreening() {
     const lockCard = document.getElementById('lockCard');
     if (remainCount > 0) {
       lockCard.style.display = 'block';
-      lockCard.querySelector('p').innerHTML = `残り <strong>${remainCount}件</strong> はメンバーシップで表示されます<br>（月額 ¥980 で全銘柄・カスタム条件が使い放題）`;
+      document.getElementById('lockCardText').innerHTML = `残り <strong>${remainCount}件</strong> はメンバーシップで表示されます`;
     } else {
       lockCard.style.display = 'none';
     }

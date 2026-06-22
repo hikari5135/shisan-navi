@@ -1,33 +1,27 @@
 name: Daily Stock Screening
-
 on:
   schedule:
     - cron: '0 21 * * *'
   workflow_dispatch:
-
 jobs:
   screening:
     runs-on: ubuntu-latest
     
     steps:
       - name: checkout
-        uses: actions/checkout@v3
-
+        uses: actions/checkout@v4
       - name: setup python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-
       - name: install
         run: |
           pip install yfinance
-
       - name: run screening
         env:
           LINE_CHANNEL_ACCESS_TOKEN: ${{ secrets.LINE_CHANNEL_ACCESS_TOKEN }}
         run: |
           python screening.py
-
       - name: commit and push
         run: |
           git config --local user.email "action@github.com"

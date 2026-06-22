@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+https://github.com/hikari5135/shisan-navi/edit/main/index.html<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
@@ -1257,6 +1257,47 @@ function getScoreBreakdownHTML(s) {
   </div>`;
 }
 
+function calcDividendRiskScore(s) {
+  let score = 0;
+  const reasons = [];
+
+  const equity = s.equity_ratio;
+  const roe = s.roe;
+  const div = s.dividend_yield;
+  const beta = s.beta;
+
+  if (equity !== null && equity !== undefined) {
+    if (equity >= 60) { score += 30; reasons.push('自己資本比率60%以上（財務が安定）'); }
+    else if (equity >= 40) { score += 15; reasons.push('自己資本比率40%以上（概ね健全）'); }
+    else { reasons.push('自己資本比率が低め（財務に注意）'); }
+  }
+
+  if (roe !== null && roe !== undefined) {
+    if (roe >= 15) { score += 30; reasons.push('ROE15%以上（稼ぐ力が高い）'); }
+    else if (roe >= 8) { score += 15; reasons.push('ROE8%以上（合格水準）'); }
+    else { reasons.push('ROEが低め（収益性に注意）'); }
+  }
+
+  if (div !== null && div !== undefined) {
+    if (div < 5) { score += 20; reasons.push('配当利回り5%未満（過大な配当負担なし）'); }
+    else { reasons.push('配当利回り5%以上（高配当だが継続性に注意）'); }
+  }
+
+  if (beta !== null && beta !== undefined) {
+    if (beta < 1.0) { score += 20; reasons.push('ベータ1.0未満（株価変動が比較的安定）'); }
+    else { reasons.push('ベータ1.0以上（株価変動が大きめ）'); }
+  } else {
+    score += 10; // ベータ不明の場合は中間点
+  }
+
+  let level, color, icon;
+  if (score >= 80) { level = '低'; color = '#2a7a4f'; icon = '🟢'; }
+  else if (score >= 60) { level = '中'; color = '#d4a017'; icon = '🟡'; }
+  else { level = '高'; color = '#c0392b'; icon = '🔴'; }
+
+  return { score, level, color, icon, reasons };
+}
+
 function getNisaAndRiskHTML(s) {
   let html = '<div class="extra-info-row">';
   if (s.nisa_fit) {
@@ -1285,6 +1326,23 @@ function getNisaAndRiskHTML(s) {
     </div>`;
   }
   html += '</div>';
+
+  // 減配リスクボックス
+  const divRisk = calcDividendRiskScore(s);
+  const divRiskBg = divRisk.level === '低' ? '#e8f5ee' : divRisk.level === '中' ? '#fff9e6' : '#fdf0ee';
+  const divRiskUid = 'divrisk_' + s.ticker.replace('.', '_');
+  html += `
+    <div class="extra-box" style="background:${divRiskBg};border:1px solid var(--border);border-radius:6px;padding:10px 12px;margin-top:10px;">
+      <div class="extra-box-title">💰 減配リスク（簡易推定）<span class="title-sub">　※財務データから機械的に算出した参考値です</span></div>
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div class="extra-box-main">${divRisk.icon} ${divRisk.level}　<span style="font-size:12px;color:var(--text-muted);">スコア ${divRisk.score}/100</span></div>
+        <div style="font-size:10px;color:var(--text-muted);cursor:pointer;font-weight:700;" onclick="toggleRiskDetail('${divRiskUid}', this)">詳細を見る ▼</div>
+      </div>
+      <div id="${divRiskUid}" style="display:none;margin-top:8px;font-size:11px;color:var(--text-muted);line-height:1.8;">
+        ${divRisk.reasons.map(r => `・${r}`).join('<br>')}
+      </div>
+    </div>`;
+
   return html;
 }
 

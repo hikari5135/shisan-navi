@@ -848,7 +848,7 @@
   </button>
 
   <div class="backtest-box" id="backtestBox" style="display:none;">
-    <div class="backtest-title">📊 参考シミュレーション（投資助言ではありません）</div>
+    <div class="backtest-title">📊 過去データ参考（投資助言ではありません）</div>
 
     <div class="backtest-tabs">
       <div class="backtest-tab-group">
@@ -876,7 +876,7 @@
 
     <div class="backtest-row" id="btRow">
       <div class="backtest-col">
-        <div class="backtest-col-label">条件を満たす銘柄群（参考・年率換算）</div>
+        <div class="backtest-col-label">条件銘柄群の過去データ上の推移（年率換算・参考値）</div>
         <div class="backtest-col-val" id="btStrategyVal">-</div>
       </div>
       <div class="backtest-col">
@@ -890,7 +890,7 @@
     </div>
 
     <div class="backtest-warning">
-      ⚠️ これは将来の運用成果を示唆・保証するものではありません
+      ⚠️ 過去データ上の推移であり、将来の運用成果を示唆・保証するものではありません
     </div>
     <p class="backtest-disclaimer" id="btDisclaimer"></p>
   </div>
@@ -1168,11 +1168,50 @@ function getScoreBreakdownHTML(s) {
     return '★'.repeat(stars) + '☆'.repeat(5 - stars);
   }
 
-  // NISA向き度を計算（score_breakdownとnisa_fitから総合判定）
-  const nisaScore = s.nisa_fit ? s.nisa_fit.stars : null;
-  const nisaRank = nisaScore >= 5 ? 'Sランク' : nisaScore >= 4 ? 'Aランク' : nisaScore >= 3 ? 'Bランク' : nisaScore >= 2 ? 'Cランク' : 'Dランク';
-  const nisaRankColor = nisaScore >= 5 ? '#c8a96e' : nisaScore >= 4 ? '#2a7a4f' : nisaScore >= 3 ? '#1a2744' : '#6b7a99';
-  const nisaVal = nisaScore !== null ? Math.round((nisaScore / 5) * 100) : null;
+  // NISA向き度を計算（複数指標から細かく差をつける）
+  function calcNisaScore(s) {
+    if (!s.nisa_fit) return null;
+    const stars = s.nisa_fit.stars || 0;
+    const fp = parseFloat(s.score) || 0;
+    const div = s.dividend_yield || 0;
+    const equity = s.equity_ratio || 0;
+    const roe = s.roe || 0;
+    const pbr = s.pbr || 99;
+    const risk = s.risk_level ? s.risk_level.level : '不明';
+
+    // 基礎点（星から）
+    let base = stars * 14; // 5星=70点ベース
+
+    // 加点項目
+    if (div >= 4.0) base += 8;
+    else if (div >= 3.0) base += 5;
+    else if (div >= 2.0) base += 2;
+
+    if (equity >= 70) base += 7;
+    else if (equity >= 50) base += 4;
+    else if (equity >= 40) base += 2;
+
+    if (roe >= 20) base += 6;
+    else if (roe >= 15) base += 4;
+    else if (roe >= 10) base += 2;
+
+    if (pbr <= 1.0) base += 5;
+    else if (pbr <= 1.5) base += 3;
+
+    // FPスコアで微調整（上位銘柄ほど高く）
+    base += Math.round((fp - 70) * 0.3);
+
+    // リスクで減点
+    if (risk === '高') base -= 8;
+    else if (risk === '中') base -= 3;
+
+    // 範囲を45〜98に収める
+    return Math.min(98, Math.max(45, Math.round(base)));
+  }
+
+  const nisaVal = calcNisaScore(s);
+  const nisaRank = nisaVal >= 90 ? 'Sランク' : nisaVal >= 85 ? 'A+ランク' : nisaVal >= 78 ? 'Aランク' : nisaVal >= 70 ? 'B+ランク' : nisaVal >= 60 ? 'Bランク' : 'Cランク';
+  const nisaRankColor = nisaVal >= 90 ? '#c8a96e' : nisaVal >= 85 ? '#2a7a4f' : nisaVal >= 78 ? '#1a2744' : nisaVal >= 70 ? '#5b8db8' : '#6b7a99';
 
   // FPコメント生成（初心者向けの一言）
   function getFPOneWord(s) {
@@ -1332,13 +1371,13 @@ function getSectorRankHTML(s) {
         <tr>
           <th>項目</th>
           <th>この企業</th>
-          <th>業種推定平均</th>
+          <th>業種比較目安</th>
           <th>業種内順位</th>
         </tr>
       </thead>
       <tbody>${rows}</tbody>
     </table>
-    <div class="sector-rank-note">※業種推定平均はパーセンタイル順位から逆算した参考値です</div>
+    <div class="sector-rank-note">※業種比較目安はパーセンタイル順位から算出した参考値です。実際の業種平均とは異なります</div>
   </div>`;
 }
 

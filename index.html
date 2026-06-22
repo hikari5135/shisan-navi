@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+https://github.com/hikari5135/shisan-navi/edit/main/index.htmlhttps://github.com/hikari5135/shisan-navi/edit/main/index.html<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
@@ -334,6 +334,10 @@
   .portfolio-empty p { font-size: 13px; color: var(--text-muted); line-height: 1.7; }
 
   .portfolio-summary { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 14px; }
+  .portfolio-score-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 16px; }
+  .portfolio-score-card { background: var(--cream); border-radius: 8px; padding: 10px 12px; text-align: center; }
+  .portfolio-score-card-label { font-size: 10px; color: var(--text-muted); margin-bottom: 4px; }
+  .portfolio-score-card-val { font-size: 20px; font-weight: 700; color: var(--navy); font-family: 'Noto Serif JP', serif; }
 
   .portfolio-warning {
     background: var(--red-light);
@@ -1498,6 +1502,20 @@ function renderPortfolio() {
 
   body.innerHTML = `
     <div class="portfolio-summary">登録銘柄数：${totalCount}件</div>
+    ${(() => {
+      const scores = items.map(it => it.score).filter(s => s !== null && s !== undefined);
+      if (scores.length === 0) return '';
+      const avg = Math.round(scores.reduce((a,b) => a+b, 0) / scores.length);
+      const max = Math.max(...scores);
+      const min = Math.min(...scores);
+      const total = scores.reduce((a,b) => a+b, 0);
+      return `<div class="portfolio-score-grid">
+        <div class="portfolio-score-card"><div class="portfolio-score-card-label">平均スコア</div><div class="portfolio-score-card-val">${avg}</div></div>
+        <div class="portfolio-score-card"><div class="portfolio-score-card-label">最高スコア</div><div class="portfolio-score-card-val">${max}</div></div>
+        <div class="portfolio-score-card"><div class="portfolio-score-card-label">最低スコア</div><div class="portfolio-score-card-val">${min}</div></div>
+        <div class="portfolio-score-card"><div class="portfolio-score-card-label">合計スコア</div><div class="portfolio-score-card-val">${total}</div></div>
+      </div>`;
+    })()}
 
     ${concentrationWarning ? `<div class="portfolio-warning">
       ⚠️ 「${sectorEntries[0][0]}」業種が全体の${Math.round(topSectorRatio*100)}%を占めています。業種が偏ると、その業種に固有のリスクの影響を受けやすくなります。

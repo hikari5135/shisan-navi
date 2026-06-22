@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+https://github.com/hikari5135/sh<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
@@ -113,7 +113,6 @@
     border-radius: 20px;
   }
 
-  /* STRATEGY TABS */
   .strategy-section {
     max-width: 900px;
     margin: 0 auto;
@@ -155,7 +154,6 @@
   .s-desc { font-size: 12px; color: var(--text-muted); line-height: 1.6; margin-bottom: 12px; }
   .s-tag { display: inline-block; background: var(--cream); color: var(--text-muted); font-size: 10px; padding: 3px 8px; border-radius: 2px; }
 
-  /* FILE UPLOAD */
   .upload-box {
     background: var(--white);
     border: 2px dashed var(--border);
@@ -188,7 +186,6 @@
     display: none;
   }
 
-  /* RUN BUTTON */
   .run-btn {
     width: 100%;
     background: var(--navy);
@@ -212,7 +209,6 @@
   .run-btn:hover { background: var(--navy-light); }
   .run-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
-  /* CUSTOM PANEL */
   .custom-panel {
     background: var(--white);
     border: 2px solid var(--gold);
@@ -256,7 +252,6 @@
   }
   .custom-hint { font-size: 11px; color: var(--text-muted); margin-top: 8px; }
 
-  /* UNLOCK */
   .unlock-btn {
     background: rgba(200,169,110,0.15);
     border: 1px solid var(--gold);
@@ -272,7 +267,6 @@
   .unlock-btn:hover { background: rgba(200,169,110,0.25); }
   .unlock-btn.unlocked { background: var(--green); border-color: var(--green); color: var(--white); }
 
-  /* PORTFOLIO */
   .portfolio-btn {
     position: relative;
     background: var(--white);
@@ -317,9 +311,9 @@
   .portfolio-modal-inner {
     background: var(--white);
     border-radius: 12px;
-    max-width: 480px;
+    max-width: 520px;
     width: 100%;
-    max-height: 85vh;
+    max-height: 90vh;
     display: flex;
     flex-direction: column;
   }
@@ -353,6 +347,30 @@
 
   .portfolio-section { margin-bottom: 22px; }
   .portfolio-section-title { font-size: 12px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+
+  /* グラフエリア */
+  .portfolio-charts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  .portfolio-chart-box {
+    background: var(--cream);
+    border-radius: 8px;
+    padding: 12px;
+  }
+  .portfolio-chart-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 8px;
+    text-align: center;
+  }
+  .portfolio-chart-container {
+    position: relative;
+    height: 160px;
+  }
 
   .portfolio-sector-row { display: flex; align-items: center; gap: 8px; margin-bottom: 7px; }
   .portfolio-sector-label { font-size: 11px; color: var(--text); width: 110px; flex-shrink: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -438,7 +456,6 @@
   .unlock-error { color: var(--red); font-size: 12px; margin-top: 10px; }
   .unlock-cta { display: block; margin-top: 18px; font-size: 12px; color: var(--gold); text-decoration: underline; }
 
-  /* BACKTEST */
   .backtest-box {
     background: var(--white);
     border: 1px solid var(--border);
@@ -485,7 +502,6 @@
     margin-bottom: 24px;
   }
 
-  /* SCORE BREAKDOWN */
   .score-breakdown { background: var(--cream); border-radius: 6px; padding: 12px 14px; margin-bottom: 14px; }
   .score-breakdown-title { font-size: 11px; color: var(--text-muted); font-weight: 700; margin-bottom: 8px; }
   .breakdown-row { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
@@ -495,7 +511,6 @@
   .breakdown-bar-fill { height: 100%; background: var(--gold); border-radius: 3px; }
   .breakdown-score { font-size: 11px; color: var(--text-muted); width: 40px; text-align: right; flex-shrink: 0; }
 
-  /* NISA / RISK */
   .extra-info-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
   .extra-box { border-radius: 6px; padding: 10px 12px; border: 1px solid var(--border); }
   .extra-box-title { font-size: 10px; color: var(--text-muted); margin-bottom: 4px; }
@@ -511,7 +526,6 @@
   .risk-toggle { font-size: 10px; color: var(--navy); cursor: pointer; margin-top: 4px; font-weight: 700; }
   .risk-toggle:hover { text-decoration: underline; }
 
-  /* SECTOR RANK */
   .sector-rank-box { background: var(--cream); border-radius: 6px; padding: 12px 14px; margin-bottom: 14px; }
   .sector-rank-title { font-size: 11px; color: var(--text-muted); font-weight: 700; margin-bottom: 10px; }
   .sector-rank-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
@@ -525,14 +539,11 @@
   @media (max-width: 600px) {
     .sector-rank-label { width: 70px; }
     .sector-rank-text { width: 80px; }
-  }
-
-  @media (max-width: 600px) {
     .extra-info-row { grid-template-columns: 1fr; }
     .breakdown-label { width: 100px; }
+    .portfolio-charts-grid { grid-template-columns: 1fr; }
   }
 
-  /* RESULTS */
   .results-section { max-width: 900px; margin: 0 auto; padding: 0 32px 64px; }
 
   .results-header {
@@ -632,7 +643,6 @@
   .watchlist-btn:hover { border-color: var(--navy); color: var(--navy); }
   .watchlist-btn.added { background: var(--navy); border-color: var(--navy); color: var(--white); }
 
-  /* LOCK */
   .lock-card {
     background: var(--white);
     border: 1px dashed var(--border);
@@ -660,7 +670,6 @@
     font-family: 'Noto Sans JP', sans-serif;
   }
 
-  /* LOADING */
   .loading-overlay { display: none; text-align: center; padding: 48px; color: var(--text-muted); font-size: 13px; }
   .spinner { width: 32px; height: 32px; border: 3px solid var(--border); border-top-color: var(--navy); border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 16px; }
   @keyframes spin { to { transform: rotate(360deg); } }
@@ -902,23 +911,18 @@
   表示されるコメント・評価（財務安定性評価・リスク評価等を含む）は、いずれも公開データに基づく客観的な特性の説明であり、個別の投資判断に対する助言ではありません。掲載データの正確性・完全性は保証されません。投資の最終判断はご自身の責任において行ってください。
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
 <script>
 let loadedData = null;
-// 現在画面に表示中の銘柄データ（ティッカー→データ）。お気に入り登録時の詳細保存に使う。
 let displayedStocksMap = {};
+let portfolioSectorChartInstance = null;
+let portfolioRiskChartInstance = null;
 
-// ===== アクセスコード（アンロック）機能 =====
 const UNLOCK_KEY = 'shisanNaviUnlocked';
-// メンバーシップ加入者向けのコード（noteのメンバー限定記事に記載）
 const VALID_UNLOCK_CODES = ['shisan2026', 'fp-member-980'];
 
-function isUnlocked() {
-  return localStorage.getItem(UNLOCK_KEY) === 'true';
-}
-
-function setUnlocked() {
-  localStorage.setItem(UNLOCK_KEY, 'true');
-}
+function isUnlocked() { return localStorage.getItem(UNLOCK_KEY) === 'true'; }
+function setUnlocked() { localStorage.setItem(UNLOCK_KEY, 'true'); }
 
 function refreshUnlockUI() {
   const btn = document.getElementById('unlockBtn');
@@ -935,10 +939,7 @@ function openUnlockModal() {
   document.getElementById('unlockModal').style.display = 'flex';
   document.getElementById('unlockError').style.display = 'none';
 }
-
-function closeUnlockModal() {
-  document.getElementById('unlockModal').style.display = 'none';
-}
+function closeUnlockModal() { document.getElementById('unlockModal').style.display = 'none'; }
 
 function submitUnlockCode() {
   const input = document.getElementById('unlockInput').value.trim();
@@ -946,10 +947,7 @@ function submitUnlockCode() {
     setUnlocked();
     refreshUnlockUI();
     closeUnlockModal();
-    // 結果が表示中なら再描画してロック解除を反映
-    if (document.getElementById('results').style.display !== 'none') {
-      runScreening();
-    }
+    if (document.getElementById('results').style.display !== 'none') runScreening();
   } else {
     document.getElementById('unlockError').style.display = 'block';
   }
@@ -959,14 +957,13 @@ window.addEventListener('DOMContentLoaded', refreshUnlockUI);
 window.addEventListener('DOMContentLoaded', updatePortfolioBadge);
 let currentStrategy = 'dividend';
 
-// GitHubから最新のscreening_result.jsonを自動取得
 const GITHUB_JSON_URL = 'https://raw.githubusercontent.com/hikari5135/shisan-navi/main/screening_result.json';
 
 async function fetchLatestData() {
   const statusText = document.getElementById('autoStatusText');
   const uploadStatus = document.getElementById('uploadStatus');
   try {
-    const res = await fetch(GITHUB_JSON_URL + '?t=' + Date.now()); // キャッシュ回避
+    const res = await fetch(GITHUB_JSON_URL + '?t=' + Date.now());
     if (!res.ok) throw new Error('取得失敗');
     const data = await res.json();
     loadedData = data;
@@ -998,10 +995,7 @@ const BACKTEST_CONDITIONS = {
 function renderBacktest(backtestMulti) {
   const box = document.getElementById('backtestBox');
   backtestMultiData = backtestMulti;
-  if (!backtestMulti) {
-    box.style.display = 'none';
-    return;
-  }
+  if (!backtestMulti) { box.style.display = 'none'; return; }
   box.style.display = 'block';
   renderBacktestPanel();
 }
@@ -1023,7 +1017,6 @@ function renderBacktestPanel() {
   const strategyData = backtestMultiData[currentBacktestStrategy];
   const backtest = strategyData ? strategyData[currentBacktestYears] : null;
 
-  // 累積リターン(%) を年率換算（CAGR）に変換: (1+r)^(1/years) - 1
   function toAnnualized(totalPct, years) {
     if (totalPct === null || totalPct === undefined || !years) return null;
     const total = totalPct / 100;
@@ -1034,22 +1027,19 @@ function renderBacktestPanel() {
     return (v === null || v === undefined) ? 'N/A' : `年率 約${v >= 0 ? '+' : ''}${v}%`;
   }
 
-  document.getElementById('btCondition').textContent =
-    BACKTEST_CONDITIONS[currentBacktestStrategy] || '-';
+  document.getElementById('btCondition').textContent = BACKTEST_CONDITIONS[currentBacktestStrategy] || '-';
 
   if (!backtest) {
     document.getElementById('btPeriod').textContent = `過去${currentBacktestYears}年間（データ準備中）`;
     document.getElementById('btStrategyVal').textContent = 'N/A';
     document.getElementById('btNikkeiVal').textContent = 'N/A';
     document.getElementById('btTopixVal').textContent = 'N/A';
-    document.getElementById('btDisclaimer').textContent =
-      'このパターンの参考シミュレーションはまだ準備中です。次回の月曜更新をお待ちください。';
+    document.getElementById('btDisclaimer').textContent = 'このパターンの参考シミュレーションはまだ準備中です。次回の月曜更新をお待ちください。';
     return;
   }
 
   const years = backtest.years || currentBacktestYears;
   const sampleSize = backtest.sample_size || 0;
-
   const annualStrategy = toAnnualized(backtest.avg_return_pct, years);
   const annualNikkei = toAnnualized(backtest.benchmark_nikkei225_pct, years);
   const annualTopix = toAnnualized(backtest.benchmark_topix_pct, years);
@@ -1073,13 +1063,11 @@ function renderBacktestPanel() {
     `現在の条件を満たす上位${sampleSize}銘柄を対象とした参考シミュレーションです。本シミュレーションは特定の銘柄や運用成果を推奨・保証するものではなく、投資助言ではありません。${backtest.disclaimer || ''}`;
 }
 
-// ページ読み込み時に自動実行
 window.addEventListener('DOMContentLoaded', fetchLatestData);
 
 function loadJSON(input) {
   const file = input.files[0];
   if (!file) return;
-
   const reader = new FileReader();
   reader.onload = function(e) {
     try {
@@ -1087,9 +1075,7 @@ function loadJSON(input) {
       document.getElementById('uploadStatus').style.display = 'block';
       document.getElementById('uploadStatus').textContent = `✅ ${loadedData.count}銘柄のデータを読み込みました（${loadedData.updated}）`;
       document.getElementById('updateInfo').textContent = `最終更新：${loadedData.updated}`;
-    } catch(err) {
-      alert('JSONファイルの読み込みに失敗しました。');
-    }
+    } catch(err) { alert('JSONファイルの読み込みに失敗しました。'); }
   };
   reader.readAsText(file, 'utf-8');
 }
@@ -1126,7 +1112,7 @@ function filterByCustom(stocks, cond) {
     const roeOk = !cond.minRoe || (s.roe !== null && s.roe !== undefined && s.roe >= cond.minRoe);
     const equityOk = !cond.minEquity || (s.equity_ratio !== null && s.equity_ratio !== undefined && s.equity_ratio >= cond.minEquity);
     return divOk && pbrOk && roeOk && equityOk;
-  }).map(s => ({ ...s, score: 100 })); // カスタムは全条件一致なので満点表示
+  }).map(s => ({ ...s, score: 100 }));
 }
 
 function getFPComment(stock, strategy) {
@@ -1157,55 +1143,42 @@ function getScoreBreakdownHTML(s) {
   if (!s.score_breakdown || !s.score_breakdown.length) return '';
   const items = s.score_breakdown.map(b => {
     const pct = b.max > 0 ? Math.round((b.score / b.max) * 100) : 0;
-    return `
-      <div class="breakdown-row">
-        <div class="breakdown-label">${b.label}</div>
-        <div class="breakdown-bar-track">
-          <div class="breakdown-bar-fill" style="width:${pct}%"></div>
-        </div>
-        <div class="breakdown-score">${b.score}/${b.max}</div>
-      </div>`;
+    return `<div class="breakdown-row">
+      <div class="breakdown-label">${b.label}</div>
+      <div class="breakdown-bar-track"><div class="breakdown-bar-fill" style="width:${pct}%"></div></div>
+      <div class="breakdown-score">${b.score}/${b.max}</div>
+    </div>`;
   }).join('');
   return `<div class="score-breakdown"><div class="score-breakdown-title">スコア内訳</div>${items}</div>`;
 }
 
 function getNisaAndRiskHTML(s) {
   let html = '<div class="extra-info-row">';
-
   if (s.nisa_fit) {
     const stars = '★'.repeat(s.nisa_fit.stars) + '☆'.repeat(5 - s.nisa_fit.stars);
     const reasonsText = s.nisa_fit.reasons.length ? s.nisa_fit.reasons.join('・') : '';
-    html += `
-      <div class="extra-box nisa-box">
-        <div class="extra-box-title">📘 財務安定性評価<span class="title-sub">（企業評価スコアとは別の評価軸です）</span></div>
-        <div class="extra-box-main">${s.nisa_fit.level} <span class="stars">${stars}</span></div>
-        <div class="extra-box-sub">${reasonsText}</div>
-      </div>`;
+    html += `<div class="extra-box nisa-box">
+      <div class="extra-box-title">📘 財務安定性評価<span class="title-sub">（企業評価スコアとは別の評価軸です）</span></div>
+      <div class="extra-box-main">${s.nisa_fit.level} <span class="stars">${stars}</span></div>
+      <div class="extra-box-sub">${reasonsText}</div>
+    </div>`;
   }
-
   if (s.risk_level) {
     const colorClass = s.risk_level.color === 'red' ? 'risk-high' : (s.risk_level.color === 'yellow' ? 'risk-mid' : 'risk-low');
     const icon = s.risk_level.color === 'red' ? '🔴' : (s.risk_level.color === 'yellow' ? '🟡' : '🟢');
     const allReasons = s.risk_level.reasons || [];
-    // 最初の1つだけを要約として見せ、残りは「詳細を見る」で展開する
     const summaryReason = allReasons.length ? allReasons[0] : '';
     const restReasons = allReasons.slice(1);
     const uid = 'risk_' + s.ticker.replace('.', '_');
-
-    html += `
-      <div class="extra-box risk-box ${colorClass}">
-        <div class="extra-box-title">⚖️ リスク評価</div>
-        <div class="extra-box-main">${icon} ${s.risk_level.level}</div>
-        <div class="extra-box-sub">${summaryReason}</div>
-        ${restReasons.length ? `
-          <div class="risk-detail" id="${uid}" style="display:none;">
-            ${restReasons.map(r => `・${r}`).join('<br>')}
-          </div>
-          <div class="risk-toggle" onclick="toggleRiskDetail('${uid}', this)">詳細を見る ▼</div>
-        ` : ''}
-      </div>`;
+    html += `<div class="extra-box risk-box ${colorClass}">
+      <div class="extra-box-title">⚖️ リスク評価</div>
+      <div class="extra-box-main">${icon} ${s.risk_level.level}</div>
+      <div class="extra-box-sub">${summaryReason}</div>
+      ${restReasons.length ? `
+        <div class="risk-detail" id="${uid}" style="display:none;">${restReasons.map(r => `・${r}`).join('<br>')}</div>
+        <div class="risk-toggle" onclick="toggleRiskDetail('${uid}', this)">詳細を見る ▼</div>` : ''}
+    </div>`;
   }
-
   html += '</div>';
   return html;
 }
@@ -1221,113 +1194,54 @@ function toggleRiskDetail(uid, el) {
 function getSectorRankHTML(s) {
   const rank = s.sector_rank;
   if (!rank || !rank.sector_count || rank.sector_count < 3) return '';
-
   const items = [];
   if (rank.percentile_margin !== null && rank.percentile_margin !== undefined) {
-    const rankText = (rank.rank_margin && rank.rank_margin_total)
-      ? `${rank.rank_margin}位 / ${rank.rank_margin_total}社`
-      : rank.label_margin;
+    const rankText = (rank.rank_margin && rank.rank_margin_total) ? `${rank.rank_margin}位 / ${rank.rank_margin_total}社` : rank.label_margin;
     items.push({ label: '利益率', pct: rank.percentile_margin, text: rankText });
   }
   if (rank.percentile_roe !== null && rank.percentile_roe !== undefined) {
-    const rankText = (rank.rank_roe && rank.rank_roe_total)
-      ? `${rank.rank_roe}位 / ${rank.rank_roe_total}社`
-      : rank.label_roe;
+    const rankText = (rank.rank_roe && rank.rank_roe_total) ? `${rank.rank_roe}位 / ${rank.rank_roe_total}社` : rank.label_roe;
     items.push({ label: '稼ぐ力（ROE）', pct: rank.percentile_roe, text: rankText });
   }
   if (!items.length) return '';
-
   const bars = items.map(it => `
     <div class="sector-rank-row">
       <div class="sector-rank-label">${it.label}</div>
-      <div class="sector-rank-bar-track">
-        <div class="sector-rank-bar-fill" style="width:${it.pct}%"></div>
-      </div>
+      <div class="sector-rank-bar-track"><div class="sector-rank-bar-fill" style="width:${it.pct}%"></div></div>
       <div class="sector-rank-text">${it.text}</div>
     </div>`).join('');
-
-  return `
-    <div class="sector-rank-box">
-      <div class="sector-rank-title">📊 業種内での位置づけ（同業種${rank.sector_count}社中）</div>
-      ${bars}
-      <div class="sector-rank-note">※同じ業種の銘柄同士で比較した相対的な順位です</div>
-    </div>`;
+  return `<div class="sector-rank-box">
+    <div class="sector-rank-title">📊 業種内での位置づけ（同業種${rank.sector_count}社中）</div>
+    ${bars}
+    <div class="sector-rank-note">※同じ業種の銘柄同士で比較した相対的な順位です</div>
+  </div>`;
 }
 
 function getIndicatorsHTML(s, strategy) {
   if (strategy === 'solid') {
     return `
-      <div class="fp-item">
-        <div class="fp-item-label">財務の安全度</div>
-        <div class="fp-item-val">${s.equity_ratio ? s.equity_ratio + '%' : 'N/A'}</div>
-        <div class="fp-item-comment ${s.equity_ratio >= 40 ? '' : 'neutral'}">${s.equity_ratio >= 55 ? '非常に安全' : s.equity_ratio >= 40 ? '安全水準' : '要確認'}</div>
-      </div>
-      <div class="fp-item">
-        <div class="fp-item-label">営業利益率</div>
-        <div class="fp-item-val">${s.operating_margin ? s.operating_margin + '%' : 'N/A'}</div>
-        <div class="fp-item-comment ${s.operating_margin >= 10 ? '' : 'neutral'}">${s.operating_margin >= 15 ? '非常に高い' : s.operating_margin >= 10 ? '合格水準' : '要確認'}</div>
-      </div>
-      <div class="fp-item">
-        <div class="fp-item-label">稼ぐ力（ROE）</div>
-        <div class="fp-item-val">${s.roe ? s.roe + '%' : 'N/A'}</div>
-        <div class="fp-item-comment ${s.roe >= 10 ? '' : 'neutral'}">${s.roe >= 15 ? '非常に優秀' : s.roe >= 8 ? '合格水準' : '要確認'}</div>
-      </div>
-      <div class="fp-item">
-        <div class="fp-item-label">現在値</div>
-        <div class="fp-item-val">${s.price ? '¥' + s.price.toLocaleString() : 'N/A'}</div>
-        <div class="fp-item-comment neutral">株価</div>
-      </div>`;
+      <div class="fp-item"><div class="fp-item-label">財務の安全度</div><div class="fp-item-val">${s.equity_ratio ? s.equity_ratio + '%' : 'N/A'}</div><div class="fp-item-comment ${s.equity_ratio >= 40 ? '' : 'neutral'}">${s.equity_ratio >= 55 ? '非常に安全' : s.equity_ratio >= 40 ? '安全水準' : '要確認'}</div></div>
+      <div class="fp-item"><div class="fp-item-label">営業利益率</div><div class="fp-item-val">${s.operating_margin ? s.operating_margin + '%' : 'N/A'}</div><div class="fp-item-comment ${s.operating_margin >= 10 ? '' : 'neutral'}">${s.operating_margin >= 15 ? '非常に高い' : s.operating_margin >= 10 ? '合格水準' : '要確認'}</div></div>
+      <div class="fp-item"><div class="fp-item-label">稼ぐ力（ROE）</div><div class="fp-item-val">${s.roe ? s.roe + '%' : 'N/A'}</div><div class="fp-item-comment ${s.roe >= 10 ? '' : 'neutral'}">${s.roe >= 15 ? '非常に優秀' : s.roe >= 8 ? '合格水準' : '要確認'}</div></div>
+      <div class="fp-item"><div class="fp-item-label">現在値</div><div class="fp-item-val">${s.price ? '¥' + s.price.toLocaleString() : 'N/A'}</div><div class="fp-item-comment neutral">株価</div></div>`;
   } else if (strategy === 'growth') {
     return `
-      <div class="fp-item">
-        <div class="fp-item-label">売上成長率</div>
-        <div class="fp-item-val">${s.revenue_growth !== null && s.revenue_growth !== undefined ? s.revenue_growth + '%' : 'N/A'}</div>
-        <div class="fp-item-comment ${s.revenue_growth > 0 ? '' : 'neutral'}">${s.revenue_growth >= 10 ? '力強い成長' : s.revenue_growth > 0 ? '成長中' : '要確認'}</div>
-      </div>
-      <div class="fp-item">
-        <div class="fp-item-label">稼ぐ力（ROE）</div>
-        <div class="fp-item-val">${s.roe ? s.roe + '%' : 'N/A'}</div>
-        <div class="fp-item-comment ${s.roe >= 10 ? '' : 'neutral'}">${s.roe >= 15 ? '非常に優秀' : '合格水準'}</div>
-      </div>
-      <div class="fp-item">
-        <div class="fp-item-label">割安度（PBR）</div>
-        <div class="fp-item-val">${s.pbr ? s.pbr + '倍' : 'N/A'}</div>
-        <div class="fp-item-comment neutral">${s.pbr <= 1.5 ? '割安水準' : 'やや高め'}</div>
-      </div>
-      <div class="fp-item">
-        <div class="fp-item-label">現在値</div>
-        <div class="fp-item-val">${s.price ? '¥' + s.price.toLocaleString() : 'N/A'}</div>
-        <div class="fp-item-comment neutral">株価</div>
-      </div>`;
+      <div class="fp-item"><div class="fp-item-label">売上成長率</div><div class="fp-item-val">${s.revenue_growth !== null && s.revenue_growth !== undefined ? s.revenue_growth + '%' : 'N/A'}</div><div class="fp-item-comment ${s.revenue_growth > 0 ? '' : 'neutral'}">${s.revenue_growth >= 10 ? '力強い成長' : s.revenue_growth > 0 ? '成長中' : '要確認'}</div></div>
+      <div class="fp-item"><div class="fp-item-label">稼ぐ力（ROE）</div><div class="fp-item-val">${s.roe ? s.roe + '%' : 'N/A'}</div><div class="fp-item-comment ${s.roe >= 10 ? '' : 'neutral'}">${s.roe >= 15 ? '非常に優秀' : '合格水準'}</div></div>
+      <div class="fp-item"><div class="fp-item-label">割安度（PBR）</div><div class="fp-item-val">${s.pbr ? s.pbr + '倍' : 'N/A'}</div><div class="fp-item-comment neutral">${s.pbr <= 1.5 ? '割安水準' : 'やや高め'}</div></div>
+      <div class="fp-item"><div class="fp-item-label">現在値</div><div class="fp-item-val">${s.price ? '¥' + s.price.toLocaleString() : 'N/A'}</div><div class="fp-item-comment neutral">株価</div></div>`;
   } else {
     return `
-      <div class="fp-item">
-        <div class="fp-item-label">配当利回り</div>
-        <div class="fp-item-val">${s.dividend_yield ? s.dividend_yield + '%' : 'N/A'}</div>
-        <div class="fp-item-comment ${s.dividend_yield >= 3 ? '' : 'neutral'}">${s.dividend_yield >= 3.5 ? '高配当' : s.dividend_yield >= 2 ? '安定水準' : '要確認'}</div>
-      </div>
-      <div class="fp-item">
-        <div class="fp-item-label">割安度（PBR）</div>
-        <div class="fp-item-val">${s.pbr ? s.pbr + '倍' : 'N/A'}</div>
-        <div class="fp-item-comment ${s.pbr && s.pbr <= 1.5 ? '' : 'neutral'}">${s.pbr <= 1.0 ? '資産より割安' : s.pbr <= 1.5 ? '適正水準' : 'やや高め'}</div>
-      </div>
-      <div class="fp-item">
-        <div class="fp-item-label">稼ぐ力（ROE）</div>
-        <div class="fp-item-val">${s.roe ? s.roe + '%' : 'N/A'}</div>
-        <div class="fp-item-comment ${s.roe >= 10 ? '' : 'neutral'}">${s.roe >= 15 ? '非常に優秀' : s.roe >= 8 ? '合格水準' : '要確認'}</div>
-      </div>
-      <div class="fp-item">
-        <div class="fp-item-label">現在値</div>
-        <div class="fp-item-val">${s.price ? '¥' + s.price.toLocaleString() : 'N/A'}</div>
-        <div class="fp-item-comment neutral">株価</div>
-      </div>`;
+      <div class="fp-item"><div class="fp-item-label">配当利回り</div><div class="fp-item-val">${s.dividend_yield ? s.dividend_yield + '%' : 'N/A'}</div><div class="fp-item-comment ${s.dividend_yield >= 3 ? '' : 'neutral'}">${s.dividend_yield >= 3.5 ? '高配当' : s.dividend_yield >= 2 ? '安定水準' : '要確認'}</div></div>
+      <div class="fp-item"><div class="fp-item-label">割安度（PBR）</div><div class="fp-item-val">${s.pbr ? s.pbr + '倍' : 'N/A'}</div><div class="fp-item-comment ${s.pbr && s.pbr <= 1.5 ? '' : 'neutral'}">${s.pbr <= 1.0 ? '資産より割安' : s.pbr <= 1.5 ? '適正水準' : 'やや高め'}</div></div>
+      <div class="fp-item"><div class="fp-item-label">稼ぐ力（ROE）</div><div class="fp-item-val">${s.roe ? s.roe + '%' : 'N/A'}</div><div class="fp-item-comment ${s.roe >= 10 ? '' : 'neutral'}">${s.roe >= 15 ? '非常に優秀' : s.roe >= 8 ? '合格水準' : '要確認'}</div></div>
+      <div class="fp-item"><div class="fp-item-label">現在値</div><div class="fp-item-val">${s.price ? '¥' + s.price.toLocaleString() : 'N/A'}</div><div class="fp-item-comment neutral">株価</div></div>`;
   }
 }
 
 function runScreening() {
   const loading = document.getElementById('loading');
   const results = document.getElementById('results');
-
   loading.style.display = 'block';
   results.style.display = 'none';
 
@@ -1338,14 +1252,10 @@ function runScreening() {
 
     let filtered = [];
 
-    // 全銘柄プールを取得（カスタム条件で使う）
     function getAllStocksPool() {
       if (loadedData && loadedData.strategies && loadedData.strategies.dividend) {
-        // 3戦略の銘柄を統合し重複排除（カスタムは全銘柄から条件で絞るため）
         const all = {};
-        Object.values(loadedData.strategies).forEach(strat => {
-          strat.stocks.forEach(s => { all[s.ticker] = s; });
-        });
+        Object.values(loadedData.strategies).forEach(strat => { strat.stocks.forEach(s => { all[s.ticker] = s; }); });
         return Object.values(all);
       }
       return loadedData && loadedData.stocks ? loadedData.stocks : getSampleData();
@@ -1353,34 +1263,26 @@ function runScreening() {
 
     if (currentStrategy === 'custom') {
       const cond = getCustomConditions();
-      const pool = getAllStocksPool();
-      filtered = filterByCustom(pool, cond);
+      filtered = filterByCustom(getAllStocksPool(), cond);
       document.getElementById('dataSource').textContent = loadedData ? `実データ（${loadedData.updated}）` : 'サンプルデータ';
     } else if (loadedData && loadedData.strategies && loadedData.strategies[currentStrategy]) {
-      // 新形式：3戦略すべて実データ
-      const strategyData = loadedData.strategies[currentStrategy];
-      filtered = strategyData.stocks;
+      filtered = loadedData.strategies[currentStrategy].stocks;
       document.getElementById('dataSource').textContent = `実データ（${loadedData.updated}）`;
     } else if (loadedData && loadedData.stocks) {
-      // 旧形式（堅実配当型のみ実データ）へのフォールバック
       filtered = filterByStrategy(loadedData.stocks, currentStrategy);
       document.getElementById('dataSource').textContent = `実データ（${loadedData.updated}）`;
     } else {
-      // サンプルデータ（完全フォールバック）
       filtered = filterByStrategy(getSampleData(), currentStrategy);
       document.getElementById('dataSource').textContent = 'サンプルデータ';
     }
 
     document.getElementById('count').textContent = filtered.length;
-
     const unlocked = isUnlocked();
     const displayLimit = unlocked ? filtered.length : 5;
     const displayStocks = filtered.slice(0, displayLimit);
     const remainCount = filtered.length - displayLimit;
-
     const list = document.getElementById('stockList');
 
-    // 表示中銘柄をマップに保存（お気に入り登録時の詳細データ保存に使う）
     displayStocks.forEach(s => { displayedStocksMap[s.ticker] = s; });
 
     list.innerHTML = displayStocks.map(s => `
@@ -1395,19 +1297,11 @@ function runScreening() {
             <div class="score-val">${s.score}<span>/100</span></div>
           </div>
         </div>
-
         ${getScoreBreakdownHTML(s)}
-
-        <div class="fp-indicators">
-          ${getIndicatorsHTML(s, currentStrategy)}
-        </div>
-
+        <div class="fp-indicators">${getIndicatorsHTML(s, currentStrategy)}</div>
         <div class="fp-plain"><span class="fp-plain-label">📋 財務データの特徴</span>${s.detailed_comment ? s.detailed_comment : getFPComment(s, currentStrategy)}</div>
-
         ${getSectorRankHTML(s)}
-
         ${getNisaAndRiskHTML(s)}
-
         <div class="stock-card-footer">
           <span class="disclaimer-tag">※投資推奨ではありません。判断・売買はご自身で。</span>
           <button class="watchlist-btn" data-ticker="${s.ticker}" onclick="toggleWatch(this, '${s.ticker}', displayedStocksMap['${s.ticker}'])">＋ 気になる</button>
@@ -1424,19 +1318,14 @@ function runScreening() {
     }
 
     applyWatchlistState();
-
     results.scrollIntoView({behavior:'smooth', block:'start'});
   }, 1500);
 }
 
 function filterByStrategy(stocks, strategy) {
-  if (strategy === 'dividend') {
-    return stocks.filter(s => s.dividend_yield >= 2.0 || s.roe >= 8);
-  } else if (strategy === 'solid') {
-    return stocks.filter(s => s.roe >= 8 && s.pbr && s.pbr <= 2.0);
-  } else {
-    return stocks.filter(s => s.roe >= 10);
-  }
+  if (strategy === 'dividend') return stocks.filter(s => s.dividend_yield >= 2.0 || s.roe >= 8);
+  else if (strategy === 'solid') return stocks.filter(s => s.roe >= 8 && s.pbr && s.pbr <= 2.0);
+  else return stocks.filter(s => s.roe >= 10);
 }
 
 function getSampleData() {
@@ -1447,54 +1336,32 @@ function getSampleData() {
   ];
 }
 
-// ===== お気に入り（気になる）機能の永続化 =====
+// ===== お気に入り機能 =====
 const WATCHLIST_KEY = 'shisanNaviWatchlist';
-// 銘柄の詳細情報（ポートフォリオ機能で使うため、ティッカーだけでなく中身も保存する）
 const WATCHLIST_DETAIL_KEY = 'shisanNaviWatchlistDetail';
 
 function getWatchlist() {
-  try {
-    const raw = localStorage.getItem(WATCHLIST_KEY);
-    return raw ? JSON.parse(raw) : [];
-  } catch (e) {
-    return [];
-  }
+  try { const raw = localStorage.getItem(WATCHLIST_KEY); return raw ? JSON.parse(raw) : []; }
+  catch (e) { return []; }
 }
-
 function saveWatchlist(list) {
-  try {
-    localStorage.setItem(WATCHLIST_KEY, JSON.stringify(list));
-  } catch (e) {
-    console.warn('保存に失敗しました', e);
-  }
+  try { localStorage.setItem(WATCHLIST_KEY, JSON.stringify(list)); } catch (e) {}
 }
-
 function getWatchlistDetail() {
-  try {
-    const raw = localStorage.getItem(WATCHLIST_DETAIL_KEY);
-    return raw ? JSON.parse(raw) : {};
-  } catch (e) {
-    return {};
-  }
+  try { const raw = localStorage.getItem(WATCHLIST_DETAIL_KEY); return raw ? JSON.parse(raw) : {}; }
+  catch (e) { return {}; }
 }
-
 function saveWatchlistDetail(detail) {
-  try {
-    localStorage.setItem(WATCHLIST_DETAIL_KEY, JSON.stringify(detail));
-  } catch (e) {
-    console.warn('詳細データの保存に失敗しました', e);
-  }
+  try { localStorage.setItem(WATCHLIST_DETAIL_KEY, JSON.stringify(detail)); } catch (e) {}
 }
 
 function toggleWatch(btn, ticker, stockData) {
   let list = getWatchlist();
   const isAdded = list.includes(ticker);
-
   if (isAdded) {
     list = list.filter(t => t !== ticker);
     btn.classList.remove('added');
     btn.textContent = '＋ 気になる';
-
     const detail = getWatchlistDetail();
     delete detail[ticker];
     saveWatchlistDetail(detail);
@@ -1502,8 +1369,6 @@ function toggleWatch(btn, ticker, stockData) {
     list.push(ticker);
     btn.classList.add('added');
     btn.textContent = '✓ 追加済み';
-
-    // 銘柄の詳細データ（ポートフォリオ表示に必要な最小限の情報）を保存
     if (stockData) {
       const detail = getWatchlistDetail();
       detail[ticker] = {
@@ -1521,15 +1386,11 @@ function toggleWatch(btn, ticker, stockData) {
   updatePortfolioBadge();
 }
 
-// カード描画時に、保存済みのお気に入り状態を反映する
 function applyWatchlistState() {
   const list = getWatchlist();
   document.querySelectorAll('.watchlist-btn[data-ticker]').forEach(btn => {
     const ticker = btn.getAttribute('data-ticker');
-    if (list.includes(ticker)) {
-      btn.classList.add('added');
-      btn.textContent = '✓ 追加済み';
-    }
+    if (list.includes(ticker)) { btn.classList.add('added'); btn.textContent = '✓ 追加済み'; }
   });
   updatePortfolioBadge();
 }
@@ -1539,17 +1400,12 @@ function updatePortfolioBadge() {
   const list = getWatchlist();
   const badge = document.getElementById('portfolioBadge');
   if (!badge) return;
-  if (list.length > 0) {
-    badge.textContent = list.length;
-    badge.style.display = 'inline-flex';
-  } else {
-    badge.style.display = 'none';
-  }
+  if (list.length > 0) { badge.textContent = list.length; badge.style.display = 'inline-flex'; }
+  else { badge.style.display = 'none'; }
 }
 
 function openPortfolioModal() {
-  const modal = document.getElementById('portfolioModal');
-  modal.style.display = 'flex';
+  document.getElementById('portfolioModal').style.display = 'flex';
   renderPortfolio();
 }
 
@@ -1563,13 +1419,8 @@ function removeFromPortfolio(ticker) {
   const detail = getWatchlistDetail();
   delete detail[ticker];
   saveWatchlistDetail(detail);
-
-  // メインの銘柄カードのボタン状態も更新
   const btn = document.querySelector(`.watchlist-btn[data-ticker="${ticker}"]`);
-  if (btn) {
-    btn.classList.remove('added');
-    btn.textContent = '＋ 気になる';
-  }
+  if (btn) { btn.classList.remove('added'); btn.textContent = '＋ 気になる'; }
   updatePortfolioBadge();
   renderPortfolio();
 }
@@ -1579,18 +1430,21 @@ function renderPortfolio() {
   const detail = getWatchlistDetail();
   const body = document.getElementById('portfolioBody');
 
+  // 既存グラフを破棄
+  if (portfolioSectorChartInstance) { portfolioSectorChartInstance.destroy(); portfolioSectorChartInstance = null; }
+  if (portfolioRiskChartInstance) { portfolioRiskChartInstance.destroy(); portfolioRiskChartInstance = null; }
+
   if (list.length === 0) {
-    body.innerHTML = `
-      <div class="portfolio-empty">
-        <div class="portfolio-empty-icon">📭</div>
-        <p>まだ「気になる」銘柄が登録されていません。<br>銘柄カードの「＋ 気になる」ボタンから追加してみてください。</p>
-      </div>`;
+    body.innerHTML = `<div class="portfolio-empty">
+      <div class="portfolio-empty-icon">📭</div>
+      <p>まだ「気になる」銘柄が登録されていません。<br>銘柄カードの「＋ 気になる」ボタンから追加してみてください。</p>
+    </div>`;
     return;
   }
 
   const items = list.map(ticker => detail[ticker] || { name: ticker, sector: '不明', score: null, risk_level: null, price: null });
 
-  // 業種ごとの集計
+  // 業種集計
   const sectorCounts = {};
   items.forEach(it => {
     const sector = it.sector || '不明';
@@ -1599,12 +1453,10 @@ function renderPortfolio() {
   const sectorEntries = Object.entries(sectorCounts).sort((a, b) => b[1] - a[1]);
   const maxSectorCount = sectorEntries.length ? sectorEntries[0][1] : 1;
   const totalCount = items.length;
-
-  // 偏りチェック：最大業種が全体の50%を超えたら警告
   const topSectorRatio = sectorEntries.length ? sectorEntries[0][1] / totalCount : 0;
   const concentrationWarning = topSectorRatio >= 0.5 && totalCount >= 4;
 
-  // リスク分布の集計
+  // リスク集計
   const riskCounts = { '低': 0, '中': 0, '高': 0, '不明': 0 };
   items.forEach(it => {
     const lv = it.risk_level || '不明';
@@ -1612,60 +1464,59 @@ function renderPortfolio() {
     else riskCounts['不明']++;
   });
 
-  // --- 業種分散度セクション ---
+  const CHART_COLORS = ['#c8a96e','#1a2744','#2a7a4f','#6b7a99','#e8a87c','#5b8db8','#b07db8','#7db87d'];
+
   const sectorHTML = sectorEntries.map(([sector, count]) => {
     const pct = Math.round((count / maxSectorCount) * 100);
     const share = Math.round((count / totalCount) * 100);
-    return `
-      <div class="portfolio-sector-row">
-        <div class="portfolio-sector-label">${sector}</div>
-        <div class="portfolio-sector-bar-track">
-          <div class="portfolio-sector-bar-fill" style="width:${pct}%"></div>
-        </div>
-        <div class="portfolio-sector-count">${count}件（${share}%）</div>
-      </div>`;
+    return `<div class="portfolio-sector-row">
+      <div class="portfolio-sector-label">${sector}</div>
+      <div class="portfolio-sector-bar-track"><div class="portfolio-sector-bar-fill" style="width:${pct}%"></div></div>
+      <div class="portfolio-sector-count">${count}件（${share}%）</div>
+    </div>`;
   }).join('');
 
-  // --- リスク分布セクション ---
   const riskColors = { '低': 'var(--green)', '中': '#d4a017', '高': 'var(--red)', '不明': 'var(--text-muted)' };
   const riskHTML = Object.entries(riskCounts).filter(([,c]) => c > 0).map(([lv, c]) => {
     const pct = Math.round((c / totalCount) * 100);
-    return `
-      <div class="portfolio-risk-chip" style="border-color:${riskColors[lv]};">
-        <span class="portfolio-risk-dot" style="background:${riskColors[lv]};"></span>
-        ${lv}リスク：${c}件（${pct}%）
-      </div>`;
+    return `<div class="portfolio-risk-chip" style="border-color:${riskColors[lv]};">
+      <span class="portfolio-risk-dot" style="background:${riskColors[lv]};"></span>
+      ${lv}リスク：${c}件（${pct}%）
+    </div>`;
   }).join('');
 
-  // --- 銘柄一覧セクション ---
   const listHTML = items.map((it, i) => {
     const ticker = list[i];
-    return `
-      <div class="portfolio-item">
-        <div class="portfolio-item-main">
-          <div class="portfolio-item-name">${it.name || ticker} <span class="portfolio-item-ticker">${ticker}</span></div>
-          <div class="portfolio-item-meta">${it.sector || '不明'}${it.score !== null && it.score !== undefined ? ` ／ 総合スコア${it.score}` : ''}${it.price ? ` ／ ¥${Number(it.price).toLocaleString()}` : ''}</div>
-        </div>
-        <button class="portfolio-item-remove" onclick="removeFromPortfolio('${ticker}')">削除</button>
-      </div>`;
+    return `<div class="portfolio-item">
+      <div>
+        <div class="portfolio-item-name">${it.name || ticker} <span class="portfolio-item-ticker">${ticker}</span></div>
+        <div class="portfolio-item-meta">${it.sector || '不明'}${it.score !== null && it.score !== undefined ? ` ／ 総合スコア${it.score}` : ''}${it.price ? ` ／ ¥${Number(it.price).toLocaleString()}` : ''}</div>
+      </div>
+      <button class="portfolio-item-remove" onclick="removeFromPortfolio('${ticker}')">削除</button>
+    </div>`;
   }).join('');
 
   body.innerHTML = `
     <div class="portfolio-summary">登録銘柄数：${totalCount}件</div>
 
-    ${concentrationWarning ? `
-      <div class="portfolio-warning">
-        ⚠️ 「${sectorEntries[0][0]}」業種が全体の${Math.round(topSectorRatio*100)}%を占めています。業種が偏ると、その業種に固有のリスク（景気変動・規制変更等）の影響を受けやすくなります。
-      </div>` : ''}
+    ${concentrationWarning ? `<div class="portfolio-warning">
+      ⚠️ 「${sectorEntries[0][0]}」業種が全体の${Math.round(topSectorRatio*100)}%を占めています。業種が偏ると、その業種に固有のリスクの影響を受けやすくなります。
+    </div>` : ''}
 
-    <div class="portfolio-section">
-      <div class="portfolio-section-title">📊 業種の分散度</div>
-      ${sectorHTML}
+    <div class="portfolio-charts-grid">
+      <div class="portfolio-chart-box">
+        <div class="portfolio-chart-title">📊 業種の分散</div>
+        <div class="portfolio-chart-container"><canvas id="portfolioSectorChart"></canvas></div>
+      </div>
+      <div class="portfolio-chart-box">
+        <div class="portfolio-chart-title">⚖️ リスクの分布</div>
+        <div class="portfolio-chart-container"><canvas id="portfolioRiskChart"></canvas></div>
+      </div>
     </div>
 
     <div class="portfolio-section">
-      <div class="portfolio-section-title">⚖️ リスクの分布</div>
-      <div class="portfolio-risk-chips">${riskHTML}</div>
+      <div class="portfolio-section-title">業種の内訳</div>
+      ${sectorHTML}
     </div>
 
     <div class="portfolio-section">
@@ -1675,7 +1526,61 @@ function renderPortfolio() {
 
     <p class="portfolio-disclaimer">※これは登録銘柄の構成を整理して表示したものであり、ポートフォリオの最適化や投資配分を助言するものではありません。分散投資の判断材料としてご活用ください。</p>
   `;
+
+  // グラフ描画
+  setTimeout(() => {
+    const sectorCanvas = document.getElementById('portfolioSectorChart');
+    const riskCanvas = document.getElementById('portfolioRiskChart');
+
+    if (sectorCanvas && sectorEntries.length > 0) {
+      portfolioSectorChartInstance = new Chart(sectorCanvas, {
+        type: 'doughnut',
+        data: {
+          labels: sectorEntries.map(([s]) => s),
+          datasets: [{
+            data: sectorEntries.map(([,c]) => c),
+            backgroundColor: CHART_COLORS.slice(0, sectorEntries.length),
+            borderWidth: 2,
+            borderColor: '#fff'
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { position: 'bottom', labels: { font: { size: 10 }, padding: 6, boxWidth: 12 } }
+          }
+        }
+      });
+    }
+
+    if (riskCanvas) {
+      const riskLabels = Object.keys(riskCounts).filter(k => riskCounts[k] > 0);
+      const riskBgColors = { '低': '#2a7a4f', '中': '#d4a017', '高': '#c0392b', '不明': '#6b7a99' };
+      portfolioRiskChartInstance = new Chart(riskCanvas, {
+        type: 'bar',
+        data: {
+          labels: riskLabels.map(k => k + 'リスク'),
+          datasets: [{
+            data: riskLabels.map(k => riskCounts[k]),
+            backgroundColor: riskLabels.map(k => riskBgColors[k]),
+            borderRadius: 6,
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: {
+            y: { beginAtZero: true, ticks: { stepSize: 1, font: { size: 11 } } },
+            x: { ticks: { font: { size: 11 } } }
+          }
+        }
+      });
+    }
+  }, 100);
 }
 </script>
 </body>
 </html>
+isan-navi/edit/main/index.html

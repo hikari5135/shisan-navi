@@ -327,17 +327,12 @@ def get_stock_data(ticker):
         beta = info.get("beta", None)
 
         if div:
-            # yfinanceのdividendYieldは基本的に小数表記（例: 0.032 = 3.2%）。
-            # まず小数として解釈し、妥当な範囲（0〜15%）に収まればそれを採用する。
             as_decimal = div * 100
             if 0 < as_decimal <= 15:
                 div_pct = round(as_decimal, 2)
             elif 15 < as_decimal <= 100:
-                # 15%超〜100%は日本株の配当利回りとして非現実的。
-                # データ取得異常の可能性が高いため採用しない。
                 div_pct = None
             elif 1 <= div <= 15:
-                # 既にパーセント表記で渡されているケース（値そのものが1〜15）
                 div_pct = round(div, 2)
             else:
                 div_pct = None
@@ -353,7 +348,7 @@ def get_stock_data(ticker):
 
         data = {
             "ticker": ticker,
-            "name": "name": info.get("shortName") or ”name": info.get("shortName") or info.get("longName", ticker),
+            "name": info.get("shortName") or info.get("longName", ticker),
             "sector": info.get("sector", "不明"),
             "industry": info.get("industry", None),
             "price": info.get("currentPrice", 0),
@@ -367,7 +362,6 @@ def get_stock_data(ticker):
             "market_cap": info.get("marketCap", 0),
             "beta": round(beta, 2) if beta else None,
         }
-        # リスク評価は財務指標のみで決まるため先に計算しておく
         data["risk_level"] = evaluate_risk_level(data)
         return data
     except Exception as e:
@@ -379,12 +373,10 @@ HIGH_RISK_BUSINESS_SECTORS = {
     "Financial Services": "投資・金融関連企業は、財務指標が一般事業会社と単純比較できない場合があります",
 }
 
-# 投資持株会社・特殊な財務構造を持つことが多い大手企業（簡易判定用）
 SPECIAL_STRUCTURE_KEYWORDS = ["SoftBank Group", "Investment", "Holdings Capital"]
 
 
 def is_special_structure_company(stock):
-    """投資会社・特殊な財務構造を持つ可能性のある企業を簡易判定する"""
     name = (stock.get("name") or "")
     for kw in SPECIAL_STRUCTURE_KEYWORDS:
         if kw in name:
@@ -393,27 +385,6 @@ def is_special_structure_company(stock):
 
 
 def evaluate_nisa_fit(stock, fp_score=None, risk_level_result=None):
-    """
-    「長期積立適性」を簡易判定する。
-    これは「企業評価スコア（FPスコア）」とは異なる、別の評価軸である。
-    FPスコアが企業の財務的な優秀さを表すのに対し、長期積立適性は
-    「値動きの安定性」「収益の継続性」「特殊な財務構造でないか」など、
-    “長期間にわたり積立で持ち続けやすいか” という観点を加味した指標。
-
-    そのため、FPスコアが非常に高い企業であっても、業績の振れ幅が大きい
-    業種（半導体・ハイテク等）やリスク評価が高い銘柄では、長期積立適性は
-    あえて控えめな評価になることがある。これは矛盾ではなく、評価軸が
-    異なることによる意図した結果である。
-
-    判定基準：配当の安定性・財務健全性・極端な割高でないこと・収益性（赤字でないこと）。
-
-    【他の評価指標との関係】
-    星評価は以下の3つの上限のうち、最も厳しいものが適用される。
-    - ROEがマイナス／5%未満、または投資持株会社等 → 星3が上限
-    - リスク評価が「高」または「中」 → 星4が上限
-    - FPスコアが低い場合 → FPスコアに応じた上限を適用
-      （90点以上:★5／80点台:★4／70点台:★4／60点台:★3／60点未満:★2）
-    """
     reasons = []
     points = 0
 
@@ -445,7 +416,6 @@ def evaluate_nisa_fit(stock, fp_score=None, risk_level_result=None):
     elif roe_is_low:
         reasons.append("収益性はまだ十分に高いとは言えません")
 
-    # 星の基本算出（素点ベース）
     if points >= 4:
         stars = 5
     elif points == 3:
@@ -455,7 +425,6 @@ def evaluate_nisa_fit(stock, fp_score=None, risk_level_result=None):
     else:
         stars = 2
 
-    # ---- 上限①：ROE・特殊構造企業による制限（星3まで） ----
     structure_cap_applied = False
     if roe_is_negative or roe_is_low or roe is None:
         if stars > 3:
@@ -470,7 +439,6 @@ def evaluate_nisa_fit(stock, fp_score=None, risk_level_result=None):
         structure_cap_applied = True
         reasons.append("⚠️ 投資持株会社等、財務構造が一般事業会社と異なる可能性があります（NAVディスカウント等にご注意ください）")
 
-    # ---- 上限②：リスク評価による制限（指摘①への対応） ----
     risk_cap_applied = False
     if risk_level_result:
         risk_lv = risk_level_result.get("level")
@@ -483,7 +451,6 @@ def evaluate_nisa_fit(stock, fp_score=None, risk_level_result=None):
             if stars > 4:
                 stars = 4
 
-    # ---- 上限③：FPスコアによる制限（指摘②への対応） ----
     score_cap_applied = False
     if fp_score is not None:
         if fp_score >= 90:
@@ -500,7 +467,6 @@ def evaluate_nisa_fit(stock, fp_score=None, risk_level_result=None):
             stars = score_cap
             score_cap_applied = True
 
-    # 最終的なレベル表示（上限が適用された場合は理由を明示）
     if stars >= 5:
         level = "非常に高い"
     elif stars == 4:
@@ -510,13 +476,8 @@ def evaluate_nisa_fit(stock, fp_score=None, risk_level_result=None):
     else:
         level = "要検討"
 
-    # 注記：FPスコア（企業評価）が高くても、長期積立適性は別軸で
-    # 評価していることが伝わるよう理由欄にも明記する。
-    # 【重要】行動を推奨する表現（〜が無難です／〜をおすすめします等）は
-    # 投資助言と受け取られるリスクがあるため使わず、客観的な事実・特性の
-    # 記述にとどめる。
     if structure_cap_applied:
-        pass  # 既にreasonsに理由が追加済み
+        pass
     elif risk_cap_applied:
         reasons.append("値動きの振れ幅が市場平均より大きい傾向が確認されています")
     elif score_cap_applied and fp_score is not None and fp_score < 60:
@@ -542,16 +503,12 @@ SECTOR_RISK_NOTES = {
     "Consumer Defensive": "比較的景気の影響を受けにくい安定した業種です",
 }
 
-# industry（より詳細な業種）ベースの注記。sectorより優先して使う。
-# yfinance（米国基準のGICS分類）では日本の建設業が「Real Estate」セクターに
-# 分類されることがあるため、industryで実態に近い表記・注記に補正する。
 INDUSTRY_RISK_NOTES = {
     "Engineering & Construction": "建設業の特性として、資材価格や工期の影響を受けやすい業種です",
     "Real Estate Services": "不動産市況・金利動向の影響を受けやすい業種です",
     "Real Estate—Development": "不動産開発を手がけており、金利・不動産市況の影響を受けやすい業種です",
 }
 
-# 表示用の日本語業種ラベル（industryをもとに、より実態に近い表記にする）
 INDUSTRY_DISPLAY_LABELS = {
     "Engineering & Construction": "建設業",
     "Real Estate Services": "不動産サービス業",
@@ -560,11 +517,6 @@ INDUSTRY_DISPLAY_LABELS = {
 
 
 def get_display_sector(stock):
-    """
-    表示用の業種名を決定する。
-    industry（詳細業種）に対応する日本語ラベルがあればそれを優先し、
-    なければsector（GICS大分類）をそのまま使う。
-    """
     industry = stock.get("industry")
     if industry and industry in INDUSTRY_DISPLAY_LABELS:
         return INDUSTRY_DISPLAY_LABELS[industry]
@@ -572,12 +524,8 @@ def get_display_sector(stock):
 
 
 def evaluate_risk_level(stock):
-    """
-    リスク評価（信号機方式）。
-    ベータ値（市場感応度）・財務健全性・配当性向・業種特性などから簡易判定する。
-    """
     reasons = []
-    risk_points = 0  # 高いほどリスクが高い
+    risk_points = 0
 
     beta = stock.get("beta")
     if beta is not None:
@@ -600,23 +548,19 @@ def evaluate_risk_level(stock):
     div_yield = stock.get("dividend_yield")
     roe = stock.get("roe")
     if div_yield is not None and roe is not None and roe > 0:
-        payout_proxy = div_yield / roe  # 簡易的な配当性向の代理指標
+        payout_proxy = div_yield / roe
         if payout_proxy >= 0.5:
             risk_points += 1
             reasons.append("利益に対して配当負担がやや大きい可能性")
 
-    # 収益性（ROE）がマイナスの場合は明確なリスク要因として追加
     if roe is not None and roe < 0:
         risk_points += 2
         reasons.append("⚠️ 直近の自己資本利益率（ROE）がマイナスです（収益性に懸念）")
 
-    # 投資持株会社など特殊な財務構造を持つ可能性がある企業
     if is_special_structure_company(stock):
         risk_points += 1
         reasons.append("投資持株会社等、財務構造が一般事業会社と異なる可能性があります")
 
-    # 業種固有のリスク注記（加点はしないが必ず注記として表示する）
-    # industry（詳細業種）の注記があればそちらを優先し、なければsectorの注記を使う
     industry = stock.get("industry")
     sector = stock.get("sector")
     industry_note = INDUSTRY_RISK_NOTES.get(industry) if industry else None
@@ -624,8 +568,6 @@ def evaluate_risk_level(stock):
 
     final_note = industry_note if industry_note else sector_note
     if final_note:
-        # Consumer Defensive / Utilities は「安定業種」のため減点（リスクを下げる）扱いにはしないが、
-        # それ以外はリスク要因として1点加算する
         if sector not in ("Consumer Defensive",):
             risk_points += 1
         reasons.append(f"【業種特性】{final_note}")
@@ -646,14 +588,7 @@ def evaluate_risk_level(stock):
     return {"level": level, "color": color, "reasons": reasons}
 
 
-
 def linear_score(value, pass_line, excellent_line, max_score, higher_is_better=True):
-    """
-    値を「合格ライン」〜「優秀ライン」の間で線形補間し、0〜max_scoreの連続値にする。
-    - value が合格ラインに届かない場合は0点
-    - value が優秀ラインに到達/超過した場合はmax_score（ただし100点連発を避けるため
-      run_screening側でさらに緩やかな圧縮をかける）
-    """
     if value is None:
         return 0
     if higher_is_better:
@@ -678,7 +613,6 @@ def screen_dividend(stock):
     roe_ok = bool(stock["roe"] and stock["roe"] >= 8.0)
     div_ok = bool(stock["dividend_yield"] and stock["dividend_yield"] >= 2.0)
 
-    # 合格ライン → 優秀ライン の間でなめらかに採点（優秀ラインはかなり高めに設定し、満点を希少にする）
     pbr_score = linear_score(stock["pbr"], pass_line=2.0, excellent_line=0.6, max_score=34, higher_is_better=False)
     roe_score = linear_score(stock["roe"], pass_line=8.0, excellent_line=22.0, max_score=33, higher_is_better=True)
     div_score = linear_score(stock["dividend_yield"], pass_line=2.0, excellent_line=5.5, max_score=33, higher_is_better=True)
@@ -798,20 +732,8 @@ def build_detailed_fp_comment(stock):
 
 
 def calculate_sector_rankings(stocks_data):
-    """
-    全銘柄について、業種内（sector_display単位）での相対順位を計算する。
-    営業利益率は業種間で水準が大きく異なるため（半導体は高く、商社・銀行は低い等）、
-    業種内パーセンタイルで評価することで「その業種の中での優秀さ」を可視化する。
-    あわせて「◯位/◯社」という具体的な順位も算出する（初心者にとって直感的なため）。
-
-    対象指標：営業利益率・ROE
-    戻り値：各銘柄のtickerをキーとした
-      { ticker: {sector_percentile_margin, sector_rank_margin,
-                 sector_percentile_roe, sector_rank_roe, sector_count} }
-    """
     from collections import defaultdict
 
-    # 業種ごとに銘柄をグルーピング
     sector_groups = defaultdict(list)
     for stock in stocks_data:
         if not stock:
@@ -822,7 +744,6 @@ def calculate_sector_rankings(stocks_data):
     rankings = {}
 
     for sector, members in sector_groups.items():
-        # 営業利益率・ROEが取得できている銘柄のみを対象に、降順（高い方が1位）でランキング
         margin_ranked = sorted(
             [m for m in members if m.get("operating_margin") is not None],
             key=lambda m: m["operating_margin"], reverse=True
@@ -872,7 +793,6 @@ def calculate_sector_rankings(stocks_data):
 
 
 def get_sector_rank_label(percentile):
-    """パーセンタイルを分かりやすいラベルに変換する"""
     if percentile is None:
         return None
     if percentile >= 90:
@@ -895,14 +815,10 @@ def run_screening(stocks_data, screen_func, sector_rankings=None):
             entry = dict(stock)
             entry["score"] = score
             entry["score_breakdown"] = breakdown
-            # 表示用の業種名（industryがあれば、より実態に近い表記に補正）
             entry["sector_display"] = get_display_sector(entry)
-            # FPスコアとリスク評価が確定した後に長期積立適性を計算する
-            # （他の評価指標との整合性を保つため）
             entry["nisa_fit"] = evaluate_nisa_fit(entry, fp_score=score, risk_level_result=entry.get("risk_level"))
             entry["detailed_comment"] = build_detailed_fp_comment(entry)
 
-            # 業種内ランキング情報を付与
             if sector_rankings and entry["ticker"] in sector_rankings:
                 rank_info = sector_rankings[entry["ticker"]]
                 entry["sector_rank"] = {
@@ -923,7 +839,6 @@ def run_screening(stocks_data, screen_func, sector_rankings=None):
 
 
 def build_line_message(dividend_results, solid_results, growth_results, updated):
-    """LINE通知用のメッセージ本文を作成（堅実配当型の上位5銘柄を中心に）"""
     lines = []
     lines.append("📊 資産形成ナビ｜本日のスクリーニング結果")
     lines.append(f"（{updated} 更新）")
@@ -956,7 +871,6 @@ def build_line_message(dividend_results, solid_results, growth_results, updated)
 
 
 def send_line_broadcast(message):
-    """LINE Messaging APIでブロードキャスト配信する"""
     token = os.environ.get("LINE_CHANNEL_ACCESS_TOKEN")
     if not token:
         print("LINE_CHANNEL_ACCESS_TOKEN が設定されていないため、LINE通知をスキップします")
@@ -984,7 +898,6 @@ def send_line_broadcast(message):
 
 
 def fetch_benchmark_returns(years):
-    """指定期間の日経平均・TOPIXのリターンを取得する（複数戦略で使い回すため独立関数化）"""
     period = f"{years}y"
     benchmarks = {}
     for label, ticker in [("nikkei225", "^N225"), ("topix", "1306.T")]:
@@ -1000,18 +913,6 @@ def fetch_benchmark_returns(years):
 
 
 def run_backtest(strategy_results, strategy_key, years=5, sample_size=10, benchmarks=None):
-    """
-    簡易バックテスト：現在の条件を満たした銘柄のうち上位サンプルについて、
-    過去N年間の株価推移を取得し、日経平均・TOPIXと比較する。
-
-    benchmarksを渡すことで、同じ期間のベンチマーク取得を複数戦略で使い回せる
-    （API呼び出し削減のため）。
-
-    【重要な制約（生存バイアス）】
-    現在存在する銘柄のみを対象としているため、過去N年間に上場廃止・
-    業績悪化で除外された銘柄は含まれない。そのため実際のリターンより
-    やや良く見える可能性がある「参考値」である。
-    """
     sample = strategy_results[:sample_size]
     if not sample:
         return None
@@ -1055,10 +956,6 @@ def run_backtest(strategy_results, strategy_key, years=5, sample_size=10, benchm
 
 
 def run_multi_backtest(dividend_results, solid_results, growth_results, periods=(1, 3, 5), sample_size=10):
-    """
-    3戦略 × 複数期間のバックテストをまとめて実行する。
-    戻り値の構造： { "dividend": {1: {...}, 3: {...}, 5: {...}}, "solid": {...}, "growth": {...} }
-    """
     strategy_map = {
         "dividend": dividend_results,
         "solid": solid_results,
@@ -1110,10 +1007,9 @@ def main():
 
     print("-" * 50)
     print("バックテストを実行中（3戦略 × 過去1年/3年/5年・上位10銘柄サンプル）...")
-    print("※株価APIへの負荷軽減のため、週1回（月曜日）のみ実行します")
 
     import datetime
-    is_monday = datetime.datetime.now().weekday() == 0  # 0=月曜日（本番設定）
+    is_monday = datetime.datetime.now().weekday() == 0
 
     multi_backtest = None
     if is_monday:
@@ -1125,7 +1021,6 @@ def main():
     else:
         print("本日は月曜日ではないためバックテストをスキップします（既存の値を維持）")
 
-    # 既存のscreening_result.jsonからバックテスト結果を引き継ぐ（月曜以外の日のため）
     existing_backtest = None
     try:
         with open("screening_result.json", "r", encoding="utf-8") as f:
@@ -1136,7 +1031,6 @@ def main():
 
     final_backtest_multi = multi_backtest if multi_backtest else existing_backtest
 
-    # 後方互換：既存UIが参照する「backtest」（堅実配当型・5年）も維持する
     legacy_backtest = None
     if final_backtest_multi and final_backtest_multi.get("dividend"):
         legacy_backtest = final_backtest_multi["dividend"].get(5)
@@ -1162,7 +1056,6 @@ def main():
     print(f"\n結果を保存しました")
     print(f"スキャン対象: {len(STOCKS)}銘柄 / 取得成功: {len(stocks_data)}銘柄")
 
-    # LINE通知（毎日1回、堅実配当型TOP5などをブロードキャスト配信）
     message = build_line_message(dividend_results, solid_results, growth_results, output["updated"])
     send_line_broadcast(message)
 

@@ -29,3 +29,4 @@ jobs:
           git add screening_result.json
           git diff --quiet && git diff --staged --quiet || git commit -m "Update screening result"
           git push
+

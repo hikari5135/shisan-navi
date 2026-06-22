@@ -353,7 +353,7 @@ def get_stock_data(ticker):
 
         data = {
             "ticker": ticker,
-            "name": "name": info.get("shortName") or info.get("longName", ticker),,
+            "name": "name": info.get("shortName") or ”name": info.get("shortName") or info.get("longName", ticker),
             "sector": info.get("sector", "不明"),
             "industry": info.get("industry", None),
             "price": info.get("currentPrice", 0),

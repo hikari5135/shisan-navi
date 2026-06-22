@@ -1,4 +1,4 @@
-https://github.com/hikari5135/shisan-navi/edit/main/index.htmlhttps://github.com/hikari5135/shisan-navi/edit/main/index.html<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
@@ -334,7 +334,7 @@ https://github.com/hikari5135/shisan-navi/edit/main/index.htmlhttps://github.com
   .portfolio-empty p { font-size: 13px; color: var(--text-muted); line-height: 1.7; }
 
   .portfolio-summary { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 14px; }
-  .portfolio-score-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 16px; }
+  .portfolio-score-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 16px; }
   .portfolio-score-card { background: var(--cream); border-radius: 8px; padding: 10px 12px; text-align: center; }
   .portfolio-score-card-label { font-size: 10px; color: var(--text-muted); margin-bottom: 4px; }
   .portfolio-score-card-val { font-size: 20px; font-weight: 700; color: var(--navy); font-family: 'Noto Serif JP', serif; }
@@ -507,13 +507,20 @@ https://github.com/hikari5135/shisan-navi/edit/main/index.htmlhttps://github.com
   }
 
   .score-breakdown { background: var(--cream); border-radius: 6px; padding: 12px 14px; margin-bottom: 14px; }
-  .score-breakdown-title { font-size: 11px; color: var(--text-muted); font-weight: 700; margin-bottom: 8px; }
-  .breakdown-row { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+  .score-breakdown-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .score-breakdown-title { font-size: 11px; color: var(--text-muted); font-weight: 700; }
+  .fp-oneword { font-size: 12px; font-weight: 700; }
+  .score-breakdown-body { display: flex; gap: 12px; align-items: flex-start; }
+  .breakdown-items { flex: 1; }
+  .breakdown-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
   .breakdown-row:last-child { margin-bottom: 0; }
   .breakdown-label { font-size: 11px; color: var(--text); width: 130px; flex-shrink: 0; }
-  .breakdown-bar-track { flex: 1; height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; }
-  .breakdown-bar-fill { height: 100%; background: var(--gold); border-radius: 3px; }
-  .breakdown-score { font-size: 11px; color: var(--text-muted); width: 40px; text-align: right; flex-shrink: 0; }
+  .breakdown-stars { font-size: 14px; color: var(--gold); letter-spacing: 2px; }
+  .nisa-score-box { text-align: center; background: var(--white); border-radius: 8px; padding: 10px 14px; flex-shrink: 0; border: 1px solid var(--border); min-width: 80px; }
+  .nisa-score-label { font-size: 9px; color: var(--text-muted); margin-bottom: 4px; font-weight: 700; letter-spacing: 0.05em; }
+  .nisa-score-val { font-size: 22px; font-weight: 700; font-family: 'Noto Serif JP', serif; line-height: 1; margin-bottom: 6px; }
+  .nisa-score-val span { font-size: 11px; color: var(--text-muted); }
+  .nisa-score-rank { font-size: 11px; font-weight: 700; color: var(--white); padding: 3px 8px; border-radius: 10px; display: inline-block; }
 
   .extra-info-row { display: grid; grid-template-columns: 1fr; gap: 10px; margin-bottom: 14px; }
   .extra-box { border-radius: 6px; padding: 10px 12px; border: 1px solid var(--border); }
@@ -532,6 +539,14 @@ https://github.com/hikari5135/shisan-navi/edit/main/index.htmlhttps://github.com
 
   .sector-rank-box { background: var(--cream); border-radius: 6px; padding: 12px 14px; margin-bottom: 14px; }
   .sector-rank-title { font-size: 11px; color: var(--text-muted); font-weight: 700; margin-bottom: 10px; }
+  .sector-compare-table { width: 100%; border-collapse: collapse; font-size: 12px; margin-bottom: 8px; }
+  .sector-compare-table th { font-size: 10px; color: var(--text-muted); font-weight: 700; padding: 4px 8px; text-align: center; border-bottom: 1px solid var(--border); }
+  .sector-compare-table th:first-child { text-align: left; }
+  .sector-compare-table td { padding: 6px 8px; text-align: center; border-bottom: 1px solid var(--border); }
+  .sector-compare-table td:first-child { text-align: left; font-size: 11px; color: var(--text-muted); }
+  .sector-compare-table .val-good { color: var(--green); font-weight: 700; }
+  .sector-compare-table .val-normal { color: var(--navy); font-weight: 700; }
+  .sector-compare-table .val-avg { color: var(--text-muted); }
   .sector-rank-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
   .sector-rank-row:last-of-type { margin-bottom: 6px; }
   .sector-rank-label { font-size: 11px; color: var(--text); width: 90px; flex-shrink: 0; }
@@ -1145,15 +1160,62 @@ function getFPComment(stock, strategy) {
 
 function getScoreBreakdownHTML(s) {
   if (!s.score_breakdown || !s.score_breakdown.length) return '';
+
+  // スコアを5段階の星に変換
+  function toStars(score, max) {
+    const pct = max > 0 ? score / max : 0;
+    const stars = Math.round(pct * 5);
+    return '★'.repeat(stars) + '☆'.repeat(5 - stars);
+  }
+
+  // NISA向き度を計算（score_breakdownとnisa_fitから総合判定）
+  const nisaScore = s.nisa_fit ? s.nisa_fit.stars : null;
+  const nisaRank = nisaScore >= 5 ? 'Sランク' : nisaScore >= 4 ? 'Aランク' : nisaScore >= 3 ? 'Bランク' : nisaScore >= 2 ? 'Cランク' : 'Dランク';
+  const nisaRankColor = nisaScore >= 5 ? '#c8a96e' : nisaScore >= 4 ? '#2a7a4f' : nisaScore >= 3 ? '#1a2744' : '#6b7a99';
+  const nisaVal = nisaScore !== null ? Math.round((nisaScore / 5) * 100) : null;
+
+  // FPコメント生成（初心者向けの一言）
+  function getFPOneWord(s) {
+    const score = parseFloat(s.score);
+    const div = s.dividend_yield;
+    const equity = s.equity_ratio;
+    const roe = s.roe;
+    const pbr = s.pbr;
+
+    if (score >= 85 && div >= 3 && equity >= 50) return { label: '長期保有候補', color: '#2a7a4f', icon: '🏆' };
+    if (score >= 80 && div >= 2.5) return { label: '高配当・安定型', color: '#2a7a4f', icon: '🏦' };
+    if (score >= 75 && roe >= 15) return { label: '収益力が高い', color: '#1a2744', icon: '💪' };
+    if (equity >= 60 && pbr && pbr <= 1.5) return { label: '財務優良・割安', color: '#1a2744', icon: '🏛️' };
+    if (score >= 70) return { label: 'バランス型', color: '#6b7a99', icon: '⚖️' };
+    return { label: '要調査', color: '#6b7a99', icon: '🔍' };
+  }
+  const fpWord = getFPOneWord(s);
+
   const items = s.score_breakdown.map(b => {
-    const pct = b.max > 0 ? Math.round((b.score / b.max) * 100) : 0;
+    const stars = toStars(b.score, b.max);
     return `<div class="breakdown-row">
       <div class="breakdown-label">${b.label}</div>
-      <div class="breakdown-bar-track"><div class="breakdown-bar-fill" style="width:${pct}%"></div></div>
-      <div class="breakdown-score">${b.score}/${b.max}</div>
+      <div class="breakdown-stars">${stars}</div>
     </div>`;
   }).join('');
-  return `<div class="score-breakdown"><div class="score-breakdown-title">スコア内訳</div>${items}</div>`;
+
+  const nisaHTML = nisaVal !== null ? `
+    <div class="nisa-score-box">
+      <div class="nisa-score-label">NISA向き度</div>
+      <div class="nisa-score-val" style="color:${nisaRankColor}">${nisaVal}<span>/100</span></div>
+      <div class="nisa-score-rank" style="background:${nisaRankColor}">${nisaRank}</div>
+    </div>` : '';
+
+  return `<div class="score-breakdown">
+    <div class="score-breakdown-header">
+      <div class="score-breakdown-title">スコア内訳</div>
+      <div class="fp-oneword" style="color:${fpWord.color};">${fpWord.icon} ${fpWord.label}</div>
+    </div>
+    <div class="score-breakdown-body">
+      <div class="breakdown-items">${items}</div>
+      ${nisaHTML}
+    </div>
+  </div>`;
 }
 
 function getNisaAndRiskHTML(s) {
@@ -1198,26 +1260,85 @@ function toggleRiskDetail(uid, el) {
 function getSectorRankHTML(s) {
   const rank = s.sector_rank;
   if (!rank || !rank.sector_count || rank.sector_count < 3) return '';
+
+  // 業界平均を逆算（パーセンタイルから推定）
+  function estimateAvg(val, percentile) {
+    if (val === null || val === undefined || percentile === null) return null;
+    // パーセンタイルが高い＝上位 → 業界平均はvalより低い
+    const factor = percentile > 50 ? (1 - (percentile - 50) / 100) : (1 + (50 - percentile) / 100);
+    return Math.round(val * factor * 10) / 10;
+  }
+
   const items = [];
-  if (rank.percentile_margin !== null && rank.percentile_margin !== undefined) {
-    const rankText = (rank.rank_margin && rank.rank_margin_total) ? `${rank.rank_margin}位 / ${rank.rank_margin_total}社` : rank.label_margin;
-    items.push({ label: '利益率', pct: rank.percentile_margin, text: rankText });
+
+  if (s.roe !== null && s.roe !== undefined && rank.percentile_roe !== null) {
+    const avgRoe = estimateAvg(s.roe, rank.percentile_roe);
+    const isGood = s.roe > (avgRoe || 0);
+    items.push({
+      label: 'ROE',
+      mine: s.roe + '%',
+      avg: avgRoe !== null ? avgRoe + '%' : 'N/A',
+      good: isGood,
+      rank: rank.rank_roe && rank.rank_roe_total ? `${rank.rank_roe}位/${rank.rank_roe_total}社` : null
+    });
   }
-  if (rank.percentile_roe !== null && rank.percentile_roe !== undefined) {
-    const rankText = (rank.rank_roe && rank.rank_roe_total) ? `${rank.rank_roe}位 / ${rank.rank_roe_total}社` : rank.label_roe;
-    items.push({ label: '稼ぐ力（ROE）', pct: rank.percentile_roe, text: rankText });
+
+  if (s.operating_margin !== null && s.operating_margin !== undefined && rank.percentile_margin !== null) {
+    const avgMargin = estimateAvg(s.operating_margin, rank.percentile_margin);
+    const isGood = s.operating_margin > (avgMargin || 0);
+    items.push({
+      label: '営業利益率',
+      mine: s.operating_margin + '%',
+      avg: avgMargin !== null ? avgMargin + '%' : 'N/A',
+      good: isGood,
+      rank: rank.rank_margin && rank.rank_margin_total ? `${rank.rank_margin}位/${rank.rank_margin_total}社` : null
+    });
   }
+
+  if (s.equity_ratio !== null && s.equity_ratio !== undefined) {
+    items.push({
+      label: '自己資本比率',
+      mine: s.equity_ratio + '%',
+      avg: '—',
+      good: s.equity_ratio >= 40,
+      rank: null
+    });
+  }
+
+  if (s.dividend_yield !== null && s.dividend_yield !== undefined) {
+    items.push({
+      label: '配当利回り',
+      mine: s.dividend_yield + '%',
+      avg: '—',
+      good: s.dividend_yield >= 2.5,
+      rank: null
+    });
+  }
+
   if (!items.length) return '';
-  const bars = items.map(it => `
-    <div class="sector-rank-row">
-      <div class="sector-rank-label">${it.label}</div>
-      <div class="sector-rank-bar-track"><div class="sector-rank-bar-fill" style="width:${it.pct}%"></div></div>
-      <div class="sector-rank-text">${it.text}</div>
-    </div>`).join('');
+
+  const rows = items.map(it => `
+    <tr>
+      <td>${it.label}</td>
+      <td class="${it.good ? 'val-good' : 'val-normal'}">${it.mine}</td>
+      <td class="val-avg">${it.avg}</td>
+      <td style="font-size:10px;color:var(--text-muted);">${it.rank || '—'}</td>
+    </tr>`).join('');
+
   return `<div class="sector-rank-box">
-    <div class="sector-rank-title">📊 業種内での位置づけ（同業種${rank.sector_count}社中）</div>
-    ${bars}
-    <div class="sector-rank-note">※同じ業種の銘柄同士で比較した相対的な順位です</div>
+    <div class="sector-rank-title">📊 業種内比較（同業種${rank.sector_count}社）</div>
+    <table class="sector-compare-table">
+      <thead>
+        <tr>
+          <th>項目</th>
+          <th>この企業</th>
+          <th>業種推定平均</th>
+          <th>業種内順位</th>
+        </tr>
+      </thead>
+      <tbody>${rows}</tbody>
+    </table>
+    <div class="sector-rank-note">※業種推定平均はパーセンタイル順位から逆算した参考値です</div>
   </div>`;
 }
 
@@ -1508,12 +1629,10 @@ function renderPortfolio() {
       const avg = Math.round(scores.reduce((a,b) => a+b, 0) / scores.length);
       const max = Math.max(...scores);
       const min = Math.min(...scores);
-      const total = scores.reduce((a,b) => a+b, 0);
       return `<div class="portfolio-score-grid">
         <div class="portfolio-score-card"><div class="portfolio-score-card-label">平均スコア</div><div class="portfolio-score-card-val">${avg}</div></div>
         <div class="portfolio-score-card"><div class="portfolio-score-card-label">最高スコア</div><div class="portfolio-score-card-val">${max}</div></div>
         <div class="portfolio-score-card"><div class="portfolio-score-card-label">最低スコア</div><div class="portfolio-score-card-val">${min}</div></div>
-        <div class="portfolio-score-card"><div class="portfolio-score-card-label">合計スコア</div><div class="portfolio-score-card-val">${total}</div></div>
       </div>`;
     })()}
 

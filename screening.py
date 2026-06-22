@@ -746,45 +746,55 @@ SECTOR_VOLATILITY_NOTES = {
 
 
 def build_detailed_fp_comment(stock):
-    """
-    各銘柄について、財務指標と業種特性を踏まえた一文コメントを生成する。
-    【重要】行動の推奨（〜が無難・〜を検討したい等）は投資助言と受け取られる
-    リスクがあるため使わず、客観的な財務データと業種特性の事実のみを記述する。
-    例：「自己資本比率97.5%、ROE57.6%という財務内容です。
-        半導体・ハイテク関連企業のため、業績変動が比較的大きい傾向があります。」
-    """
     equity_ratio = stock.get("equity_ratio")
     roe = stock.get("roe")
+    div_yield = stock.get("dividend_yield")
+    pbr = stock.get("pbr")
+    revenue_growth = stock.get("revenue_growth")
     sector = stock.get("sector")
 
     parts = []
 
-    # 前半：財務の良さを具体的な数値で
-    good_points = []
-    if equity_ratio is not None and equity_ratio >= 50:
-        good_points.append(f"自己資本比率{equity_ratio}%")
-    if roe is not None and roe >= 15:
-        good_points.append(f"ROE{roe}%")
+    if equity_ratio is not None:
+        if equity_ratio >= 70:
+            parts.append(f"自己資本比率{equity_ratio}%と財務基盤が非常に安定しています")
+        elif equity_ratio >= 50:
+            parts.append(f"自己資本比率{equity_ratio}%と財務が安定しています")
+        elif equity_ratio >= 40:
+            parts.append(f"自己資本比率{equity_ratio}%と財務は概ね健全な水準です")
+        else:
+            parts.append(f"自己資本比率{equity_ratio}%と借入への依存がやや見られます")
 
-    if good_points:
-        parts.append(f"{('、'.join(good_points))}という財務データです。")
-    elif equity_ratio is not None or roe is not None:
-        detail = []
-        if equity_ratio is not None:
-            detail.append(f"自己資本比率{equity_ratio}%")
-        if roe is not None:
-            detail.append(f"ROE{roe}%")
-        parts.append(f"{('、'.join(detail))}という財務データです。")
+    if roe is not None:
+        if roe >= 20:
+            parts.append(f"ROE{roe}%と非常に高い収益力を持っています")
+        elif roe >= 15:
+            parts.append(f"ROE{roe}%と収益力が優秀です")
+        elif roe >= 10:
+            parts.append(f"ROE{roe}%と収益力は合格水準です")
+        elif roe < 0:
+            parts.append(f"ROEはマイナス（{roe}%）で、直近は赤字決算となっています")
 
-    # 後半：業種特性の注記（ある場合のみ）
+    if div_yield is not None:
+        if div_yield >= 4.0:
+            parts.append(f"配当利回り{div_yield}%と高水準の配当が特徴です")
+        elif div_yield >= 2.5:
+            parts.append(f"配当利回り{div_yield}%と安定した配当が続いています")
+
+    if pbr is not None and pbr <= 1.0:
+        parts.append(f"PBR{pbr}倍と資産価値より株価が割安な水準です")
+
+    if revenue_growth is not None and revenue_growth > 5:
+        parts.append(f"売上高は前年比+{revenue_growth}%と成長が続いています")
+
     volatility_note = SECTOR_VOLATILITY_NOTES.get(sector)
     if volatility_note:
-        parts.append(f"{volatility_note}。")
+        parts.append(volatility_note)
 
     if not parts:
         return "財務データの一部が取得できなかったため、詳細な評価ができませんでした。"
 
-    return "".join(parts)
+    return "。".join(parts[:3]) + "。"
 
 
 def calculate_sector_rankings(stocks_data):

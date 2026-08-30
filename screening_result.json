@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-29 23:25",
+  "updated": "2026-08-30 23:34",
   "total_stocks_scanned": 1561,
   "strategies": {
     "dividend": {
@@ -40014,73 +40014,6 @@
           }
         },
         {
-          "ticker": "5074.T",
-          "name": "TESS HOLDINGS CO LTD",
-          "sector": "Utilities",
-          "industry": "Utilities - Renewable",
-          "price": 634.0,
-          "pbr": 0.86,
-          "roe": 4.69,
-          "dividend_yield": 3.02,
-          "equity_ratio": 36.1,
-          "operating_margin": 12.59,
-          "revenue_growth": 39.2,
-          "current_ratio": 1.25,
-          "market_cap": 44787707904,
-          "beta": 1.11,
-          "risk_level": {
-            "level": "高",
-            "color": "red",
-            "reasons": [
-              "株価が市場平均並みに変動する",
-              "自己資本比率がやや低め",
-              "利益に対して配当負担がやや大きい可能性",
-              "【業種特性】規制・燃料価格の影響を受けやすい一方、比較的安定した業種です"
-            ]
-          },
-          "score": 37.3,
-          "score_breakdown": [
-            {
-              "label": "割安度（PBR）",
-              "score": 27.7,
-              "max": 34
-            },
-            {
-              "label": "稼ぐ力（ROE）",
-              "score": 0,
-              "max": 33
-            },
-            {
-              "label": "配当利回り",
-              "score": 9.6,
-              "max": 33
-            }
-          ],
-          "sector_display": "Utilities",
-          "nisa_fit": {
-            "level": "要検討",
-            "stars": 2,
-            "reasons": [
-              "配当が安定的",
-              "極端な割高ではない",
-              "収益性はまだ十分に高いとは言えません",
-              "⚠️ リスク評価が「高」のため、星評価を調整しています"
-            ]
-          },
-          "detailed_comment": "自己資本比率36.1%と借入への依存がやや見られます。配当利回り3.02%と安定した配当が続いています。PBR0.86倍と資産価値より株価が割安な水準です。",
-          "sector_rank": {
-            "percentile_margin": 73.9,
-            "percentile_roe": 17.4,
-            "sector_count": 23,
-            "label_margin": "業種内で上位",
-            "label_roe": "業種内では控えめ",
-            "rank_margin": 7,
-            "rank_margin_total": 23,
-            "rank_roe": 20,
-            "rank_roe_total": 23
-          }
-        },
-        {
           "ticker": "9003.T",
           "name": "SOTETSU HOLDINGS INC",
           "sector": "Industrials",
@@ -42065,6 +41998,73 @@
             "rank_margin_total": 261,
             "rank_roe": 35,
             "rank_roe_total": 246
+          }
+        },
+        {
+          "ticker": "5074.T",
+          "name": "TESS HOLDINGS CO LTD",
+          "sector": "Utilities",
+          "industry": "Utilities - Renewable",
+          "price": 634.0,
+          "pbr": 0.9,
+          "roe": 4.69,
+          "dividend_yield": 3.02,
+          "equity_ratio": 40.2,
+          "operating_margin": 12.59,
+          "revenue_growth": 39.2,
+          "current_ratio": 1.25,
+          "market_cap": 44787707904,
+          "beta": 1.11,
+          "risk_level": {
+            "level": "高",
+            "color": "red",
+            "reasons": [
+              "株価が市場平均並みに変動する",
+              "利益に対して配当負担がやや大きい可能性",
+              "【業種特性】規制・燃料価格の影響を受けやすい一方、比較的安定した業種です"
+            ]
+          },
+          "score": 36.3,
+          "score_breakdown": [
+            {
+              "label": "割安度（PBR）",
+              "score": 26.7,
+              "max": 34
+            },
+            {
+              "label": "稼ぐ力（ROE）",
+              "score": 0,
+              "max": 33
+            },
+            {
+              "label": "配当利回り",
+              "score": 9.6,
+              "max": 33
+            }
+          ],
+          "sector_display": "Utilities",
+          "nisa_fit": {
+            "level": "要検討",
+            "stars": 2,
+            "reasons": [
+              "配当が安定的",
+              "財務が健全（自己資本比率40.2%）",
+              "極端な割高ではない",
+              "収益性はまだ十分に高いとは言えません",
+              "⚠️ リスク評価が「高」のため、星評価を調整しています"
+            ]
+          },
+          "detailed_comment": "自己資本比率40.2%と財務は概ね健全な水準です。配当利回り3.02%と安定した配当が続いています。PBR0.9倍と資産価値より株価が割安な水準です。",
+          "sector_rank": {
+            "percentile_margin": 73.9,
+            "percentile_roe": 17.4,
+            "sector_count": 23,
+            "label_margin": "業種内で上位",
+            "label_roe": "業種内では控えめ",
+            "rank_margin": 7,
+            "rank_margin_total": 23,
+            "rank_roe": 20,
+            "rank_roe_total": 23
           }
         },
         {
@@ -75663,7 +75663,7 @@
     },
     "solid": {
       "name": "財務優良型",
-      "count": 964,
+      "count": 965,
       "stocks": [
         {
           "ticker": "6857.T",
@@ -92799,7 +92799,7 @@
           "sector": "Basic Materials",
           "industry": "Specialty Chemicals",
           "price": 2146.0,
-          "pbr": 2.63,
+          "pbr": 2.6,
           "roe": 15.27,
           "dividend_yield": 1.68,
           "equity_ratio": 81.8,
@@ -141933,6 +141933,78 @@
           }
         },
         {
+          "ticker": "5074.T",
+          "name": "TESS HOLDINGS CO LTD",
+          "sector": "Utilities",
+          "industry": "Utilities - Renewable",
+          "price": 634.0,
+          "pbr": 0.9,
+          "roe": 4.69,
+          "dividend_yield": 3.02,
+          "equity_ratio": 40.2,
+          "operating_margin": 12.59,
+          "revenue_growth": 39.2,
+          "current_ratio": 1.25,
+          "market_cap": 44787707904,
+          "beta": 1.11,
+          "risk_level": {
+            "level": "高",
+            "color": "red",
+            "reasons": [
+              "株価が市場平均並みに変動する",
+              "利益に対して配当負担がやや大きい可能性",
+              "【業種特性】規制・燃料価格の影響を受けやすい一方、比較的安定した業種です"
+            ]
+          },
+          "score": 4.0,
+          "score_breakdown": [
+            {
+              "label": "財務の安全度（自己資本比率）",
+              "score": 0.2,
+              "max": 30
+            },
+            {
+              "label": "稼ぐ力（ROE）",
+              "score": 0,
+              "max": 30
+            },
+            {
+              "label": "利益率（営業利益率）",
+              "score": 3.2,
+              "max": 25
+            },
+            {
+              "label": "短期支払能力（流動比率）",
+              "score": 0.6,
+              "max": 15
+            }
+          ],
+          "sector_display": "Utilities",
+          "nisa_fit": {
+            "level": "要検討",
+            "stars": 2,
+            "reasons": [
+              "配当が安定的",
+              "財務が健全（自己資本比率40.2%）",
+              "極端な割高ではない",
+              "収益性はまだ十分に高いとは言えません",
+              "⚠️ リスク評価が「高」のため、星評価を調整しています"
+            ]
+          },
+          "detailed_comment": "自己資本比率40.2%と財務は概ね健全な水準です。配当利回り3.02%と安定した配当が続いています。PBR0.9倍と資産価値より株価が割安な水準です。",
+          "sector_rank": {
+            "percentile_margin": 73.9,
+            "percentile_roe": 17.4,
+            "sector_count": 23,
+            "label_margin": "業種内で上位",
+            "label_roe": "業種内では控えめ",
+            "rank_margin": 7,
+            "rank_margin_total": 23,
+            "rank_roe": 20,
+            "rank_roe_total": 23
+          }
+        },
+        {
           "ticker": "6523.T",
           "name": "PHC HLDGS CORP",
           "sector": "Healthcare",
@@ -142211,7 +142283,7 @@
     },
     "growth": {
       "name": "成長×安定型",
-      "count": 1201,
+      "count": 1202,
       "stocks": [
         {
           "ticker": "5351.T",
@@ -153309,7 +153381,7 @@
           "sector": "Basic Materials",
           "industry": "Specialty Chemicals",
           "price": 2146.0,
-          "pbr": 2.63,
+          "pbr": 2.6,
           "roe": 15.27,
           "dividend_yield": 1.68,
           "equity_ratio": 81.8,
@@ -153325,7 +153397,7 @@
               "【業種特性】原材料価格・為替変動の影響を受けやすい業種です"
             ]
           },
-          "score": 64.2,
+          "score": 64.5,
           "score_breakdown": [
             {
               "label": "売上成長率",
@@ -153339,7 +153411,7 @@
             },
             {
               "label": "割安度（PBR）",
-              "score": 3.7,
+              "score": 4.0,
               "max": 20
             },
             {
@@ -178765,6 +178837,78 @@
             "rank_margin_total": 363,
             "rank_roe": 85,
             "rank_roe_total": 346
+          }
+        },
+        {
+          "ticker": "5074.T",
+          "name": "TESS HOLDINGS CO LTD",
+          "sector": "Utilities",
+          "industry": "Utilities - Renewable",
+          "price": 634.0,
+          "pbr": 0.9,
+          "roe": 4.69,
+          "dividend_yield": 3.02,
+          "equity_ratio": 40.2,
+          "operating_margin": 12.59,
+          "revenue_growth": 39.2,
+          "current_ratio": 1.25,
+          "market_cap": 44787707904,
+          "beta": 1.11,
+          "risk_level": {
+            "level": "高",
+            "color": "red",
+            "reasons": [
+              "株価が市場平均並みに変動する",
+              "利益に対して配当負担がやや大きい可能性",
+              "【業種特性】規制・燃料価格の影響を受けやすい一方、比較的安定した業種です"
+            ]
+          },
+          "score": 50.1,
+          "score_breakdown": [
+            {
+              "label": "売上成長率",
+              "score": 30.0,
+              "max": 30
+            },
+            {
+              "label": "稼ぐ力（ROE）",
+              "score": 0,
+              "max": 30
+            },
+            {
+              "label": "割安度（PBR）",
+              "score": 20.0,
+              "max": 20
+            },
+            {
+              "label": "財務の安全度（自己資本比率）",
+              "score": 0.1,
+              "max": 20
+            }
+          ],
+          "sector_display": "Utilities",
+          "nisa_fit": {
+            "level": "要検討",
+            "stars": 2,
+            "reasons": [
+              "配当が安定的",
+              "財務が健全（自己資本比率40.2%）",
+              "極端な割高ではない",
+              "収益性はまだ十分に高いとは言えません",
+              "⚠️ リスク評価が「高」のため、星評価を調整しています"
+            ]
+          },
+          "detailed_comment": "自己資本比率40.2%と財務は概ね健全な水準です。配当利回り3.02%と安定した配当が続いています。PBR0.9倍と資産価値より株価が割安な水準です。",
+          "sector_rank": {
+            "percentile_margin": 73.9,
+            "percentile_roe": 17.4,
+            "sector_count": 23,
+            "label_margin": "業種内で上位",
+            "label_roe": "業種内では控えめ",
+            "rank_margin": 7,
+            "rank_margin_total": 23,
+            "rank_roe": 20,
+            "rank_roe_total": 23
           }
         },
         {
@@ -265691,73 +265835,6 @@
       }
     },
     {
-      "ticker": "5074.T",
-      "name": "TESS HOLDINGS CO LTD",
-      "sector": "Utilities",
-      "industry": "Utilities - Renewable",
-      "price": 634.0,
-      "pbr": 0.86,
-      "roe": 4.69,
-      "dividend_yield": 3.02,
-      "equity_ratio": 36.1,
-      "operating_margin": 12.59,
-      "revenue_growth": 39.2,
-      "current_ratio": 1.25,
-      "market_cap": 44787707904,
-      "beta": 1.11,
-      "risk_level": {
-        "level": "高",
-        "color": "red",
-        "reasons": [
-          "株価が市場平均並みに変動する",
-          "自己資本比率がやや低め",
-          "利益に対して配当負担がやや大きい可能性",
-          "【業種特性】規制・燃料価格の影響を受けやすい一方、比較的安定した業種です"
-        ]
-      },
-      "score": 37.3,
-      "score_breakdown": [
-        {
-          "label": "割安度（PBR）",
-          "score": 27.7,
-          "max": 34
-        },
-        {
-          "label": "稼ぐ力（ROE）",
-          "score": 0,
-          "max": 33
-        },
-        {
-          "label": "配当利回り",
-          "score": 9.6,
-          "max": 33
-        }
-      ],
-      "sector_display": "Utilities",
-      "nisa_fit": {
-        "level": "要検討",
-        "stars": 2,
-        "reasons": [
-          "配当が安定的",
-          "極端な割高ではない",
-          "収益性はまだ十分に高いとは言えません",
-          "⚠️ リスク評価が「高」のため、星評価を調整しています"
-        ]
-      },
-      "detailed_comment": "自己資本比率36.1%と借入への依存がやや見られます。配当利回り3.02%と安定した配当が続いています。PBR0.86倍と資産価値より株価が割安な水準です。",
-      "sector_rank": {
-        "percentile_margin": 73.9,
-        "percentile_roe": 17.4,
-        "sector_count": 23,
-        "label_margin": "業種内で上位",
-        "label_roe": "業種内では控えめ",
-        "rank_margin": 7,
-        "rank_margin_total": 23,
-        "rank_roe": 20,
-        "rank_roe_total": 23
-      }
-    },
-    {
       "ticker": "9003.T",
       "name": "SOTETSU HOLDINGS INC",
       "sector": "Industrials",
@@ -267742,6 +267819,73 @@
         "rank_margin_total": 261,
         "rank_roe": 35,
         "rank_roe_total": 246
+      }
+    },
+    {
+      "ticker": "5074.T",
+      "name": "TESS HOLDINGS CO LTD",
+      "sector": "Utilities",
+      "industry": "Utilities - Renewable",
+      "price": 634.0,
+      "pbr": 0.9,
+      "roe": 4.69,
+      "dividend_yield": 3.02,
+      "equity_ratio": 40.2,
+      "operating_margin": 12.59,
+      "revenue_growth": 39.2,
+      "current_ratio": 1.25,
+      "market_cap": 44787707904,
+      "beta": 1.11,
+      "risk_level": {
+        "level": "高",
+        "color": "red",
+        "reasons": [
+          "株価が市場平均並みに変動する",
+          "利益に対して配当負担がやや大きい可能性",
+          "【業種特性】規制・燃料価格の影響を受けやすい一方、比較的安定した業種です"
+        ]
+      },
+      "score": 36.3,
+      "score_breakdown": [
+        {
+          "label": "割安度（PBR）",
+          "score": 26.7,
+          "max": 34
+        },
+        {
+          "label": "稼ぐ力（ROE）",
+          "score": 0,
+          "max": 33
+        },
+        {
+          "label": "配当利回り",
+          "score": 9.6,
+          "max": 33
+        }
+      ],
+      "sector_display": "Utilities",
+      "nisa_fit": {
+        "level": "要検討",
+        "stars": 2,
+        "reasons": [
+          "配当が安定的",
+          "財務が健全（自己資本比率40.2%）",
+          "極端な割高ではない",
+          "収益性はまだ十分に高いとは言えません",
+          "⚠️ リスク評価が「高」のため、星評価を調整しています"
+        ]
+      },
+      "detailed_comment": "自己資本比率40.2%と財務は概ね健全な水準です。配当利回り3.02%と安定した配当が続いています。PBR0.9倍と資産価値より株価が割安な水準です。",
+      "sector_rank": {
+        "percentile_margin": 73.9,
+        "percentile_roe": 17.4,
+        "sector_count": 23,
+        "label_margin": "業種内で上位",
+        "label_roe": "業種内では控えめ",
+        "rank_margin": 7,
+        "rank_margin_total": 23,
+        "rank_roe": 20,
+        "rank_roe_total": 23
       }
     },
     {

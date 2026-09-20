@@ -1,10 +1,10 @@
 {
-  "updated": "2026-09-19 23:04",
+  "updated": "2026-09-20 23:21",
   "total_stocks_scanned": 1561,
   "strategies": {
     "dividend": {
       "name": "堅実配当型",
-      "count": 1186,
+      "count": 1185,
       "stocks": [
         {
           "ticker": "5351.T",
@@ -4058,10 +4058,10 @@
           "industry": "Education & Training Services",
           "price": 2601.0,
           "pbr": 3.73,
-          "roe": 26.19,
+          "roe": 26.2,
           "dividend_yield": 5.0,
           "equity_ratio": 87.1,
-          "operating_margin": -1.16,
+          "operating_margin": -1.14,
           "revenue_growth": -2.9,
           "current_ratio": 1.12,
           "market_cap": 28268169216,
@@ -4101,14 +4101,14 @@
               "収益性が安定"
             ]
           },
-          "detailed_comment": "自己資本比率87.1%と財務基盤が非常に安定しています。ROE26.19%と非常に高い収益力を持っています。配当利回り5.0%と高水準の配当が特徴です。",
+          "detailed_comment": "自己資本比率87.1%と財務基盤が非常に安定しています。ROE26.2%と非常に高い収益力を持っています。配当利回り5.0%と高水準の配当が特徴です。",
           "sector_rank": {
             "percentile_margin": 7.3,
-            "percentile_roe": 97.5,
+            "percentile_roe": 98.3,
             "sector_count": 123,
             "label_margin": "業種内では控えめ",
             "label_roe": "業種内トップクラス",
-            "rank_margin": 116,
+            "rank_margin": 115,
             "rank_margin_total": 123,
             "rank_roe": 4,
             "rank_roe_total": 119
@@ -41101,12 +41101,12 @@
           },
           "detailed_comment": "自己資本比率96.8%と財務基盤が非常に安定しています。ROE17.58%と収益力が優秀です。配当利回り3.56%と安定した配当が続いています。",
           "sector_rank": {
-            "percentile_margin": 7.3,
+            "percentile_margin": 6.5,
             "percentile_roe": 92.4,
             "sector_count": 123,
             "label_margin": "業種内では控えめ",
             "label_roe": "業種内トップクラス",
-            "rank_margin": 115,
+            "rank_margin": 116,
             "rank_margin_total": 123,
             "rank_roe": 10,
             "rank_roe_total": 119
@@ -42849,7 +42849,7 @@
         },
         {
           "ticker": "8151.T",
-          "name": "TOYO CORPORATION",
+          "name": "TOYO CORPORATION (TOKYO)",
           "sector": "Technology",
           "industry": "Scientific & Technical Instruments",
           "price": 1822.0,
@@ -57939,71 +57939,6 @@
           }
         },
         {
-          "ticker": "6361.T",
-          "name": "EBARA CORP",
-          "sector": "Industrials",
-          "industry": "Specialty Industrial Machinery",
-          "price": 4323.0,
-          "pbr": 1.57,
-          "roe": 15.74,
-          "dividend_yield": 1.53,
-          "equity_ratio": 70.4,
-          "operating_margin": 9.79,
-          "revenue_growth": 3.5,
-          "current_ratio": 1.8,
-          "market_cap": 1968672735232,
-          "beta": 1.2,
-          "risk_level": {
-            "level": "中",
-            "color": "yellow",
-            "reasons": [
-              "株価が市場平均並みに変動する",
-              "【業種特性】景気変動・燃料費や原材料費の影響を受けやすい業種です"
-            ]
-          },
-          "score": 28.6,
-          "score_breakdown": [
-            {
-              "label": "割安度（PBR）",
-              "score": 10.4,
-              "max": 34
-            },
-            {
-              "label": "稼ぐ力（ROE）",
-              "score": 18.2,
-              "max": 33
-            },
-            {
-              "label": "配当利回り",
-              "score": 0,
-              "max": 33
-            }
-          ],
-          "sector_display": "Industrials",
-          "nisa_fit": {
-            "level": "要検討",
-            "stars": 2,
-            "reasons": [
-              "財務が健全（自己資本比率70.4%）",
-              "極端な割高ではない",
-              "収益性が安定",
-              "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
-            ]
-          },
-          "detailed_comment": "自己資本比率70.4%と財務基盤が非常に安定しています。ROE15.74%と収益力が優秀です。",
-          "sector_rank": {
-            "percentile_margin": 61.5,
-            "percentile_roe": 82.4,
-            "sector_count": 364,
-            "label_margin": "業種内で平均的",
-            "label_roe": "業種内で上位",
-            "rank_margin": 141,
-            "rank_margin_total": 364,
-            "rank_roe": 62,
-            "rank_roe_total": 347
-          }
-        },
-        {
           "ticker": "3199.T",
           "name": "WATAHAN CO LTD",
           "sector": "Consumer Cyclical",
@@ -67879,6 +67814,70 @@
           }
         },
         {
+          "ticker": "9629.T",
+          "name": "PCA CORPORATION",
+          "sector": "Technology",
+          "industry": "Software - Application",
+          "price": 1574.0,
+          "pbr": 1.82,
+          "roe": 12.7,
+          "dividend_yield": 2.54,
+          "equity_ratio": null,
+          "operating_margin": 9.05,
+          "revenue_growth": 9.1,
+          "current_ratio": 1.68,
+          "market_cap": 31561740288,
+          "beta": 0.64,
+          "risk_level": {
+            "level": "中",
+            "color": "yellow",
+            "reasons": [
+              "【業種特性】技術革新の速さや競争環境の変化が大きい業種です"
+            ]
+          },
+          "score": 20.6,
+          "score_breakdown": [
+            {
+              "label": "割安度（PBR）",
+              "score": 4.4,
+              "max": 34
+            },
+            {
+              "label": "稼ぐ力（ROE）",
+              "score": 11.1,
+              "max": 33
+            },
+            {
+              "label": "配当利回り",
+              "score": 5.1,
+              "max": 33
+            }
+          ],
+          "sector_display": "Technology",
+          "nisa_fit": {
+            "level": "要検討",
+            "stars": 2,
+            "reasons": [
+              "配当が安定的",
+              "極端な割高ではない",
+              "収益性が安定",
+              "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
+            ]
+          },
+          "detailed_comment": "ROE12.7%と収益力は合格水準です。配当利回り2.54%と安定した配当が続いています。売上高は前年比+9.1%と成長が続いています。",
+          "sector_rank": {
+            "percentile_margin": 47.8,
+            "percentile_roe": 48.6,
+            "sector_count": 228,
+            "label_margin": "業種内で平均的",
+            "label_roe": "業種内で平均的",
+            "rank_margin": 120,
+            "rank_margin_total": 228,
+            "rank_roe": 110,
+            "rank_roe_total": 212
+          }
+        },
+        {
           "ticker": "6301.T",
           "name": "KOMATSU",
           "sector": "Industrials",
@@ -68066,70 +68065,6 @@
             "rank_margin_total": 364,
             "rank_roe": 328,
             "rank_roe_total": 347
-          }
-        },
-        {
-          "ticker": "9629.T",
-          "name": "PCA CORPORATION",
-          "sector": "Technology",
-          "industry": "Software - Application",
-          "price": 1574.0,
-          "pbr": 1.82,
-          "roe": 12.7,
-          "dividend_yield": 2.52,
-          "equity_ratio": null,
-          "operating_margin": 9.05,
-          "revenue_growth": 9.1,
-          "current_ratio": 1.68,
-          "market_cap": 31561740288,
-          "beta": 0.64,
-          "risk_level": {
-            "level": "中",
-            "color": "yellow",
-            "reasons": [
-              "【業種特性】技術革新の速さや競争環境の変化が大きい業種です"
-            ]
-          },
-          "score": 20.4,
-          "score_breakdown": [
-            {
-              "label": "割安度（PBR）",
-              "score": 4.4,
-              "max": 34
-            },
-            {
-              "label": "稼ぐ力（ROE）",
-              "score": 11.1,
-              "max": 33
-            },
-            {
-              "label": "配当利回り",
-              "score": 4.9,
-              "max": 33
-            }
-          ],
-          "sector_display": "Technology",
-          "nisa_fit": {
-            "level": "要検討",
-            "stars": 2,
-            "reasons": [
-              "配当が安定的",
-              "極端な割高ではない",
-              "収益性が安定",
-              "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
-            ]
-          },
-          "detailed_comment": "ROE12.7%と収益力は合格水準です。配当利回り2.52%と安定した配当が続いています。売上高は前年比+9.1%と成長が続いています。",
-          "sector_rank": {
-            "percentile_margin": 47.8,
-            "percentile_roe": 48.6,
-            "sector_count": 228,
-            "label_margin": "業種内で平均的",
-            "label_roe": "業種内で平均的",
-            "rank_margin": 120,
-            "rank_margin_total": 228,
-            "rank_roe": 110,
-            "rank_roe_total": 212
           }
         },
         {
@@ -69924,6 +69859,70 @@
           }
         },
         {
+          "ticker": "3539.T",
+          "name": "JM HOLDINGS CO LTD",
+          "sector": "Consumer Defensive",
+          "industry": "Grocery Stores",
+          "price": 1416.0,
+          "pbr": 1.47,
+          "roe": 10.31,
+          "dividend_yield": 1.84,
+          "equity_ratio": 86.5,
+          "operating_margin": 3.05,
+          "revenue_growth": 3.7,
+          "current_ratio": 1.82,
+          "market_cap": 72156233728,
+          "beta": 0.29,
+          "risk_level": {
+            "level": "低",
+            "color": "green",
+            "reasons": [
+              "【業種特性】比較的景気の影響を受けにくい安定した業種です"
+            ]
+          },
+          "score": 18.3,
+          "score_breakdown": [
+            {
+              "label": "割安度（PBR）",
+              "score": 12.9,
+              "max": 34
+            },
+            {
+              "label": "稼ぐ力（ROE）",
+              "score": 5.4,
+              "max": 33
+            },
+            {
+              "label": "配当利回り",
+              "score": 0,
+              "max": 33
+            }
+          ],
+          "sector_display": "Consumer Defensive",
+          "nisa_fit": {
+            "level": "要検討",
+            "stars": 2,
+            "reasons": [
+              "財務が健全（自己資本比率86.5%）",
+              "極端な割高ではない",
+              "収益性が安定",
+              "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
+            ]
+          },
+          "detailed_comment": "自己資本比率86.5%と財務基盤が非常に安定しています。ROE10.31%と収益力は合格水準です。",
+          "sector_rank": {
+            "percentile_margin": 37.4,
+            "percentile_roe": 67.2,
+            "sector_count": 123,
+            "label_margin": "業種内では控えめ",
+            "label_roe": "業種内で平均的",
+            "rank_margin": 78,
+            "rank_margin_total": 123,
+            "rank_roe": 40,
+            "rank_roe_total": 119
+          }
+        },
+        {
           "ticker": "8079.T",
           "name": "SHOEI FOODS CORP",
           "sector": "Consumer Defensive",
@@ -70877,70 +70876,6 @@
             "rank_margin_total": 364,
             "rank_roe": null,
             "rank_roe_total": null
-          }
-        },
-        {
-          "ticker": "3539.T",
-          "name": "JM HOLDINGS CO LTD",
-          "sector": "Consumer Defensive",
-          "industry": "Grocery Stores",
-          "price": 1416.0,
-          "pbr": 1.51,
-          "roe": 10.31,
-          "dividend_yield": 1.84,
-          "equity_ratio": 86.5,
-          "operating_margin": 3.05,
-          "revenue_growth": 3.7,
-          "current_ratio": 1.82,
-          "market_cap": 72156233728,
-          "beta": 0.29,
-          "risk_level": {
-            "level": "低",
-            "color": "green",
-            "reasons": [
-              "【業種特性】比較的景気の影響を受けにくい安定した業種です"
-            ]
-          },
-          "score": 17.3,
-          "score_breakdown": [
-            {
-              "label": "割安度（PBR）",
-              "score": 11.9,
-              "max": 34
-            },
-            {
-              "label": "稼ぐ力（ROE）",
-              "score": 5.4,
-              "max": 33
-            },
-            {
-              "label": "配当利回り",
-              "score": 0,
-              "max": 33
-            }
-          ],
-          "sector_display": "Consumer Defensive",
-          "nisa_fit": {
-            "level": "要検討",
-            "stars": 2,
-            "reasons": [
-              "財務が健全（自己資本比率86.5%）",
-              "極端な割高ではない",
-              "収益性が安定",
-              "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
-            ]
-          },
-          "detailed_comment": "自己資本比率86.5%と財務基盤が非常に安定しています。ROE10.31%と収益力は合格水準です。",
-          "sector_rank": {
-            "percentile_margin": 37.4,
-            "percentile_roe": 67.2,
-            "sector_count": 123,
-            "label_margin": "業種内では控えめ",
-            "label_roe": "業種内で平均的",
-            "rank_margin": 78,
-            "rank_margin_total": 123,
-            "rank_roe": 40,
-            "rank_roe_total": 119
           }
         },
         {
@@ -88226,12 +88161,12 @@
           },
           "detailed_comment": "自己資本比率96.8%と財務基盤が非常に安定しています。ROE17.58%と収益力が優秀です。配当利回り3.56%と安定した配当が続いています。",
           "sector_rank": {
-            "percentile_margin": 7.3,
+            "percentile_margin": 6.5,
             "percentile_roe": 92.4,
             "sector_count": 123,
             "label_margin": "業種内では控えめ",
             "label_roe": "業種内トップクラス",
-            "rank_margin": 115,
+            "rank_margin": 116,
             "rank_margin_total": 123,
             "rank_roe": 10,
             "rank_roe_total": 119
@@ -92473,10 +92408,10 @@
           "industry": "Education & Training Services",
           "price": 2601.0,
           "pbr": 3.73,
-          "roe": 26.19,
+          "roe": 26.2,
           "dividend_yield": 5.0,
           "equity_ratio": 87.1,
-          "operating_margin": -1.16,
+          "operating_margin": -1.14,
           "revenue_growth": -2.9,
           "current_ratio": 1.12,
           "market_cap": 28268169216,
@@ -92521,14 +92456,14 @@
               "収益性が安定"
             ]
           },
-          "detailed_comment": "自己資本比率87.1%と財務基盤が非常に安定しています。ROE26.19%と非常に高い収益力を持っています。配当利回り5.0%と高水準の配当が特徴です。",
+          "detailed_comment": "自己資本比率87.1%と財務基盤が非常に安定しています。ROE26.2%と非常に高い収益力を持っています。配当利回り5.0%と高水準の配当が特徴です。",
           "sector_rank": {
             "percentile_margin": 7.3,
-            "percentile_roe": 97.5,
+            "percentile_roe": 98.3,
             "sector_count": 123,
             "label_margin": "業種内では控えめ",
             "label_roe": "業種内トップクラス",
-            "rank_margin": 116,
+            "rank_margin": 115,
             "rank_margin_total": 123,
             "rank_roe": 4,
             "rank_roe_total": 119
@@ -105434,7 +105369,7 @@
           "sector": "Industrials",
           "industry": "Specialty Industrial Machinery",
           "price": 4323.0,
-          "pbr": 1.57,
+          "pbr": 3.71,
           "roe": 15.74,
           "dividend_yield": 1.53,
           "equity_ratio": 70.4,
@@ -105480,7 +105415,6 @@
             "stars": 2,
             "reasons": [
               "財務が健全（自己資本比率70.4%）",
-              "極端な割高ではない",
               "収益性が安定",
               "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
             ]
@@ -117993,7 +117927,7 @@
           "sector": "Consumer Defensive",
           "industry": "Grocery Stores",
           "price": 1416.0,
-          "pbr": 1.51,
+          "pbr": 1.47,
           "roe": 10.31,
           "dividend_yield": 1.84,
           "equity_ratio": 86.5,
@@ -121738,7 +121672,7 @@
         },
         {
           "ticker": "8151.T",
-          "name": "TOYO CORPORATION",
+          "name": "TOYO CORPORATION (TOKYO)",
           "sector": "Technology",
           "industry": "Scientific & Technical Instruments",
           "price": 1822.0,
@@ -171935,7 +171869,7 @@
         },
         {
           "ticker": "8151.T",
-          "name": "TOYO CORPORATION",
+          "name": "TOYO CORPORATION (TOKYO)",
           "sector": "Technology",
           "industry": "Scientific & Technical Instruments",
           "price": 1822.0,
@@ -180058,76 +179992,6 @@
           }
         },
         {
-          "ticker": "6361.T",
-          "name": "EBARA CORP",
-          "sector": "Industrials",
-          "industry": "Specialty Industrial Machinery",
-          "price": 4323.0,
-          "pbr": 1.57,
-          "roe": 15.74,
-          "dividend_yield": 1.53,
-          "equity_ratio": 70.4,
-          "operating_margin": 9.79,
-          "revenue_growth": 3.5,
-          "current_ratio": 1.8,
-          "market_cap": 1968672735232,
-          "beta": 1.2,
-          "risk_level": {
-            "level": "中",
-            "color": "yellow",
-            "reasons": [
-              "株価が市場平均並みに変動する",
-              "【業種特性】景気変動・燃料費や原材料費の影響を受けやすい業種です"
-            ]
-          },
-          "score": 50.0,
-          "score_breakdown": [
-            {
-              "label": "売上成長率",
-              "score": 4.2,
-              "max": 30
-            },
-            {
-              "label": "稼ぐ力（ROE）",
-              "score": 11.5,
-              "max": 30
-            },
-            {
-              "label": "割安度（PBR）",
-              "score": 14.3,
-              "max": 20
-            },
-            {
-              "label": "財務の安全度（自己資本比率）",
-              "score": 20.0,
-              "max": 20
-            }
-          ],
-          "sector_display": "Industrials",
-          "nisa_fit": {
-            "level": "要検討",
-            "stars": 2,
-            "reasons": [
-              "財務が健全（自己資本比率70.4%）",
-              "極端な割高ではない",
-              "収益性が安定",
-              "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
-            ]
-          },
-          "detailed_comment": "自己資本比率70.4%と財務基盤が非常に安定しています。ROE15.74%と収益力が優秀です。",
-          "sector_rank": {
-            "percentile_margin": 61.5,
-            "percentile_roe": 82.4,
-            "sector_count": 364,
-            "label_margin": "業種内で平均的",
-            "label_roe": "業種内で上位",
-            "rank_margin": 141,
-            "rank_margin_total": 364,
-            "rank_roe": 62,
-            "rank_roe_total": 347
-          }
-        },
-        {
           "ticker": "5803.T",
           "name": "FUJIKURA",
           "sector": "Industrials",
@@ -180546,10 +180410,10 @@
           "industry": "Education & Training Services",
           "price": 2601.0,
           "pbr": 3.73,
-          "roe": 26.19,
+          "roe": 26.2,
           "dividend_yield": 5.0,
           "equity_ratio": 87.1,
-          "operating_margin": -1.16,
+          "operating_margin": -1.14,
           "revenue_growth": -2.9,
           "current_ratio": 1.12,
           "market_cap": 28268169216,
@@ -180595,14 +180459,14 @@
               "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
             ]
           },
-          "detailed_comment": "自己資本比率87.1%と財務基盤が非常に安定しています。ROE26.19%と非常に高い収益力を持っています。配当利回り5.0%と高水準の配当が特徴です。",
+          "detailed_comment": "自己資本比率87.1%と財務基盤が非常に安定しています。ROE26.2%と非常に高い収益力を持っています。配当利回り5.0%と高水準の配当が特徴です。",
           "sector_rank": {
             "percentile_margin": 7.3,
-            "percentile_roe": 97.5,
+            "percentile_roe": 98.3,
             "sector_count": 123,
             "label_margin": "業種内では控えめ",
             "label_roe": "業種内トップクラス",
-            "rank_margin": 116,
+            "rank_margin": 115,
             "rank_margin_total": 123,
             "rank_roe": 4,
             "rank_roe_total": 119
@@ -187403,12 +187267,12 @@
           },
           "detailed_comment": "自己資本比率96.8%と財務基盤が非常に安定しています。ROE17.58%と収益力が優秀です。配当利回り3.56%と安定した配当が続いています。",
           "sector_rank": {
-            "percentile_margin": 7.3,
+            "percentile_margin": 6.5,
             "percentile_roe": 92.4,
             "sector_count": 123,
             "label_margin": "業種内では控えめ",
             "label_roe": "業種内トップクラス",
-            "rank_margin": 115,
+            "rank_margin": 116,
             "rank_margin_total": 123,
             "rank_roe": 10,
             "rank_roe_total": 119
@@ -206058,6 +205922,75 @@
           }
         },
         {
+          "ticker": "3539.T",
+          "name": "JM HOLDINGS CO LTD",
+          "sector": "Consumer Defensive",
+          "industry": "Grocery Stores",
+          "price": 1416.0,
+          "pbr": 1.47,
+          "roe": 10.31,
+          "dividend_yield": 1.84,
+          "equity_ratio": 86.5,
+          "operating_margin": 3.05,
+          "revenue_growth": 3.7,
+          "current_ratio": 1.82,
+          "market_cap": 72156233728,
+          "beta": 0.29,
+          "risk_level": {
+            "level": "低",
+            "color": "green",
+            "reasons": [
+              "【業種特性】比較的景気の影響を受けにくい安定した業種です"
+            ]
+          },
+          "score": 40.3,
+          "score_breakdown": [
+            {
+              "label": "売上成長率",
+              "score": 4.4,
+              "max": 30
+            },
+            {
+              "label": "稼ぐ力（ROE）",
+              "score": 0.6,
+              "max": 30
+            },
+            {
+              "label": "割安度（PBR）",
+              "score": 15.3,
+              "max": 20
+            },
+            {
+              "label": "財務の安全度（自己資本比率）",
+              "score": 20.0,
+              "max": 20
+            }
+          ],
+          "sector_display": "Consumer Defensive",
+          "nisa_fit": {
+            "level": "要検討",
+            "stars": 2,
+            "reasons": [
+              "財務が健全（自己資本比率86.5%）",
+              "極端な割高ではない",
+              "収益性が安定",
+              "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
+            ]
+          },
+          "detailed_comment": "自己資本比率86.5%と財務基盤が非常に安定しています。ROE10.31%と収益力は合格水準です。",
+          "sector_rank": {
+            "percentile_margin": 37.4,
+            "percentile_roe": 67.2,
+            "sector_count": 123,
+            "label_margin": "業種内では控えめ",
+            "label_roe": "業種内で平均的",
+            "rank_margin": 78,
+            "rank_margin_total": 123,
+            "rank_roe": 40,
+            "rank_roe_total": 119
+          }
+        },
+        {
           "ticker": "6282.T",
           "name": "OILES CORPORATION",
           "sector": "Industrials",
@@ -207163,75 +207096,6 @@
             "rank_margin_total": 364,
             "rank_roe": 154,
             "rank_roe_total": 347
-          }
-        },
-        {
-          "ticker": "3539.T",
-          "name": "JM HOLDINGS CO LTD",
-          "sector": "Consumer Defensive",
-          "industry": "Grocery Stores",
-          "price": 1416.0,
-          "pbr": 1.51,
-          "roe": 10.31,
-          "dividend_yield": 1.84,
-          "equity_ratio": 86.5,
-          "operating_margin": 3.05,
-          "revenue_growth": 3.7,
-          "current_ratio": 1.82,
-          "market_cap": 72156233728,
-          "beta": 0.29,
-          "risk_level": {
-            "level": "低",
-            "color": "green",
-            "reasons": [
-              "【業種特性】比較的景気の影響を受けにくい安定した業種です"
-            ]
-          },
-          "score": 39.9,
-          "score_breakdown": [
-            {
-              "label": "売上成長率",
-              "score": 4.4,
-              "max": 30
-            },
-            {
-              "label": "稼ぐ力（ROE）",
-              "score": 0.6,
-              "max": 30
-            },
-            {
-              "label": "割安度（PBR）",
-              "score": 14.9,
-              "max": 20
-            },
-            {
-              "label": "財務の安全度（自己資本比率）",
-              "score": 20.0,
-              "max": 20
-            }
-          ],
-          "sector_display": "Consumer Defensive",
-          "nisa_fit": {
-            "level": "要検討",
-            "stars": 2,
-            "reasons": [
-              "財務が健全（自己資本比率86.5%）",
-              "極端な割高ではない",
-              "収益性が安定",
-              "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
-            ]
-          },
-          "detailed_comment": "自己資本比率86.5%と財務基盤が非常に安定しています。ROE10.31%と収益力は合格水準です。",
-          "sector_rank": {
-            "percentile_margin": 37.4,
-            "percentile_roe": 67.2,
-            "sector_count": 123,
-            "label_margin": "業種内では控えめ",
-            "label_roe": "業種内で平均的",
-            "rank_margin": 78,
-            "rank_margin_total": 123,
-            "rank_roe": 40,
-            "rank_roe_total": 119
           }
         },
         {
@@ -213244,6 +213108,75 @@
             "rank_margin": 87,
             "rank_margin_total": 364,
             "rank_roe": 181,
+            "rank_roe_total": 347
+          }
+        },
+        {
+          "ticker": "6361.T",
+          "name": "EBARA CORP",
+          "sector": "Industrials",
+          "industry": "Specialty Industrial Machinery",
+          "price": 4323.0,
+          "pbr": 3.71,
+          "roe": 15.74,
+          "dividend_yield": 1.53,
+          "equity_ratio": 70.4,
+          "operating_margin": 9.79,
+          "revenue_growth": 3.5,
+          "current_ratio": 1.8,
+          "market_cap": 1968672735232,
+          "beta": 1.2,
+          "risk_level": {
+            "level": "中",
+            "color": "yellow",
+            "reasons": [
+              "株価が市場平均並みに変動する",
+              "【業種特性】景気変動・燃料費や原材料費の影響を受けやすい業種です"
+            ]
+          },
+          "score": 35.7,
+          "score_breakdown": [
+            {
+              "label": "売上成長率",
+              "score": 4.2,
+              "max": 30
+            },
+            {
+              "label": "稼ぐ力（ROE）",
+              "score": 11.5,
+              "max": 30
+            },
+            {
+              "label": "割安度（PBR）",
+              "score": 0,
+              "max": 20
+            },
+            {
+              "label": "財務の安全度（自己資本比率）",
+              "score": 20.0,
+              "max": 20
+            }
+          ],
+          "sector_display": "Industrials",
+          "nisa_fit": {
+            "level": "要検討",
+            "stars": 2,
+            "reasons": [
+              "財務が健全（自己資本比率70.4%）",
+              "収益性が安定",
+              "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
+            ]
+          },
+          "detailed_comment": "自己資本比率70.4%と財務基盤が非常に安定しています。ROE15.74%と収益力が優秀です。",
+          "sector_rank": {
+            "percentile_margin": 61.5,
+            "percentile_roe": 82.4,
+            "sector_count": 364,
+            "label_margin": "業種内で平均的",
+            "label_roe": "業種内で上位",
+            "rank_margin": 141,
+            "rank_margin_total": 364,
+            "rank_roe": 62,
             "rank_roe_total": 347
           }
         },
@@ -221380,7 +221313,7 @@
           "price": 1574.0,
           "pbr": 1.82,
           "roe": 12.7,
-          "dividend_yield": 2.52,
+          "dividend_yield": 2.54,
           "equity_ratio": null,
           "operating_margin": 9.05,
           "revenue_growth": 9.1,
@@ -221428,7 +221361,7 @@
               "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
             ]
           },
-          "detailed_comment": "ROE12.7%と収益力は合格水準です。配当利回り2.52%と安定した配当が続いています。売上高は前年比+9.1%と成長が続いています。",
+          "detailed_comment": "ROE12.7%と収益力は合格水準です。配当利回り2.54%と安定した配当が続いています。売上高は前年比+9.1%と成長が続いています。",
           "sector_rank": {
             "percentile_margin": 47.8,
             "percentile_roe": 48.6,
@@ -226847,7 +226780,7 @@
     }
   },
   "strategy": "堅実配当型",
-  "count": 1186,
+  "count": 1185,
   "stocks": [
     {
       "ticker": "5351.T",
@@ -230901,10 +230834,10 @@
       "industry": "Education & Training Services",
       "price": 2601.0,
       "pbr": 3.73,
-      "roe": 26.19,
+      "roe": 26.2,
       "dividend_yield": 5.0,
       "equity_ratio": 87.1,
-      "operating_margin": -1.16,
+      "operating_margin": -1.14,
       "revenue_growth": -2.9,
       "current_ratio": 1.12,
       "market_cap": 28268169216,
@@ -230944,14 +230877,14 @@
           "収益性が安定"
         ]
       },
-      "detailed_comment": "自己資本比率87.1%と財務基盤が非常に安定しています。ROE26.19%と非常に高い収益力を持っています。配当利回り5.0%と高水準の配当が特徴です。",
+      "detailed_comment": "自己資本比率87.1%と財務基盤が非常に安定しています。ROE26.2%と非常に高い収益力を持っています。配当利回り5.0%と高水準の配当が特徴です。",
       "sector_rank": {
         "percentile_margin": 7.3,
-        "percentile_roe": 97.5,
+        "percentile_roe": 98.3,
         "sector_count": 123,
         "label_margin": "業種内では控えめ",
         "label_roe": "業種内トップクラス",
-        "rank_margin": 116,
+        "rank_margin": 115,
         "rank_margin_total": 123,
         "rank_roe": 4,
         "rank_roe_total": 119
@@ -267944,12 +267877,12 @@
       },
       "detailed_comment": "自己資本比率96.8%と財務基盤が非常に安定しています。ROE17.58%と収益力が優秀です。配当利回り3.56%と安定した配当が続いています。",
       "sector_rank": {
-        "percentile_margin": 7.3,
+        "percentile_margin": 6.5,
         "percentile_roe": 92.4,
         "sector_count": 123,
         "label_margin": "業種内では控えめ",
         "label_roe": "業種内トップクラス",
-        "rank_margin": 115,
+        "rank_margin": 116,
         "rank_margin_total": 123,
         "rank_roe": 10,
         "rank_roe_total": 119
@@ -269692,7 +269625,7 @@
     },
     {
       "ticker": "8151.T",
-      "name": "TOYO CORPORATION",
+      "name": "TOYO CORPORATION (TOKYO)",
       "sector": "Technology",
       "industry": "Scientific & Technical Instruments",
       "price": 1822.0,
@@ -284782,71 +284715,6 @@
       }
     },
     {
-      "ticker": "6361.T",
-      "name": "EBARA CORP",
-      "sector": "Industrials",
-      "industry": "Specialty Industrial Machinery",
-      "price": 4323.0,
-      "pbr": 1.57,
-      "roe": 15.74,
-      "dividend_yield": 1.53,
-      "equity_ratio": 70.4,
-      "operating_margin": 9.79,
-      "revenue_growth": 3.5,
-      "current_ratio": 1.8,
-      "market_cap": 1968672735232,
-      "beta": 1.2,
-      "risk_level": {
-        "level": "中",
-        "color": "yellow",
-        "reasons": [
-          "株価が市場平均並みに変動する",
-          "【業種特性】景気変動・燃料費や原材料費の影響を受けやすい業種です"
-        ]
-      },
-      "score": 28.6,
-      "score_breakdown": [
-        {
-          "label": "割安度（PBR）",
-          "score": 10.4,
-          "max": 34
-        },
-        {
-          "label": "稼ぐ力（ROE）",
-          "score": 18.2,
-          "max": 33
-        },
-        {
-          "label": "配当利回り",
-          "score": 0,
-          "max": 33
-        }
-      ],
-      "sector_display": "Industrials",
-      "nisa_fit": {
-        "level": "要検討",
-        "stars": 2,
-        "reasons": [
-          "財務が健全（自己資本比率70.4%）",
-          "極端な割高ではない",
-          "収益性が安定",
-          "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
-        ]
-      },
-      "detailed_comment": "自己資本比率70.4%と財務基盤が非常に安定しています。ROE15.74%と収益力が優秀です。",
-      "sector_rank": {
-        "percentile_margin": 61.5,
-        "percentile_roe": 82.4,
-        "sector_count": 364,
-        "label_margin": "業種内で平均的",
-        "label_roe": "業種内で上位",
-        "rank_margin": 141,
-        "rank_margin_total": 364,
-        "rank_roe": 62,
-        "rank_roe_total": 347
-      }
-    },
-    {
       "ticker": "3199.T",
       "name": "WATAHAN CO LTD",
       "sector": "Consumer Cyclical",
@@ -294722,6 +294590,70 @@
       }
     },
     {
+      "ticker": "9629.T",
+      "name": "PCA CORPORATION",
+      "sector": "Technology",
+      "industry": "Software - Application",
+      "price": 1574.0,
+      "pbr": 1.82,
+      "roe": 12.7,
+      "dividend_yield": 2.54,
+      "equity_ratio": null,
+      "operating_margin": 9.05,
+      "revenue_growth": 9.1,
+      "current_ratio": 1.68,
+      "market_cap": 31561740288,
+      "beta": 0.64,
+      "risk_level": {
+        "level": "中",
+        "color": "yellow",
+        "reasons": [
+          "【業種特性】技術革新の速さや競争環境の変化が大きい業種です"
+        ]
+      },
+      "score": 20.6,
+      "score_breakdown": [
+        {
+          "label": "割安度（PBR）",
+          "score": 4.4,
+          "max": 34
+        },
+        {
+          "label": "稼ぐ力（ROE）",
+          "score": 11.1,
+          "max": 33
+        },
+        {
+          "label": "配当利回り",
+          "score": 5.1,
+          "max": 33
+        }
+      ],
+      "sector_display": "Technology",
+      "nisa_fit": {
+        "level": "要検討",
+        "stars": 2,
+        "reasons": [
+          "配当が安定的",
+          "極端な割高ではない",
+          "収益性が安定",
+          "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
+        ]
+      },
+      "detailed_comment": "ROE12.7%と収益力は合格水準です。配当利回り2.54%と安定した配当が続いています。売上高は前年比+9.1%と成長が続いています。",
+      "sector_rank": {
+        "percentile_margin": 47.8,
+        "percentile_roe": 48.6,
+        "sector_count": 228,
+        "label_margin": "業種内で平均的",
+        "label_roe": "業種内で平均的",
+        "rank_margin": 120,
+        "rank_margin_total": 228,
+        "rank_roe": 110,
+        "rank_roe_total": 212
+      }
+    },
+    {
       "ticker": "6301.T",
       "name": "KOMATSU",
       "sector": "Industrials",
@@ -294909,70 +294841,6 @@
         "rank_margin_total": 364,
         "rank_roe": 328,
         "rank_roe_total": 347
-      }
-    },
-    {
-      "ticker": "9629.T",
-      "name": "PCA CORPORATION",
-      "sector": "Technology",
-      "industry": "Software - Application",
-      "price": 1574.0,
-      "pbr": 1.82,
-      "roe": 12.7,
-      "dividend_yield": 2.52,
-      "equity_ratio": null,
-      "operating_margin": 9.05,
-      "revenue_growth": 9.1,
-      "current_ratio": 1.68,
-      "market_cap": 31561740288,
-      "beta": 0.64,
-      "risk_level": {
-        "level": "中",
-        "color": "yellow",
-        "reasons": [
-          "【業種特性】技術革新の速さや競争環境の変化が大きい業種です"
-        ]
-      },
-      "score": 20.4,
-      "score_breakdown": [
-        {
-          "label": "割安度（PBR）",
-          "score": 4.4,
-          "max": 34
-        },
-        {
-          "label": "稼ぐ力（ROE）",
-          "score": 11.1,
-          "max": 33
-        },
-        {
-          "label": "配当利回り",
-          "score": 4.9,
-          "max": 33
-        }
-      ],
-      "sector_display": "Technology",
-      "nisa_fit": {
-        "level": "要検討",
-        "stars": 2,
-        "reasons": [
-          "配当が安定的",
-          "極端な割高ではない",
-          "収益性が安定",
-          "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
-        ]
-      },
-      "detailed_comment": "ROE12.7%と収益力は合格水準です。配当利回り2.52%と安定した配当が続いています。売上高は前年比+9.1%と成長が続いています。",
-      "sector_rank": {
-        "percentile_margin": 47.8,
-        "percentile_roe": 48.6,
-        "sector_count": 228,
-        "label_margin": "業種内で平均的",
-        "label_roe": "業種内で平均的",
-        "rank_margin": 120,
-        "rank_margin_total": 228,
-        "rank_roe": 110,
-        "rank_roe_total": 212
       }
     },
     {
@@ -296767,6 +296635,70 @@
       }
     },
     {
+      "ticker": "3539.T",
+      "name": "JM HOLDINGS CO LTD",
+      "sector": "Consumer Defensive",
+      "industry": "Grocery Stores",
+      "price": 1416.0,
+      "pbr": 1.47,
+      "roe": 10.31,
+      "dividend_yield": 1.84,
+      "equity_ratio": 86.5,
+      "operating_margin": 3.05,
+      "revenue_growth": 3.7,
+      "current_ratio": 1.82,
+      "market_cap": 72156233728,
+      "beta": 0.29,
+      "risk_level": {
+        "level": "低",
+        "color": "green",
+        "reasons": [
+          "【業種特性】比較的景気の影響を受けにくい安定した業種です"
+        ]
+      },
+      "score": 18.3,
+      "score_breakdown": [
+        {
+          "label": "割安度（PBR）",
+          "score": 12.9,
+          "max": 34
+        },
+        {
+          "label": "稼ぐ力（ROE）",
+          "score": 5.4,
+          "max": 33
+        },
+        {
+          "label": "配当利回り",
+          "score": 0,
+          "max": 33
+        }
+      ],
+      "sector_display": "Consumer Defensive",
+      "nisa_fit": {
+        "level": "要検討",
+        "stars": 2,
+        "reasons": [
+          "財務が健全（自己資本比率86.5%）",
+          "極端な割高ではない",
+          "収益性が安定",
+          "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
+        ]
+      },
+      "detailed_comment": "自己資本比率86.5%と財務基盤が非常に安定しています。ROE10.31%と収益力は合格水準です。",
+      "sector_rank": {
+        "percentile_margin": 37.4,
+        "percentile_roe": 67.2,
+        "sector_count": 123,
+        "label_margin": "業種内では控えめ",
+        "label_roe": "業種内で平均的",
+        "rank_margin": 78,
+        "rank_margin_total": 123,
+        "rank_roe": 40,
+        "rank_roe_total": 119
+      }
+    },
+    {
       "ticker": "8079.T",
       "name": "SHOEI FOODS CORP",
       "sector": "Consumer Defensive",
@@ -297720,70 +297652,6 @@
         "rank_margin_total": 364,
         "rank_roe": null,
         "rank_roe_total": null
-      }
-    },
-    {
-      "ticker": "3539.T",
-      "name": "JM HOLDINGS CO LTD",
-      "sector": "Consumer Defensive",
-      "industry": "Grocery Stores",
-      "price": 1416.0,
-      "pbr": 1.51,
-      "roe": 10.31,
-      "dividend_yield": 1.84,
-      "equity_ratio": 86.5,
-      "operating_margin": 3.05,
-      "revenue_growth": 3.7,
-      "current_ratio": 1.82,
-      "market_cap": 72156233728,
-      "beta": 0.29,
-      "risk_level": {
-        "level": "低",
-        "color": "green",
-        "reasons": [
-          "【業種特性】比較的景気の影響を受けにくい安定した業種です"
-        ]
-      },
-      "score": 17.3,
-      "score_breakdown": [
-        {
-          "label": "割安度（PBR）",
-          "score": 11.9,
-          "max": 34
-        },
-        {
-          "label": "稼ぐ力（ROE）",
-          "score": 5.4,
-          "max": 33
-        },
-        {
-          "label": "配当利回り",
-          "score": 0,
-          "max": 33
-        }
-      ],
-      "sector_display": "Consumer Defensive",
-      "nisa_fit": {
-        "level": "要検討",
-        "stars": 2,
-        "reasons": [
-          "財務が健全（自己資本比率86.5%）",
-          "極端な割高ではない",
-          "収益性が安定",
-          "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
-        ]
-      },
-      "detailed_comment": "自己資本比率86.5%と財務基盤が非常に安定しています。ROE10.31%と収益力は合格水準です。",
-      "sector_rank": {
-        "percentile_margin": 37.4,
-        "percentile_roe": 67.2,
-        "sector_count": 123,
-        "label_margin": "業種内では控えめ",
-        "label_roe": "業種内で平均的",
-        "rank_margin": 78,
-        "rank_margin_total": 123,
-        "rank_roe": 40,
-        "rank_roe_total": 119
       }
     },
     {

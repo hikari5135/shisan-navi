@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-26 23:42",
+  "updated": "2026-09-28 00:00",
   "total_stocks_scanned": 1561,
   "strategies": {
     "dividend": {
@@ -1302,7 +1302,7 @@
           "operating_margin": 16.39,
           "revenue_growth": 18.0,
           "current_ratio": 3.9,
-          "market_cap": 20118159360,
+          "market_cap": 10059079680,
           "beta": 0.24,
           "risk_level": {
             "level": "中",
@@ -1365,7 +1365,7 @@
           "operating_margin": 15.62,
           "revenue_growth": 14.4,
           "current_ratio": 3.21,
-          "market_cap": 80286048256,
+          "market_cap": 80715513856,
           "beta": -0.23,
           "risk_level": {
             "level": "中",
@@ -3936,7 +3936,7 @@
           "operating_margin": 2.98,
           "revenue_growth": 0.7,
           "current_ratio": 3.19,
-          "market_cap": 0,
+          "market_cap": 108022218752,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -7048,7 +7048,7 @@
           "operating_margin": 13.56,
           "revenue_growth": 121.6,
           "current_ratio": 4.04,
-          "market_cap": 46444560384,
+          "market_cap": 55669956608,
           "beta": 0.56,
           "risk_level": {
             "level": "中",
@@ -7113,7 +7113,7 @@
           "operating_margin": 1.3,
           "revenue_growth": 17.5,
           "current_ratio": 1.02,
-          "market_cap": 77855293440,
+          "market_cap": 77961281536,
           "beta": -0.03,
           "risk_level": {
             "level": "中",
@@ -9263,7 +9263,7 @@
           "operating_margin": 4.55,
           "revenue_growth": -12.5,
           "current_ratio": 2.1,
-          "market_cap": 71573315584,
+          "market_cap": 72549097472,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -9835,71 +9835,6 @@
             "rank_margin_total": 261,
             "rank_roe": 192,
             "rank_roe_total": 247
-          }
-        },
-        {
-          "ticker": "7915.T",
-          "name": "NISSHA CO LTD",
-          "sector": "Technology",
-          "industry": "Electronic Components",
-          "price": 1201.0,
-          "pbr": 0.49,
-          "roe": 1.43,
-          "dividend_yield": 4.16,
-          "equity_ratio": 62.0,
-          "operating_margin": 1.85,
-          "revenue_growth": -3.5,
-          "current_ratio": 1.52,
-          "market_cap": 56943550464,
-          "beta": 0.57,
-          "risk_level": {
-            "level": "中",
-            "color": "yellow",
-            "reasons": [
-              "利益に対して配当負担がやや大きい可能性",
-              "【業種特性】技術革新の速さや競争環境の変化が大きい業種です"
-            ]
-          },
-          "score": 54.4,
-          "score_breakdown": [
-            {
-              "label": "割安度（PBR）",
-              "score": 34.0,
-              "max": 34
-            },
-            {
-              "label": "稼ぐ力（ROE）",
-              "score": 0,
-              "max": 33
-            },
-            {
-              "label": "配当利回り",
-              "score": 20.4,
-              "max": 33
-            }
-          ],
-          "sector_display": "Technology",
-          "nisa_fit": {
-            "level": "要検討",
-            "stars": 2,
-            "reasons": [
-              "配当が安定的",
-              "財務が健全（自己資本比率62.0%）",
-              "極端な割高ではない",
-              "収益性はまだ十分に高いとは言えません"
-            ]
-          },
-          "detailed_comment": "自己資本比率62.0%と財務が安定しています。配当利回り4.16%と高水準の配当が特徴です。PBR0.49倍と資産価値より株価が割安な水準です。",
-          "sector_rank": {
-            "percentile_margin": 12.7,
-            "percentile_roe": 3.8,
-            "sector_count": 228,
-            "label_margin": "業種内では控えめ",
-            "label_roe": "業種内では控えめ",
-            "rank_margin": 200,
-            "rank_margin_total": 228,
-            "rank_roe": 204,
-            "rank_roe_total": 211
           }
         },
         {
@@ -10697,7 +10632,7 @@
           "operating_margin": 36.76,
           "revenue_growth": -8.0,
           "current_ratio": 1.48,
-          "market_cap": 134197190656,
+          "market_cap": 134199566336,
           "beta": 0.25,
           "risk_level": {
             "level": "中",
@@ -10747,6 +10682,71 @@
             "rank_margin_total": 364,
             "rank_roe": 71,
             "rank_roe_total": 347
+          }
+        },
+        {
+          "ticker": "7915.T",
+          "name": "NISSHA CO LTD",
+          "sector": "Technology",
+          "industry": "Electronic Components",
+          "price": 1201.0,
+          "pbr": 0.64,
+          "roe": 1.43,
+          "dividend_yield": 4.16,
+          "equity_ratio": 62.0,
+          "operating_margin": 1.85,
+          "revenue_growth": -3.5,
+          "current_ratio": 1.52,
+          "market_cap": 56943550464,
+          "beta": 0.57,
+          "risk_level": {
+            "level": "中",
+            "color": "yellow",
+            "reasons": [
+              "利益に対して配当負担がやや大きい可能性",
+              "【業種特性】技術革新の速さや競争環境の変化が大きい業種です"
+            ]
+          },
+          "score": 53.4,
+          "score_breakdown": [
+            {
+              "label": "割安度（PBR）",
+              "score": 33.0,
+              "max": 34
+            },
+            {
+              "label": "稼ぐ力（ROE）",
+              "score": 0,
+              "max": 33
+            },
+            {
+              "label": "配当利回り",
+              "score": 20.4,
+              "max": 33
+            }
+          ],
+          "sector_display": "Technology",
+          "nisa_fit": {
+            "level": "要検討",
+            "stars": 2,
+            "reasons": [
+              "配当が安定的",
+              "財務が健全（自己資本比率62.0%）",
+              "極端な割高ではない",
+              "収益性はまだ十分に高いとは言えません"
+            ]
+          },
+          "detailed_comment": "自己資本比率62.0%と財務が安定しています。配当利回り4.16%と高水準の配当が特徴です。PBR0.64倍と資産価値より株価が割安な水準です。",
+          "sector_rank": {
+            "percentile_margin": 12.7,
+            "percentile_roe": 3.8,
+            "sector_count": 228,
+            "label_margin": "業種内では控えめ",
+            "label_roe": "業種内では控えめ",
+            "rank_margin": 200,
+            "rank_margin_total": 228,
+            "rank_roe": 204,
+            "rank_roe_total": 211
           }
         },
         {
@@ -10955,7 +10955,7 @@
           "operating_margin": 8.76,
           "revenue_growth": 13.5,
           "current_ratio": 1.29,
-          "market_cap": 6756330110976,
+          "market_cap": 6755573039104,
           "beta": 0.31,
           "risk_level": {
             "level": "高",
@@ -11796,7 +11796,7 @@
           "operating_margin": 9.83,
           "revenue_growth": -10.1,
           "current_ratio": 1.92,
-          "market_cap": 103283679232,
+          "market_cap": 103283703808,
           "beta": 0.62,
           "risk_level": {
             "level": "中",
@@ -13289,7 +13289,7 @@
           "operating_margin": 25.81,
           "revenue_growth": 1.0,
           "current_ratio": 7.13,
-          "market_cap": 201172860928,
+          "market_cap": 201342042112,
           "beta": 0.57,
           "risk_level": {
             "level": "中",
@@ -19821,6 +19821,70 @@
           }
         },
         {
+          "ticker": "3333.T",
+          "name": "ASAHI CO LTD",
+          "sector": "Consumer Cyclical",
+          "industry": "Specialty Retail",
+          "price": 1288.0,
+          "pbr": 0.8,
+          "roe": 4.43,
+          "dividend_yield": 3.88,
+          "equity_ratio": null,
+          "operating_margin": 0.62,
+          "revenue_growth": -1.9,
+          "current_ratio": 2.44,
+          "market_cap": 33541992448,
+          "beta": 0.11,
+          "risk_level": {
+            "level": "中",
+            "color": "yellow",
+            "reasons": [
+              "利益に対して配当負担がやや大きい可能性",
+              "【業種特性】景気動向や個人消費の変化の影響を受けやすい業種です"
+            ]
+          },
+          "score": 46.8,
+          "score_breakdown": [
+            {
+              "label": "割安度（PBR）",
+              "score": 29.1,
+              "max": 34
+            },
+            {
+              "label": "稼ぐ力（ROE）",
+              "score": 0,
+              "max": 33
+            },
+            {
+              "label": "配当利回り",
+              "score": 17.7,
+              "max": 33
+            }
+          ],
+          "sector_display": "Consumer Cyclical",
+          "nisa_fit": {
+            "level": "要検討",
+            "stars": 2,
+            "reasons": [
+              "配当が安定的",
+              "極端な割高ではない",
+              "収益性はまだ十分に高いとは言えません"
+            ]
+          },
+          "detailed_comment": "配当利回り3.88%と安定した配当が続いています。PBR0.8倍と資産価値より株価が割安な水準です。景気動向の影響を受けやすく、業績変動が比較的大きい業種です。",
+          "sector_rank": {
+            "percentile_margin": 6.1,
+            "percentile_roe": 18.2,
+            "sector_count": 261,
+            "label_margin": "業種内では控えめ",
+            "label_roe": "業種内では控えめ",
+            "rank_margin": 246,
+            "rank_margin_total": 261,
+            "rank_roe": 203,
+            "rank_roe_total": 247
+          }
+        },
+        {
           "ticker": "3580.T",
           "name": "KOMATSU MATERE CO LTD",
           "sector": "Consumer Cyclical",
@@ -20074,70 +20138,6 @@
             "rank_margin_total": 68,
             "rank_roe": 12,
             "rank_roe_total": 65
-          }
-        },
-        {
-          "ticker": "3333.T",
-          "name": "ASAHI CO LTD",
-          "sector": "Consumer Cyclical",
-          "industry": "Specialty Retail",
-          "price": 1288.0,
-          "pbr": 0.81,
-          "roe": 4.43,
-          "dividend_yield": 3.88,
-          "equity_ratio": null,
-          "operating_margin": 0.62,
-          "revenue_growth": -1.9,
-          "current_ratio": 2.44,
-          "market_cap": 33541992448,
-          "beta": 0.11,
-          "risk_level": {
-            "level": "中",
-            "color": "yellow",
-            "reasons": [
-              "利益に対して配当負担がやや大きい可能性",
-              "【業種特性】景気動向や個人消費の変化の影響を受けやすい業種です"
-            ]
-          },
-          "score": 46.6,
-          "score_breakdown": [
-            {
-              "label": "割安度（PBR）",
-              "score": 28.9,
-              "max": 34
-            },
-            {
-              "label": "稼ぐ力（ROE）",
-              "score": 0,
-              "max": 33
-            },
-            {
-              "label": "配当利回り",
-              "score": 17.7,
-              "max": 33
-            }
-          ],
-          "sector_display": "Consumer Cyclical",
-          "nisa_fit": {
-            "level": "要検討",
-            "stars": 2,
-            "reasons": [
-              "配当が安定的",
-              "極端な割高ではない",
-              "収益性はまだ十分に高いとは言えません"
-            ]
-          },
-          "detailed_comment": "配当利回り3.88%と安定した配当が続いています。PBR0.81倍と資産価値より株価が割安な水準です。景気動向の影響を受けやすく、業績変動が比較的大きい業種です。",
-          "sector_rank": {
-            "percentile_margin": 6.1,
-            "percentile_roe": 18.2,
-            "sector_count": 261,
-            "label_margin": "業種内では控えめ",
-            "label_roe": "業種内では控えめ",
-            "rank_margin": 246,
-            "rank_margin_total": 261,
-            "rank_roe": 203,
-            "rank_roe_total": 247
           }
         },
         {
@@ -21125,7 +21125,7 @@
           "operating_margin": 6.56,
           "revenue_growth": 18.6,
           "current_ratio": 1.88,
-          "market_cap": 130848047104,
+          "market_cap": 130510659584,
           "beta": 0.49,
           "risk_level": {
             "level": "中",
@@ -21774,7 +21774,7 @@
           "operating_margin": 2.61,
           "revenue_growth": 6.9,
           "current_ratio": 2.32,
-          "market_cap": 75899641856,
+          "market_cap": 75900190720,
           "beta": 0.09,
           "risk_level": {
             "level": "中",
@@ -21968,7 +21968,7 @@
           "operating_margin": 19.51,
           "revenue_growth": -7.4,
           "current_ratio": 1.6,
-          "market_cap": 115559120896,
+          "market_cap": 115528433664,
           "beta": 0.41,
           "risk_level": {
             "level": "中",
@@ -23009,7 +23009,7 @@
           "operating_margin": 4.34,
           "revenue_growth": 13.5,
           "current_ratio": 1.38,
-          "market_cap": 1212768583680,
+          "market_cap": 1212925476864,
           "beta": 0.4,
           "risk_level": {
             "level": "中",
@@ -23460,7 +23460,7 @@
           "operating_margin": 1.01,
           "revenue_growth": 3.8,
           "current_ratio": 2.84,
-          "market_cap": 66984062976,
+          "market_cap": 66984079360,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -24043,7 +24043,7 @@
           "operating_margin": 6.34,
           "revenue_growth": 14.2,
           "current_ratio": 1.51,
-          "market_cap": 21306896384,
+          "market_cap": 21259010048,
           "beta": -0.04,
           "risk_level": {
             "level": "中",
@@ -24493,7 +24493,7 @@
           "operating_margin": 2.31,
           "revenue_growth": 19.8,
           "current_ratio": 1.26,
-          "market_cap": 85212102656,
+          "market_cap": 85227954176,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -25395,7 +25395,7 @@
           "operating_margin": 25.9,
           "revenue_growth": 32.3,
           "current_ratio": 1.81,
-          "market_cap": 1316660445184,
+          "market_cap": 1316885364736,
           "beta": 0.36,
           "risk_level": {
             "level": "中",
@@ -25912,7 +25912,7 @@
           "operating_margin": 30.65,
           "revenue_growth": 4.6,
           "current_ratio": 15.4,
-          "market_cap": 668082569216,
+          "market_cap": 667852734464,
           "beta": 0.48,
           "risk_level": {
             "level": "高",
@@ -27532,7 +27532,7 @@
           "operating_margin": 11.23,
           "revenue_growth": 14.8,
           "current_ratio": 2.24,
-          "market_cap": 174966833152,
+          "market_cap": 174565654528,
           "beta": 0.7,
           "risk_level": {
             "level": "中",
@@ -28049,7 +28049,7 @@
           "operating_margin": 15.29,
           "revenue_growth": 14.6,
           "current_ratio": 2.65,
-          "market_cap": 95713730560,
+          "market_cap": 95713861632,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -29537,7 +29537,7 @@
           "operating_margin": 3.77,
           "revenue_growth": 9.0,
           "current_ratio": 2.18,
-          "market_cap": 75533328384,
+          "market_cap": 75514519552,
           "beta": 0.73,
           "risk_level": {
             "level": "中",
@@ -31224,7 +31224,7 @@
           "operating_margin": 10.09,
           "revenue_growth": -6.4,
           "current_ratio": 3.85,
-          "market_cap": 83393691648,
+          "market_cap": 83395477504,
           "beta": 0.57,
           "risk_level": {
             "level": "中",
@@ -33616,7 +33616,7 @@
           "operating_margin": 1.91,
           "revenue_growth": -22.1,
           "current_ratio": 2.32,
-          "market_cap": 30679361536,
+          "market_cap": 30679263232,
           "beta": 0.54,
           "risk_level": {
             "level": "中",
@@ -33746,7 +33746,7 @@
           "operating_margin": 11.42,
           "revenue_growth": 63.7,
           "current_ratio": 1.14,
-          "market_cap": 2500757291008,
+          "market_cap": 2500165894144,
           "beta": 0.03,
           "risk_level": {
             "level": "中",
@@ -34328,7 +34328,7 @@
           "operating_margin": 31.01,
           "revenue_growth": 11.6,
           "current_ratio": 6.06,
-          "market_cap": 0,
+          "market_cap": 110085832704,
           "beta": 0.16,
           "risk_level": {
             "level": "中",
@@ -34718,7 +34718,7 @@
           "operating_margin": 4.67,
           "revenue_growth": 31.6,
           "current_ratio": 2.64,
-          "market_cap": 71074283520,
+          "market_cap": 71074078720,
           "beta": 0.42,
           "risk_level": {
             "level": "中",
@@ -35041,7 +35041,7 @@
           "operating_margin": 12.96,
           "revenue_growth": 4.5,
           "current_ratio": 2.19,
-          "market_cap": 254046961664,
+          "market_cap": 254017601536,
           "beta": 0.56,
           "risk_level": {
             "level": "中",
@@ -36915,7 +36915,7 @@
           "operating_margin": 17.07,
           "revenue_growth": 13.9,
           "current_ratio": 1.34,
-          "market_cap": 13203590144,
+          "market_cap": 13845909504,
           "beta": 0.35,
           "risk_level": {
             "level": "中",
@@ -37173,7 +37173,7 @@
           "operating_margin": 26.26,
           "revenue_growth": -2.1,
           "current_ratio": 13.97,
-          "market_cap": 48896167936,
+          "market_cap": 48634998784,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -37367,7 +37367,7 @@
           "operating_margin": 20.13,
           "revenue_growth": 19.9,
           "current_ratio": 2.94,
-          "market_cap": 1483428200448,
+          "market_cap": 1486049902592,
           "beta": 0.25,
           "risk_level": {
             "level": "中",
@@ -39500,7 +39500,7 @@
           "operating_margin": 8.57,
           "revenue_growth": -3.3,
           "current_ratio": 1.83,
-          "market_cap": 121354772480,
+          "market_cap": 121354928128,
           "beta": 0.02,
           "risk_level": {
             "level": "中",
@@ -40662,7 +40662,7 @@
           "operating_margin": 0.23,
           "revenue_growth": -1.7,
           "current_ratio": 3.08,
-          "market_cap": 67322884096,
+          "market_cap": 67323580416,
           "beta": 0.19,
           "risk_level": {
             "level": "中",
@@ -42592,7 +42592,7 @@
           "operating_margin": 5.11,
           "revenue_growth": 3.6,
           "current_ratio": 2.31,
-          "market_cap": 79528034304,
+          "market_cap": 79527870464,
           "beta": 0.35,
           "risk_level": {
             "level": "中",
@@ -42848,7 +42848,7 @@
           "operating_margin": 20.26,
           "revenue_growth": 58.2,
           "current_ratio": 3.13,
-          "market_cap": 55033319424,
+          "market_cap": 54417948672,
           "beta": 1.22,
           "risk_level": {
             "level": "中",
@@ -45291,7 +45291,7 @@
           "operating_margin": 8.11,
           "revenue_growth": 5.4,
           "current_ratio": 2.12,
-          "market_cap": 90295508992,
+          "market_cap": 89995026432,
           "beta": 0.61,
           "risk_level": {
             "level": "中",
@@ -46002,7 +46002,7 @@
           "operating_margin": 8.12,
           "revenue_growth": 10.1,
           "current_ratio": 1.64,
-          "market_cap": 44152930304,
+          "market_cap": 44154744832,
           "beta": 0.63,
           "risk_level": {
             "level": "中",
@@ -46707,7 +46707,7 @@
           "operating_margin": 12.5,
           "revenue_growth": 8.7,
           "current_ratio": 1.73,
-          "market_cap": 90183245824,
+          "market_cap": 89258958848,
           "beta": 0.21,
           "risk_level": {
             "level": "中",
@@ -47799,7 +47799,7 @@
           "operating_margin": 3.09,
           "revenue_growth": 15.7,
           "current_ratio": 4.07,
-          "market_cap": 239496855552,
+          "market_cap": 239325626368,
           "beta": 0.34,
           "risk_level": {
             "level": "中",
@@ -48177,7 +48177,7 @@
           "operating_margin": 11.48,
           "revenue_growth": 36.0,
           "current_ratio": 1.94,
-          "market_cap": 113373241344,
+          "market_cap": 113185816576,
           "beta": 0.49,
           "risk_level": {
             "level": "中",
@@ -48948,7 +48948,7 @@
           "operating_margin": 5.14,
           "revenue_growth": 1.1,
           "current_ratio": 2.28,
-          "market_cap": 567057842176,
+          "market_cap": 567336370176,
           "beta": -0.1,
           "risk_level": {
             "level": "中",
@@ -49723,7 +49723,7 @@
           "operating_margin": 3.36,
           "revenue_growth": -8.9,
           "current_ratio": 1.24,
-          "market_cap": 63594680320,
+          "market_cap": 63594565632,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -49977,7 +49977,7 @@
           "operating_margin": 47.09,
           "revenue_growth": 17.8,
           "current_ratio": 4.34,
-          "market_cap": 10887139164160,
+          "market_cap": 10888368095232,
           "beta": 0.55,
           "risk_level": {
             "level": "中",
@@ -50876,7 +50876,7 @@
           "operating_margin": 9.53,
           "revenue_growth": -21.4,
           "current_ratio": 2.48,
-          "market_cap": 480618971136,
+          "market_cap": 482046672896,
           "beta": 0.16,
           "risk_level": {
             "level": "中",
@@ -50939,7 +50939,7 @@
           "operating_margin": 16.06,
           "revenue_growth": 3.5,
           "current_ratio": 0.55,
-          "market_cap": 610637709312,
+          "market_cap": 609901150208,
           "beta": 0.23,
           "risk_level": {
             "level": "中",
@@ -52289,7 +52289,7 @@
           "operating_margin": 13.78,
           "revenue_growth": 56.8,
           "current_ratio": 1.03,
-          "market_cap": 204174655488,
+          "market_cap": 203735056384,
           "beta": 0.43,
           "risk_level": {
             "level": "高",
@@ -54152,7 +54152,7 @@
           "operating_margin": 0.5,
           "revenue_growth": 62.9,
           "current_ratio": 2.83,
-          "market_cap": 0,
+          "market_cap": 185267732480,
           "beta": 0.61,
           "risk_level": {
             "level": "中",
@@ -54923,7 +54923,7 @@
           "operating_margin": 12.45,
           "revenue_growth": 10.9,
           "current_ratio": 0.49,
-          "market_cap": 14269021159424,
+          "market_cap": 14299850342400,
           "beta": -0.17,
           "risk_level": {
             "level": "中",
@@ -55244,7 +55244,7 @@
           "operating_margin": 32.88,
           "revenue_growth": 40.8,
           "current_ratio": null,
-          "market_cap": 715437506560,
+          "market_cap": 718276198400,
           "beta": 0.16,
           "risk_level": {
             "level": "中",
@@ -55372,7 +55372,7 @@
           "operating_margin": 6.08,
           "revenue_growth": 17.9,
           "current_ratio": 1.8,
-          "market_cap": 483660922880,
+          "market_cap": 483077652480,
           "beta": 0.32,
           "risk_level": {
             "level": "中",
@@ -57170,7 +57170,7 @@
           "operating_margin": 16.18,
           "revenue_growth": 68.8,
           "current_ratio": null,
-          "market_cap": 194132197376,
+          "market_cap": 194133032960,
           "beta": 0.3,
           "risk_level": {
             "level": "中",
@@ -57487,7 +57487,7 @@
           "operating_margin": 9.56,
           "revenue_growth": 29.3,
           "current_ratio": 2.29,
-          "market_cap": 352379043840,
+          "market_cap": 352251936768,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -57874,7 +57874,7 @@
           "operating_margin": 10.57,
           "revenue_growth": 32.0,
           "current_ratio": 2.82,
-          "market_cap": 85031870464,
+          "market_cap": 85110620160,
           "beta": 0.89,
           "risk_level": {
             "level": "中",
@@ -58178,6 +58178,70 @@
             "rank_margin_total": 364,
             "rank_roe": 279,
             "rank_roe_total": 347
+          }
+        },
+        {
+          "ticker": "9627.T",
+          "name": "AIN HOLDINGS INC",
+          "sector": "Healthcare",
+          "industry": "Pharmaceutical Retailers",
+          "price": 5463.0,
+          "pbr": 1.21,
+          "roe": 11.54,
+          "dividend_yield": 1.83,
+          "equity_ratio": 48.7,
+          "operating_margin": 2.48,
+          "revenue_growth": 33.2,
+          "current_ratio": 0.91,
+          "market_cap": 192190627840,
+          "beta": 0.26,
+          "risk_level": {
+            "level": "中",
+            "color": "yellow",
+            "reasons": [
+              "【業種特性】薬価改定や規制動向の影響を受けやすい業種です"
+            ]
+          },
+          "score": 27.5,
+          "score_breakdown": [
+            {
+              "label": "割安度（PBR）",
+              "score": 19.2,
+              "max": 34
+            },
+            {
+              "label": "稼ぐ力（ROE）",
+              "score": 8.3,
+              "max": 33
+            },
+            {
+              "label": "配当利回り",
+              "score": 0,
+              "max": 33
+            }
+          ],
+          "sector_display": "Healthcare",
+          "nisa_fit": {
+            "level": "要検討",
+            "stars": 2,
+            "reasons": [
+              "財務が健全（自己資本比率48.7%）",
+              "極端な割高ではない",
+              "収益性が安定",
+              "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
+            ]
+          },
+          "detailed_comment": "自己資本比率48.7%と財務は概ね健全な水準です。ROE11.54%と収益力は合格水準です。売上高は前年比+33.2%と成長が続いています。",
+          "sector_rank": {
+            "percentile_margin": 20.5,
+            "percentile_roe": 68.2,
+            "sector_count": 88,
+            "label_margin": "業種内では控えめ",
+            "label_roe": "業種内で平均的",
+            "rank_margin": 71,
+            "rank_margin_total": 88,
+            "rank_roe": 29,
+            "rank_roe_total": 85
           }
         },
         {
@@ -58943,70 +59007,6 @@
             "rank_margin_total": 120,
             "rank_roe": 90,
             "rank_roe_total": 114
-          }
-        },
-        {
-          "ticker": "9627.T",
-          "name": "AIN HOLDINGS INC",
-          "sector": "Healthcare",
-          "industry": "Pharmaceutical Retailers",
-          "price": 5463.0,
-          "pbr": 1.22,
-          "roe": 11.54,
-          "dividend_yield": 1.83,
-          "equity_ratio": 48.7,
-          "operating_margin": 2.48,
-          "revenue_growth": 33.2,
-          "current_ratio": 0.91,
-          "market_cap": 192190627840,
-          "beta": 0.26,
-          "risk_level": {
-            "level": "中",
-            "color": "yellow",
-            "reasons": [
-              "【業種特性】薬価改定や規制動向の影響を受けやすい業種です"
-            ]
-          },
-          "score": 27.2,
-          "score_breakdown": [
-            {
-              "label": "割安度（PBR）",
-              "score": 18.9,
-              "max": 34
-            },
-            {
-              "label": "稼ぐ力（ROE）",
-              "score": 8.3,
-              "max": 33
-            },
-            {
-              "label": "配当利回り",
-              "score": 0,
-              "max": 33
-            }
-          ],
-          "sector_display": "Healthcare",
-          "nisa_fit": {
-            "level": "要検討",
-            "stars": 2,
-            "reasons": [
-              "財務が健全（自己資本比率48.7%）",
-              "極端な割高ではない",
-              "収益性が安定",
-              "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
-            ]
-          },
-          "detailed_comment": "自己資本比率48.7%と財務は概ね健全な水準です。ROE11.54%と収益力は合格水準です。売上高は前年比+33.2%と成長が続いています。",
-          "sector_rank": {
-            "percentile_margin": 20.5,
-            "percentile_roe": 68.2,
-            "sector_count": 88,
-            "label_margin": "業種内では控えめ",
-            "label_roe": "業種内で平均的",
-            "rank_margin": 71,
-            "rank_margin_total": 88,
-            "rank_roe": 29,
-            "rank_roe_total": 85
           }
         },
         {
@@ -62649,7 +62649,7 @@
           "operating_margin": 23.52,
           "revenue_growth": 38.3,
           "current_ratio": null,
-          "market_cap": 396294815744,
+          "market_cap": 397163331584,
           "beta": 0.2,
           "risk_level": {
             "level": "中",
@@ -64370,7 +64370,7 @@
           "operating_margin": 0.15,
           "revenue_growth": 37.2,
           "current_ratio": 7.93,
-          "market_cap": 79951781888,
+          "market_cap": 79952183296,
           "beta": 0.4,
           "risk_level": {
             "level": "中",
@@ -64433,7 +64433,7 @@
           "operating_margin": 3.5,
           "revenue_growth": 2.1,
           "current_ratio": 1.38,
-          "market_cap": 116628357120,
+          "market_cap": 117174009856,
           "beta": 0.3,
           "risk_level": {
             "level": "低",
@@ -64561,7 +64561,7 @@
           "operating_margin": 21.56,
           "revenue_growth": 31.1,
           "current_ratio": 4.64,
-          "market_cap": 139952603136,
+          "market_cap": 139952816128,
           "beta": 0.85,
           "risk_level": {
             "level": "中",
@@ -65579,7 +65579,7 @@
           "operating_margin": 33.05,
           "revenue_growth": 3.4,
           "current_ratio": null,
-          "market_cap": 301560987648,
+          "market_cap": 302826520576,
           "beta": -0.23,
           "risk_level": {
             "level": "中",
@@ -67807,7 +67807,7 @@
           "operating_margin": 1.57,
           "revenue_growth": 8.0,
           "current_ratio": 1.38,
-          "market_cap": 225756217344,
+          "market_cap": 224484556800,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -68063,7 +68063,7 @@
           "operating_margin": 5.02,
           "revenue_growth": 3.6,
           "current_ratio": 3.31,
-          "market_cap": 28087517184,
+          "market_cap": 28049940480,
           "beta": 0.24,
           "risk_level": {
             "level": "中",
@@ -68830,7 +68830,7 @@
           "operating_margin": 13.54,
           "revenue_growth": 3.6,
           "current_ratio": 4.55,
-          "market_cap": 132238368768,
+          "market_cap": 132238409728,
           "beta": 0.33,
           "risk_level": {
             "level": "中",
@@ -69598,7 +69598,7 @@
           "operating_margin": 8.7,
           "revenue_growth": null,
           "current_ratio": 1.49,
-          "market_cap": 135105347584,
+          "market_cap": 135231635456,
           "beta": 0.82,
           "risk_level": {
             "level": "中",
@@ -70683,7 +70683,7 @@
           "operating_margin": 7.29,
           "revenue_growth": 10.0,
           "current_ratio": 1.43,
-          "market_cap": 842253008896,
+          "market_cap": 843664326656,
           "beta": -0.03,
           "risk_level": {
             "level": "低",
@@ -70747,7 +70747,7 @@
           "operating_margin": 15.01,
           "revenue_growth": -7.4,
           "current_ratio": 2.92,
-          "market_cap": 80004292608,
+          "market_cap": 79997534208,
           "beta": -0.2,
           "risk_level": {
             "level": "中",
@@ -73177,7 +73177,7 @@
           "operating_margin": 20.01,
           "revenue_growth": 49.6,
           "current_ratio": 3.06,
-          "market_cap": 192459030528,
+          "market_cap": 192458801152,
           "beta": 0.62,
           "risk_level": {
             "level": "中",
@@ -73626,7 +73626,7 @@
           "operating_margin": 7.72,
           "revenue_growth": 23.4,
           "current_ratio": 2.79,
-          "market_cap": 104109752320,
+          "market_cap": 104081276928,
           "beta": 1.23,
           "risk_level": {
             "level": "中",
@@ -75289,7 +75289,7 @@
           "operating_margin": 40.37,
           "revenue_growth": 15.8,
           "current_ratio": null,
-          "market_cap": 5672742682624,
+          "market_cap": 5686734880768,
           "beta": 0.31,
           "risk_level": {
             "level": "中",
@@ -75735,7 +75735,7 @@
           "operating_margin": 11.34,
           "revenue_growth": 23.6,
           "current_ratio": 3.4,
-          "market_cap": 1144481382400,
+          "market_cap": 1150481203200,
           "beta": 0.71,
           "risk_level": {
             "level": "中",
@@ -76279,7 +76279,7 @@
           "operating_margin": 31.01,
           "revenue_growth": 11.6,
           "current_ratio": 6.06,
-          "market_cap": 0,
+          "market_cap": 110085832704,
           "beta": 0.16,
           "risk_level": {
             "level": "中",
@@ -77028,7 +77028,7 @@
           "operating_margin": 25.81,
           "revenue_growth": 1.0,
           "current_ratio": 7.13,
-          "market_cap": 201172860928,
+          "market_cap": 201342042112,
           "beta": 0.57,
           "risk_level": {
             "level": "中",
@@ -78183,7 +78183,7 @@
           "operating_margin": 20.13,
           "revenue_growth": 19.9,
           "current_ratio": 2.94,
-          "market_cap": 1483428200448,
+          "market_cap": 1486049902592,
           "beta": 0.25,
           "risk_level": {
             "level": "中",
@@ -79065,7 +79065,7 @@
           "operating_margin": 16.39,
           "revenue_growth": 18.0,
           "current_ratio": 3.9,
-          "market_cap": 20118159360,
+          "market_cap": 10059079680,
           "beta": 0.24,
           "risk_level": {
             "level": "中",
@@ -81177,7 +81177,7 @@
           "operating_margin": 12.96,
           "revenue_growth": 4.5,
           "current_ratio": 2.19,
-          "market_cap": 254046961664,
+          "market_cap": 254017601536,
           "beta": 0.56,
           "risk_level": {
             "level": "中",
@@ -83291,7 +83291,7 @@
           "operating_margin": 47.09,
           "revenue_growth": 17.8,
           "current_ratio": 4.34,
-          "market_cap": 10887139164160,
+          "market_cap": 10888368095232,
           "beta": 0.55,
           "risk_level": {
             "level": "中",
@@ -83696,7 +83696,7 @@
           "operating_margin": 34.82,
           "revenue_growth": 9.7,
           "current_ratio": 6.28,
-          "market_cap": 29551108096,
+          "market_cap": 29515274240,
           "beta": 0.6,
           "risk_level": {
             "level": "中",
@@ -84575,7 +84575,7 @@
           "operating_margin": 20.26,
           "revenue_growth": 58.2,
           "current_ratio": 3.13,
-          "market_cap": 55033319424,
+          "market_cap": 54417948672,
           "beta": 1.22,
           "risk_level": {
             "level": "中",
@@ -84643,7 +84643,7 @@
           "operating_margin": 15.44,
           "revenue_growth": 20.1,
           "current_ratio": 1.39,
-          "market_cap": 258172256256,
+          "market_cap": 258240970752,
           "beta": 1.48,
           "risk_level": {
             "level": "高",
@@ -86355,7 +86355,7 @@
           "operating_margin": 20.01,
           "revenue_growth": 49.6,
           "current_ratio": 3.06,
-          "market_cap": 192459030528,
+          "market_cap": 192458801152,
           "beta": 0.62,
           "risk_level": {
             "level": "中",
@@ -87239,7 +87239,7 @@
           "operating_margin": 8.12,
           "revenue_growth": 10.1,
           "current_ratio": 1.64,
-          "market_cap": 44152930304,
+          "market_cap": 44154744832,
           "beta": 0.63,
           "risk_level": {
             "level": "中",
@@ -89493,7 +89493,7 @@
           "operating_margin": 15.62,
           "revenue_growth": 14.4,
           "current_ratio": 3.21,
-          "market_cap": 80286048256,
+          "market_cap": 80715513856,
           "beta": -0.23,
           "risk_level": {
             "level": "中",
@@ -91067,7 +91067,7 @@
           "operating_margin": 13.54,
           "revenue_growth": 3.6,
           "current_ratio": 4.55,
-          "market_cap": 132238368768,
+          "market_cap": 132238409728,
           "beta": 0.33,
           "risk_level": {
             "level": "中",
@@ -95062,7 +95062,7 @@
           "sector": "Industrials",
           "industry": "Pollution & Treatment Controls",
           "price": 7723.0,
-          "pbr": 2.49,
+          "pbr": 2.51,
           "roe": 13.55,
           "dividend_yield": 1.74,
           "equity_ratio": 74.6,
@@ -95107,7 +95107,6 @@
             "stars": 2,
             "reasons": [
               "財務が健全（自己資本比率74.6%）",
-              "極端な割高ではない",
               "収益性が安定",
               "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
             ]
@@ -95208,7 +95207,7 @@
           "operating_margin": 19.51,
           "revenue_growth": -7.4,
           "current_ratio": 1.6,
-          "market_cap": 115559120896,
+          "market_cap": 115528433664,
           "beta": 0.41,
           "risk_level": {
             "level": "中",
@@ -96181,7 +96180,7 @@
           "operating_margin": 9.56,
           "revenue_growth": 29.3,
           "current_ratio": 2.29,
-          "market_cap": 352379043840,
+          "market_cap": 352251936768,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -97290,7 +97289,7 @@
           "operating_margin": 15.01,
           "revenue_growth": -7.4,
           "current_ratio": 2.92,
-          "market_cap": 80004292608,
+          "market_cap": 79997534208,
           "beta": -0.2,
           "risk_level": {
             "level": "中",
@@ -97359,7 +97358,7 @@
           "operating_margin": 13.56,
           "revenue_growth": 121.6,
           "current_ratio": 4.04,
-          "market_cap": 46444560384,
+          "market_cap": 55669956608,
           "beta": 0.56,
           "risk_level": {
             "level": "中",
@@ -97917,7 +97916,7 @@
           "operating_margin": 15.29,
           "revenue_growth": 14.6,
           "current_ratio": 2.65,
-          "market_cap": 95713730560,
+          "market_cap": 95713861632,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -99581,7 +99580,7 @@
           "operating_margin": 5.02,
           "revenue_growth": 3.6,
           "current_ratio": 3.31,
-          "market_cap": 28087517184,
+          "market_cap": 28049940480,
           "beta": 0.24,
           "risk_level": {
             "level": "中",
@@ -100688,7 +100687,7 @@
           "operating_margin": 17.07,
           "revenue_growth": 13.9,
           "current_ratio": 1.34,
-          "market_cap": 13203590144,
+          "market_cap": 13845909504,
           "beta": 0.35,
           "risk_level": {
             "level": "中",
@@ -100897,7 +100896,7 @@
           "operating_margin": 9.83,
           "revenue_growth": -10.1,
           "current_ratio": 1.92,
-          "market_cap": 103283679232,
+          "market_cap": 103283703808,
           "beta": 0.62,
           "risk_level": {
             "level": "中",
@@ -101996,7 +101995,7 @@
           "operating_margin": 12.5,
           "revenue_growth": 8.7,
           "current_ratio": 1.73,
-          "market_cap": 90183245824,
+          "market_cap": 89258958848,
           "beta": 0.21,
           "risk_level": {
             "level": "中",
@@ -105189,7 +105188,7 @@
           "operating_margin": 10.09,
           "revenue_growth": -6.4,
           "current_ratio": 3.85,
-          "market_cap": 83393691648,
+          "market_cap": 83395477504,
           "beta": 0.57,
           "risk_level": {
             "level": "中",
@@ -106156,7 +106155,7 @@
           "operating_margin": 4.55,
           "revenue_growth": -12.5,
           "current_ratio": 2.1,
-          "market_cap": 71573315584,
+          "market_cap": 72549097472,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -106992,7 +106991,7 @@
           "operating_margin": 11.48,
           "revenue_growth": 36.0,
           "current_ratio": 1.94,
-          "market_cap": 113373241344,
+          "market_cap": 113185816576,
           "beta": 0.49,
           "risk_level": {
             "level": "中",
@@ -107337,7 +107336,7 @@
           "operating_margin": 11.42,
           "revenue_growth": 63.7,
           "current_ratio": 1.14,
-          "market_cap": 2500757291008,
+          "market_cap": 2500165894144,
           "beta": 0.03,
           "risk_level": {
             "level": "中",
@@ -108454,7 +108453,7 @@
           "operating_margin": 7.72,
           "revenue_growth": 23.4,
           "current_ratio": 2.79,
-          "market_cap": 104109752320,
+          "market_cap": 104081276928,
           "beta": 1.23,
           "risk_level": {
             "level": "中",
@@ -108594,7 +108593,7 @@
           "operating_margin": 21.56,
           "revenue_growth": 31.1,
           "current_ratio": 4.64,
-          "market_cap": 139952603136,
+          "market_cap": 139952816128,
           "beta": 0.85,
           "risk_level": {
             "level": "中",
@@ -108798,7 +108797,7 @@
           "operating_margin": 3.09,
           "revenue_growth": 15.7,
           "current_ratio": 4.07,
-          "market_cap": 239496855552,
+          "market_cap": 239325626368,
           "beta": 0.34,
           "risk_level": {
             "level": "中",
@@ -109142,7 +109141,7 @@
           "operating_margin": 11.34,
           "revenue_growth": 23.6,
           "current_ratio": 3.4,
-          "market_cap": 1144481382400,
+          "market_cap": 1150481203200,
           "beta": 0.71,
           "risk_level": {
             "level": "中",
@@ -109348,7 +109347,7 @@
           "operating_margin": 8.7,
           "revenue_growth": null,
           "current_ratio": 1.49,
-          "market_cap": 135105347584,
+          "market_cap": 135231635456,
           "beta": 0.82,
           "risk_level": {
             "level": "中",
@@ -112530,7 +112529,7 @@
           "operating_margin": 10.57,
           "revenue_growth": 32.0,
           "current_ratio": 2.82,
-          "market_cap": 85031870464,
+          "market_cap": 85110620160,
           "beta": 0.89,
           "risk_level": {
             "level": "中",
@@ -113296,7 +113295,7 @@
           "operating_margin": 10.1,
           "revenue_growth": 27.7,
           "current_ratio": 2.52,
-          "market_cap": 318361567232,
+          "market_cap": 318344232960,
           "beta": 0.77,
           "risk_level": {
             "level": "中",
@@ -114884,7 +114883,7 @@
           "operating_margin": 0.5,
           "revenue_growth": 62.9,
           "current_ratio": 2.83,
-          "market_cap": 0,
+          "market_cap": 185267732480,
           "beta": 0.61,
           "risk_level": {
             "level": "中",
@@ -115023,7 +115022,7 @@
           "operating_margin": 6.56,
           "revenue_growth": 18.6,
           "current_ratio": 1.88,
-          "market_cap": 130848047104,
+          "market_cap": 130510659584,
           "beta": 0.49,
           "risk_level": {
             "level": "中",
@@ -116140,7 +116139,7 @@
           "operating_margin": 36.76,
           "revenue_growth": -8.0,
           "current_ratio": 1.48,
-          "market_cap": 134197190656,
+          "market_cap": 134199566336,
           "beta": 0.25,
           "risk_level": {
             "level": "中",
@@ -116281,7 +116280,7 @@
           "operating_margin": 30.65,
           "revenue_growth": 4.6,
           "current_ratio": 15.4,
-          "market_cap": 668082569216,
+          "market_cap": 667852734464,
           "beta": 0.48,
           "risk_level": {
             "level": "高",
@@ -118020,7 +118019,7 @@
           "operating_margin": 8.11,
           "revenue_growth": 5.4,
           "current_ratio": 2.12,
-          "market_cap": 90295508992,
+          "market_cap": 89995026432,
           "beta": 0.61,
           "risk_level": {
             "level": "中",
@@ -118786,7 +118785,7 @@
           "operating_margin": 11.23,
           "revenue_growth": 14.8,
           "current_ratio": 2.24,
-          "market_cap": 174966833152,
+          "market_cap": 174565654528,
           "beta": 0.7,
           "risk_level": {
             "level": "中",
@@ -119618,7 +119617,7 @@
           "operating_margin": 3.14,
           "revenue_growth": 3.2,
           "current_ratio": 1.19,
-          "market_cap": 29763612672,
+          "market_cap": 14881806336,
           "beta": 0.21,
           "risk_level": {
             "level": "中",
@@ -122666,7 +122665,7 @@
           "operating_margin": 25.9,
           "revenue_growth": 32.3,
           "current_ratio": 1.81,
-          "market_cap": 1316660445184,
+          "market_cap": 1316885364736,
           "beta": 0.36,
           "risk_level": {
             "level": "中",
@@ -124682,7 +124681,7 @@
           "operating_margin": 14.9,
           "revenue_growth": 7.2,
           "current_ratio": null,
-          "market_cap": 0,
+          "market_cap": 19682129920,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -125437,7 +125436,7 @@
           "operating_margin": 7.29,
           "revenue_growth": 10.0,
           "current_ratio": 1.43,
-          "market_cap": 842253008896,
+          "market_cap": 843664326656,
           "beta": -0.03,
           "risk_level": {
             "level": "低",
@@ -125714,7 +125713,7 @@
           "operating_margin": 3.5,
           "revenue_growth": 2.1,
           "current_ratio": 1.38,
-          "market_cap": 116628357120,
+          "market_cap": 117174009856,
           "beta": 0.3,
           "risk_level": {
             "level": "低",
@@ -126263,7 +126262,7 @@
           "operating_margin": 1.57,
           "revenue_growth": 8.0,
           "current_ratio": 1.38,
-          "market_cap": 225756217344,
+          "market_cap": 224484556800,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -126676,7 +126675,7 @@
           "operating_margin": 6.08,
           "revenue_growth": 17.9,
           "current_ratio": 1.8,
-          "market_cap": 483660922880,
+          "market_cap": 483077652480,
           "beta": 0.32,
           "risk_level": {
             "level": "中",
@@ -132412,7 +132411,7 @@
           "operating_margin": 40.37,
           "revenue_growth": 15.8,
           "current_ratio": null,
-          "market_cap": 5672742682624,
+          "market_cap": 5686734880768,
           "beta": 0.31,
           "risk_level": {
             "level": "中",
@@ -134285,7 +134284,7 @@
           "operating_margin": 11.08,
           "revenue_growth": 10.5,
           "current_ratio": 1.38,
-          "market_cap": 1398685171712,
+          "market_cap": 1398665117696,
           "beta": 0.56,
           "risk_level": {
             "level": "中",
@@ -136007,7 +136006,7 @@
           "operating_margin": 2.31,
           "revenue_growth": 19.8,
           "current_ratio": 1.26,
-          "market_cap": 85212102656,
+          "market_cap": 85227954176,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -136358,7 +136357,7 @@
           "operating_margin": 1.3,
           "revenue_growth": 17.5,
           "current_ratio": 1.02,
-          "market_cap": 77855293440,
+          "market_cap": 77961281536,
           "beta": -0.03,
           "risk_level": {
             "level": "中",
@@ -137401,7 +137400,7 @@
           "operating_margin": 6.34,
           "revenue_growth": 14.2,
           "current_ratio": 1.51,
-          "market_cap": 21306896384,
+          "market_cap": 21259010048,
           "beta": -0.04,
           "risk_level": {
             "level": "中",
@@ -139002,7 +139001,7 @@
           "operating_margin": 23.52,
           "revenue_growth": 38.3,
           "current_ratio": null,
-          "market_cap": 396294815744,
+          "market_cap": 397163331584,
           "beta": 0.2,
           "risk_level": {
             "level": "中",
@@ -139481,7 +139480,7 @@
           "sector": "Healthcare",
           "industry": "Pharmaceutical Retailers",
           "price": 5463.0,
-          "pbr": 1.22,
+          "pbr": 1.21,
           "roe": 11.54,
           "dividend_yield": 1.83,
           "equity_ratio": 48.7,
@@ -140879,7 +140878,7 @@
           "operating_margin": 16.18,
           "revenue_growth": 68.8,
           "current_ratio": null,
-          "market_cap": 194132197376,
+          "market_cap": 194133032960,
           "beta": 0.3,
           "risk_level": {
             "level": "中",
@@ -141293,7 +141292,7 @@
           "operating_margin": 16.06,
           "revenue_growth": 3.5,
           "current_ratio": 0.55,
-          "market_cap": 610637709312,
+          "market_cap": 609901150208,
           "beta": 0.23,
           "risk_level": {
             "level": "中",
@@ -141432,7 +141431,7 @@
           "operating_margin": 12.45,
           "revenue_growth": 10.9,
           "current_ratio": 0.49,
-          "market_cap": 14269021159424,
+          "market_cap": 14299850342400,
           "beta": -0.17,
           "risk_level": {
             "level": "中",
@@ -141713,7 +141712,7 @@
           "operating_margin": 13.78,
           "revenue_growth": 56.8,
           "current_ratio": 1.03,
-          "market_cap": 204174655488,
+          "market_cap": 203735056384,
           "beta": 0.43,
           "risk_level": {
             "level": "高",
@@ -142758,7 +142757,7 @@
           "operating_margin": 20.13,
           "revenue_growth": 19.9,
           "current_ratio": 2.94,
-          "market_cap": 1483428200448,
+          "market_cap": 1486049902592,
           "beta": 0.25,
           "risk_level": {
             "level": "中",
@@ -144130,7 +144129,7 @@
           "operating_margin": 11.42,
           "revenue_growth": 63.7,
           "current_ratio": 1.14,
-          "market_cap": 2500757291008,
+          "market_cap": 2500165894144,
           "beta": 0.03,
           "risk_level": {
             "level": "中",
@@ -145089,7 +145088,7 @@
           "operating_margin": 13.56,
           "revenue_growth": 121.6,
           "current_ratio": 4.04,
-          "market_cap": 46444560384,
+          "market_cap": 55669956608,
           "beta": 0.56,
           "risk_level": {
             "level": "中",
@@ -145632,7 +145631,7 @@
           "operating_margin": 15.44,
           "revenue_growth": 20.1,
           "current_ratio": 1.39,
-          "market_cap": 258172256256,
+          "market_cap": 258240970752,
           "beta": 1.48,
           "risk_level": {
             "level": "高",
@@ -146935,7 +146934,7 @@
           "operating_margin": 16.39,
           "revenue_growth": 18.0,
           "current_ratio": 3.9,
-          "market_cap": 20118159360,
+          "market_cap": 10059079680,
           "beta": 0.24,
           "risk_level": {
             "level": "中",
@@ -147070,7 +147069,7 @@
           "operating_margin": 9.56,
           "revenue_growth": 29.3,
           "current_ratio": 2.29,
-          "market_cap": 352379043840,
+          "market_cap": 352251936768,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -147477,7 +147476,7 @@
           "operating_margin": 4.67,
           "revenue_growth": 31.6,
           "current_ratio": 2.64,
-          "market_cap": 71074283520,
+          "market_cap": 71074078720,
           "beta": 0.42,
           "risk_level": {
             "level": "中",
@@ -147819,7 +147818,7 @@
           "operating_margin": 10.57,
           "revenue_growth": 32.0,
           "current_ratio": 2.82,
-          "market_cap": 85031870464,
+          "market_cap": 85110620160,
           "beta": 0.89,
           "risk_level": {
             "level": "中",
@@ -148774,7 +148773,7 @@
           "operating_margin": 0.15,
           "revenue_growth": 37.2,
           "current_ratio": 7.93,
-          "market_cap": 79951781888,
+          "market_cap": 79952183296,
           "beta": 0.4,
           "risk_level": {
             "level": "中",
@@ -149050,7 +149049,7 @@
           "operating_margin": 20.26,
           "revenue_growth": 58.2,
           "current_ratio": 3.13,
-          "market_cap": 55033319424,
+          "market_cap": 54417948672,
           "beta": 1.22,
           "risk_level": {
             "level": "中",
@@ -149873,7 +149872,7 @@
           "operating_margin": 11.48,
           "revenue_growth": 36.0,
           "current_ratio": 1.94,
-          "market_cap": 113373241344,
+          "market_cap": 113185816576,
           "beta": 0.49,
           "risk_level": {
             "level": "中",
@@ -152552,7 +152551,7 @@
           "operating_margin": 10.1,
           "revenue_growth": 27.7,
           "current_ratio": 2.52,
-          "market_cap": 318361567232,
+          "market_cap": 318344232960,
           "beta": 0.77,
           "risk_level": {
             "level": "中",
@@ -153582,7 +153581,7 @@
           "operating_margin": 20.01,
           "revenue_growth": 49.6,
           "current_ratio": 3.06,
-          "market_cap": 192459030528,
+          "market_cap": 192458801152,
           "beta": 0.62,
           "risk_level": {
             "level": "中",
@@ -155018,7 +155017,7 @@
           "operating_margin": 6.56,
           "revenue_growth": 18.6,
           "current_ratio": 1.88,
-          "market_cap": 130848047104,
+          "market_cap": 130510659584,
           "beta": 0.49,
           "risk_level": {
             "level": "中",
@@ -157895,7 +157894,7 @@
           "operating_margin": 7.72,
           "revenue_growth": 23.4,
           "current_ratio": 2.79,
-          "market_cap": 104109752320,
+          "market_cap": 104081276928,
           "beta": 1.23,
           "risk_level": {
             "level": "中",
@@ -159745,7 +159744,7 @@
           "operating_margin": 2.31,
           "revenue_growth": 19.8,
           "current_ratio": 1.26,
-          "market_cap": 85212102656,
+          "market_cap": 85227954176,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -160504,7 +160503,7 @@
           "operating_margin": 6.08,
           "revenue_growth": 17.9,
           "current_ratio": 1.8,
-          "market_cap": 483660922880,
+          "market_cap": 483077652480,
           "beta": 0.32,
           "risk_level": {
             "level": "中",
@@ -163418,7 +163417,7 @@
           "operating_margin": 31.01,
           "revenue_growth": 11.6,
           "current_ratio": 6.06,
-          "market_cap": 0,
+          "market_cap": 110085832704,
           "beta": 0.16,
           "risk_level": {
             "level": "中",
@@ -163557,7 +163556,7 @@
           "operating_margin": 0.5,
           "revenue_growth": 62.9,
           "current_ratio": 2.83,
-          "market_cap": 0,
+          "market_cap": 185267732480,
           "beta": 0.61,
           "risk_level": {
             "level": "中",
@@ -164040,7 +164039,7 @@
           "operating_margin": 8.12,
           "revenue_growth": 10.1,
           "current_ratio": 1.64,
-          "market_cap": 44152930304,
+          "market_cap": 44154744832,
           "beta": 0.63,
           "risk_level": {
             "level": "中",
@@ -164108,7 +164107,7 @@
           "operating_margin": 3.09,
           "revenue_growth": 15.7,
           "current_ratio": 4.07,
-          "market_cap": 239496855552,
+          "market_cap": 239325626368,
           "beta": 0.34,
           "risk_level": {
             "level": "中",
@@ -164178,7 +164177,7 @@
           "operating_margin": 1.3,
           "revenue_growth": 17.5,
           "current_ratio": 1.02,
-          "market_cap": 77855293440,
+          "market_cap": 77961281536,
           "beta": -0.03,
           "risk_level": {
             "level": "中",
@@ -164791,6 +164790,75 @@
           }
         },
         {
+          "ticker": "9627.T",
+          "name": "AIN HOLDINGS INC",
+          "sector": "Healthcare",
+          "industry": "Pharmaceutical Retailers",
+          "price": 5463.0,
+          "pbr": 1.21,
+          "roe": 11.54,
+          "dividend_yield": 1.83,
+          "equity_ratio": 48.7,
+          "operating_margin": 2.48,
+          "revenue_growth": 33.2,
+          "current_ratio": 0.91,
+          "market_cap": 192190627840,
+          "beta": 0.26,
+          "risk_level": {
+            "level": "中",
+            "color": "yellow",
+            "reasons": [
+              "【業種特性】薬価改定や規制動向の影響を受けやすい業種です"
+            ]
+          },
+          "score": 56.8,
+          "score_breakdown": [
+            {
+              "label": "売上成長率",
+              "score": 30.0,
+              "max": 30
+            },
+            {
+              "label": "稼ぐ力（ROE）",
+              "score": 3.1,
+              "max": 30
+            },
+            {
+              "label": "割安度（PBR）",
+              "score": 17.9,
+              "max": 20
+            },
+            {
+              "label": "財務の安全度（自己資本比率）",
+              "score": 5.8,
+              "max": 20
+            }
+          ],
+          "sector_display": "Healthcare",
+          "nisa_fit": {
+            "level": "要検討",
+            "stars": 2,
+            "reasons": [
+              "財務が健全（自己資本比率48.7%）",
+              "極端な割高ではない",
+              "収益性が安定",
+              "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
+            ]
+          },
+          "detailed_comment": "自己資本比率48.7%と財務は概ね健全な水準です。ROE11.54%と収益力は合格水準です。売上高は前年比+33.2%と成長が続いています。",
+          "sector_rank": {
+            "percentile_margin": 20.5,
+            "percentile_roe": 68.2,
+            "sector_count": 88,
+            "label_margin": "業種内では控えめ",
+            "label_roe": "業種内で平均的",
+            "rank_margin": 71,
+            "rank_margin_total": 88,
+            "rank_roe": 29,
+            "rank_roe_total": 85
+          }
+        },
+        {
           "ticker": "4318.T",
           "name": "QUICK CO LTD",
           "sector": "Industrials",
@@ -164943,7 +165011,7 @@
           "operating_margin": 15.29,
           "revenue_growth": 14.6,
           "current_ratio": 2.65,
-          "market_cap": 95713730560,
+          "market_cap": 95713861632,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -164998,75 +165066,6 @@
             "rank_margin_total": 139,
             "rank_roe": 49,
             "rank_roe_total": 132
-          }
-        },
-        {
-          "ticker": "9627.T",
-          "name": "AIN HOLDINGS INC",
-          "sector": "Healthcare",
-          "industry": "Pharmaceutical Retailers",
-          "price": 5463.0,
-          "pbr": 1.22,
-          "roe": 11.54,
-          "dividend_yield": 1.83,
-          "equity_ratio": 48.7,
-          "operating_margin": 2.48,
-          "revenue_growth": 33.2,
-          "current_ratio": 0.91,
-          "market_cap": 192190627840,
-          "beta": 0.26,
-          "risk_level": {
-            "level": "中",
-            "color": "yellow",
-            "reasons": [
-              "【業種特性】薬価改定や規制動向の影響を受けやすい業種です"
-            ]
-          },
-          "score": 56.7,
-          "score_breakdown": [
-            {
-              "label": "売上成長率",
-              "score": 30.0,
-              "max": 30
-            },
-            {
-              "label": "稼ぐ力（ROE）",
-              "score": 3.1,
-              "max": 30
-            },
-            {
-              "label": "割安度（PBR）",
-              "score": 17.8,
-              "max": 20
-            },
-            {
-              "label": "財務の安全度（自己資本比率）",
-              "score": 5.8,
-              "max": 20
-            }
-          ],
-          "sector_display": "Healthcare",
-          "nisa_fit": {
-            "level": "要検討",
-            "stars": 2,
-            "reasons": [
-              "財務が健全（自己資本比率48.7%）",
-              "極端な割高ではない",
-              "収益性が安定",
-              "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
-            ]
-          },
-          "detailed_comment": "自己資本比率48.7%と財務は概ね健全な水準です。ROE11.54%と収益力は合格水準です。売上高は前年比+33.2%と成長が続いています。",
-          "sector_rank": {
-            "percentile_margin": 20.5,
-            "percentile_roe": 68.2,
-            "sector_count": 88,
-            "label_margin": "業種内では控えめ",
-            "label_roe": "業種内で平均的",
-            "rank_margin": 71,
-            "rank_margin_total": 88,
-            "rank_roe": 29,
-            "rank_roe_total": 85
           }
         },
         {
@@ -165222,7 +165221,7 @@
           "operating_margin": 11.23,
           "revenue_growth": 14.8,
           "current_ratio": 2.24,
-          "market_cap": 174966833152,
+          "market_cap": 174565654528,
           "beta": 0.7,
           "risk_level": {
             "level": "中",
@@ -165845,7 +165844,7 @@
           "operating_margin": 4.34,
           "revenue_growth": 13.5,
           "current_ratio": 1.38,
-          "market_cap": 1212768583680,
+          "market_cap": 1212925476864,
           "beta": 0.4,
           "risk_level": {
             "level": "中",
@@ -167648,7 +167647,7 @@
           "operating_margin": 15.62,
           "revenue_growth": 14.4,
           "current_ratio": 3.21,
-          "market_cap": 80286048256,
+          "market_cap": 80715513856,
           "beta": -0.23,
           "risk_level": {
             "level": "中",
@@ -168758,7 +168757,7 @@
           "operating_margin": 11.34,
           "revenue_growth": 23.6,
           "current_ratio": 3.4,
-          "market_cap": 1144481382400,
+          "market_cap": 1150481203200,
           "beta": 0.71,
           "risk_level": {
             "level": "中",
@@ -173554,7 +173553,7 @@
           "operating_margin": 25.9,
           "revenue_growth": 32.3,
           "current_ratio": 1.81,
-          "market_cap": 1316660445184,
+          "market_cap": 1316885364736,
           "beta": 0.36,
           "risk_level": {
             "level": "中",
@@ -175629,7 +175628,7 @@
           "operating_margin": 25.81,
           "revenue_growth": 1.0,
           "current_ratio": 7.13,
-          "market_cap": 201172860928,
+          "market_cap": 201342042112,
           "beta": 0.57,
           "risk_level": {
             "level": "中",
@@ -175835,7 +175834,7 @@
           "operating_margin": 12.96,
           "revenue_growth": 4.5,
           "current_ratio": 2.19,
-          "market_cap": 254046961664,
+          "market_cap": 254017601536,
           "beta": 0.56,
           "risk_level": {
             "level": "中",
@@ -176807,7 +176806,7 @@
           "operating_margin": 3.77,
           "revenue_growth": 9.0,
           "current_ratio": 2.18,
-          "market_cap": 75533328384,
+          "market_cap": 75514519552,
           "beta": 0.73,
           "risk_level": {
             "level": "中",
@@ -180836,7 +180835,7 @@
           "operating_margin": 6.34,
           "revenue_growth": 14.2,
           "current_ratio": 1.51,
-          "market_cap": 21306896384,
+          "market_cap": 21259010048,
           "beta": -0.04,
           "risk_level": {
             "level": "中",
@@ -180976,7 +180975,7 @@
           "operating_margin": 1.0,
           "revenue_growth": 9.1,
           "current_ratio": 1.81,
-          "market_cap": 309609005056,
+          "market_cap": 301993426944,
           "beta": 0.01,
           "risk_level": {
             "level": "中",
@@ -181171,75 +181170,6 @@
           }
         },
         {
-          "ticker": "6370.T",
-          "name": "KURITA WATER INDUSTRIES",
-          "sector": "Industrials",
-          "industry": "Pollution & Treatment Controls",
-          "price": 7723.0,
-          "pbr": 2.49,
-          "roe": 13.55,
-          "dividend_yield": 1.74,
-          "equity_ratio": 74.6,
-          "operating_margin": 14.31,
-          "revenue_growth": 14.3,
-          "current_ratio": 2.02,
-          "market_cap": 831741952000,
-          "beta": 0.93,
-          "risk_level": {
-            "level": "中",
-            "color": "yellow",
-            "reasons": [
-              "【業種特性】景気変動・燃料費や原材料費の影響を受けやすい業種です"
-            ]
-          },
-          "score": 49.4,
-          "score_breakdown": [
-            {
-              "label": "売上成長率",
-              "score": 17.2,
-              "max": 30
-            },
-            {
-              "label": "稼ぐ力（ROE）",
-              "score": 7.1,
-              "max": 30
-            },
-            {
-              "label": "割安度（PBR）",
-              "score": 5.1,
-              "max": 20
-            },
-            {
-              "label": "財務の安全度（自己資本比率）",
-              "score": 20.0,
-              "max": 20
-            }
-          ],
-          "sector_display": "Industrials",
-          "nisa_fit": {
-            "level": "要検討",
-            "stars": 2,
-            "reasons": [
-              "財務が健全（自己資本比率74.6%）",
-              "極端な割高ではない",
-              "収益性が安定",
-              "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
-            ]
-          },
-          "detailed_comment": "自己資本比率74.6%と財務基盤が非常に安定しています。ROE13.55%と収益力は合格水準です。売上高は前年比+14.3%と成長が続いています。",
-          "sector_rank": {
-            "percentile_margin": 78.6,
-            "percentile_roe": 74.1,
-            "sector_count": 364,
-            "label_margin": "業種内で上位",
-            "label_roe": "業種内で上位",
-            "rank_margin": 79,
-            "rank_margin_total": 364,
-            "rank_roe": 91,
-            "rank_roe_total": 347
-          }
-        },
-        {
           "ticker": "2130.T",
           "name": "MEMBERS CO LTD",
           "sector": "Communication Services",
@@ -181392,7 +181322,7 @@
           "operating_margin": 4.41,
           "revenue_growth": 23.0,
           "current_ratio": 1.43,
-          "market_cap": 71216078848,
+          "market_cap": 71186366464,
           "beta": 1.31,
           "risk_level": {
             "level": "高",
@@ -181729,6 +181659,74 @@
           }
         },
         {
+          "ticker": "6370.T",
+          "name": "KURITA WATER INDUSTRIES",
+          "sector": "Industrials",
+          "industry": "Pollution & Treatment Controls",
+          "price": 7723.0,
+          "pbr": 2.51,
+          "roe": 13.55,
+          "dividend_yield": 1.74,
+          "equity_ratio": 74.6,
+          "operating_margin": 14.31,
+          "revenue_growth": 14.3,
+          "current_ratio": 2.02,
+          "market_cap": 831741952000,
+          "beta": 0.93,
+          "risk_level": {
+            "level": "中",
+            "color": "yellow",
+            "reasons": [
+              "【業種特性】景気変動・燃料費や原材料費の影響を受けやすい業種です"
+            ]
+          },
+          "score": 49.2,
+          "score_breakdown": [
+            {
+              "label": "売上成長率",
+              "score": 17.2,
+              "max": 30
+            },
+            {
+              "label": "稼ぐ力（ROE）",
+              "score": 7.1,
+              "max": 30
+            },
+            {
+              "label": "割安度（PBR）",
+              "score": 4.9,
+              "max": 20
+            },
+            {
+              "label": "財務の安全度（自己資本比率）",
+              "score": 20.0,
+              "max": 20
+            }
+          ],
+          "sector_display": "Industrials",
+          "nisa_fit": {
+            "level": "要検討",
+            "stars": 2,
+            "reasons": [
+              "財務が健全（自己資本比率74.6%）",
+              "収益性が安定",
+              "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
+            ]
+          },
+          "detailed_comment": "自己資本比率74.6%と財務基盤が非常に安定しています。ROE13.55%と収益力は合格水準です。売上高は前年比+14.3%と成長が続いています。",
+          "sector_rank": {
+            "percentile_margin": 78.6,
+            "percentile_roe": 74.1,
+            "sector_count": 364,
+            "label_margin": "業種内で上位",
+            "label_roe": "業種内で上位",
+            "rank_margin": 79,
+            "rank_margin_total": 364,
+            "rank_roe": 91,
+            "rank_roe_total": 347
+          }
+        },
+        {
           "ticker": "6674.T",
           "name": "GS YUASA CORP",
           "sector": "Consumer Cyclical",
@@ -181810,7 +181808,7 @@
           "operating_margin": 12.5,
           "revenue_growth": 8.7,
           "current_ratio": 1.73,
-          "market_cap": 90183245824,
+          "market_cap": 89258958848,
           "beta": 0.21,
           "risk_level": {
             "level": "中",
@@ -182297,7 +182295,7 @@
           "operating_margin": 17.07,
           "revenue_growth": 13.9,
           "current_ratio": 1.34,
-          "market_cap": 13203590144,
+          "market_cap": 13845909504,
           "beta": 0.35,
           "risk_level": {
             "level": "中",
@@ -183962,7 +183960,7 @@
           "operating_margin": 47.09,
           "revenue_growth": 17.8,
           "current_ratio": 4.34,
-          "market_cap": 10887139164160,
+          "market_cap": 10888368095232,
           "beta": 0.55,
           "risk_level": {
             "level": "中",
@@ -184167,7 +184165,7 @@
           "operating_margin": 2.61,
           "revenue_growth": 6.9,
           "current_ratio": 2.32,
-          "market_cap": 75899641856,
+          "market_cap": 75900190720,
           "beta": 0.09,
           "risk_level": {
             "level": "中",
@@ -189721,7 +189719,7 @@
           "operating_margin": 8.11,
           "revenue_growth": 5.4,
           "current_ratio": 2.12,
-          "market_cap": 90295508992,
+          "market_cap": 89995026432,
           "beta": 0.61,
           "risk_level": {
             "level": "中",
@@ -190551,7 +190549,7 @@
           "operating_margin": 7.29,
           "revenue_growth": 10.0,
           "current_ratio": 1.43,
-          "market_cap": 842253008896,
+          "market_cap": 843664326656,
           "beta": -0.03,
           "risk_level": {
             "level": "低",
@@ -191312,7 +191310,7 @@
           "operating_margin": 9.83,
           "revenue_growth": -10.1,
           "current_ratio": 1.92,
-          "market_cap": 103283679232,
+          "market_cap": 103283703808,
           "beta": 0.62,
           "risk_level": {
             "level": "中",
@@ -192835,7 +192833,7 @@
           "operating_margin": 6.51,
           "revenue_growth": 6.6,
           "current_ratio": 1.97,
-          "market_cap": 246495526912,
+          "market_cap": 246408478720,
           "beta": 0.09,
           "risk_level": {
             "level": "低",
@@ -194144,7 +194142,7 @@
           "operating_margin": 1.01,
           "revenue_growth": 3.8,
           "current_ratio": 2.84,
-          "market_cap": 66984062976,
+          "market_cap": 66984079360,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -194699,7 +194697,7 @@
           "operating_margin": -0.39,
           "revenue_growth": 4.3,
           "current_ratio": 1.94,
-          "market_cap": 65109180416,
+          "market_cap": 65108918272,
           "beta": -0.01,
           "risk_level": {
             "level": "中",
@@ -194907,7 +194905,7 @@
           "operating_margin": 5.11,
           "revenue_growth": 3.6,
           "current_ratio": 2.31,
-          "market_cap": 79528034304,
+          "market_cap": 79527870464,
           "beta": 0.35,
           "risk_level": {
             "level": "中",
@@ -195046,7 +195044,7 @@
           "operating_margin": 1.57,
           "revenue_growth": 8.0,
           "current_ratio": 1.38,
-          "market_cap": 225756217344,
+          "market_cap": 224484556800,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -197400,7 +197398,7 @@
           "operating_margin": 4.06,
           "revenue_growth": 6.0,
           "current_ratio": 2.48,
-          "market_cap": 97956356096,
+          "market_cap": 97961902080,
           "beta": 0.76,
           "risk_level": {
             "level": "中",
@@ -198025,7 +198023,7 @@
           "operating_margin": 13.54,
           "revenue_growth": 3.6,
           "current_ratio": 4.55,
-          "market_cap": 132238368768,
+          "market_cap": 132238409728,
           "beta": 0.33,
           "risk_level": {
             "level": "中",
@@ -198582,7 +198580,7 @@
           "operating_margin": 21.56,
           "revenue_growth": 31.1,
           "current_ratio": 4.64,
-          "market_cap": 139952603136,
+          "market_cap": 139952816128,
           "beta": 0.85,
           "risk_level": {
             "level": "中",
@@ -201766,7 +201764,7 @@
           "operating_margin": 34.82,
           "revenue_growth": 9.7,
           "current_ratio": 6.28,
-          "market_cap": 29551108096,
+          "market_cap": 29515274240,
           "beta": 0.6,
           "risk_level": {
             "level": "中",
@@ -203570,7 +203568,7 @@
           "operating_margin": 2.98,
           "revenue_growth": 0.7,
           "current_ratio": 3.19,
-          "market_cap": 0,
+          "market_cap": 108022218752,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -203773,7 +203771,7 @@
           "operating_margin": 8.76,
           "revenue_growth": 13.5,
           "current_ratio": 1.29,
-          "market_cap": 6756330110976,
+          "market_cap": 6755573039104,
           "beta": 0.31,
           "risk_level": {
             "level": "高",
@@ -204055,7 +204053,7 @@
           "operating_margin": 9.55,
           "revenue_growth": 12.0,
           "current_ratio": 2.96,
-          "market_cap": 100087455744,
+          "market_cap": 99962781696,
           "beta": 0.08,
           "risk_level": {
             "level": "中",
@@ -205029,7 +205027,7 @@
           "operating_margin": 5.14,
           "revenue_growth": 1.1,
           "current_ratio": 2.28,
-          "market_cap": 567057842176,
+          "market_cap": 567336370176,
           "beta": -0.1,
           "risk_level": {
             "level": "中",
@@ -206000,7 +205998,7 @@
           "operating_margin": 3.5,
           "revenue_growth": 2.1,
           "current_ratio": 1.38,
-          "market_cap": 116628357120,
+          "market_cap": 117174009856,
           "beta": 0.3,
           "risk_level": {
             "level": "低",
@@ -206345,7 +206343,7 @@
           "operating_margin": 19.51,
           "revenue_growth": -7.4,
           "current_ratio": 1.6,
-          "market_cap": 115559120896,
+          "market_cap": 115528433664,
           "beta": 0.41,
           "risk_level": {
             "level": "中",
@@ -206901,7 +206899,7 @@
           "operating_margin": 4.55,
           "revenue_growth": -12.5,
           "current_ratio": 2.1,
-          "market_cap": 71573315584,
+          "market_cap": 72549097472,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -207455,7 +207453,7 @@
           "operating_margin": 5.02,
           "revenue_growth": 3.6,
           "current_ratio": 3.31,
-          "market_cap": 28087517184,
+          "market_cap": 28049940480,
           "beta": 0.24,
           "risk_level": {
             "level": "中",
@@ -209190,7 +209188,7 @@
           "operating_margin": 11.08,
           "revenue_growth": 10.5,
           "current_ratio": 1.38,
-          "market_cap": 1398685171712,
+          "market_cap": 1398665117696,
           "beta": 0.56,
           "risk_level": {
             "level": "中",
@@ -210358,7 +210356,7 @@
           "operating_margin": 8.7,
           "revenue_growth": null,
           "current_ratio": 1.49,
-          "market_cap": 135105347584,
+          "market_cap": 135231635456,
           "beta": 0.82,
           "risk_level": {
             "level": "中",
@@ -210495,7 +210493,7 @@
           "operating_margin": 10.09,
           "revenue_growth": -6.4,
           "current_ratio": 3.85,
-          "market_cap": 83393691648,
+          "market_cap": 83395477504,
           "beta": 0.57,
           "risk_level": {
             "level": "中",
@@ -217582,7 +217580,7 @@
           "operating_margin": 3.14,
           "revenue_growth": 3.2,
           "current_ratio": 1.19,
-          "market_cap": 29763612672,
+          "market_cap": 14881806336,
           "beta": 0.21,
           "risk_level": {
             "level": "中",
@@ -219306,7 +219304,7 @@
           "operating_margin": 12.45,
           "revenue_growth": 10.9,
           "current_ratio": 0.49,
-          "market_cap": 14269021159424,
+          "market_cap": 14299850342400,
           "beta": -0.17,
           "risk_level": {
             "level": "中",
@@ -220413,7 +220411,7 @@
           "operating_margin": 14.9,
           "revenue_growth": 7.2,
           "current_ratio": null,
-          "market_cap": 0,
+          "market_cap": 19682129920,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -222727,7 +222725,7 @@
           "operating_margin": 16.06,
           "revenue_growth": 3.5,
           "current_ratio": 0.55,
-          "market_cap": 610637709312,
+          "market_cap": 609901150208,
           "beta": 0.23,
           "risk_level": {
             "level": "中",
@@ -225472,7 +225470,7 @@
           "operating_margin": 0.6,
           "revenue_growth": 4.2,
           "current_ratio": 5.88,
-          "market_cap": 35880615936,
+          "market_cap": 35896705024,
           "beta": 0.27,
           "risk_level": {
             "level": "低",
@@ -225663,66 +225661,126 @@
       ]
     }
   },
-  "backtest": null,
+  "backtest": {
+    "strategy": "dividend",
+    "years": 5,
+    "sample_size": 10,
+    "avg_return_pct": 160.1,
+    "benchmark_nikkei225_pct": 119.9,
+    "benchmark_topix_pct": 123.7,
+    "stocks": [
+      {
+        "ticker": "5351.T",
+        "name": "SHINAGAWA REFRA CO LTD",
+        "return_pct": 215.5
+      },
+      {
+        "ticker": "5076.T",
+        "name": "INFRONEER HLDGS INC",
+        "return_pct": 276.9
+      },
+      {
+        "ticker": "5989.T",
+        "name": "H-ONE CO.LTD",
+        "return_pct": 136.2
+      },
+      {
+        "ticker": "2982.T",
+        "name": "AD WORKS GRP CO LTD",
+        "return_pct": 227.6
+      },
+      {
+        "ticker": "3284.T",
+        "name": "HOOSIERS HOLDINGS CO LTD",
+        "return_pct": 137.5
+      },
+      {
+        "ticker": "6390.T",
+        "name": "KATO WORKS CO LTD",
+        "return_pct": 83.0
+      },
+      {
+        "ticker": "3465.T",
+        "name": "KI-STAR REAL ESTATE CO LTD",
+        "return_pct": 38.7
+      },
+      {
+        "ticker": "5021.T",
+        "name": "COSMO ENERGY HLDGS CO LTD",
+        "return_pct": 329.8
+      },
+      {
+        "ticker": "7095.T",
+        "name": "MACBEE PLANET INC",
+        "return_pct": -46.8
+      },
+      {
+        "ticker": "3482.T",
+        "name": "LOADSTAR CAPITAL K K",
+        "return_pct": 203.0
+      }
+    ],
+    "disclaimer": "現在の条件を満たす上位銘柄のみを対象とした参考値です。過去に上場廃止・条件外となった銘柄は含まれないため、実際の運用成績とは異なります。"
+  },
   "backtest_multi": {
     "dividend": {
       "1": {
         "strategy": "dividend",
         "years": 1,
         "sample_size": 10,
-        "avg_return_pct": 17.7,
-        "benchmark_nikkei225_pct": 49.0,
-        "benchmark_topix_pct": 34.4,
+        "avg_return_pct": 8.5,
+        "benchmark_nikkei225_pct": 47.3,
+        "benchmark_topix_pct": 33.5,
         "stocks": [
           {
             "ticker": "5351.T",
             "name": "SHINAGAWA REFRA CO LTD",
-            "return_pct": 9.6
+            "return_pct": 12.9
           },
           {
             "ticker": "5076.T",
             "name": "INFRONEER HLDGS INC",
-            "return_pct": 92.7
+            "return_pct": 96.4
           },
           {
             "ticker": "5989.T",
             "name": "H-ONE CO.LTD",
-            "return_pct": 3.1
-          },
-          {
-            "ticker": "3284.T",
-            "name": "HOOSIERS HOLDINGS CO LTD",
-            "return_pct": 0.4
-          },
-          {
-            "ticker": "5021.T",
-            "name": "COSMO ENERGY HLDGS CO LTD",
-            "return_pct": 25.6
-          },
-          {
-            "ticker": "6390.T",
-            "name": "KATO WORKS CO LTD",
-            "return_pct": -4.1
-          },
-          {
-            "ticker": "3465.T",
-            "name": "KI-STAR REAL ESTATE CO LTD",
-            "return_pct": 23.1
-          },
-          {
-            "ticker": "3482.T",
-            "name": "LOADSTAR CAPITAL K K",
-            "return_pct": -16.9
-          },
-          {
-            "ticker": "1814.T",
-            "name": "DAISUE CONSTRUCTION CO",
-            "return_pct": 50.4
+            "return_pct": 3.7
           },
           {
             "ticker": "2982.T",
             "name": "AD WORKS GRP CO LTD",
-            "return_pct": -7.2
+            "return_pct": -9.2
+          },
+          {
+            "ticker": "3284.T",
+            "name": "HOOSIERS HOLDINGS CO LTD",
+            "return_pct": 1.8
+          },
+          {
+            "ticker": "6390.T",
+            "name": "KATO WORKS CO LTD",
+            "return_pct": -3.1
+          },
+          {
+            "ticker": "3465.T",
+            "name": "KI-STAR REAL ESTATE CO LTD",
+            "return_pct": 19.5
+          },
+          {
+            "ticker": "5021.T",
+            "name": "COSMO ENERGY HLDGS CO LTD",
+            "return_pct": 29.4
+          },
+          {
+            "ticker": "7095.T",
+            "name": "MACBEE PLANET INC",
+            "return_pct": -48.0
+          },
+          {
+            "ticker": "3482.T",
+            "name": "LOADSTAR CAPITAL K K",
+            "return_pct": -18.3
           }
         ],
         "disclaimer": "現在の条件を満たす上位銘柄のみを対象とした参考値です。過去に上場廃止・条件外となった銘柄は含まれないため、実際の運用成績とは異なります。"
@@ -225731,59 +225789,59 @@
         "strategy": "dividend",
         "years": 3,
         "sample_size": 10,
-        "avg_return_pct": 81.0,
-        "benchmark_nikkei225_pct": 97.1,
-        "benchmark_topix_pct": 85.5,
+        "avg_return_pct": 51.3,
+        "benchmark_nikkei225_pct": 108.2,
+        "benchmark_topix_pct": 86.8,
         "stocks": [
           {
             "ticker": "5351.T",
             "name": "SHINAGAWA REFRA CO LTD",
-            "return_pct": 48.0
+            "return_pct": 43.0
           },
           {
             "ticker": "5076.T",
             "name": "INFRONEER HLDGS INC",
-            "return_pct": 107.6
+            "return_pct": 111.8
           },
           {
             "ticker": "5989.T",
             "name": "H-ONE CO.LTD",
-            "return_pct": 110.0
-          },
-          {
-            "ticker": "3284.T",
-            "name": "HOOSIERS HOLDINGS CO LTD",
-            "return_pct": 34.5
-          },
-          {
-            "ticker": "5021.T",
-            "name": "COSMO ENERGY HLDGS CO LTD",
-            "return_pct": 81.3
-          },
-          {
-            "ticker": "6390.T",
-            "name": "KATO WORKS CO LTD",
-            "return_pct": 19.6
-          },
-          {
-            "ticker": "3465.T",
-            "name": "KI-STAR REAL ESTATE CO LTD",
-            "return_pct": 53.7
-          },
-          {
-            "ticker": "3482.T",
-            "name": "LOADSTAR CAPITAL K K",
-            "return_pct": 54.6
-          },
-          {
-            "ticker": "1814.T",
-            "name": "DAISUE CONSTRUCTION CO",
-            "return_pct": 185.8
+            "return_pct": 86.1
           },
           {
             "ticker": "2982.T",
             "name": "AD WORKS GRP CO LTD",
-            "return_pct": 115.1
+            "return_pct": 97.3
+          },
+          {
+            "ticker": "3284.T",
+            "name": "HOOSIERS HOLDINGS CO LTD",
+            "return_pct": 34.6
+          },
+          {
+            "ticker": "6390.T",
+            "name": "KATO WORKS CO LTD",
+            "return_pct": 24.1
+          },
+          {
+            "ticker": "3465.T",
+            "name": "KI-STAR REAL ESTATE CO LTD",
+            "return_pct": 54.5
+          },
+          {
+            "ticker": "5021.T",
+            "name": "COSMO ENERGY HLDGS CO LTD",
+            "return_pct": 83.6
+          },
+          {
+            "ticker": "7095.T",
+            "name": "MACBEE PLANET INC",
+            "return_pct": -74.4
+          },
+          {
+            "ticker": "3482.T",
+            "name": "LOADSTAR CAPITAL K K",
+            "return_pct": 52.4
           }
         ],
         "disclaimer": "現在の条件を満たす上位銘柄のみを対象とした参考値です。過去に上場廃止・条件外となった銘柄は含まれないため、実際の運用成績とは異なります。"
@@ -225792,59 +225850,59 @@
         "strategy": "dividend",
         "years": 5,
         "sample_size": 10,
-        "avg_return_pct": 206.0,
-        "benchmark_nikkei225_pct": 117.3,
-        "benchmark_topix_pct": 125.5,
+        "avg_return_pct": 160.1,
+        "benchmark_nikkei225_pct": 119.9,
+        "benchmark_topix_pct": 123.7,
         "stocks": [
           {
             "ticker": "5351.T",
             "name": "SHINAGAWA REFRA CO LTD",
-            "return_pct": 212.3
+            "return_pct": 215.5
           },
           {
             "ticker": "5076.T",
             "name": "INFRONEER HLDGS INC",
-            "return_pct": 259.8
+            "return_pct": 276.9
           },
           {
             "ticker": "5989.T",
             "name": "H-ONE CO.LTD",
-            "return_pct": 143.4
-          },
-          {
-            "ticker": "3284.T",
-            "name": "HOOSIERS HOLDINGS CO LTD",
-            "return_pct": 150.5
-          },
-          {
-            "ticker": "5021.T",
-            "name": "COSMO ENERGY HLDGS CO LTD",
-            "return_pct": 371.6
-          },
-          {
-            "ticker": "6390.T",
-            "name": "KATO WORKS CO LTD",
-            "return_pct": 74.3
-          },
-          {
-            "ticker": "3465.T",
-            "name": "KI-STAR REAL ESTATE CO LTD",
-            "return_pct": 54.1
-          },
-          {
-            "ticker": "3482.T",
-            "name": "LOADSTAR CAPITAL K K",
-            "return_pct": 183.6
-          },
-          {
-            "ticker": "1814.T",
-            "name": "DAISUE CONSTRUCTION CO",
-            "return_pct": 376.5
+            "return_pct": 136.2
           },
           {
             "ticker": "2982.T",
             "name": "AD WORKS GRP CO LTD",
-            "return_pct": 233.5
+            "return_pct": 227.6
+          },
+          {
+            "ticker": "3284.T",
+            "name": "HOOSIERS HOLDINGS CO LTD",
+            "return_pct": 137.5
+          },
+          {
+            "ticker": "6390.T",
+            "name": "KATO WORKS CO LTD",
+            "return_pct": 83.0
+          },
+          {
+            "ticker": "3465.T",
+            "name": "KI-STAR REAL ESTATE CO LTD",
+            "return_pct": 38.7
+          },
+          {
+            "ticker": "5021.T",
+            "name": "COSMO ENERGY HLDGS CO LTD",
+            "return_pct": 329.8
+          },
+          {
+            "ticker": "7095.T",
+            "name": "MACBEE PLANET INC",
+            "return_pct": -46.8
+          },
+          {
+            "ticker": "3482.T",
+            "name": "LOADSTAR CAPITAL K K",
+            "return_pct": 203.0
           }
         ],
         "disclaimer": "現在の条件を満たす上位銘柄のみを対象とした参考値です。過去に上場廃止・条件外となった銘柄は含まれないため、実際の運用成績とは異なります。"
@@ -225855,59 +225913,59 @@
         "strategy": "solid",
         "years": 1,
         "sample_size": 10,
-        "avg_return_pct": 47.6,
-        "benchmark_nikkei225_pct": 49.0,
-        "benchmark_topix_pct": 34.4,
+        "avg_return_pct": 40.0,
+        "benchmark_nikkei225_pct": 47.3,
+        "benchmark_topix_pct": 33.5,
         "stocks": [
           {
             "ticker": "6857.T",
             "name": "ADVANTEST CORP",
-            "return_pct": 189.8
+            "return_pct": 124.8
           },
           {
             "ticker": "7741.T",
             "name": "HOYA CORP",
-            "return_pct": 17.8
+            "return_pct": 16.2
           },
           {
             "ticker": "4732.T",
             "name": "USS CO LTD",
-            "return_pct": 11.9
+            "return_pct": 12.1
           },
           {
             "ticker": "3853.T",
             "name": "ASTERIA CORPORATION",
-            "return_pct": -32.1
+            "return_pct": -34.5
+          },
+          {
+            "ticker": "3939.T",
+            "name": "KANAMIC NETWORK CO LTD",
+            "return_pct": 3.6
           },
           {
             "ticker": "6101.T",
             "name": "TSUGAMI CORP",
-            "return_pct": 141.3
+            "return_pct": 125.5
           },
           {
             "ticker": "6532.T",
             "name": "BAYCURRENT INC",
-            "return_pct": -8.7
+            "return_pct": -7.3
           },
           {
             "ticker": "7839.T",
             "name": "SHOEI CO LTD",
-            "return_pct": 17.0
+            "return_pct": 22.4
           },
           {
             "ticker": "6941.T",
             "name": "YAMAICHI ELECTRONICS",
-            "return_pct": 139.5
+            "return_pct": 140.8
           },
           {
             "ticker": "9757.T",
             "name": "FUNAI SOKEN HOLDINGS INCORPORAT",
-            "return_pct": -5.7
-          },
-          {
-            "ticker": "4318.T",
-            "name": "QUICK CO LTD",
-            "return_pct": 4.8
+            "return_pct": -4.0
           }
         ],
         "disclaimer": "現在の条件を満たす上位銘柄のみを対象とした参考値です。過去に上場廃止・条件外となった銘柄は含まれないため、実際の運用成績とは異なります。"
@@ -225916,59 +225974,59 @@
         "strategy": "solid",
         "years": 3,
         "sample_size": 10,
-        "avg_return_pct": 171.0,
-        "benchmark_nikkei225_pct": 97.1,
-        "benchmark_topix_pct": 85.5,
+        "avg_return_pct": 181.2,
+        "benchmark_nikkei225_pct": 108.2,
+        "benchmark_topix_pct": 86.8,
         "stocks": [
           {
             "ticker": "6857.T",
             "name": "ADVANTEST CORP",
-            "return_pct": 711.3
+            "return_pct": 747.2
           },
           {
             "ticker": "7741.T",
             "name": "HOYA CORP",
-            "return_pct": 54.1
+            "return_pct": 58.6
           },
           {
             "ticker": "4732.T",
             "name": "USS CO LTD",
-            "return_pct": 68.3
+            "return_pct": 65.2
           },
           {
             "ticker": "3853.T",
             "name": "ASTERIA CORPORATION",
-            "return_pct": 41.6
+            "return_pct": 62.5
+          },
+          {
+            "ticker": "3939.T",
+            "name": "KANAMIC NETWORK CO LTD",
+            "return_pct": -1.6
           },
           {
             "ticker": "6101.T",
             "name": "TSUGAMI CORP",
-            "return_pct": 393.9
+            "return_pct": 386.7
           },
           {
             "ticker": "6532.T",
             "name": "BAYCURRENT INC",
-            "return_pct": 51.1
+            "return_pct": 62.7
           },
           {
             "ticker": "7839.T",
             "name": "SHOEI CO LTD",
-            "return_pct": -4.2
+            "return_pct": -1.3
           },
           {
             "ticker": "6941.T",
             "name": "YAMAICHI ELECTRONICS",
-            "return_pct": 369.0
+            "return_pct": 430.4
           },
           {
             "ticker": "9757.T",
             "name": "FUNAI SOKEN HOLDINGS INCORPORAT",
-            "return_pct": -4.7
-          },
-          {
-            "ticker": "4318.T",
-            "name": "QUICK CO LTD",
-            "return_pct": 30.1
+            "return_pct": 1.4
           }
         ],
         "disclaimer": "現在の条件を満たす上位銘柄のみを対象とした参考値です。過去に上場廃止・条件外となった銘柄は含まれないため、実際の運用成績とは異なります。"
@@ -225977,59 +226035,59 @@
         "strategy": "solid",
         "years": 5,
         "sample_size": 10,
-        "avg_return_pct": 237.1,
-        "benchmark_nikkei225_pct": 117.3,
-        "benchmark_topix_pct": 125.5,
+        "avg_return_pct": 216.6,
+        "benchmark_nikkei225_pct": 119.9,
+        "benchmark_topix_pct": 123.7,
         "stocks": [
           {
             "ticker": "6857.T",
             "name": "ADVANTEST CORP",
-            "return_pct": 1304.3
+            "return_pct": 1211.8
           },
           {
             "ticker": "7741.T",
             "name": "HOYA CORP",
-            "return_pct": 38.4
+            "return_pct": 33.8
           },
           {
             "ticker": "4732.T",
             "name": "USS CO LTD",
-            "return_pct": 137.2
+            "return_pct": 120.1
           },
           {
             "ticker": "3853.T",
             "name": "ASTERIA CORPORATION",
-            "return_pct": 66.7
+            "return_pct": 63.0
+          },
+          {
+            "ticker": "3939.T",
+            "name": "KANAMIC NETWORK CO LTD",
+            "return_pct": -17.0
           },
           {
             "ticker": "6101.T",
             "name": "TSUGAMI CORP",
-            "return_pct": 228.7
+            "return_pct": 240.9
           },
           {
             "ticker": "6532.T",
             "name": "BAYCURRENT INC",
-            "return_pct": 41.5
+            "return_pct": 36.4
           },
           {
             "ticker": "7839.T",
             "name": "SHOEI CO LTD",
-            "return_pct": -6.4
+            "return_pct": -1.6
           },
           {
             "ticker": "6941.T",
             "name": "YAMAICHI ELECTRONICS",
-            "return_pct": 449.0
+            "return_pct": 486.1
           },
           {
             "ticker": "9757.T",
             "name": "FUNAI SOKEN HOLDINGS INCORPORAT",
-            "return_pct": -3.3
-          },
-          {
-            "ticker": "4318.T",
-            "name": "QUICK CO LTD",
-            "return_pct": 115.0
+            "return_pct": -7.6
           }
         ],
         "disclaimer": "現在の条件を満たす上位銘柄のみを対象とした参考値です。過去に上場廃止・条件外となった銘柄は含まれないため、実際の運用成績とは異なります。"
@@ -226040,59 +226098,59 @@
         "strategy": "growth",
         "years": 1,
         "sample_size": 10,
-        "avg_return_pct": 46.0,
-        "benchmark_nikkei225_pct": 49.0,
-        "benchmark_topix_pct": 34.4,
+        "avg_return_pct": 43.9,
+        "benchmark_nikkei225_pct": 47.3,
+        "benchmark_topix_pct": 33.5,
         "stocks": [
           {
             "ticker": "5351.T",
             "name": "SHINAGAWA REFRA CO LTD",
-            "return_pct": 9.6
+            "return_pct": 12.9
           },
           {
             "ticker": "4763.T",
             "name": "CREEK & RIVER",
-            "return_pct": 1.6
-          },
-          {
-            "ticker": "6418.T",
-            "name": "JAPAN CASH MACHINE CO",
-            "return_pct": 26.0
-          },
-          {
-            "ticker": "4506.T",
-            "name": "SUMITOMO PHARMA CO LTD",
-            "return_pct": -9.7
-          },
-          {
-            "ticker": "5076.T",
-            "name": "INFRONEER HLDGS INC",
-            "return_pct": 92.7
+            "return_pct": 2.6
           },
           {
             "ticker": "6269.T",
             "name": "MODEC INC(JAPAN)",
-            "return_pct": 25.5
+            "return_pct": 10.8
+          },
+          {
+            "ticker": "6418.T",
+            "name": "JAPAN CASH MACHINE CO",
+            "return_pct": 31.6
+          },
+          {
+            "ticker": "4506.T",
+            "name": "SUMITOMO PHARMA CO LTD",
+            "return_pct": -3.0
           },
           {
             "ticker": "5334.T",
             "name": "NITERRA CO LTD",
-            "return_pct": 49.5
+            "return_pct": 35.0
           },
           {
             "ticker": "5714.T",
             "name": "DOWA HOLDINGS",
-            "return_pct": 76.5
+            "return_pct": 71.2
+          },
+          {
+            "ticker": "5076.T",
+            "name": "INFRONEER HLDGS INC",
+            "return_pct": 96.4
           },
           {
             "ticker": "1814.T",
             "name": "DAISUE CONSTRUCTION CO",
-            "return_pct": 50.4
+            "return_pct": 53.2
           },
           {
             "ticker": "9880.T",
             "name": "INNOTECH CORP (JAPAN)",
-            "return_pct": 138.3
+            "return_pct": 128.3
           }
         ],
         "disclaimer": "現在の条件を満たす上位銘柄のみを対象とした参考値です。過去に上場廃止・条件外となった銘柄は含まれないため、実際の運用成績とは異なります。"
@@ -226101,59 +226159,59 @@
         "strategy": "growth",
         "years": 3,
         "sample_size": 10,
-        "avg_return_pct": 147.1,
-        "benchmark_nikkei225_pct": 97.1,
-        "benchmark_topix_pct": 85.5,
+        "avg_return_pct": 135.1,
+        "benchmark_nikkei225_pct": 108.2,
+        "benchmark_topix_pct": 86.8,
         "stocks": [
           {
             "ticker": "5351.T",
             "name": "SHINAGAWA REFRA CO LTD",
-            "return_pct": 48.0
+            "return_pct": 43.0
           },
           {
             "ticker": "4763.T",
             "name": "CREEK & RIVER",
-            "return_pct": -25.5
-          },
-          {
-            "ticker": "6418.T",
-            "name": "JAPAN CASH MACHINE CO",
-            "return_pct": 35.0
-          },
-          {
-            "ticker": "4506.T",
-            "name": "SUMITOMO PHARMA CO LTD",
-            "return_pct": 215.2
-          },
-          {
-            "ticker": "5076.T",
-            "name": "INFRONEER HLDGS INC",
-            "return_pct": 107.6
+            "return_pct": -23.8
           },
           {
             "ticker": "6269.T",
             "name": "MODEC INC(JAPAN)",
-            "return_pct": 481.3
+            "return_pct": 400.4
+          },
+          {
+            "ticker": "6418.T",
+            "name": "JAPAN CASH MACHINE CO",
+            "return_pct": 41.8
+          },
+          {
+            "ticker": "4506.T",
+            "name": "SUMITOMO PHARMA CO LTD",
+            "return_pct": 195.0
           },
           {
             "ticker": "5334.T",
             "name": "NITERRA CO LTD",
-            "return_pct": 160.2
+            "return_pct": 140.1
           },
           {
             "ticker": "5714.T",
             "name": "DOWA HOLDINGS",
-            "return_pct": 113.6
+            "return_pct": 107.3
+          },
+          {
+            "ticker": "5076.T",
+            "name": "INFRONEER HLDGS INC",
+            "return_pct": 111.8
           },
           {
             "ticker": "1814.T",
             "name": "DAISUE CONSTRUCTION CO",
-            "return_pct": 185.8
+            "return_pct": 185.5
           },
           {
             "ticker": "9880.T",
             "name": "INNOTECH CORP (JAPAN)",
-            "return_pct": 149.7
+            "return_pct": 149.9
           }
         ],
         "disclaimer": "現在の条件を満たす上位銘柄のみを対象とした参考値です。過去に上場廃止・条件外となった銘柄は含まれないため、実際の運用成績とは異なります。"
@@ -226162,59 +226220,59 @@
         "strategy": "growth",
         "years": 5,
         "sample_size": 10,
-        "avg_return_pct": 225.5,
-        "benchmark_nikkei225_pct": 117.3,
-        "benchmark_topix_pct": 125.5,
+        "avg_return_pct": 214.3,
+        "benchmark_nikkei225_pct": 119.9,
+        "benchmark_topix_pct": 123.7,
         "stocks": [
           {
             "ticker": "5351.T",
             "name": "SHINAGAWA REFRA CO LTD",
-            "return_pct": 212.3
+            "return_pct": 215.5
           },
           {
             "ticker": "4763.T",
             "name": "CREEK & RIVER",
-            "return_pct": -10.7
-          },
-          {
-            "ticker": "6418.T",
-            "name": "JAPAN CASH MACHINE CO",
-            "return_pct": 133.8
-          },
-          {
-            "ticker": "4506.T",
-            "name": "SUMITOMO PHARMA CO LTD",
-            "return_pct": -18.7
-          },
-          {
-            "ticker": "5076.T",
-            "name": "INFRONEER HLDGS INC",
-            "return_pct": 259.8
+            "return_pct": -11.7
           },
           {
             "ticker": "6269.T",
             "name": "MODEC INC(JAPAN)",
-            "return_pct": 500.9
+            "return_pct": 444.3
+          },
+          {
+            "ticker": "6418.T",
+            "name": "JAPAN CASH MACHINE CO",
+            "return_pct": 94.2
+          },
+          {
+            "ticker": "4506.T",
+            "name": "SUMITOMO PHARMA CO LTD",
+            "return_pct": -18.1
           },
           {
             "ticker": "5334.T",
             "name": "NITERRA CO LTD",
-            "return_pct": 475.9
+            "return_pct": 422.2
           },
           {
             "ticker": "5714.T",
             "name": "DOWA HOLDINGS",
-            "return_pct": 121.3
+            "return_pct": 127.7
+          },
+          {
+            "ticker": "5076.T",
+            "name": "INFRONEER HLDGS INC",
+            "return_pct": 276.9
           },
           {
             "ticker": "1814.T",
             "name": "DAISUE CONSTRUCTION CO",
-            "return_pct": 376.5
+            "return_pct": 379.0
           },
           {
             "ticker": "9880.T",
             "name": "INNOTECH CORP (JAPAN)",
-            "return_pct": 204.2
+            "return_pct": 213.2
           }
         ],
         "disclaimer": "現在の条件を満たす上位銘柄のみを対象とした参考値です。過去に上場廃止・条件外となった銘柄は含まれないため、実際の運用成績とは異なります。"
@@ -227520,7 +227578,7 @@
       "operating_margin": 16.39,
       "revenue_growth": 18.0,
       "current_ratio": 3.9,
-      "market_cap": 20118159360,
+      "market_cap": 10059079680,
       "beta": 0.24,
       "risk_level": {
         "level": "中",
@@ -227583,7 +227641,7 @@
       "operating_margin": 15.62,
       "revenue_growth": 14.4,
       "current_ratio": 3.21,
-      "market_cap": 80286048256,
+      "market_cap": 80715513856,
       "beta": -0.23,
       "risk_level": {
         "level": "中",
@@ -230154,7 +230212,7 @@
       "operating_margin": 2.98,
       "revenue_growth": 0.7,
       "current_ratio": 3.19,
-      "market_cap": 0,
+      "market_cap": 108022218752,
       "beta": null,
       "risk_level": {
         "level": "中",
@@ -233266,7 +233324,7 @@
       "operating_margin": 13.56,
       "revenue_growth": 121.6,
       "current_ratio": 4.04,
-      "market_cap": 46444560384,
+      "market_cap": 55669956608,
       "beta": 0.56,
       "risk_level": {
         "level": "中",
@@ -233331,7 +233389,7 @@
       "operating_margin": 1.3,
       "revenue_growth": 17.5,
       "current_ratio": 1.02,
-      "market_cap": 77855293440,
+      "market_cap": 77961281536,
       "beta": -0.03,
       "risk_level": {
         "level": "中",
@@ -235481,7 +235539,7 @@
       "operating_margin": 4.55,
       "revenue_growth": -12.5,
       "current_ratio": 2.1,
-      "market_cap": 71573315584,
+      "market_cap": 72549097472,
       "beta": null,
       "risk_level": {
         "level": "中",
@@ -236053,71 +236111,6 @@
         "rank_margin_total": 261,
         "rank_roe": 192,
         "rank_roe_total": 247
-      }
-    },
-    {
-      "ticker": "7915.T",
-      "name": "NISSHA CO LTD",
-      "sector": "Technology",
-      "industry": "Electronic Components",
-      "price": 1201.0,
-      "pbr": 0.49,
-      "roe": 1.43,
-      "dividend_yield": 4.16,
-      "equity_ratio": 62.0,
-      "operating_margin": 1.85,
-      "revenue_growth": -3.5,
-      "current_ratio": 1.52,
-      "market_cap": 56943550464,
-      "beta": 0.57,
-      "risk_level": {
-        "level": "中",
-        "color": "yellow",
-        "reasons": [
-          "利益に対して配当負担がやや大きい可能性",
-          "【業種特性】技術革新の速さや競争環境の変化が大きい業種です"
-        ]
-      },
-      "score": 54.4,
-      "score_breakdown": [
-        {
-          "label": "割安度（PBR）",
-          "score": 34.0,
-          "max": 34
-        },
-        {
-          "label": "稼ぐ力（ROE）",
-          "score": 0,
-          "max": 33
-        },
-        {
-          "label": "配当利回り",
-          "score": 20.4,
-          "max": 33
-        }
-      ],
-      "sector_display": "Technology",
-      "nisa_fit": {
-        "level": "要検討",
-        "stars": 2,
-        "reasons": [
-          "配当が安定的",
-          "財務が健全（自己資本比率62.0%）",
-          "極端な割高ではない",
-          "収益性はまだ十分に高いとは言えません"
-        ]
-      },
-      "detailed_comment": "自己資本比率62.0%と財務が安定しています。配当利回り4.16%と高水準の配当が特徴です。PBR0.49倍と資産価値より株価が割安な水準です。",
-      "sector_rank": {
-        "percentile_margin": 12.7,
-        "percentile_roe": 3.8,
-        "sector_count": 228,
-        "label_margin": "業種内では控えめ",
-        "label_roe": "業種内では控えめ",
-        "rank_margin": 200,
-        "rank_margin_total": 228,
-        "rank_roe": 204,
-        "rank_roe_total": 211
       }
     },
     {
@@ -236915,7 +236908,7 @@
       "operating_margin": 36.76,
       "revenue_growth": -8.0,
       "current_ratio": 1.48,
-      "market_cap": 134197190656,
+      "market_cap": 134199566336,
       "beta": 0.25,
       "risk_level": {
         "level": "中",
@@ -236965,6 +236958,71 @@
         "rank_margin_total": 364,
         "rank_roe": 71,
         "rank_roe_total": 347
+      }
+    },
+    {
+      "ticker": "7915.T",
+      "name": "NISSHA CO LTD",
+      "sector": "Technology",
+      "industry": "Electronic Components",
+      "price": 1201.0,
+      "pbr": 0.64,
+      "roe": 1.43,
+      "dividend_yield": 4.16,
+      "equity_ratio": 62.0,
+      "operating_margin": 1.85,
+      "revenue_growth": -3.5,
+      "current_ratio": 1.52,
+      "market_cap": 56943550464,
+      "beta": 0.57,
+      "risk_level": {
+        "level": "中",
+        "color": "yellow",
+        "reasons": [
+          "利益に対して配当負担がやや大きい可能性",
+          "【業種特性】技術革新の速さや競争環境の変化が大きい業種です"
+        ]
+      },
+      "score": 53.4,
+      "score_breakdown": [
+        {
+          "label": "割安度（PBR）",
+          "score": 33.0,
+          "max": 34
+        },
+        {
+          "label": "稼ぐ力（ROE）",
+          "score": 0,
+          "max": 33
+        },
+        {
+          "label": "配当利回り",
+          "score": 20.4,
+          "max": 33
+        }
+      ],
+      "sector_display": "Technology",
+      "nisa_fit": {
+        "level": "要検討",
+        "stars": 2,
+        "reasons": [
+          "配当が安定的",
+          "財務が健全（自己資本比率62.0%）",
+          "極端な割高ではない",
+          "収益性はまだ十分に高いとは言えません"
+        ]
+      },
+      "detailed_comment": "自己資本比率62.0%と財務が安定しています。配当利回り4.16%と高水準の配当が特徴です。PBR0.64倍と資産価値より株価が割安な水準です。",
+      "sector_rank": {
+        "percentile_margin": 12.7,
+        "percentile_roe": 3.8,
+        "sector_count": 228,
+        "label_margin": "業種内では控えめ",
+        "label_roe": "業種内では控えめ",
+        "rank_margin": 200,
+        "rank_margin_total": 228,
+        "rank_roe": 204,
+        "rank_roe_total": 211
       }
     },
     {
@@ -237173,7 +237231,7 @@
       "operating_margin": 8.76,
       "revenue_growth": 13.5,
       "current_ratio": 1.29,
-      "market_cap": 6756330110976,
+      "market_cap": 6755573039104,
       "beta": 0.31,
       "risk_level": {
         "level": "高",
@@ -238014,7 +238072,7 @@
       "operating_margin": 9.83,
       "revenue_growth": -10.1,
       "current_ratio": 1.92,
-      "market_cap": 103283679232,
+      "market_cap": 103283703808,
       "beta": 0.62,
       "risk_level": {
         "level": "中",
@@ -239507,7 +239565,7 @@
       "operating_margin": 25.81,
       "revenue_growth": 1.0,
       "current_ratio": 7.13,
-      "market_cap": 201172860928,
+      "market_cap": 201342042112,
       "beta": 0.57,
       "risk_level": {
         "level": "中",
@@ -246039,6 +246097,70 @@
       }
     },
     {
+      "ticker": "3333.T",
+      "name": "ASAHI CO LTD",
+      "sector": "Consumer Cyclical",
+      "industry": "Specialty Retail",
+      "price": 1288.0,
+      "pbr": 0.8,
+      "roe": 4.43,
+      "dividend_yield": 3.88,
+      "equity_ratio": null,
+      "operating_margin": 0.62,
+      "revenue_growth": -1.9,
+      "current_ratio": 2.44,
+      "market_cap": 33541992448,
+      "beta": 0.11,
+      "risk_level": {
+        "level": "中",
+        "color": "yellow",
+        "reasons": [
+          "利益に対して配当負担がやや大きい可能性",
+          "【業種特性】景気動向や個人消費の変化の影響を受けやすい業種です"
+        ]
+      },
+      "score": 46.8,
+      "score_breakdown": [
+        {
+          "label": "割安度（PBR）",
+          "score": 29.1,
+          "max": 34
+        },
+        {
+          "label": "稼ぐ力（ROE）",
+          "score": 0,
+          "max": 33
+        },
+        {
+          "label": "配当利回り",
+          "score": 17.7,
+          "max": 33
+        }
+      ],
+      "sector_display": "Consumer Cyclical",
+      "nisa_fit": {
+        "level": "要検討",
+        "stars": 2,
+        "reasons": [
+          "配当が安定的",
+          "極端な割高ではない",
+          "収益性はまだ十分に高いとは言えません"
+        ]
+      },
+      "detailed_comment": "配当利回り3.88%と安定した配当が続いています。PBR0.8倍と資産価値より株価が割安な水準です。景気動向の影響を受けやすく、業績変動が比較的大きい業種です。",
+      "sector_rank": {
+        "percentile_margin": 6.1,
+        "percentile_roe": 18.2,
+        "sector_count": 261,
+        "label_margin": "業種内では控えめ",
+        "label_roe": "業種内では控えめ",
+        "rank_margin": 246,
+        "rank_margin_total": 261,
+        "rank_roe": 203,
+        "rank_roe_total": 247
+      }
+    },
+    {
       "ticker": "3580.T",
       "name": "KOMATSU MATERE CO LTD",
       "sector": "Consumer Cyclical",
@@ -246292,70 +246414,6 @@
         "rank_margin_total": 68,
         "rank_roe": 12,
         "rank_roe_total": 65
-      }
-    },
-    {
-      "ticker": "3333.T",
-      "name": "ASAHI CO LTD",
-      "sector": "Consumer Cyclical",
-      "industry": "Specialty Retail",
-      "price": 1288.0,
-      "pbr": 0.81,
-      "roe": 4.43,
-      "dividend_yield": 3.88,
-      "equity_ratio": null,
-      "operating_margin": 0.62,
-      "revenue_growth": -1.9,
-      "current_ratio": 2.44,
-      "market_cap": 33541992448,
-      "beta": 0.11,
-      "risk_level": {
-        "level": "中",
-        "color": "yellow",
-        "reasons": [
-          "利益に対して配当負担がやや大きい可能性",
-          "【業種特性】景気動向や個人消費の変化の影響を受けやすい業種です"
-        ]
-      },
-      "score": 46.6,
-      "score_breakdown": [
-        {
-          "label": "割安度（PBR）",
-          "score": 28.9,
-          "max": 34
-        },
-        {
-          "label": "稼ぐ力（ROE）",
-          "score": 0,
-          "max": 33
-        },
-        {
-          "label": "配当利回り",
-          "score": 17.7,
-          "max": 33
-        }
-      ],
-      "sector_display": "Consumer Cyclical",
-      "nisa_fit": {
-        "level": "要検討",
-        "stars": 2,
-        "reasons": [
-          "配当が安定的",
-          "極端な割高ではない",
-          "収益性はまだ十分に高いとは言えません"
-        ]
-      },
-      "detailed_comment": "配当利回り3.88%と安定した配当が続いています。PBR0.81倍と資産価値より株価が割安な水準です。景気動向の影響を受けやすく、業績変動が比較的大きい業種です。",
-      "sector_rank": {
-        "percentile_margin": 6.1,
-        "percentile_roe": 18.2,
-        "sector_count": 261,
-        "label_margin": "業種内では控えめ",
-        "label_roe": "業種内では控えめ",
-        "rank_margin": 246,
-        "rank_margin_total": 261,
-        "rank_roe": 203,
-        "rank_roe_total": 247
       }
     },
     {
@@ -247343,7 +247401,7 @@
       "operating_margin": 6.56,
       "revenue_growth": 18.6,
       "current_ratio": 1.88,
-      "market_cap": 130848047104,
+      "market_cap": 130510659584,
       "beta": 0.49,
       "risk_level": {
         "level": "中",
@@ -247992,7 +248050,7 @@
       "operating_margin": 2.61,
       "revenue_growth": 6.9,
       "current_ratio": 2.32,
-      "market_cap": 75899641856,
+      "market_cap": 75900190720,
       "beta": 0.09,
       "risk_level": {
         "level": "中",
@@ -248186,7 +248244,7 @@
       "operating_margin": 19.51,
       "revenue_growth": -7.4,
       "current_ratio": 1.6,
-      "market_cap": 115559120896,
+      "market_cap": 115528433664,
       "beta": 0.41,
       "risk_level": {
         "level": "中",
@@ -249227,7 +249285,7 @@
       "operating_margin": 4.34,
       "revenue_growth": 13.5,
       "current_ratio": 1.38,
-      "market_cap": 1212768583680,
+      "market_cap": 1212925476864,
       "beta": 0.4,
       "risk_level": {
         "level": "中",
@@ -249678,7 +249736,7 @@
       "operating_margin": 1.01,
       "revenue_growth": 3.8,
       "current_ratio": 2.84,
-      "market_cap": 66984062976,
+      "market_cap": 66984079360,
       "beta": null,
       "risk_level": {
         "level": "中",
@@ -250261,7 +250319,7 @@
       "operating_margin": 6.34,
       "revenue_growth": 14.2,
       "current_ratio": 1.51,
-      "market_cap": 21306896384,
+      "market_cap": 21259010048,
       "beta": -0.04,
       "risk_level": {
         "level": "中",
@@ -250711,7 +250769,7 @@
       "operating_margin": 2.31,
       "revenue_growth": 19.8,
       "current_ratio": 1.26,
-      "market_cap": 85212102656,
+      "market_cap": 85227954176,
       "beta": null,
       "risk_level": {
         "level": "中",
@@ -251613,7 +251671,7 @@
       "operating_margin": 25.9,
       "revenue_growth": 32.3,
       "current_ratio": 1.81,
-      "market_cap": 1316660445184,
+      "market_cap": 1316885364736,
       "beta": 0.36,
       "risk_level": {
         "level": "中",
@@ -252130,7 +252188,7 @@
       "operating_margin": 30.65,
       "revenue_growth": 4.6,
       "current_ratio": 15.4,
-      "market_cap": 668082569216,
+      "market_cap": 667852734464,
       "beta": 0.48,
       "risk_level": {
         "level": "高",
@@ -253750,7 +253808,7 @@
       "operating_margin": 11.23,
       "revenue_growth": 14.8,
       "current_ratio": 2.24,
-      "market_cap": 174966833152,
+      "market_cap": 174565654528,
       "beta": 0.7,
       "risk_level": {
         "level": "中",
@@ -254267,7 +254325,7 @@
       "operating_margin": 15.29,
       "revenue_growth": 14.6,
       "current_ratio": 2.65,
-      "market_cap": 95713730560,
+      "market_cap": 95713861632,
       "beta": null,
       "risk_level": {
         "level": "中",
@@ -255755,7 +255813,7 @@
       "operating_margin": 3.77,
       "revenue_growth": 9.0,
       "current_ratio": 2.18,
-      "market_cap": 75533328384,
+      "market_cap": 75514519552,
       "beta": 0.73,
       "risk_level": {
         "level": "中",
@@ -257442,7 +257500,7 @@
       "operating_margin": 10.09,
       "revenue_growth": -6.4,
       "current_ratio": 3.85,
-      "market_cap": 83393691648,
+      "market_cap": 83395477504,
       "beta": 0.57,
       "risk_level": {
         "level": "中",
@@ -259834,7 +259892,7 @@
       "operating_margin": 1.91,
       "revenue_growth": -22.1,
       "current_ratio": 2.32,
-      "market_cap": 30679361536,
+      "market_cap": 30679263232,
       "beta": 0.54,
       "risk_level": {
         "level": "中",
@@ -259964,7 +260022,7 @@
       "operating_margin": 11.42,
       "revenue_growth": 63.7,
       "current_ratio": 1.14,
-      "market_cap": 2500757291008,
+      "market_cap": 2500165894144,
       "beta": 0.03,
       "risk_level": {
         "level": "中",
@@ -260546,7 +260604,7 @@
       "operating_margin": 31.01,
       "revenue_growth": 11.6,
       "current_ratio": 6.06,
-      "market_cap": 0,
+      "market_cap": 110085832704,
       "beta": 0.16,
       "risk_level": {
         "level": "中",
@@ -260936,7 +260994,7 @@
       "operating_margin": 4.67,
       "revenue_growth": 31.6,
       "current_ratio": 2.64,
-      "market_cap": 71074283520,
+      "market_cap": 71074078720,
       "beta": 0.42,
       "risk_level": {
         "level": "中",
@@ -261259,7 +261317,7 @@
       "operating_margin": 12.96,
       "revenue_growth": 4.5,
       "current_ratio": 2.19,
-      "market_cap": 254046961664,
+      "market_cap": 254017601536,
       "beta": 0.56,
       "risk_level": {
         "level": "中",
@@ -263133,7 +263191,7 @@
       "operating_margin": 17.07,
       "revenue_growth": 13.9,
       "current_ratio": 1.34,
-      "market_cap": 13203590144,
+      "market_cap": 13845909504,
       "beta": 0.35,
       "risk_level": {
         "level": "中",
@@ -263391,7 +263449,7 @@
       "operating_margin": 26.26,
       "revenue_growth": -2.1,
       "current_ratio": 13.97,
-      "market_cap": 48896167936,
+      "market_cap": 48634998784,
       "beta": null,
       "risk_level": {
         "level": "中",
@@ -263585,7 +263643,7 @@
       "operating_margin": 20.13,
       "revenue_growth": 19.9,
       "current_ratio": 2.94,
-      "market_cap": 1483428200448,
+      "market_cap": 1486049902592,
       "beta": 0.25,
       "risk_level": {
         "level": "中",
@@ -265718,7 +265776,7 @@
       "operating_margin": 8.57,
       "revenue_growth": -3.3,
       "current_ratio": 1.83,
-      "market_cap": 121354772480,
+      "market_cap": 121354928128,
       "beta": 0.02,
       "risk_level": {
         "level": "中",
@@ -266880,7 +266938,7 @@
       "operating_margin": 0.23,
       "revenue_growth": -1.7,
       "current_ratio": 3.08,
-      "market_cap": 67322884096,
+      "market_cap": 67323580416,
       "beta": 0.19,
       "risk_level": {
         "level": "中",
@@ -268810,7 +268868,7 @@
       "operating_margin": 5.11,
       "revenue_growth": 3.6,
       "current_ratio": 2.31,
-      "market_cap": 79528034304,
+      "market_cap": 79527870464,
       "beta": 0.35,
       "risk_level": {
         "level": "中",
@@ -269066,7 +269124,7 @@
       "operating_margin": 20.26,
       "revenue_growth": 58.2,
       "current_ratio": 3.13,
-      "market_cap": 55033319424,
+      "market_cap": 54417948672,
       "beta": 1.22,
       "risk_level": {
         "level": "中",
@@ -271509,7 +271567,7 @@
       "operating_margin": 8.11,
       "revenue_growth": 5.4,
       "current_ratio": 2.12,
-      "market_cap": 90295508992,
+      "market_cap": 89995026432,
       "beta": 0.61,
       "risk_level": {
         "level": "中",
@@ -272220,7 +272278,7 @@
       "operating_margin": 8.12,
       "revenue_growth": 10.1,
       "current_ratio": 1.64,
-      "market_cap": 44152930304,
+      "market_cap": 44154744832,
       "beta": 0.63,
       "risk_level": {
         "level": "中",
@@ -272925,7 +272983,7 @@
       "operating_margin": 12.5,
       "revenue_growth": 8.7,
       "current_ratio": 1.73,
-      "market_cap": 90183245824,
+      "market_cap": 89258958848,
       "beta": 0.21,
       "risk_level": {
         "level": "中",
@@ -274017,7 +274075,7 @@
       "operating_margin": 3.09,
       "revenue_growth": 15.7,
       "current_ratio": 4.07,
-      "market_cap": 239496855552,
+      "market_cap": 239325626368,
       "beta": 0.34,
       "risk_level": {
         "level": "中",
@@ -274395,7 +274453,7 @@
       "operating_margin": 11.48,
       "revenue_growth": 36.0,
       "current_ratio": 1.94,
-      "market_cap": 113373241344,
+      "market_cap": 113185816576,
       "beta": 0.49,
       "risk_level": {
         "level": "中",
@@ -275166,7 +275224,7 @@
       "operating_margin": 5.14,
       "revenue_growth": 1.1,
       "current_ratio": 2.28,
-      "market_cap": 567057842176,
+      "market_cap": 567336370176,
       "beta": -0.1,
       "risk_level": {
         "level": "中",
@@ -275941,7 +275999,7 @@
       "operating_margin": 3.36,
       "revenue_growth": -8.9,
       "current_ratio": 1.24,
-      "market_cap": 63594680320,
+      "market_cap": 63594565632,
       "beta": null,
       "risk_level": {
         "level": "中",
@@ -276195,7 +276253,7 @@
       "operating_margin": 47.09,
       "revenue_growth": 17.8,
       "current_ratio": 4.34,
-      "market_cap": 10887139164160,
+      "market_cap": 10888368095232,
       "beta": 0.55,
       "risk_level": {
         "level": "中",
@@ -277094,7 +277152,7 @@
       "operating_margin": 9.53,
       "revenue_growth": -21.4,
       "current_ratio": 2.48,
-      "market_cap": 480618971136,
+      "market_cap": 482046672896,
       "beta": 0.16,
       "risk_level": {
         "level": "中",
@@ -277157,7 +277215,7 @@
       "operating_margin": 16.06,
       "revenue_growth": 3.5,
       "current_ratio": 0.55,
-      "market_cap": 610637709312,
+      "market_cap": 609901150208,
       "beta": 0.23,
       "risk_level": {
         "level": "中",
@@ -278507,7 +278565,7 @@
       "operating_margin": 13.78,
       "revenue_growth": 56.8,
       "current_ratio": 1.03,
-      "market_cap": 204174655488,
+      "market_cap": 203735056384,
       "beta": 0.43,
       "risk_level": {
         "level": "高",
@@ -280370,7 +280428,7 @@
       "operating_margin": 0.5,
       "revenue_growth": 62.9,
       "current_ratio": 2.83,
-      "market_cap": 0,
+      "market_cap": 185267732480,
       "beta": 0.61,
       "risk_level": {
         "level": "中",
@@ -281141,7 +281199,7 @@
       "operating_margin": 12.45,
       "revenue_growth": 10.9,
       "current_ratio": 0.49,
-      "market_cap": 14269021159424,
+      "market_cap": 14299850342400,
       "beta": -0.17,
       "risk_level": {
         "level": "中",
@@ -281462,7 +281520,7 @@
       "operating_margin": 32.88,
       "revenue_growth": 40.8,
       "current_ratio": null,
-      "market_cap": 715437506560,
+      "market_cap": 718276198400,
       "beta": 0.16,
       "risk_level": {
         "level": "中",
@@ -281590,7 +281648,7 @@
       "operating_margin": 6.08,
       "revenue_growth": 17.9,
       "current_ratio": 1.8,
-      "market_cap": 483660922880,
+      "market_cap": 483077652480,
       "beta": 0.32,
       "risk_level": {
         "level": "中",
@@ -283388,7 +283446,7 @@
       "operating_margin": 16.18,
       "revenue_growth": 68.8,
       "current_ratio": null,
-      "market_cap": 194132197376,
+      "market_cap": 194133032960,
       "beta": 0.3,
       "risk_level": {
         "level": "中",
@@ -283705,7 +283763,7 @@
       "operating_margin": 9.56,
       "revenue_growth": 29.3,
       "current_ratio": 2.29,
-      "market_cap": 352379043840,
+      "market_cap": 352251936768,
       "beta": null,
       "risk_level": {
         "level": "中",
@@ -284092,7 +284150,7 @@
       "operating_margin": 10.57,
       "revenue_growth": 32.0,
       "current_ratio": 2.82,
-      "market_cap": 85031870464,
+      "market_cap": 85110620160,
       "beta": 0.89,
       "risk_level": {
         "level": "中",
@@ -284396,6 +284454,70 @@
         "rank_margin_total": 364,
         "rank_roe": 279,
         "rank_roe_total": 347
+      }
+    },
+    {
+      "ticker": "9627.T",
+      "name": "AIN HOLDINGS INC",
+      "sector": "Healthcare",
+      "industry": "Pharmaceutical Retailers",
+      "price": 5463.0,
+      "pbr": 1.21,
+      "roe": 11.54,
+      "dividend_yield": 1.83,
+      "equity_ratio": 48.7,
+      "operating_margin": 2.48,
+      "revenue_growth": 33.2,
+      "current_ratio": 0.91,
+      "market_cap": 192190627840,
+      "beta": 0.26,
+      "risk_level": {
+        "level": "中",
+        "color": "yellow",
+        "reasons": [
+          "【業種特性】薬価改定や規制動向の影響を受けやすい業種です"
+        ]
+      },
+      "score": 27.5,
+      "score_breakdown": [
+        {
+          "label": "割安度（PBR）",
+          "score": 19.2,
+          "max": 34
+        },
+        {
+          "label": "稼ぐ力（ROE）",
+          "score": 8.3,
+          "max": 33
+        },
+        {
+          "label": "配当利回り",
+          "score": 0,
+          "max": 33
+        }
+      ],
+      "sector_display": "Healthcare",
+      "nisa_fit": {
+        "level": "要検討",
+        "stars": 2,
+        "reasons": [
+          "財務が健全（自己資本比率48.7%）",
+          "極端な割高ではない",
+          "収益性が安定",
+          "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
+        ]
+      },
+      "detailed_comment": "自己資本比率48.7%と財務は概ね健全な水準です。ROE11.54%と収益力は合格水準です。売上高は前年比+33.2%と成長が続いています。",
+      "sector_rank": {
+        "percentile_margin": 20.5,
+        "percentile_roe": 68.2,
+        "sector_count": 88,
+        "label_margin": "業種内では控えめ",
+        "label_roe": "業種内で平均的",
+        "rank_margin": 71,
+        "rank_margin_total": 88,
+        "rank_roe": 29,
+        "rank_roe_total": 85
       }
     },
     {
@@ -285161,70 +285283,6 @@
         "rank_margin_total": 120,
         "rank_roe": 90,
         "rank_roe_total": 114
-      }
-    },
-    {
-      "ticker": "9627.T",
-      "name": "AIN HOLDINGS INC",
-      "sector": "Healthcare",
-      "industry": "Pharmaceutical Retailers",
-      "price": 5463.0,
-      "pbr": 1.22,
-      "roe": 11.54,
-      "dividend_yield": 1.83,
-      "equity_ratio": 48.7,
-      "operating_margin": 2.48,
-      "revenue_growth": 33.2,
-      "current_ratio": 0.91,
-      "market_cap": 192190627840,
-      "beta": 0.26,
-      "risk_level": {
-        "level": "中",
-        "color": "yellow",
-        "reasons": [
-          "【業種特性】薬価改定や規制動向の影響を受けやすい業種です"
-        ]
-      },
-      "score": 27.2,
-      "score_breakdown": [
-        {
-          "label": "割安度（PBR）",
-          "score": 18.9,
-          "max": 34
-        },
-        {
-          "label": "稼ぐ力（ROE）",
-          "score": 8.3,
-          "max": 33
-        },
-        {
-          "label": "配当利回り",
-          "score": 0,
-          "max": 33
-        }
-      ],
-      "sector_display": "Healthcare",
-      "nisa_fit": {
-        "level": "要検討",
-        "stars": 2,
-        "reasons": [
-          "財務が健全（自己資本比率48.7%）",
-          "極端な割高ではない",
-          "収益性が安定",
-          "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
-        ]
-      },
-      "detailed_comment": "自己資本比率48.7%と財務は概ね健全な水準です。ROE11.54%と収益力は合格水準です。売上高は前年比+33.2%と成長が続いています。",
-      "sector_rank": {
-        "percentile_margin": 20.5,
-        "percentile_roe": 68.2,
-        "sector_count": 88,
-        "label_margin": "業種内では控えめ",
-        "label_roe": "業種内で平均的",
-        "rank_margin": 71,
-        "rank_margin_total": 88,
-        "rank_roe": 29,
-        "rank_roe_total": 85
       }
     },
     {
@@ -288867,7 +288925,7 @@
       "operating_margin": 23.52,
       "revenue_growth": 38.3,
       "current_ratio": null,
-      "market_cap": 396294815744,
+      "market_cap": 397163331584,
       "beta": 0.2,
       "risk_level": {
         "level": "中",
@@ -290588,7 +290646,7 @@
       "operating_margin": 0.15,
       "revenue_growth": 37.2,
       "current_ratio": 7.93,
-      "market_cap": 79951781888,
+      "market_cap": 79952183296,
       "beta": 0.4,
       "risk_level": {
         "level": "中",
@@ -290651,7 +290709,7 @@
       "operating_margin": 3.5,
       "revenue_growth": 2.1,
       "current_ratio": 1.38,
-      "market_cap": 116628357120,
+      "market_cap": 117174009856,
       "beta": 0.3,
       "risk_level": {
         "level": "低",
@@ -290779,7 +290837,7 @@
       "operating_margin": 21.56,
       "revenue_growth": 31.1,
       "current_ratio": 4.64,
-      "market_cap": 139952603136,
+      "market_cap": 139952816128,
       "beta": 0.85,
       "risk_level": {
         "level": "中",
@@ -291797,7 +291855,7 @@
       "operating_margin": 33.05,
       "revenue_growth": 3.4,
       "current_ratio": null,
-      "market_cap": 301560987648,
+      "market_cap": 302826520576,
       "beta": -0.23,
       "risk_level": {
         "level": "中",
@@ -294025,7 +294083,7 @@
       "operating_margin": 1.57,
       "revenue_growth": 8.0,
       "current_ratio": 1.38,
-      "market_cap": 225756217344,
+      "market_cap": 224484556800,
       "beta": null,
       "risk_level": {
         "level": "中",
@@ -294281,7 +294339,7 @@
       "operating_margin": 5.02,
       "revenue_growth": 3.6,
       "current_ratio": 3.31,
-      "market_cap": 28087517184,
+      "market_cap": 28049940480,
       "beta": 0.24,
       "risk_level": {
         "level": "中",
@@ -295048,7 +295106,7 @@
       "operating_margin": 13.54,
       "revenue_growth": 3.6,
       "current_ratio": 4.55,
-      "market_cap": 132238368768,
+      "market_cap": 132238409728,
       "beta": 0.33,
       "risk_level": {
         "level": "中",
@@ -295816,7 +295874,7 @@
       "operating_margin": 8.7,
       "revenue_growth": null,
       "current_ratio": 1.49,
-      "market_cap": 135105347584,
+      "market_cap": 135231635456,
       "beta": 0.82,
       "risk_level": {
         "level": "中",
@@ -296901,7 +296959,7 @@
       "operating_margin": 7.29,
       "revenue_growth": 10.0,
       "current_ratio": 1.43,
-      "market_cap": 842253008896,
+      "market_cap": 843664326656,
       "beta": -0.03,
       "risk_level": {
         "level": "低",
@@ -296965,7 +297023,7 @@
       "operating_margin": 15.01,
       "revenue_growth": -7.4,
       "current_ratio": 2.92,
-      "market_cap": 80004292608,
+      "market_cap": 79997534208,
       "beta": -0.2,
       "risk_level": {
         "level": "中",
@@ -299395,7 +299453,7 @@
       "operating_margin": 20.01,
       "revenue_growth": 49.6,
       "current_ratio": 3.06,
-      "market_cap": 192459030528,
+      "market_cap": 192458801152,
       "beta": 0.62,
       "risk_level": {
         "level": "中",
@@ -299844,7 +299902,7 @@
       "operating_margin": 7.72,
       "revenue_growth": 23.4,
       "current_ratio": 2.79,
-      "market_cap": 104109752320,
+      "market_cap": 104081276928,
       "beta": 1.23,
       "risk_level": {
         "level": "中",
@@ -301507,7 +301565,7 @@
       "operating_margin": 40.37,
       "revenue_growth": 15.8,
       "current_ratio": null,
-      "market_cap": 5672742682624,
+      "market_cap": 5686734880768,
       "beta": 0.31,
       "risk_level": {
         "level": "中",
@@ -301953,7 +302011,7 @@
       "operating_margin": 11.34,
       "revenue_growth": 23.6,
       "current_ratio": 3.4,
-      "market_cap": 1144481382400,
+      "market_cap": 1150481203200,
       "beta": 0.71,
       "risk_level": {
         "level": "中",

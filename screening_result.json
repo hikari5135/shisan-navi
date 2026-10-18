@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-17 23:15",
+  "updated": "2026-10-18 23:14",
   "total_stocks_scanned": 1561,
   "strategies": {
     "dividend": {
@@ -2919,7 +2919,7 @@
           "operating_margin": 16.39,
           "revenue_growth": 18.0,
           "current_ratio": 3.9,
-          "market_cap": 9931884544,
+          "market_cap": 19863769088,
           "beta": 0.27,
           "risk_level": {
             "level": "中",
@@ -3233,7 +3233,7 @@
           "operating_margin": 34.54,
           "revenue_growth": 6.4,
           "current_ratio": 5.18,
-          "market_cap": 35945148416,
+          "market_cap": 35988787200,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -8208,7 +8208,7 @@
           "operating_margin": 1.3,
           "revenue_growth": 17.5,
           "current_ratio": 1.02,
-          "market_cap": 75208728576,
+          "market_cap": 75106476032,
           "beta": -0.0,
           "risk_level": {
             "level": "中",
@@ -10091,7 +10091,7 @@
           "operating_margin": 4.55,
           "revenue_growth": -12.5,
           "current_ratio": 2.1,
-          "market_cap": 69569830912,
+          "market_cap": 68634120192,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -10416,7 +10416,7 @@
           "operating_margin": 9.83,
           "revenue_growth": -10.1,
           "current_ratio": 1.92,
-          "market_cap": 99069952000,
+          "market_cap": 99069927424,
           "beta": 0.63,
           "risk_level": {
             "level": "中",
@@ -12615,6 +12615,71 @@
           }
         },
         {
+          "ticker": "2292.T",
+          "name": "S FOODS INC",
+          "sector": "Consumer Defensive",
+          "industry": "Farm Products",
+          "price": 2625.0,
+          "pbr": 0.62,
+          "roe": 6.46,
+          "dividend_yield": 4.19,
+          "equity_ratio": 74.7,
+          "operating_margin": 1.32,
+          "revenue_growth": 7.3,
+          "current_ratio": 2.29,
+          "market_cap": 83142369280,
+          "beta": null,
+          "risk_level": {
+            "level": "中",
+            "color": "yellow",
+            "reasons": [
+              "利益に対して配当負担がやや大きい可能性",
+              "【業種特性】比較的景気の影響を受けにくい安定した業種です"
+            ]
+          },
+          "score": 54.1,
+          "score_breakdown": [
+            {
+              "label": "割安度（PBR）",
+              "score": 33.5,
+              "max": 34
+            },
+            {
+              "label": "稼ぐ力（ROE）",
+              "score": 0,
+              "max": 33
+            },
+            {
+              "label": "配当利回り",
+              "score": 20.6,
+              "max": 33
+            }
+          ],
+          "sector_display": "Consumer Defensive",
+          "nisa_fit": {
+            "level": "要検討",
+            "stars": 2,
+            "reasons": [
+              "配当が安定的",
+              "財務が健全（自己資本比率74.7%）",
+              "極端な割高ではない",
+              "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
+            ]
+          },
+          "detailed_comment": "自己資本比率74.7%と財務基盤が非常に安定しています。配当利回り4.19%と高水準の配当が特徴です。PBR0.62倍と資産価値より株価が割安な水準です。",
+          "sector_rank": {
+            "percentile_margin": 13.0,
+            "percentile_roe": 34.5,
+            "sector_count": 123,
+            "label_margin": "業種内では控えめ",
+            "label_roe": "業種内では控えめ",
+            "rank_margin": 108,
+            "rank_margin_total": 123,
+            "rank_roe": 79,
+            "rank_roe_total": 119
+          }
+        },
+        {
           "ticker": "2335.T",
           "name": "CUBE SYSTEM INC",
           "sector": "Technology",
@@ -12822,7 +12887,7 @@
           "operating_margin": 1.17,
           "revenue_growth": 5.0,
           "current_ratio": 1.42,
-          "market_cap": 86238404608,
+          "market_cap": 86236012544,
           "beta": 0.14,
           "risk_level": {
             "level": "中",
@@ -13132,71 +13197,6 @@
           }
         },
         {
-          "ticker": "2292.T",
-          "name": "S FOODS INC",
-          "sector": "Consumer Defensive",
-          "industry": "Farm Products",
-          "price": 2625.0,
-          "pbr": 0.64,
-          "roe": 6.46,
-          "dividend_yield": 4.19,
-          "equity_ratio": 74.7,
-          "operating_margin": 1.32,
-          "revenue_growth": 7.3,
-          "current_ratio": 2.29,
-          "market_cap": 83142369280,
-          "beta": null,
-          "risk_level": {
-            "level": "中",
-            "color": "yellow",
-            "reasons": [
-              "利益に対して配当負担がやや大きい可能性",
-              "【業種特性】比較的景気の影響を受けにくい安定した業種です"
-            ]
-          },
-          "score": 53.6,
-          "score_breakdown": [
-            {
-              "label": "割安度（PBR）",
-              "score": 33.0,
-              "max": 34
-            },
-            {
-              "label": "稼ぐ力（ROE）",
-              "score": 0,
-              "max": 33
-            },
-            {
-              "label": "配当利回り",
-              "score": 20.6,
-              "max": 33
-            }
-          ],
-          "sector_display": "Consumer Defensive",
-          "nisa_fit": {
-            "level": "要検討",
-            "stars": 2,
-            "reasons": [
-              "配当が安定的",
-              "財務が健全（自己資本比率74.7%）",
-              "極端な割高ではない",
-              "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
-            ]
-          },
-          "detailed_comment": "自己資本比率74.7%と財務基盤が非常に安定しています。配当利回り4.19%と高水準の配当が特徴です。PBR0.64倍と資産価値より株価が割安な水準です。",
-          "sector_rank": {
-            "percentile_margin": 13.0,
-            "percentile_roe": 34.5,
-            "sector_count": 123,
-            "label_margin": "業種内では控えめ",
-            "label_roe": "業種内では控えめ",
-            "rank_margin": 108,
-            "rank_margin_total": 123,
-            "rank_roe": 79,
-            "rank_roe_total": 119
-          }
-        },
-        {
           "ticker": "2270.T",
           "name": "MEGMILK SNOW BRAND CO.LTD",
           "sector": "Consumer Defensive",
@@ -13471,7 +13471,7 @@
           "operating_margin": 25.81,
           "revenue_growth": 1.0,
           "current_ratio": 7.13,
-          "market_cap": 199152500736,
+          "market_cap": 198985154560,
           "beta": 0.6,
           "risk_level": {
             "level": "中",
@@ -16137,7 +16137,7 @@
           "operating_margin": 36.76,
           "revenue_growth": -8.0,
           "current_ratio": 1.48,
-          "market_cap": 136559394816,
+          "market_cap": 136556978176,
           "beta": 0.23,
           "risk_level": {
             "level": "中",
@@ -16202,7 +16202,7 @@
           "operating_margin": 8.76,
           "revenue_growth": 13.5,
           "current_ratio": 1.29,
-          "market_cap": 6996913291264,
+          "market_cap": 6997697101824,
           "beta": 0.33,
           "risk_level": {
             "level": "高",
@@ -16333,7 +16333,7 @@
           "operating_margin": 15.29,
           "revenue_growth": 14.6,
           "current_ratio": 2.65,
-          "market_cap": 83965026304,
+          "market_cap": 83964903424,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -18207,7 +18207,7 @@
           "operating_margin": 30.65,
           "revenue_growth": 4.6,
           "current_ratio": 15.4,
-          "market_cap": 601211076608,
+          "market_cap": 601417973760,
           "beta": 0.55,
           "risk_level": {
             "level": "高",
@@ -18403,7 +18403,7 @@
           "operating_margin": 1.01,
           "revenue_growth": 3.8,
           "current_ratio": 2.84,
-          "market_cap": 62004379648,
+          "market_cap": 62004363264,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -20609,7 +20609,7 @@
           "operating_margin": 2.39,
           "revenue_growth": 2.7,
           "current_ratio": 2.25,
-          "market_cap": 101535776768,
+          "market_cap": 101464203264,
           "beta": 0.34,
           "risk_level": {
             "level": "中",
@@ -22360,7 +22360,7 @@
           "operating_margin": 4.04,
           "revenue_growth": 15.0,
           "current_ratio": 1.47,
-          "market_cap": 21097650176,
+          "market_cap": 21145174016,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -22425,7 +22425,7 @@
           "operating_margin": -1.41,
           "revenue_growth": 1.3,
           "current_ratio": 2.11,
-          "market_cap": 73060048896,
+          "market_cap": 73054199808,
           "beta": 0.34,
           "risk_level": {
             "level": "中",
@@ -22490,7 +22490,7 @@
           "operating_margin": 2.61,
           "revenue_growth": 6.9,
           "current_ratio": 2.32,
-          "market_cap": 74111967232,
+          "market_cap": 74111426560,
           "beta": 0.11,
           "risk_level": {
             "level": "中",
@@ -23460,7 +23460,7 @@
           "operating_margin": 4.34,
           "revenue_growth": 13.5,
           "current_ratio": 1.38,
-          "market_cap": 1179150450688,
+          "market_cap": 1178997882880,
           "beta": 0.43,
           "risk_level": {
             "level": "中",
@@ -24826,7 +24826,7 @@
           "operating_margin": 2.31,
           "revenue_growth": 19.8,
           "current_ratio": 1.26,
-          "market_cap": 82981634048,
+          "market_cap": 82966200320,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -25020,7 +25020,7 @@
           "operating_margin": 6.56,
           "revenue_growth": 18.6,
           "current_ratio": 1.88,
-          "market_cap": 130462031872,
+          "market_cap": 130799296512,
           "beta": 0.5,
           "risk_level": {
             "level": "中",
@@ -25279,7 +25279,7 @@
           "operating_margin": 25.9,
           "revenue_growth": 32.3,
           "current_ratio": 1.81,
-          "market_cap": 1292962758656,
+          "market_cap": 1292741902336,
           "beta": 0.36,
           "risk_level": {
             "level": "中",
@@ -26185,7 +26185,7 @@
           "operating_margin": 11.23,
           "revenue_growth": 14.8,
           "current_ratio": 2.24,
-          "market_cap": 165970100224,
+          "market_cap": 166351519744,
           "beta": 0.71,
           "risk_level": {
             "level": "中",
@@ -28967,7 +28967,7 @@
           "operating_margin": 4.67,
           "revenue_growth": 31.6,
           "current_ratio": 2.64,
-          "market_cap": 66236399616,
+          "market_cap": 66236592128,
           "beta": 0.41,
           "risk_level": {
             "level": "中",
@@ -29808,7 +29808,7 @@
           "operating_margin": 3.77,
           "revenue_growth": 9.1,
           "current_ratio": 1.42,
-          "market_cap": 125603143680,
+          "market_cap": 125600284672,
           "beta": 0.06,
           "risk_level": {
             "level": "低",
@@ -31406,6 +31406,71 @@
           }
         },
         {
+          "ticker": "4577.T",
+          "name": "DAITO PHARMACEUTICAL CO.LTD",
+          "sector": "Healthcare",
+          "industry": "Drug Manufacturers - Specialty & Generic",
+          "price": 1371.0,
+          "pbr": 0.74,
+          "roe": 6.07,
+          "dividend_yield": 3.28,
+          "equity_ratio": 86.1,
+          "operating_margin": 5.99,
+          "revenue_growth": -8.6,
+          "current_ratio": 2.64,
+          "market_cap": 38744215552,
+          "beta": null,
+          "risk_level": {
+            "level": "中",
+            "color": "yellow",
+            "reasons": [
+              "利益に対して配当負担がやや大きい可能性",
+              "【業種特性】薬価改定や規制動向の影響を受けやすい業種です"
+            ]
+          },
+          "score": 42.7,
+          "score_breakdown": [
+            {
+              "label": "割安度（PBR）",
+              "score": 30.6,
+              "max": 34
+            },
+            {
+              "label": "稼ぐ力（ROE）",
+              "score": 0,
+              "max": 33
+            },
+            {
+              "label": "配当利回り",
+              "score": 12.1,
+              "max": 33
+            }
+          ],
+          "sector_display": "Healthcare",
+          "nisa_fit": {
+            "level": "要検討",
+            "stars": 2,
+            "reasons": [
+              "配当が安定的",
+              "財務が健全（自己資本比率86.1%）",
+              "極端な割高ではない",
+              "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
+            ]
+          },
+          "detailed_comment": "自己資本比率86.1%と財務基盤が非常に安定しています。配当利回り3.28%と安定した配当が続いています。PBR0.74倍と資産価値より株価が割安な水準です。",
+          "sector_rank": {
+            "percentile_margin": 39.1,
+            "percentile_roe": 20.0,
+            "sector_count": 87,
+            "label_margin": "業種内では控えめ",
+            "label_roe": "業種内では控えめ",
+            "rank_margin": 54,
+            "rank_margin_total": 87,
+            "rank_roe": 69,
+            "rank_roe_total": 85
+          }
+        },
+        {
           "ticker": "7181.T",
           "name": "JAPAN POST INSURANCE CO LTD",
           "sector": "Financial Services",
@@ -31483,7 +31548,7 @@
           "operating_margin": 19.51,
           "revenue_growth": -7.4,
           "current_ratio": 1.6,
-          "market_cap": 120254595072,
+          "market_cap": 120286543872,
           "beta": 0.42,
           "risk_level": {
             "level": "中",
@@ -31789,71 +31854,6 @@
             "rank_margin_total": 139,
             "rank_roe": null,
             "rank_roe_total": null
-          }
-        },
-        {
-          "ticker": "4577.T",
-          "name": "DAITO PHARMACEUTICAL CO.LTD",
-          "sector": "Healthcare",
-          "industry": "Drug Manufacturers - Specialty & Generic",
-          "price": 1371.0,
-          "pbr": 0.75,
-          "roe": 6.07,
-          "dividend_yield": 3.28,
-          "equity_ratio": 86.1,
-          "operating_margin": 5.99,
-          "revenue_growth": -8.6,
-          "current_ratio": 2.64,
-          "market_cap": 38744215552,
-          "beta": null,
-          "risk_level": {
-            "level": "中",
-            "color": "yellow",
-            "reasons": [
-              "利益に対して配当負担がやや大きい可能性",
-              "【業種特性】薬価改定や規制動向の影響を受けやすい業種です"
-            ]
-          },
-          "score": 42.5,
-          "score_breakdown": [
-            {
-              "label": "割安度（PBR）",
-              "score": 30.4,
-              "max": 34
-            },
-            {
-              "label": "稼ぐ力（ROE）",
-              "score": 0,
-              "max": 33
-            },
-            {
-              "label": "配当利回り",
-              "score": 12.1,
-              "max": 33
-            }
-          ],
-          "sector_display": "Healthcare",
-          "nisa_fit": {
-            "level": "要検討",
-            "stars": 2,
-            "reasons": [
-              "配当が安定的",
-              "財務が健全（自己資本比率86.1%）",
-              "極端な割高ではない",
-              "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
-            ]
-          },
-          "detailed_comment": "自己資本比率86.1%と財務基盤が非常に安定しています。配当利回り3.28%と安定した配当が続いています。PBR0.75倍と資産価値より株価が割安な水準です。",
-          "sector_rank": {
-            "percentile_margin": 39.1,
-            "percentile_roe": 20.0,
-            "sector_count": 87,
-            "label_margin": "業種内では控えめ",
-            "label_roe": "業種内では控えめ",
-            "rank_margin": 54,
-            "rank_margin_total": 87,
-            "rank_roe": 69,
-            "rank_roe_total": 85
           }
         },
         {
@@ -32453,7 +32453,7 @@
           "operating_margin": 9.26,
           "revenue_growth": 22.0,
           "current_ratio": 1.81,
-          "market_cap": 4086202368000,
+          "market_cap": 4086202105856,
           "beta": 0.45,
           "risk_level": {
             "level": "中",
@@ -32840,7 +32840,7 @@
           "operating_margin": 1.91,
           "revenue_growth": -22.1,
           "current_ratio": 2.32,
-          "market_cap": 29917145088,
+          "market_cap": 29917241344,
           "beta": 0.56,
           "risk_level": {
             "level": "中",
@@ -33100,7 +33100,7 @@
           "operating_margin": 10.09,
           "revenue_growth": -6.4,
           "current_ratio": 3.85,
-          "market_cap": 82992603136,
+          "market_cap": 82990825472,
           "beta": 0.58,
           "risk_level": {
             "level": "中",
@@ -35565,7 +35565,7 @@
           "operating_margin": 3.77,
           "revenue_growth": 9.0,
           "current_ratio": 2.18,
-          "market_cap": 78578466816,
+          "market_cap": 78598037504,
           "beta": 0.71,
           "risk_level": {
             "level": "中",
@@ -35630,7 +35630,7 @@
           "operating_margin": 11.42,
           "revenue_growth": 63.7,
           "current_ratio": 1.14,
-          "market_cap": 2496761954304,
+          "market_cap": 2497352564736,
           "beta": 0.07,
           "risk_level": {
             "level": "中",
@@ -36329,6 +36329,70 @@
           }
         },
         {
+          "ticker": "7516.T",
+          "name": "KOHNAN SHOJI",
+          "sector": "Consumer Cyclical",
+          "industry": "Home Improvement Retail",
+          "price": 4660.0,
+          "pbr": 0.73,
+          "roe": 7.78,
+          "dividend_yield": 3.0,
+          "equity_ratio": 45.9,
+          "operating_margin": 5.16,
+          "revenue_growth": 8.4,
+          "current_ratio": 1.53,
+          "market_cap": 134636552192,
+          "beta": null,
+          "risk_level": {
+            "level": "中",
+            "color": "yellow",
+            "reasons": [
+              "【業種特性】景気動向や個人消費の変化の影響を受けやすい業種です"
+            ]
+          },
+          "score": 40.2,
+          "score_breakdown": [
+            {
+              "label": "割安度（PBR）",
+              "score": 30.8,
+              "max": 34
+            },
+            {
+              "label": "稼ぐ力（ROE）",
+              "score": 0,
+              "max": 33
+            },
+            {
+              "label": "配当利回り",
+              "score": 9.4,
+              "max": 33
+            }
+          ],
+          "sector_display": "Consumer Cyclical",
+          "nisa_fit": {
+            "level": "要検討",
+            "stars": 2,
+            "reasons": [
+              "配当が安定的",
+              "財務が健全（自己資本比率45.9%）",
+              "極端な割高ではない",
+              "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
+            ]
+          },
+          "detailed_comment": "自己資本比率45.9%と財務は概ね健全な水準です。配当利回り3.0%と安定した配当が続いています。PBR0.73倍と資産価値より株価が割安な水準です。",
+          "sector_rank": {
+            "percentile_margin": 42.9,
+            "percentile_roe": 42.1,
+            "sector_count": 261,
+            "label_margin": "業種内で平均的",
+            "label_roe": "業種内で平均的",
+            "rank_margin": 150,
+            "rank_margin_total": 261,
+            "rank_roe": 144,
+            "rank_roe_total": 247
+          }
+        },
+        {
           "ticker": "5233.T",
           "name": "TAIHEIYO CEMENT CORP",
           "sector": "Basic Materials",
@@ -36714,70 +36778,6 @@
             "rank_margin_total": 364,
             "rank_roe": 20,
             "rank_roe_total": 347
-          }
-        },
-        {
-          "ticker": "7516.T",
-          "name": "KOHNAN SHOJI",
-          "sector": "Consumer Cyclical",
-          "industry": "Home Improvement Retail",
-          "price": 4660.0,
-          "pbr": 0.74,
-          "roe": 7.78,
-          "dividend_yield": 3.0,
-          "equity_ratio": 45.9,
-          "operating_margin": 5.16,
-          "revenue_growth": 8.4,
-          "current_ratio": 1.53,
-          "market_cap": 134636552192,
-          "beta": null,
-          "risk_level": {
-            "level": "中",
-            "color": "yellow",
-            "reasons": [
-              "【業種特性】景気動向や個人消費の変化の影響を受けやすい業種です"
-            ]
-          },
-          "score": 40.0,
-          "score_breakdown": [
-            {
-              "label": "割安度（PBR）",
-              "score": 30.6,
-              "max": 34
-            },
-            {
-              "label": "稼ぐ力（ROE）",
-              "score": 0,
-              "max": 33
-            },
-            {
-              "label": "配当利回り",
-              "score": 9.4,
-              "max": 33
-            }
-          ],
-          "sector_display": "Consumer Cyclical",
-          "nisa_fit": {
-            "level": "要検討",
-            "stars": 2,
-            "reasons": [
-              "配当が安定的",
-              "財務が健全（自己資本比率45.9%）",
-              "極端な割高ではない",
-              "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
-            ]
-          },
-          "detailed_comment": "自己資本比率45.9%と財務は概ね健全な水準です。配当利回り3.0%と安定した配当が続いています。PBR0.74倍と資産価値より株価が割安な水準です。",
-          "sector_rank": {
-            "percentile_margin": 42.9,
-            "percentile_roe": 42.1,
-            "sector_count": 261,
-            "label_margin": "業種内で平均的",
-            "label_roe": "業種内で平均的",
-            "rank_margin": 150,
-            "rank_margin_total": 261,
-            "rank_roe": 144,
-            "rank_roe_total": 247
           }
         },
         {
@@ -37169,6 +37169,71 @@
           }
         },
         {
+          "ticker": "8167.T",
+          "name": "RETAIL PARTNERS CO LTD",
+          "sector": "Consumer Defensive",
+          "industry": "Grocery Stores",
+          "price": 1433.0,
+          "pbr": 0.66,
+          "roe": 5.01,
+          "dividend_yield": 2.79,
+          "equity_ratio": 87.6,
+          "operating_margin": 1.81,
+          "revenue_growth": 3.0,
+          "current_ratio": 1.07,
+          "market_cap": 59434655744,
+          "beta": null,
+          "risk_level": {
+            "level": "中",
+            "color": "yellow",
+            "reasons": [
+              "利益に対して配当負担がやや大きい可能性",
+              "【業種特性】比較的景気の影響を受けにくい安定した業種です"
+            ]
+          },
+          "score": 39.9,
+          "score_breakdown": [
+            {
+              "label": "割安度（PBR）",
+              "score": 32.5,
+              "max": 34
+            },
+            {
+              "label": "稼ぐ力（ROE）",
+              "score": 0,
+              "max": 33
+            },
+            {
+              "label": "配当利回り",
+              "score": 7.4,
+              "max": 33
+            }
+          ],
+          "sector_display": "Consumer Defensive",
+          "nisa_fit": {
+            "level": "要検討",
+            "stars": 2,
+            "reasons": [
+              "配当が安定的",
+              "財務が健全（自己資本比率87.6%）",
+              "極端な割高ではない",
+              "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
+            ]
+          },
+          "detailed_comment": "自己資本比率87.6%と財務基盤が非常に安定しています。配当利回り2.79%と安定した配当が続いています。PBR0.66倍と資産価値より株価が割安な水準です。",
+          "sector_rank": {
+            "percentile_margin": 16.3,
+            "percentile_roe": 22.7,
+            "sector_count": 123,
+            "label_margin": "業種内では控えめ",
+            "label_roe": "業種内では控えめ",
+            "rank_margin": 104,
+            "rank_margin_total": 123,
+            "rank_roe": 93,
+            "rank_roe_total": 119
+          }
+        },
+        {
           "ticker": "2726.T",
           "name": "PAL GROUP HOLDINGS CO LTD",
           "sector": "Consumer Cyclical",
@@ -37181,7 +37246,7 @@
           "operating_margin": 10.4,
           "revenue_growth": 3.8,
           "current_ratio": 2.59,
-          "market_cap": 251422048256,
+          "market_cap": 251451113472,
           "beta": 0.61,
           "risk_level": {
             "level": "中",
@@ -37814,71 +37879,6 @@
           }
         },
         {
-          "ticker": "8167.T",
-          "name": "RETAIL PARTNERS CO LTD",
-          "sector": "Consumer Defensive",
-          "industry": "Grocery Stores",
-          "price": 1433.0,
-          "pbr": 0.68,
-          "roe": 5.01,
-          "dividend_yield": 2.79,
-          "equity_ratio": 87.6,
-          "operating_margin": 1.81,
-          "revenue_growth": 3.0,
-          "current_ratio": 1.07,
-          "market_cap": 59434655744,
-          "beta": null,
-          "risk_level": {
-            "level": "中",
-            "color": "yellow",
-            "reasons": [
-              "利益に対して配当負担がやや大きい可能性",
-              "【業種特性】比較的景気の影響を受けにくい安定した業種です"
-            ]
-          },
-          "score": 39.5,
-          "score_breakdown": [
-            {
-              "label": "割安度（PBR）",
-              "score": 32.1,
-              "max": 34
-            },
-            {
-              "label": "稼ぐ力（ROE）",
-              "score": 0,
-              "max": 33
-            },
-            {
-              "label": "配当利回り",
-              "score": 7.4,
-              "max": 33
-            }
-          ],
-          "sector_display": "Consumer Defensive",
-          "nisa_fit": {
-            "level": "要検討",
-            "stars": 2,
-            "reasons": [
-              "配当が安定的",
-              "財務が健全（自己資本比率87.6%）",
-              "極端な割高ではない",
-              "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
-            ]
-          },
-          "detailed_comment": "自己資本比率87.6%と財務基盤が非常に安定しています。配当利回り2.79%と安定した配当が続いています。PBR0.68倍と資産価値より株価が割安な水準です。",
-          "sector_rank": {
-            "percentile_margin": 16.3,
-            "percentile_roe": 22.7,
-            "sector_count": 123,
-            "label_margin": "業種内では控えめ",
-            "label_roe": "業種内では控えめ",
-            "rank_margin": 104,
-            "rank_margin_total": 123,
-            "rank_roe": 93,
-            "rank_roe_total": 119
-          }
-        },
-        {
           "ticker": "2109.T",
           "name": "MITSUI DM SUGAR CO LTD",
           "sector": "Consumer Defensive",
@@ -37891,7 +37891,7 @@
           "operating_margin": 8.57,
           "revenue_growth": -3.3,
           "current_ratio": 1.83,
-          "market_cap": 117309759488,
+          "market_cap": 117309612032,
           "beta": 0.02,
           "risk_level": {
             "level": "中",
@@ -39573,7 +39573,7 @@
           "operating_margin": 31.01,
           "revenue_growth": 11.6,
           "current_ratio": 6.06,
-          "market_cap": 118073450496,
+          "market_cap": 0,
           "beta": 0.17,
           "risk_level": {
             "level": "中",
@@ -40282,7 +40282,7 @@
           "operating_margin": 17.07,
           "revenue_growth": 13.9,
           "current_ratio": 1.34,
-          "market_cap": 14211880960,
+          "market_cap": 13552583680,
           "beta": 0.22,
           "risk_level": {
             "level": "中",
@@ -40670,7 +40670,7 @@
           "operating_margin": 3.09,
           "revenue_growth": 15.7,
           "current_ratio": 4.07,
-          "market_cap": 221813997568,
+          "market_cap": 221972692992,
           "beta": 0.34,
           "risk_level": {
             "level": "中",
@@ -41058,7 +41058,7 @@
           "operating_margin": 20.3,
           "revenue_growth": 8.8,
           "current_ratio": 14.64,
-          "market_cap": 49458323456,
+          "market_cap": 49723912192,
           "beta": 0.31,
           "risk_level": {
             "level": "中",
@@ -42475,7 +42475,7 @@
           "operating_margin": 4.83,
           "revenue_growth": 14.1,
           "current_ratio": 1.4,
-          "market_cap": 336026107904,
+          "market_cap": 336025190400,
           "beta": 0.21,
           "risk_level": {
             "level": "低",
@@ -42669,7 +42669,7 @@
           "operating_margin": 9.53,
           "revenue_growth": -21.4,
           "current_ratio": 2.48,
-          "market_cap": 429566820352,
+          "market_cap": 428294537216,
           "beta": 0.22,
           "risk_level": {
             "level": "中",
@@ -42990,7 +42990,7 @@
           "operating_margin": 0.23,
           "revenue_growth": -1.7,
           "current_ratio": 3.08,
-          "market_cap": 67323580416,
+          "market_cap": 67322884096,
           "beta": 0.22,
           "risk_level": {
             "level": "中",
@@ -44532,7 +44532,7 @@
           "operating_margin": 12.5,
           "revenue_growth": 8.7,
           "current_ratio": 1.73,
-          "market_cap": 87530569728,
+          "market_cap": 88436957184,
           "beta": 0.23,
           "risk_level": {
             "level": "中",
@@ -47094,7 +47094,7 @@
           "operating_margin": 8.11,
           "revenue_growth": 5.4,
           "current_ratio": 2.12,
-          "market_cap": 90066395136,
+          "market_cap": 90367115264,
           "beta": 0.65,
           "risk_level": {
             "level": "中",
@@ -47672,7 +47672,7 @@
           "operating_margin": 8.35,
           "revenue_growth": 3.0,
           "current_ratio": 0.84,
-          "market_cap": 91206410240,
+          "market_cap": 91351064576,
           "beta": -0.02,
           "risk_level": {
             "level": "中",
@@ -47799,7 +47799,7 @@
           "operating_margin": 8.12,
           "revenue_growth": 10.1,
           "current_ratio": 1.64,
-          "market_cap": 44033773568,
+          "market_cap": 44031963136,
           "beta": 0.65,
           "risk_level": {
             "level": "中",
@@ -48503,7 +48503,7 @@
           "operating_margin": 5.11,
           "revenue_growth": 3.6,
           "current_ratio": 2.31,
-          "market_cap": 81875099648,
+          "market_cap": 81875263488,
           "beta": 0.34,
           "risk_level": {
             "level": "中",
@@ -49204,7 +49204,7 @@
           "operating_margin": 11.48,
           "revenue_growth": 36.0,
           "current_ratio": 1.94,
-          "market_cap": 112446046208,
+          "market_cap": 112632242176,
           "beta": 0.47,
           "risk_level": {
             "level": "中",
@@ -50301,7 +50301,7 @@
           "operating_margin": 47.09,
           "revenue_growth": 17.8,
           "current_ratio": 4.34,
-          "market_cap": 10455532699648,
+          "market_cap": 10454352003072,
           "beta": 0.56,
           "risk_level": {
             "level": "中",
@@ -51326,7 +51326,7 @@
           "operating_margin": 32.88,
           "revenue_growth": 40.8,
           "current_ratio": null,
-          "market_cap": 669109714944,
+          "market_cap": 666465337344,
           "beta": 0.14,
           "risk_level": {
             "level": "中",
@@ -52596,6 +52596,71 @@
           }
         },
         {
+          "ticker": "2157.T",
+          "name": "KOSHIDAKA HOLDINGS CO LTD",
+          "sector": "Consumer Cyclical",
+          "industry": "Leisure",
+          "price": 943.0,
+          "pbr": 1.93,
+          "roe": 16.38,
+          "dividend_yield": 3.18,
+          "equity_ratio": 81.6,
+          "operating_margin": 15.06,
+          "revenue_growth": 16.7,
+          "current_ratio": 0.83,
+          "market_cap": 81915731968,
+          "beta": -0.04,
+          "risk_level": {
+            "level": "中",
+            "color": "yellow",
+            "reasons": [
+              "【業種特性】景気動向や個人消費の変化の影響を受けやすい業種です"
+            ]
+          },
+          "score": 32.6,
+          "score_breakdown": [
+            {
+              "label": "割安度（PBR）",
+              "score": 1.7,
+              "max": 34
+            },
+            {
+              "label": "稼ぐ力（ROE）",
+              "score": 19.8,
+              "max": 33
+            },
+            {
+              "label": "配当利回り",
+              "score": 11.1,
+              "max": 33
+            }
+          ],
+          "sector_display": "Consumer Cyclical",
+          "nisa_fit": {
+            "level": "要検討",
+            "stars": 2,
+            "reasons": [
+              "配当が安定的",
+              "財務が健全（自己資本比率81.6%）",
+              "極端な割高ではない",
+              "収益性が安定",
+              "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
+            ]
+          },
+          "detailed_comment": "自己資本比率81.6%と財務基盤が非常に安定しています。ROE16.38%と収益力が優秀です。配当利回り3.18%と安定した配当が続いています。",
+          "sector_rank": {
+            "percentile_margin": 88.5,
+            "percentile_roe": 83.4,
+            "sector_count": 261,
+            "label_margin": "業種内で上位",
+            "label_roe": "業種内で上位",
+            "rank_margin": 31,
+            "rank_margin_total": 261,
+            "rank_roe": 42,
+            "rank_roe_total": 247
+          }
+        },
+        {
           "ticker": "4674.T",
           "name": "CRESCO LTD",
           "sector": "Technology",
@@ -52865,7 +52930,7 @@
           "operating_margin": 1.35,
           "revenue_growth": 4.7,
           "current_ratio": 1.28,
-          "market_cap": 639683002368,
+          "market_cap": 639683264512,
           "beta": -0.03,
           "risk_level": {
             "level": "中",
@@ -53885,7 +53950,7 @@
           "operating_margin": 23.52,
           "revenue_growth": 38.3,
           "current_ratio": null,
-          "market_cap": 343411884032,
+          "market_cap": 342660907008,
           "beta": 0.2,
           "risk_level": {
             "level": "中",
@@ -54590,7 +54655,7 @@
           "operating_margin": 16.18,
           "revenue_growth": 68.8,
           "current_ratio": null,
-          "market_cap": 172353273856,
+          "market_cap": 172352520192,
           "beta": 0.21,
           "risk_level": {
             "level": "中",
@@ -54653,7 +54718,7 @@
           "operating_margin": 5.14,
           "revenue_growth": 1.1,
           "current_ratio": 2.28,
-          "market_cap": 568455331840,
+          "market_cap": 568176345088,
           "beta": -0.08,
           "risk_level": {
             "level": "中",
@@ -56109,71 +56174,6 @@
             "rank_margin_total": 120,
             "rank_roe": 85,
             "rank_roe_total": 114
-          }
-        },
-        {
-          "ticker": "2157.T",
-          "name": "KOSHIDAKA HOLDINGS CO LTD",
-          "sector": "Consumer Cyclical",
-          "industry": "Leisure",
-          "price": 943.0,
-          "pbr": 2.0,
-          "roe": 16.38,
-          "dividend_yield": 3.18,
-          "equity_ratio": 81.6,
-          "operating_margin": 15.06,
-          "revenue_growth": 16.7,
-          "current_ratio": 0.83,
-          "market_cap": 81915731968,
-          "beta": -0.04,
-          "risk_level": {
-            "level": "中",
-            "color": "yellow",
-            "reasons": [
-              "【業種特性】景気動向や個人消費の変化の影響を受けやすい業種です"
-            ]
-          },
-          "score": 30.9,
-          "score_breakdown": [
-            {
-              "label": "割安度（PBR）",
-              "score": 0.0,
-              "max": 34
-            },
-            {
-              "label": "稼ぐ力（ROE）",
-              "score": 19.8,
-              "max": 33
-            },
-            {
-              "label": "配当利回り",
-              "score": 11.1,
-              "max": 33
-            }
-          ],
-          "sector_display": "Consumer Cyclical",
-          "nisa_fit": {
-            "level": "要検討",
-            "stars": 2,
-            "reasons": [
-              "配当が安定的",
-              "財務が健全（自己資本比率81.6%）",
-              "極端な割高ではない",
-              "収益性が安定",
-              "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
-            ]
-          },
-          "detailed_comment": "自己資本比率81.6%と財務基盤が非常に安定しています。ROE16.38%と収益力が優秀です。配当利回り3.18%と安定した配当が続いています。",
-          "sector_rank": {
-            "percentile_margin": 88.5,
-            "percentile_roe": 83.4,
-            "sector_count": 261,
-            "label_margin": "業種内で上位",
-            "label_roe": "業種内で上位",
-            "rank_margin": 31,
-            "rank_margin_total": 261,
-            "rank_roe": 42,
-            "rank_roe_total": 247
           }
         },
         {
@@ -57727,7 +57727,7 @@
           "operating_margin": 10.57,
           "revenue_growth": 32.0,
           "current_ratio": 2.82,
-          "market_cap": 77913948160,
+          "market_cap": 77841858560,
           "beta": 0.91,
           "risk_level": {
             "level": "中",
@@ -58308,7 +58308,7 @@
           "operating_margin": 18.18,
           "revenue_growth": 21.3,
           "current_ratio": 4.03,
-          "market_cap": 122525736960,
+          "market_cap": 122525556736,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -59009,7 +59009,7 @@
           "operating_margin": 7.84,
           "revenue_growth": 45.7,
           "current_ratio": 3.5,
-          "market_cap": 53791993856,
+          "market_cap": 53793103872,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -62912,7 +62912,7 @@
           "operating_margin": 3.5,
           "revenue_growth": 2.1,
           "current_ratio": 1.38,
-          "market_cap": 110979407872,
+          "market_cap": 110462599168,
           "beta": 0.29,
           "risk_level": {
             "level": "低",
@@ -63103,7 +63103,7 @@
           "operating_margin": 0.15,
           "revenue_growth": 37.2,
           "current_ratio": 7.93,
-          "market_cap": 75595816960,
+          "market_cap": 75595440128,
           "beta": 0.43,
           "risk_level": {
             "level": "中",
@@ -63415,7 +63415,7 @@
           "operating_margin": 9.56,
           "revenue_growth": 29.3,
           "current_ratio": 2.29,
-          "market_cap": 351353929728,
+          "market_cap": 351480709120,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -65142,7 +65142,7 @@
           "operating_margin": 30.68,
           "revenue_growth": 10.0,
           "current_ratio": 4.43,
-          "market_cap": 128323887104,
+          "market_cap": 128323452928,
           "beta": 0.86,
           "risk_level": {
             "level": "中",
@@ -69857,7 +69857,7 @@
           "operating_margin": 15.01,
           "revenue_growth": -7.4,
           "current_ratio": 2.92,
-          "market_cap": 77779484672,
+          "market_cap": 77786054656,
           "beta": -0.06,
           "risk_level": {
             "level": "中",
@@ -70500,7 +70500,7 @@
           "operating_margin": 13.51,
           "revenue_growth": 3.6,
           "current_ratio": 4.55,
-          "market_cap": 134172303360,
+          "market_cap": 134172262400,
           "beta": 0.35,
           "risk_level": {
             "level": "中",
@@ -70628,7 +70628,7 @@
           "operating_margin": 5.02,
           "revenue_growth": 3.6,
           "current_ratio": 3.31,
-          "market_cap": 28508461056,
+          "market_cap": 28546652160,
           "beta": 0.24,
           "risk_level": {
             "level": "中",
@@ -71000,70 +71000,6 @@
           }
         },
         {
-          "ticker": "7730.T",
-          "name": "MANI INC",
-          "sector": "Healthcare",
-          "industry": "Medical Instruments & Supplies",
-          "price": 1553.0,
-          "pbr": 2.59,
-          "roe": 12.86,
-          "dividend_yield": 2.64,
-          "equity_ratio": 99.9,
-          "operating_margin": 28.5,
-          "revenue_growth": 12.1,
-          "current_ratio": 7.16,
-          "market_cap": 152974540800,
-          "beta": null,
-          "risk_level": {
-            "level": "中",
-            "color": "yellow",
-            "reasons": [
-              "【業種特性】薬価改定や規制動向の影響を受けやすい業種です"
-            ]
-          },
-          "score": 17.5,
-          "score_breakdown": [
-            {
-              "label": "割安度（PBR）",
-              "score": 0,
-              "max": 34
-            },
-            {
-              "label": "稼ぐ力（ROE）",
-              "score": 11.5,
-              "max": 33
-            },
-            {
-              "label": "配当利回り",
-              "score": 6.0,
-              "max": 33
-            }
-          ],
-          "sector_display": "Healthcare",
-          "nisa_fit": {
-            "level": "要検討",
-            "stars": 2,
-            "reasons": [
-              "配当が安定的",
-              "財務が健全（自己資本比率99.9%）",
-              "収益性が安定",
-              "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
-            ]
-          },
-          "detailed_comment": "自己資本比率99.9%と財務基盤が非常に安定しています。ROE12.86%と収益力は合格水準です。配当利回り2.64%と安定した配当が続いています。",
-          "sector_rank": {
-            "percentile_margin": 92.0,
-            "percentile_roe": 71.8,
-            "sector_count": 87,
-            "label_margin": "業種内トップクラス",
-            "label_roe": "業種内で上位",
-            "rank_margin": 8,
-            "rank_margin_total": 87,
-            "rank_roe": 25,
-            "rank_roe_total": 85
-          }
-        },
-        {
           "ticker": "8306.T",
           "name": "MITSUBISHI UFJ FINANCIAL GROUP ",
           "sector": "Financial Services",
@@ -71140,7 +71076,7 @@
           "operating_margin": 4.06,
           "revenue_growth": 6.0,
           "current_ratio": 2.48,
-          "market_cap": 93709066240,
+          "market_cap": 93703757824,
           "beta": 0.73,
           "risk_level": {
             "level": "中",
@@ -71189,6 +71125,70 @@
             "rank_margin_total": 364,
             "rank_roe": 327,
             "rank_roe_total": 347
+          }
+        },
+        {
+          "ticker": "7730.T",
+          "name": "MANI INC",
+          "sector": "Healthcare",
+          "industry": "Medical Instruments & Supplies",
+          "price": 1553.0,
+          "pbr": 2.59,
+          "roe": 12.8,
+          "dividend_yield": 2.64,
+          "equity_ratio": 99.9,
+          "operating_margin": 28.5,
+          "revenue_growth": 12.1,
+          "current_ratio": 7.16,
+          "market_cap": 152974540800,
+          "beta": 0.4,
+          "risk_level": {
+            "level": "中",
+            "color": "yellow",
+            "reasons": [
+              "【業種特性】薬価改定や規制動向の影響を受けやすい業種です"
+            ]
+          },
+          "score": 17.3,
+          "score_breakdown": [
+            {
+              "label": "割安度（PBR）",
+              "score": 0,
+              "max": 34
+            },
+            {
+              "label": "稼ぐ力（ROE）",
+              "score": 11.3,
+              "max": 33
+            },
+            {
+              "label": "配当利回り",
+              "score": 6.0,
+              "max": 33
+            }
+          ],
+          "sector_display": "Healthcare",
+          "nisa_fit": {
+            "level": "要検討",
+            "stars": 2,
+            "reasons": [
+              "配当が安定的",
+              "財務が健全（自己資本比率99.9%）",
+              "収益性が安定",
+              "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
+            ]
+          },
+          "detailed_comment": "自己資本比率99.9%と財務基盤が非常に安定しています。ROE12.8%と収益力は合格水準です。配当利回り2.64%と安定した配当が続いています。",
+          "sector_rank": {
+            "percentile_margin": 92.0,
+            "percentile_roe": 71.8,
+            "sector_count": 87,
+            "label_margin": "業種内トップクラス",
+            "label_roe": "業種内で上位",
+            "rank_margin": 8,
+            "rank_margin_total": 87,
+            "rank_roe": 25,
+            "rank_roe_total": 85
           }
         },
         {
@@ -72106,7 +72106,7 @@
           "operating_margin": 7.29,
           "revenue_growth": 10.0,
           "current_ratio": 1.43,
-          "market_cap": 858160824320,
+          "market_cap": 856725192704,
           "beta": 0.0,
           "risk_level": {
             "level": "低",
@@ -72429,7 +72429,7 @@
           "operating_margin": 7.72,
           "revenue_growth": 23.4,
           "current_ratio": 2.79,
-          "market_cap": 93358456832,
+          "market_cap": 93383999488,
           "beta": 1.19,
           "risk_level": {
             "level": "中",
@@ -73198,7 +73198,7 @@
           "operating_margin": 8.7,
           "revenue_growth": 18.4,
           "current_ratio": 1.19,
-          "market_cap": 1840386932736,
+          "market_cap": 1840372908032,
           "beta": 0.56,
           "risk_level": {
             "level": "中",
@@ -74028,7 +74028,7 @@
           "operating_margin": 4.29,
           "revenue_growth": 14.4,
           "current_ratio": 1.43,
-          "market_cap": 399909584896,
+          "market_cap": 400297885696,
           "beta": 0.28,
           "risk_level": {
             "level": "中",
@@ -76328,7 +76328,7 @@
           "operating_margin": 11.34,
           "revenue_growth": 23.6,
           "current_ratio": 3.4,
-          "market_cap": 1121431715840,
+          "market_cap": 1115583414272,
           "beta": 0.77,
           "risk_level": {
             "level": "中",
@@ -77003,7 +77003,7 @@
           "operating_margin": 31.01,
           "revenue_growth": 11.6,
           "current_ratio": 6.06,
-          "market_cap": 118073450496,
+          "market_cap": 0,
           "beta": 0.17,
           "risk_level": {
             "level": "中",
@@ -77750,7 +77750,7 @@
           "operating_margin": 25.81,
           "revenue_growth": 1.0,
           "current_ratio": 7.13,
-          "market_cap": 199152500736,
+          "market_cap": 198985154560,
           "beta": 0.6,
           "risk_level": {
             "level": "中",
@@ -79250,7 +79250,7 @@
           "operating_margin": 30.68,
           "revenue_growth": 10.0,
           "current_ratio": 4.43,
-          "market_cap": 128323887104,
+          "market_cap": 128323452928,
           "beta": 0.86,
           "risk_level": {
             "level": "中",
@@ -79728,7 +79728,7 @@
           "operating_margin": 16.39,
           "revenue_growth": 18.0,
           "current_ratio": 3.9,
-          "market_cap": 9931884544,
+          "market_cap": 19863769088,
           "beta": 0.27,
           "risk_level": {
             "level": "中",
@@ -81150,14 +81150,14 @@
           "industry": "Medical Instruments & Supplies",
           "price": 1553.0,
           "pbr": 2.59,
-          "roe": 12.86,
+          "roe": 12.8,
           "dividend_yield": 2.64,
           "equity_ratio": 99.9,
           "operating_margin": 28.5,
           "revenue_growth": 12.1,
           "current_ratio": 7.16,
           "market_cap": 152974540800,
-          "beta": null,
+          "beta": 0.4,
           "risk_level": {
             "level": "中",
             "color": "yellow",
@@ -81165,7 +81165,7 @@
               "【業種特性】薬価改定や規制動向の影響を受けやすい業種です"
             ]
           },
-          "score": 78.5,
+          "score": 78.4,
           "score_breakdown": [
             {
               "label": "財務の安全度（自己資本比率）",
@@ -81174,7 +81174,7 @@
             },
             {
               "label": "稼ぐ力（ROE）",
-              "score": 10.4,
+              "score": 10.3,
               "max": 30
             },
             {
@@ -81198,7 +81198,7 @@
               "収益性が安定"
             ]
           },
-          "detailed_comment": "自己資本比率99.9%と財務基盤が非常に安定しています。ROE12.86%と収益力は合格水準です。配当利回り2.64%と安定した配当が続いています。",
+          "detailed_comment": "自己資本比率99.9%と財務基盤が非常に安定しています。ROE12.8%と収益力は合格水準です。配当利回り2.64%と安定した配当が続いています。",
           "sector_rank": {
             "percentile_margin": 92.0,
             "percentile_roe": 71.8,
@@ -81838,7 +81838,7 @@
           "operating_margin": 10.4,
           "revenue_growth": 3.8,
           "current_ratio": 2.59,
-          "market_cap": 251422048256,
+          "market_cap": 251451113472,
           "beta": 0.61,
           "risk_level": {
             "level": "中",
@@ -84020,7 +84020,7 @@
           "operating_margin": 47.09,
           "revenue_growth": 17.8,
           "current_ratio": 4.34,
-          "market_cap": 10455532699648,
+          "market_cap": 10454352003072,
           "beta": 0.56,
           "risk_level": {
             "level": "中",
@@ -84425,7 +84425,7 @@
           "operating_margin": 34.54,
           "revenue_growth": 6.4,
           "current_ratio": 5.18,
-          "market_cap": 35945148416,
+          "market_cap": 35988787200,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -85236,7 +85236,7 @@
           "operating_margin": 15.74,
           "revenue_growth": 20.1,
           "current_ratio": 1.39,
-          "market_cap": 251346190336,
+          "market_cap": 251279310848,
           "beta": 1.5,
           "risk_level": {
             "level": "高",
@@ -86879,7 +86879,7 @@
           "operating_margin": 11.8,
           "revenue_growth": -10.3,
           "current_ratio": 2.12,
-          "market_cap": 2612252377088,
+          "market_cap": 2612248182784,
           "beta": 1.52,
           "risk_level": {
             "level": "高",
@@ -87086,7 +87086,7 @@
           "operating_margin": 20.01,
           "revenue_growth": 49.6,
           "current_ratio": 3.06,
-          "market_cap": 212266909696,
+          "market_cap": 212267171840,
           "beta": 0.65,
           "risk_level": {
             "level": "中",
@@ -87968,7 +87968,7 @@
           "operating_margin": 8.12,
           "revenue_growth": 10.1,
           "current_ratio": 1.64,
-          "market_cap": 44033773568,
+          "market_cap": 44031963136,
           "beta": 0.65,
           "risk_level": {
             "level": "中",
@@ -91721,7 +91721,7 @@
           "operating_margin": 13.51,
           "revenue_growth": 3.6,
           "current_ratio": 4.55,
-          "market_cap": 134172303360,
+          "market_cap": 134172262400,
           "beta": 0.35,
           "risk_level": {
             "level": "中",
@@ -95995,7 +95995,7 @@
           "operating_margin": 19.51,
           "revenue_growth": -7.4,
           "current_ratio": 1.6,
-          "market_cap": 120254595072,
+          "market_cap": 120286543872,
           "beta": 0.42,
           "risk_level": {
             "level": "中",
@@ -96897,7 +96897,7 @@
           "operating_margin": 9.56,
           "revenue_growth": 29.3,
           "current_ratio": 2.29,
-          "market_cap": 351353929728,
+          "market_cap": 351480709120,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -97938,7 +97938,7 @@
           "operating_margin": 15.01,
           "revenue_growth": -7.4,
           "current_ratio": 2.92,
-          "market_cap": 77779484672,
+          "market_cap": 77786054656,
           "beta": -0.06,
           "risk_level": {
             "level": "中",
@@ -98211,7 +98211,7 @@
           "sector": "Consumer Cyclical",
           "industry": "Leisure",
           "price": 943.0,
-          "pbr": 2.0,
+          "pbr": 1.93,
           "roe": 16.38,
           "dividend_yield": 3.18,
           "equity_ratio": 81.6,
@@ -98635,7 +98635,7 @@
           "operating_margin": 15.29,
           "revenue_growth": 14.6,
           "current_ratio": 2.65,
-          "market_cap": 83965026304,
+          "market_cap": 83964903424,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -100228,7 +100228,7 @@
           "operating_margin": 5.02,
           "revenue_growth": 3.6,
           "current_ratio": 3.31,
-          "market_cap": 28508461056,
+          "market_cap": 28546652160,
           "beta": 0.24,
           "risk_level": {
             "level": "中",
@@ -100504,7 +100504,7 @@
           "operating_margin": 9.26,
           "revenue_growth": 22.0,
           "current_ratio": 1.81,
-          "market_cap": 4086202368000,
+          "market_cap": 4086202105856,
           "beta": 0.45,
           "risk_level": {
             "level": "中",
@@ -101403,7 +101403,7 @@
           "operating_margin": 17.07,
           "revenue_growth": 13.9,
           "current_ratio": 1.34,
-          "market_cap": 14211880960,
+          "market_cap": 13552583680,
           "beta": 0.22,
           "risk_level": {
             "level": "中",
@@ -101612,7 +101612,7 @@
           "operating_margin": 9.83,
           "revenue_growth": -10.1,
           "current_ratio": 1.92,
-          "market_cap": 99069952000,
+          "market_cap": 99069927424,
           "beta": 0.63,
           "risk_level": {
             "level": "中",
@@ -102641,7 +102641,7 @@
           "operating_margin": 12.5,
           "revenue_growth": 8.7,
           "current_ratio": 1.73,
-          "market_cap": 87530569728,
+          "market_cap": 88436957184,
           "beta": 0.23,
           "risk_level": {
             "level": "中",
@@ -105971,7 +105971,7 @@
           "operating_margin": 10.09,
           "revenue_growth": -6.4,
           "current_ratio": 3.85,
-          "market_cap": 82992603136,
+          "market_cap": 82990825472,
           "beta": 0.58,
           "risk_level": {
             "level": "中",
@@ -107010,7 +107010,7 @@
           "operating_margin": 4.55,
           "revenue_growth": -12.5,
           "current_ratio": 2.1,
-          "market_cap": 69569830912,
+          "market_cap": 68634120192,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -107775,7 +107775,7 @@
           "operating_margin": 11.48,
           "revenue_growth": 36.0,
           "current_ratio": 1.94,
-          "market_cap": 112446046208,
+          "market_cap": 112632242176,
           "beta": 0.47,
           "risk_level": {
             "level": "中",
@@ -108190,7 +108190,7 @@
           "operating_margin": 11.42,
           "revenue_growth": 63.7,
           "current_ratio": 1.14,
-          "market_cap": 2496761954304,
+          "market_cap": 2497352564736,
           "beta": 0.07,
           "risk_level": {
             "level": "中",
@@ -109307,7 +109307,7 @@
           "operating_margin": 7.72,
           "revenue_growth": 23.4,
           "current_ratio": 2.79,
-          "market_cap": 93358456832,
+          "market_cap": 93383999488,
           "beta": 1.19,
           "risk_level": {
             "level": "中",
@@ -109585,7 +109585,7 @@
           "operating_margin": 3.09,
           "revenue_growth": 15.7,
           "current_ratio": 4.07,
-          "market_cap": 221813997568,
+          "market_cap": 221972692992,
           "beta": 0.34,
           "risk_level": {
             "level": "中",
@@ -109862,7 +109862,7 @@
           "operating_margin": 11.34,
           "revenue_growth": 23.6,
           "current_ratio": 3.4,
-          "market_cap": 1121431715840,
+          "market_cap": 1115583414272,
           "beta": 0.77,
           "risk_level": {
             "level": "中",
@@ -111872,7 +111872,7 @@
           "operating_margin": 18.18,
           "revenue_growth": 21.3,
           "current_ratio": 4.03,
-          "market_cap": 122525736960,
+          "market_cap": 122525556736,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -112631,7 +112631,7 @@
           "operating_margin": 10.74,
           "revenue_growth": 52.7,
           "current_ratio": 5.35,
-          "market_cap": 45749194752,
+          "market_cap": 48035823616,
           "beta": 0.74,
           "risk_level": {
             "level": "中",
@@ -113111,7 +113111,7 @@
           "operating_margin": 10.57,
           "revenue_growth": 32.0,
           "current_ratio": 2.82,
-          "market_cap": 77913948160,
+          "market_cap": 77841858560,
           "beta": 0.91,
           "risk_level": {
             "level": "中",
@@ -113876,7 +113876,7 @@
           "operating_margin": 10.1,
           "revenue_growth": 27.7,
           "current_ratio": 2.52,
-          "market_cap": 304537698304,
+          "market_cap": 304554278912,
           "beta": 0.78,
           "risk_level": {
             "level": "中",
@@ -115681,7 +115681,7 @@
           "operating_margin": 6.56,
           "revenue_growth": 18.6,
           "current_ratio": 1.88,
-          "market_cap": 130462031872,
+          "market_cap": 130799296512,
           "beta": 0.5,
           "risk_level": {
             "level": "中",
@@ -116798,7 +116798,7 @@
           "operating_margin": 36.76,
           "revenue_growth": -8.0,
           "current_ratio": 1.48,
-          "market_cap": 136559394816,
+          "market_cap": 136556978176,
           "beta": 0.23,
           "risk_level": {
             "level": "中",
@@ -116939,7 +116939,7 @@
           "operating_margin": 30.65,
           "revenue_growth": 4.6,
           "current_ratio": 15.4,
-          "market_cap": 601211076608,
+          "market_cap": 601417973760,
           "beta": 0.55,
           "risk_level": {
             "level": "高",
@@ -118681,7 +118681,7 @@
           "operating_margin": 8.11,
           "revenue_growth": 5.4,
           "current_ratio": 2.12,
-          "market_cap": 90066395136,
+          "market_cap": 90367115264,
           "beta": 0.65,
           "risk_level": {
             "level": "中",
@@ -119443,7 +119443,7 @@
           "operating_margin": 11.23,
           "revenue_growth": 14.8,
           "current_ratio": 2.24,
-          "market_cap": 165970100224,
+          "market_cap": 166351519744,
           "beta": 0.71,
           "risk_level": {
             "level": "中",
@@ -120208,7 +120208,7 @@
           "operating_margin": 3.14,
           "revenue_growth": 3.2,
           "current_ratio": 1.19,
-          "market_cap": 15400939520,
+          "market_cap": 30801879040,
           "beta": 0.32,
           "risk_level": {
             "level": "中",
@@ -122977,7 +122977,7 @@
           "operating_margin": 8.35,
           "revenue_growth": 3.0,
           "current_ratio": 0.84,
-          "market_cap": 91206410240,
+          "market_cap": 91351064576,
           "beta": -0.02,
           "risk_level": {
             "level": "中",
@@ -123325,7 +123325,7 @@
           "operating_margin": 25.9,
           "revenue_growth": 32.3,
           "current_ratio": 1.81,
-          "market_cap": 1292962758656,
+          "market_cap": 1292741902336,
           "beta": 0.36,
           "risk_level": {
             "level": "中",
@@ -126374,7 +126374,7 @@
           "operating_margin": 7.29,
           "revenue_growth": 10.0,
           "current_ratio": 1.43,
-          "market_cap": 858160824320,
+          "market_cap": 856725192704,
           "beta": 0.0,
           "risk_level": {
             "level": "低",
@@ -126583,7 +126583,7 @@
           "operating_margin": 3.5,
           "revenue_growth": 2.1,
           "current_ratio": 1.38,
-          "market_cap": 110979407872,
+          "market_cap": 110462599168,
           "beta": 0.29,
           "risk_level": {
             "level": "低",
@@ -132039,11 +132039,12 @@
           "revenue_growth": 48.4,
           "current_ratio": 1.53,
           "market_cap": 359358005248,
-          "beta": null,
+          "beta": 1.2,
           "risk_level": {
             "level": "中",
             "color": "yellow",
             "reasons": [
+              "株価が市場平均並みに変動する",
               "【業種特性】技術革新の速さや競争環境の変化が大きい業種です"
             ]
           },
@@ -135091,7 +135092,7 @@
           "operating_margin": 11.08,
           "revenue_growth": 10.5,
           "current_ratio": 1.38,
-          "market_cap": 1400263540736,
+          "market_cap": 1400283725824,
           "beta": 0.59,
           "risk_level": {
             "level": "中",
@@ -136746,7 +136747,7 @@
           "operating_margin": 2.31,
           "revenue_growth": 19.8,
           "current_ratio": 1.26,
-          "market_cap": 82981634048,
+          "market_cap": 82966200320,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -137097,7 +137098,7 @@
           "operating_margin": 1.3,
           "revenue_growth": 17.5,
           "current_ratio": 1.02,
-          "market_cap": 75208728576,
+          "market_cap": 75106476032,
           "beta": -0.0,
           "risk_level": {
             "level": "中",
@@ -137934,7 +137935,7 @@
           "operating_margin": 4.04,
           "revenue_growth": 15.0,
           "current_ratio": 1.47,
-          "market_cap": 21097650176,
+          "market_cap": 21145174016,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -138208,7 +138209,7 @@
           "operating_margin": 2.39,
           "revenue_growth": 2.7,
           "current_ratio": 2.25,
-          "market_cap": 101535776768,
+          "market_cap": 101464203264,
           "beta": 0.34,
           "risk_level": {
             "level": "中",
@@ -139602,7 +139603,7 @@
           "operating_margin": 23.52,
           "revenue_growth": 38.3,
           "current_ratio": null,
-          "market_cap": 343411884032,
+          "market_cap": 342660907008,
           "beta": 0.2,
           "risk_level": {
             "level": "中",
@@ -139671,7 +139672,7 @@
           "operating_margin": 4.83,
           "revenue_growth": 14.1,
           "current_ratio": 1.4,
-          "market_cap": 336026107904,
+          "market_cap": 336025190400,
           "beta": 0.21,
           "risk_level": {
             "level": "低",
@@ -141410,7 +141411,7 @@
           "operating_margin": 16.18,
           "revenue_growth": 68.8,
           "current_ratio": null,
-          "market_cap": 172353273856,
+          "market_cap": 172352520192,
           "beta": 0.21,
           "risk_level": {
             "level": "中",
@@ -142526,7 +142527,7 @@
           "operating_margin": 4.29,
           "revenue_growth": 14.4,
           "current_ratio": 1.43,
-          "market_cap": 399909584896,
+          "market_cap": 400297885696,
           "beta": 0.28,
           "risk_level": {
             "level": "中",
@@ -144726,7 +144727,7 @@
           "operating_margin": 11.42,
           "revenue_growth": 63.7,
           "current_ratio": 1.14,
-          "market_cap": 2496761954304,
+          "market_cap": 2497352564736,
           "beta": 0.07,
           "risk_level": {
             "level": "中",
@@ -145687,7 +145688,7 @@
           "operating_margin": 9.26,
           "revenue_growth": 22.0,
           "current_ratio": 1.81,
-          "market_cap": 4086202368000,
+          "market_cap": 4086202105856,
           "beta": 0.45,
           "risk_level": {
             "level": "中",
@@ -146229,7 +146230,7 @@
           "operating_margin": 15.74,
           "revenue_growth": 20.1,
           "current_ratio": 1.39,
-          "market_cap": 251346190336,
+          "market_cap": 251279310848,
           "beta": 1.5,
           "risk_level": {
             "level": "高",
@@ -147534,7 +147535,7 @@
           "operating_margin": 9.56,
           "revenue_growth": 29.3,
           "current_ratio": 2.29,
-          "market_cap": 351353929728,
+          "market_cap": 351480709120,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -147602,7 +147603,7 @@
           "operating_margin": 16.39,
           "revenue_growth": 18.0,
           "current_ratio": 3.9,
-          "market_cap": 9931884544,
+          "market_cap": 19863769088,
           "beta": 0.27,
           "risk_level": {
             "level": "中",
@@ -148286,7 +148287,7 @@
           "operating_margin": 4.67,
           "revenue_growth": 31.6,
           "current_ratio": 2.64,
-          "market_cap": 66236399616,
+          "market_cap": 66236592128,
           "beta": 0.41,
           "risk_level": {
             "level": "中",
@@ -148561,7 +148562,7 @@
           "operating_margin": 7.84,
           "revenue_growth": 45.7,
           "current_ratio": 3.5,
-          "market_cap": 53791993856,
+          "market_cap": 53793103872,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -148695,7 +148696,7 @@
           "operating_margin": 10.57,
           "revenue_growth": 32.0,
           "current_ratio": 2.82,
-          "market_cap": 77913948160,
+          "market_cap": 77841858560,
           "beta": 0.91,
           "risk_level": {
             "level": "中",
@@ -149174,7 +149175,7 @@
           "operating_margin": 0.15,
           "revenue_growth": 37.2,
           "current_ratio": 7.93,
-          "market_cap": 75595816960,
+          "market_cap": 75595440128,
           "beta": 0.43,
           "risk_level": {
             "level": "中",
@@ -149788,7 +149789,7 @@
           "operating_margin": 10.74,
           "revenue_growth": 52.7,
           "current_ratio": 5.35,
-          "market_cap": 45749194752,
+          "market_cap": 48035823616,
           "beta": 0.74,
           "risk_level": {
             "level": "中",
@@ -150750,7 +150751,7 @@
           "operating_margin": 11.48,
           "revenue_growth": 36.0,
           "current_ratio": 1.94,
-          "market_cap": 112446046208,
+          "market_cap": 112632242176,
           "beta": 0.47,
           "risk_level": {
             "level": "中",
@@ -152955,7 +152956,7 @@
           "operating_margin": 10.1,
           "revenue_growth": 27.7,
           "current_ratio": 2.52,
-          "market_cap": 304537698304,
+          "market_cap": 304554278912,
           "beta": 0.78,
           "risk_level": {
             "level": "中",
@@ -155344,6 +155345,75 @@
           }
         },
         {
+          "ticker": "2157.T",
+          "name": "KOSHIDAKA HOLDINGS CO LTD",
+          "sector": "Consumer Cyclical",
+          "industry": "Leisure",
+          "price": 943.0,
+          "pbr": 1.93,
+          "roe": 16.38,
+          "dividend_yield": 3.18,
+          "equity_ratio": 81.6,
+          "operating_margin": 15.06,
+          "revenue_growth": 16.7,
+          "current_ratio": 0.83,
+          "market_cap": 81915731968,
+          "beta": -0.04,
+          "risk_level": {
+            "level": "中",
+            "color": "yellow",
+            "reasons": [
+              "【業種特性】景気動向や個人消費の変化の影響を受けやすい業種です"
+            ]
+          },
+          "score": 63.5,
+          "score_breakdown": [
+            {
+              "label": "売上成長率",
+              "score": 20.0,
+              "max": 30
+            },
+            {
+              "label": "稼ぐ力（ROE）",
+              "score": 12.8,
+              "max": 30
+            },
+            {
+              "label": "割安度（PBR）",
+              "score": 10.7,
+              "max": 20
+            },
+            {
+              "label": "財務の安全度（自己資本比率）",
+              "score": 20.0,
+              "max": 20
+            }
+          ],
+          "sector_display": "Consumer Cyclical",
+          "nisa_fit": {
+            "level": "普通",
+            "stars": 3,
+            "reasons": [
+              "配当が安定的",
+              "財務が健全（自己資本比率81.6%）",
+              "極端な割高ではない",
+              "収益性が安定"
+            ]
+          },
+          "detailed_comment": "自己資本比率81.6%と財務基盤が非常に安定しています。ROE16.38%と収益力が優秀です。配当利回り3.18%と安定した配当が続いています。",
+          "sector_rank": {
+            "percentile_margin": 88.5,
+            "percentile_roe": 83.4,
+            "sector_count": 261,
+            "label_margin": "業種内で上位",
+            "label_roe": "業種内で上位",
+            "rank_margin": 31,
+            "rank_margin_total": 261,
+            "rank_roe": 42,
+            "rank_roe_total": 247
+          }
+        },
+        {
           "ticker": "3769.T",
           "name": "GMO PAYMENT GATEWAY INC",
           "sector": "Technology",
@@ -155493,7 +155563,7 @@
           "operating_margin": 6.56,
           "revenue_growth": 18.6,
           "current_ratio": 1.88,
-          "market_cap": 130462031872,
+          "market_cap": 130799296512,
           "beta": 0.5,
           "risk_level": {
             "level": "中",
@@ -155906,7 +155976,7 @@
           "operating_margin": 7.72,
           "revenue_growth": 23.4,
           "current_ratio": 2.79,
-          "market_cap": 93358456832,
+          "market_cap": 93383999488,
           "beta": 1.19,
           "risk_level": {
             "level": "中",
@@ -156043,7 +156113,7 @@
           "operating_margin": 20.01,
           "revenue_growth": 49.6,
           "current_ratio": 3.06,
-          "market_cap": 212266909696,
+          "market_cap": 212267171840,
           "beta": 0.65,
           "risk_level": {
             "level": "中",
@@ -156506,75 +156576,6 @@
             "rank_margin_total": 364,
             "rank_roe": 110,
             "rank_roe_total": 347
-          }
-        },
-        {
-          "ticker": "2157.T",
-          "name": "KOSHIDAKA HOLDINGS CO LTD",
-          "sector": "Consumer Cyclical",
-          "industry": "Leisure",
-          "price": 943.0,
-          "pbr": 2.0,
-          "roe": 16.38,
-          "dividend_yield": 3.18,
-          "equity_ratio": 81.6,
-          "operating_margin": 15.06,
-          "revenue_growth": 16.7,
-          "current_ratio": 0.83,
-          "market_cap": 81915731968,
-          "beta": -0.04,
-          "risk_level": {
-            "level": "中",
-            "color": "yellow",
-            "reasons": [
-              "【業種特性】景気動向や個人消費の変化の影響を受けやすい業種です"
-            ]
-          },
-          "score": 62.8,
-          "score_breakdown": [
-            {
-              "label": "売上成長率",
-              "score": 20.0,
-              "max": 30
-            },
-            {
-              "label": "稼ぐ力（ROE）",
-              "score": 12.8,
-              "max": 30
-            },
-            {
-              "label": "割安度（PBR）",
-              "score": 10.0,
-              "max": 20
-            },
-            {
-              "label": "財務の安全度（自己資本比率）",
-              "score": 20.0,
-              "max": 20
-            }
-          ],
-          "sector_display": "Consumer Cyclical",
-          "nisa_fit": {
-            "level": "普通",
-            "stars": 3,
-            "reasons": [
-              "配当が安定的",
-              "財務が健全（自己資本比率81.6%）",
-              "極端な割高ではない",
-              "収益性が安定"
-            ]
-          },
-          "detailed_comment": "自己資本比率81.6%と財務基盤が非常に安定しています。ROE16.38%と収益力が優秀です。配当利回り3.18%と安定した配当が続いています。",
-          "sector_rank": {
-            "percentile_margin": 88.5,
-            "percentile_roe": 83.4,
-            "sector_count": 261,
-            "label_margin": "業種内で上位",
-            "label_roe": "業種内で上位",
-            "rank_margin": 31,
-            "rank_margin_total": 261,
-            "rank_roe": 42,
-            "rank_roe_total": 247
           }
         },
         {
@@ -160632,7 +160633,7 @@
           "operating_margin": 2.31,
           "revenue_growth": 19.8,
           "current_ratio": 1.26,
-          "market_cap": 82981634048,
+          "market_cap": 82966200320,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -163682,7 +163683,7 @@
           "operating_margin": 3.09,
           "revenue_growth": 15.7,
           "current_ratio": 4.07,
-          "market_cap": 221813997568,
+          "market_cap": 221972692992,
           "beta": 0.34,
           "risk_level": {
             "level": "中",
@@ -164028,7 +164029,7 @@
           "operating_margin": 31.01,
           "revenue_growth": 11.6,
           "current_ratio": 6.06,
-          "market_cap": 118073450496,
+          "market_cap": 0,
           "beta": 0.17,
           "risk_level": {
             "level": "中",
@@ -164789,7 +164790,7 @@
           "operating_margin": 15.29,
           "revenue_growth": 14.6,
           "current_ratio": 2.65,
-          "market_cap": 83965026304,
+          "market_cap": 83964903424,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -164859,7 +164860,7 @@
           "operating_margin": 8.12,
           "revenue_growth": 10.1,
           "current_ratio": 1.64,
-          "market_cap": 44033773568,
+          "market_cap": 44031963136,
           "beta": 0.65,
           "risk_level": {
             "level": "中",
@@ -164996,7 +164997,7 @@
           "operating_margin": 1.3,
           "revenue_growth": 17.5,
           "current_ratio": 1.02,
-          "market_cap": 75208728576,
+          "market_cap": 75106476032,
           "beta": -0.0,
           "risk_level": {
             "level": "中",
@@ -165898,7 +165899,7 @@
           "operating_margin": 11.23,
           "revenue_growth": 14.8,
           "current_ratio": 2.24,
-          "market_cap": 165970100224,
+          "market_cap": 166351519744,
           "beta": 0.71,
           "risk_level": {
             "level": "中",
@@ -166452,7 +166453,7 @@
           "operating_margin": 4.34,
           "revenue_growth": 13.5,
           "current_ratio": 1.38,
-          "market_cap": 1179150450688,
+          "market_cap": 1178997882880,
           "beta": 0.43,
           "risk_level": {
             "level": "中",
@@ -168531,7 +168532,7 @@
           "operating_margin": 11.34,
           "revenue_growth": 23.6,
           "current_ratio": 3.4,
-          "market_cap": 1121431715840,
+          "market_cap": 1115583414272,
           "beta": 0.77,
           "risk_level": {
             "level": "中",
@@ -173947,7 +173948,7 @@
           "operating_margin": 25.9,
           "revenue_growth": 32.3,
           "current_ratio": 1.81,
-          "market_cap": 1292962758656,
+          "market_cap": 1292741902336,
           "beta": 0.36,
           "risk_level": {
             "level": "中",
@@ -175747,7 +175748,7 @@
           "operating_margin": 8.7,
           "revenue_growth": 18.4,
           "current_ratio": 1.19,
-          "market_cap": 1840386932736,
+          "market_cap": 1840372908032,
           "beta": 0.56,
           "risk_level": {
             "level": "中",
@@ -175955,7 +175956,7 @@
           "operating_margin": 30.68,
           "revenue_growth": 10.0,
           "current_ratio": 4.43,
-          "market_cap": 128323887104,
+          "market_cap": 128323452928,
           "beta": 0.86,
           "risk_level": {
             "level": "中",
@@ -176442,7 +176443,7 @@
           "operating_margin": 25.81,
           "revenue_growth": 1.0,
           "current_ratio": 7.13,
-          "market_cap": 199152500736,
+          "market_cap": 198985154560,
           "beta": 0.6,
           "risk_level": {
             "level": "中",
@@ -176790,7 +176791,7 @@
           "operating_margin": 4.41,
           "revenue_growth": 23.0,
           "current_ratio": 1.43,
-          "market_cap": 50131632128,
+          "market_cap": 50152554496,
           "beta": 1.37,
           "risk_level": {
             "level": "高",
@@ -177212,7 +177213,7 @@
           "operating_margin": 3.77,
           "revenue_growth": 9.1,
           "current_ratio": 1.42,
-          "market_cap": 125603143680,
+          "market_cap": 125600284672,
           "beta": 0.06,
           "risk_level": {
             "level": "低",
@@ -177560,7 +177561,7 @@
           "operating_margin": 3.77,
           "revenue_growth": 9.0,
           "current_ratio": 2.18,
-          "market_cap": 78578466816,
+          "market_cap": 78598037504,
           "beta": 0.71,
           "risk_level": {
             "level": "中",
@@ -181376,7 +181377,7 @@
           "operating_margin": 4.04,
           "revenue_growth": 15.0,
           "current_ratio": 1.47,
-          "market_cap": 21097650176,
+          "market_cap": 21145174016,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -181932,7 +181933,7 @@
           "operating_margin": 12.5,
           "revenue_growth": 8.7,
           "current_ratio": 1.73,
-          "market_cap": 87530569728,
+          "market_cap": 88436957184,
           "beta": 0.23,
           "risk_level": {
             "level": "中",
@@ -182898,7 +182899,7 @@
           "operating_margin": 17.07,
           "revenue_growth": 13.9,
           "current_ratio": 1.34,
-          "market_cap": 14211880960,
+          "market_cap": 13552583680,
           "beta": 0.22,
           "risk_level": {
             "level": "中",
@@ -183375,7 +183376,7 @@
           "sector": "Consumer Defensive",
           "industry": "Farm Products",
           "price": 2625.0,
-          "pbr": 0.64,
+          "pbr": 0.62,
           "roe": 6.46,
           "dividend_yield": 4.19,
           "equity_ratio": 74.7,
@@ -183426,7 +183427,7 @@
               "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
             ]
           },
-          "detailed_comment": "自己資本比率74.7%と財務基盤が非常に安定しています。配当利回り4.19%と高水準の配当が特徴です。PBR0.64倍と資産価値より株価が割安な水準です。",
+          "detailed_comment": "自己資本比率74.7%と財務基盤が非常に安定しています。配当利回り4.19%と高水準の配当が特徴です。PBR0.62倍と資産価値より株価が割安な水準です。",
           "sector_rank": {
             "percentile_margin": 13.0,
             "percentile_roe": 34.5,
@@ -183452,7 +183453,7 @@
           "operating_margin": 10.4,
           "revenue_growth": 3.8,
           "current_ratio": 2.59,
-          "market_cap": 251422048256,
+          "market_cap": 251451113472,
           "beta": 0.61,
           "risk_level": {
             "level": "中",
@@ -184842,7 +184843,7 @@
           "operating_margin": 47.09,
           "revenue_growth": 17.8,
           "current_ratio": 4.34,
-          "market_cap": 10455532699648,
+          "market_cap": 10454352003072,
           "beta": 0.56,
           "risk_level": {
             "level": "中",
@@ -185325,7 +185326,7 @@
           "operating_margin": 2.61,
           "revenue_growth": 6.9,
           "current_ratio": 2.32,
-          "market_cap": 74111967232,
+          "market_cap": 74111426560,
           "beta": 0.11,
           "risk_level": {
             "level": "中",
@@ -188308,11 +188309,12 @@
           "revenue_growth": 48.4,
           "current_ratio": 1.53,
           "market_cap": 359358005248,
-          "beta": null,
+          "beta": 1.2,
           "risk_level": {
             "level": "中",
             "color": "yellow",
             "reasons": [
+              "株価が市場平均並みに変動する",
               "【業種特性】技術革新の速さや競争環境の変化が大きい業種です"
             ]
           },
@@ -188865,7 +188867,7 @@
           "operating_margin": 8.35,
           "revenue_growth": 3.0,
           "current_ratio": 0.84,
-          "market_cap": 91206410240,
+          "market_cap": 91351064576,
           "beta": -0.02,
           "risk_level": {
             "level": "中",
@@ -190185,7 +190187,7 @@
           "operating_margin": 8.11,
           "revenue_growth": 5.4,
           "current_ratio": 2.12,
-          "market_cap": 90066395136,
+          "market_cap": 90367115264,
           "beta": 0.65,
           "risk_level": {
             "level": "中",
@@ -190324,7 +190326,7 @@
           "operating_margin": 9.83,
           "revenue_growth": -10.1,
           "current_ratio": 1.92,
-          "market_cap": 99069952000,
+          "market_cap": 99069927424,
           "beta": 0.63,
           "risk_level": {
             "level": "中",
@@ -191777,7 +191779,7 @@
           "operating_margin": 7.29,
           "revenue_growth": 10.0,
           "current_ratio": 1.43,
-          "market_cap": 858160824320,
+          "market_cap": 856725192704,
           "beta": 0.0,
           "risk_level": {
             "level": "低",
@@ -193720,7 +193722,7 @@
           "operating_margin": 6.51,
           "revenue_growth": 6.6,
           "current_ratio": 1.97,
-          "market_cap": 251064532992,
+          "market_cap": 251153219584,
           "beta": 0.1,
           "risk_level": {
             "level": "低",
@@ -194479,7 +194481,7 @@
           "operating_margin": 1.17,
           "revenue_growth": 5.0,
           "current_ratio": 1.42,
-          "market_cap": 86238404608,
+          "market_cap": 86236012544,
           "beta": 0.14,
           "risk_level": {
             "level": "中",
@@ -194618,7 +194620,7 @@
           "operating_margin": 1.01,
           "revenue_growth": 3.8,
           "current_ratio": 2.84,
-          "market_cap": 62004379648,
+          "market_cap": 62004363264,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -194688,7 +194690,7 @@
           "operating_margin": 18.18,
           "revenue_growth": 21.3,
           "current_ratio": 4.03,
-          "market_cap": 122525736960,
+          "market_cap": 122525556736,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -195517,7 +195519,7 @@
           "operating_margin": -0.39,
           "revenue_growth": 4.3,
           "current_ratio": 1.94,
-          "market_cap": 64954265600,
+          "market_cap": 64954527744,
           "beta": -0.0,
           "risk_level": {
             "level": "中",
@@ -195644,75 +195646,6 @@
           }
         },
         {
-          "ticker": "7730.T",
-          "name": "MANI INC",
-          "sector": "Healthcare",
-          "industry": "Medical Instruments & Supplies",
-          "price": 1553.0,
-          "pbr": 2.59,
-          "roe": 12.86,
-          "dividend_yield": 2.64,
-          "equity_ratio": 99.9,
-          "operating_margin": 28.5,
-          "revenue_growth": 12.1,
-          "current_ratio": 7.16,
-          "market_cap": 152974540800,
-          "beta": null,
-          "risk_level": {
-            "level": "中",
-            "color": "yellow",
-            "reasons": [
-              "【業種特性】薬価改定や規制動向の影響を受けやすい業種です"
-            ]
-          },
-          "score": 44.3,
-          "score_breakdown": [
-            {
-              "label": "売上成長率",
-              "score": 14.5,
-              "max": 30
-            },
-            {
-              "label": "稼ぐ力（ROE）",
-              "score": 5.7,
-              "max": 30
-            },
-            {
-              "label": "割安度（PBR）",
-              "score": 4.1,
-              "max": 20
-            },
-            {
-              "label": "財務の安全度（自己資本比率）",
-              "score": 20.0,
-              "max": 20
-            }
-          ],
-          "sector_display": "Healthcare",
-          "nisa_fit": {
-            "level": "要検討",
-            "stars": 2,
-            "reasons": [
-              "配当が安定的",
-              "財務が健全（自己資本比率99.9%）",
-              "収益性が安定",
-              "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
-            ]
-          },
-          "detailed_comment": "自己資本比率99.9%と財務基盤が非常に安定しています。ROE12.86%と収益力は合格水準です。配当利回り2.64%と安定した配当が続いています。",
-          "sector_rank": {
-            "percentile_margin": 92.0,
-            "percentile_roe": 71.8,
-            "sector_count": 87,
-            "label_margin": "業種内トップクラス",
-            "label_roe": "業種内で上位",
-            "rank_margin": 8,
-            "rank_margin_total": 87,
-            "rank_roe": 25,
-            "rank_roe_total": 85
-          }
-        },
-        {
           "ticker": "7840.T",
           "name": "FRANCE BED HOLDINGS CO",
           "sector": "Consumer Cyclical",
@@ -195795,7 +195728,7 @@
           "operating_margin": 5.11,
           "revenue_growth": 3.6,
           "current_ratio": 2.31,
-          "market_cap": 81875099648,
+          "market_cap": 81875263488,
           "beta": 0.34,
           "risk_level": {
             "level": "中",
@@ -196212,7 +196145,7 @@
           "operating_margin": 4.06,
           "revenue_growth": 6.0,
           "current_ratio": 2.48,
-          "market_cap": 93709066240,
+          "market_cap": 93703757824,
           "beta": 0.73,
           "risk_level": {
             "level": "中",
@@ -196404,6 +196337,75 @@
             "rank_margin_total": 123,
             "rank_roe": 19,
             "rank_roe_total": 119
+          }
+        },
+        {
+          "ticker": "7730.T",
+          "name": "MANI INC",
+          "sector": "Healthcare",
+          "industry": "Medical Instruments & Supplies",
+          "price": 1553.0,
+          "pbr": 2.59,
+          "roe": 12.8,
+          "dividend_yield": 2.64,
+          "equity_ratio": 99.9,
+          "operating_margin": 28.5,
+          "revenue_growth": 12.1,
+          "current_ratio": 7.16,
+          "market_cap": 152974540800,
+          "beta": 0.4,
+          "risk_level": {
+            "level": "中",
+            "color": "yellow",
+            "reasons": [
+              "【業種特性】薬価改定や規制動向の影響を受けやすい業種です"
+            ]
+          },
+          "score": 44.2,
+          "score_breakdown": [
+            {
+              "label": "売上成長率",
+              "score": 14.5,
+              "max": 30
+            },
+            {
+              "label": "稼ぐ力（ROE）",
+              "score": 5.6,
+              "max": 30
+            },
+            {
+              "label": "割安度（PBR）",
+              "score": 4.1,
+              "max": 20
+            },
+            {
+              "label": "財務の安全度（自己資本比率）",
+              "score": 20.0,
+              "max": 20
+            }
+          ],
+          "sector_display": "Healthcare",
+          "nisa_fit": {
+            "level": "要検討",
+            "stars": 2,
+            "reasons": [
+              "配当が安定的",
+              "財務が健全（自己資本比率99.9%）",
+              "収益性が安定",
+              "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
+            ]
+          },
+          "detailed_comment": "自己資本比率99.9%と財務基盤が非常に安定しています。ROE12.8%と収益力は合格水準です。配当利回り2.64%と安定した配当が続いています。",
+          "sector_rank": {
+            "percentile_margin": 92.0,
+            "percentile_roe": 71.8,
+            "sector_count": 87,
+            "label_margin": "業種内トップクラス",
+            "label_roe": "業種内で上位",
+            "rank_margin": 8,
+            "rank_margin_total": 87,
+            "rank_roe": 25,
+            "rank_roe_total": 85
           }
         },
         {
@@ -197038,7 +197040,7 @@
           "operating_margin": 4.83,
           "revenue_growth": 14.1,
           "current_ratio": 1.4,
-          "market_cap": 336026107904,
+          "market_cap": 336025190400,
           "beta": 0.21,
           "risk_level": {
             "level": "低",
@@ -197595,11 +197597,12 @@
           "revenue_growth": 3.1,
           "current_ratio": 2.28,
           "market_cap": 56925102080,
-          "beta": null,
+          "beta": 1.27,
           "risk_level": {
             "level": "高",
             "color": "red",
             "reasons": [
+              "株価が市場平均並みに変動する",
               "⚠️ 直近の自己資本利益率（ROE）がマイナスです（収益性に懸念）",
               "【業種特性】景気変動・燃料費や原材料費の影響を受けやすい業種です"
             ]
@@ -198144,7 +198147,7 @@
           "sector": "Consumer Defensive",
           "industry": "Grocery Stores",
           "price": 1433.0,
-          "pbr": 0.68,
+          "pbr": 0.66,
           "roe": 5.01,
           "dividend_yield": 2.79,
           "equity_ratio": 87.6,
@@ -198195,7 +198198,7 @@
               "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
             ]
           },
-          "detailed_comment": "自己資本比率87.6%と財務基盤が非常に安定しています。配当利回り2.79%と安定した配当が続いています。PBR0.68倍と資産価値より株価が割安な水準です。",
+          "detailed_comment": "自己資本比率87.6%と財務基盤が非常に安定しています。配当利回り2.79%と安定した配当が続いています。PBR0.66倍と資産価値より株価が割安な水準です。",
           "sector_rank": {
             "percentile_margin": 16.3,
             "percentile_roe": 22.7,
@@ -198986,7 +198989,7 @@
           "operating_margin": 13.51,
           "revenue_growth": 3.6,
           "current_ratio": 4.55,
-          "market_cap": 134172303360,
+          "market_cap": 134172262400,
           "beta": 0.35,
           "risk_level": {
             "level": "中",
@@ -204602,7 +204605,7 @@
           "operating_margin": 8.76,
           "revenue_growth": 13.5,
           "current_ratio": 1.29,
-          "market_cap": 6996913291264,
+          "market_cap": 6997697101824,
           "beta": 0.33,
           "risk_level": {
             "level": "高",
@@ -204744,7 +204747,7 @@
           "operating_margin": 3.5,
           "revenue_growth": 2.1,
           "current_ratio": 1.38,
-          "market_cap": 110979407872,
+          "market_cap": 110462599168,
           "beta": 0.29,
           "risk_level": {
             "level": "低",
@@ -205369,7 +205372,7 @@
           "operating_margin": 9.55,
           "revenue_growth": 12.0,
           "current_ratio": 2.96,
-          "market_cap": 100754046976,
+          "market_cap": 100879704064,
           "beta": 0.1,
           "risk_level": {
             "level": "中",
@@ -206137,7 +206140,7 @@
           "operating_margin": 5.14,
           "revenue_growth": 1.1,
           "current_ratio": 2.28,
-          "market_cap": 568455331840,
+          "market_cap": 568176345088,
           "beta": -0.08,
           "risk_level": {
             "level": "中",
@@ -207318,7 +207321,7 @@
           "operating_margin": 4.55,
           "revenue_growth": -12.5,
           "current_ratio": 2.1,
-          "market_cap": 69569830912,
+          "market_cap": 68634120192,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -207873,7 +207876,7 @@
           "operating_margin": 19.51,
           "revenue_growth": -7.4,
           "current_ratio": 1.6,
-          "market_cap": 120254595072,
+          "market_cap": 120286543872,
           "beta": 0.42,
           "risk_level": {
             "level": "中",
@@ -208634,7 +208637,7 @@
           "operating_margin": 5.02,
           "revenue_growth": 3.6,
           "current_ratio": 3.31,
-          "market_cap": 28508461056,
+          "market_cap": 28546652160,
           "beta": 0.24,
           "risk_level": {
             "level": "中",
@@ -209668,7 +209671,7 @@
           "operating_margin": 11.08,
           "revenue_growth": 10.5,
           "current_ratio": 1.38,
-          "market_cap": 1400263540736,
+          "market_cap": 1400283725824,
           "beta": 0.59,
           "risk_level": {
             "level": "中",
@@ -210014,7 +210017,7 @@
           "operating_margin": 11.8,
           "revenue_growth": -10.3,
           "current_ratio": 2.12,
-          "market_cap": 2612252377088,
+          "market_cap": 2612248182784,
           "beta": 1.52,
           "risk_level": {
             "level": "高",
@@ -210632,7 +210635,7 @@
           "operating_margin": -1.41,
           "revenue_growth": 1.3,
           "current_ratio": 2.11,
-          "market_cap": 73060048896,
+          "market_cap": 73054199808,
           "beta": 0.34,
           "risk_level": {
             "level": "中",
@@ -210909,7 +210912,7 @@
           "operating_margin": 10.09,
           "revenue_growth": -6.4,
           "current_ratio": 3.85,
-          "market_cap": 82992603136,
+          "market_cap": 82990825472,
           "beta": 0.58,
           "risk_level": {
             "level": "中",
@@ -211462,7 +211465,7 @@
           "operating_margin": 34.54,
           "revenue_growth": 6.4,
           "current_ratio": 5.18,
-          "market_cap": 35945148416,
+          "market_cap": 35988787200,
           "beta": null,
           "risk_level": {
             "level": "中",
@@ -215801,7 +215804,7 @@
           "sector": "Consumer Cyclical",
           "industry": "Home Improvement Retail",
           "price": 4660.0,
-          "pbr": 0.74,
+          "pbr": 0.73,
           "roe": 7.78,
           "dividend_yield": 3.0,
           "equity_ratio": 45.9,
@@ -215851,7 +215854,7 @@
               "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
             ]
           },
-          "detailed_comment": "自己資本比率45.9%と財務は概ね健全な水準です。配当利回り3.0%と安定した配当が続いています。PBR0.74倍と資産価値より株価が割安な水準です。",
+          "detailed_comment": "自己資本比率45.9%と財務は概ね健全な水準です。配当利回り3.0%と安定した配当が続いています。PBR0.73倍と資産価値より株価が割安な水準です。",
           "sector_rank": {
             "percentile_margin": 42.9,
             "percentile_roe": 42.1,
@@ -219095,7 +219098,7 @@
           "operating_margin": 4.29,
           "revenue_growth": 14.4,
           "current_ratio": 1.43,
-          "market_cap": 399909584896,
+          "market_cap": 400297885696,
           "beta": 0.28,
           "risk_level": {
             "level": "中",
@@ -219301,7 +219304,7 @@
           "operating_margin": 3.14,
           "revenue_growth": 3.2,
           "current_ratio": 1.19,
-          "market_cap": 15400939520,
+          "market_cap": 30801879040,
           "beta": 0.32,
           "risk_level": {
             "level": "中",
@@ -220688,7 +220691,7 @@
           "operating_margin": 2.39,
           "revenue_growth": 2.7,
           "current_ratio": 2.25,
-          "market_cap": 101535776768,
+          "market_cap": 101464203264,
           "beta": 0.34,
           "risk_level": {
             "level": "中",
@@ -226095,7 +226098,7 @@
           "operating_margin": 0.6,
           "revenue_growth": 4.2,
           "current_ratio": 5.88,
-          "market_cap": 32575094784,
+          "market_cap": 32560492544,
           "beta": 0.31,
           "risk_level": {
             "level": "低",
@@ -229898,7 +229901,7 @@
       "operating_margin": 16.39,
       "revenue_growth": 18.0,
       "current_ratio": 3.9,
-      "market_cap": 9931884544,
+      "market_cap": 19863769088,
       "beta": 0.27,
       "risk_level": {
         "level": "中",
@@ -230212,7 +230215,7 @@
       "operating_margin": 34.54,
       "revenue_growth": 6.4,
       "current_ratio": 5.18,
-      "market_cap": 35945148416,
+      "market_cap": 35988787200,
       "beta": null,
       "risk_level": {
         "level": "中",
@@ -235187,7 +235190,7 @@
       "operating_margin": 1.3,
       "revenue_growth": 17.5,
       "current_ratio": 1.02,
-      "market_cap": 75208728576,
+      "market_cap": 75106476032,
       "beta": -0.0,
       "risk_level": {
         "level": "中",
@@ -237070,7 +237073,7 @@
       "operating_margin": 4.55,
       "revenue_growth": -12.5,
       "current_ratio": 2.1,
-      "market_cap": 69569830912,
+      "market_cap": 68634120192,
       "beta": null,
       "risk_level": {
         "level": "中",
@@ -237395,7 +237398,7 @@
       "operating_margin": 9.83,
       "revenue_growth": -10.1,
       "current_ratio": 1.92,
-      "market_cap": 99069952000,
+      "market_cap": 99069927424,
       "beta": 0.63,
       "risk_level": {
         "level": "中",
@@ -239594,6 +239597,71 @@
       }
     },
     {
+      "ticker": "2292.T",
+      "name": "S FOODS INC",
+      "sector": "Consumer Defensive",
+      "industry": "Farm Products",
+      "price": 2625.0,
+      "pbr": 0.62,
+      "roe": 6.46,
+      "dividend_yield": 4.19,
+      "equity_ratio": 74.7,
+      "operating_margin": 1.32,
+      "revenue_growth": 7.3,
+      "current_ratio": 2.29,
+      "market_cap": 83142369280,
+      "beta": null,
+      "risk_level": {
+        "level": "中",
+        "color": "yellow",
+        "reasons": [
+          "利益に対して配当負担がやや大きい可能性",
+          "【業種特性】比較的景気の影響を受けにくい安定した業種です"
+        ]
+      },
+      "score": 54.1,
+      "score_breakdown": [
+        {
+          "label": "割安度（PBR）",
+          "score": 33.5,
+          "max": 34
+        },
+        {
+          "label": "稼ぐ力（ROE）",
+          "score": 0,
+          "max": 33
+        },
+        {
+          "label": "配当利回り",
+          "score": 20.6,
+          "max": 33
+        }
+      ],
+      "sector_display": "Consumer Defensive",
+      "nisa_fit": {
+        "level": "要検討",
+        "stars": 2,
+        "reasons": [
+          "配当が安定的",
+          "財務が健全（自己資本比率74.7%）",
+          "極端な割高ではない",
+          "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
+        ]
+      },
+      "detailed_comment": "自己資本比率74.7%と財務基盤が非常に安定しています。配当利回り4.19%と高水準の配当が特徴です。PBR0.62倍と資産価値より株価が割安な水準です。",
+      "sector_rank": {
+        "percentile_margin": 13.0,
+        "percentile_roe": 34.5,
+        "sector_count": 123,
+        "label_margin": "業種内では控えめ",
+        "label_roe": "業種内では控えめ",
+        "rank_margin": 108,
+        "rank_margin_total": 123,
+        "rank_roe": 79,
+        "rank_roe_total": 119
+      }
+    },
+    {
       "ticker": "2335.T",
       "name": "CUBE SYSTEM INC",
       "sector": "Technology",
@@ -239801,7 +239869,7 @@
       "operating_margin": 1.17,
       "revenue_growth": 5.0,
       "current_ratio": 1.42,
-      "market_cap": 86238404608,
+      "market_cap": 86236012544,
       "beta": 0.14,
       "risk_level": {
         "level": "中",
@@ -240111,71 +240179,6 @@
       }
     },
     {
-      "ticker": "2292.T",
-      "name": "S FOODS INC",
-      "sector": "Consumer Defensive",
-      "industry": "Farm Products",
-      "price": 2625.0,
-      "pbr": 0.64,
-      "roe": 6.46,
-      "dividend_yield": 4.19,
-      "equity_ratio": 74.7,
-      "operating_margin": 1.32,
-      "revenue_growth": 7.3,
-      "current_ratio": 2.29,
-      "market_cap": 83142369280,
-      "beta": null,
-      "risk_level": {
-        "level": "中",
-        "color": "yellow",
-        "reasons": [
-          "利益に対して配当負担がやや大きい可能性",
-          "【業種特性】比較的景気の影響を受けにくい安定した業種です"
-        ]
-      },
-      "score": 53.6,
-      "score_breakdown": [
-        {
-          "label": "割安度（PBR）",
-          "score": 33.0,
-          "max": 34
-        },
-        {
-          "label": "稼ぐ力（ROE）",
-          "score": 0,
-          "max": 33
-        },
-        {
-          "label": "配当利回り",
-          "score": 20.6,
-          "max": 33
-        }
-      ],
-      "sector_display": "Consumer Defensive",
-      "nisa_fit": {
-        "level": "要検討",
-        "stars": 2,
-        "reasons": [
-          "配当が安定的",
-          "財務が健全（自己資本比率74.7%）",
-          "極端な割高ではない",
-          "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
-        ]
-      },
-      "detailed_comment": "自己資本比率74.7%と財務基盤が非常に安定しています。配当利回り4.19%と高水準の配当が特徴です。PBR0.64倍と資産価値より株価が割安な水準です。",
-      "sector_rank": {
-        "percentile_margin": 13.0,
-        "percentile_roe": 34.5,
-        "sector_count": 123,
-        "label_margin": "業種内では控えめ",
-        "label_roe": "業種内では控えめ",
-        "rank_margin": 108,
-        "rank_margin_total": 123,
-        "rank_roe": 79,
-        "rank_roe_total": 119
-      }
-    },
-    {
       "ticker": "2270.T",
       "name": "MEGMILK SNOW BRAND CO.LTD",
       "sector": "Consumer Defensive",
@@ -240450,7 +240453,7 @@
       "operating_margin": 25.81,
       "revenue_growth": 1.0,
       "current_ratio": 7.13,
-      "market_cap": 199152500736,
+      "market_cap": 198985154560,
       "beta": 0.6,
       "risk_level": {
         "level": "中",
@@ -243116,7 +243119,7 @@
       "operating_margin": 36.76,
       "revenue_growth": -8.0,
       "current_ratio": 1.48,
-      "market_cap": 136559394816,
+      "market_cap": 136556978176,
       "beta": 0.23,
       "risk_level": {
         "level": "中",
@@ -243181,7 +243184,7 @@
       "operating_margin": 8.76,
       "revenue_growth": 13.5,
       "current_ratio": 1.29,
-      "market_cap": 6996913291264,
+      "market_cap": 6997697101824,
       "beta": 0.33,
       "risk_level": {
         "level": "高",
@@ -243312,7 +243315,7 @@
       "operating_margin": 15.29,
       "revenue_growth": 14.6,
       "current_ratio": 2.65,
-      "market_cap": 83965026304,
+      "market_cap": 83964903424,
       "beta": null,
       "risk_level": {
         "level": "中",
@@ -245186,7 +245189,7 @@
       "operating_margin": 30.65,
       "revenue_growth": 4.6,
       "current_ratio": 15.4,
-      "market_cap": 601211076608,
+      "market_cap": 601417973760,
       "beta": 0.55,
       "risk_level": {
         "level": "高",
@@ -245382,7 +245385,7 @@
       "operating_margin": 1.01,
       "revenue_growth": 3.8,
       "current_ratio": 2.84,
-      "market_cap": 62004379648,
+      "market_cap": 62004363264,
       "beta": null,
       "risk_level": {
         "level": "中",
@@ -247588,7 +247591,7 @@
       "operating_margin": 2.39,
       "revenue_growth": 2.7,
       "current_ratio": 2.25,
-      "market_cap": 101535776768,
+      "market_cap": 101464203264,
       "beta": 0.34,
       "risk_level": {
         "level": "中",
@@ -249339,7 +249342,7 @@
       "operating_margin": 4.04,
       "revenue_growth": 15.0,
       "current_ratio": 1.47,
-      "market_cap": 21097650176,
+      "market_cap": 21145174016,
       "beta": null,
       "risk_level": {
         "level": "中",
@@ -249404,7 +249407,7 @@
       "operating_margin": -1.41,
       "revenue_growth": 1.3,
       "current_ratio": 2.11,
-      "market_cap": 73060048896,
+      "market_cap": 73054199808,
       "beta": 0.34,
       "risk_level": {
         "level": "中",
@@ -249469,7 +249472,7 @@
       "operating_margin": 2.61,
       "revenue_growth": 6.9,
       "current_ratio": 2.32,
-      "market_cap": 74111967232,
+      "market_cap": 74111426560,
       "beta": 0.11,
       "risk_level": {
         "level": "中",
@@ -250439,7 +250442,7 @@
       "operating_margin": 4.34,
       "revenue_growth": 13.5,
       "current_ratio": 1.38,
-      "market_cap": 1179150450688,
+      "market_cap": 1178997882880,
       "beta": 0.43,
       "risk_level": {
         "level": "中",
@@ -251805,7 +251808,7 @@
       "operating_margin": 2.31,
       "revenue_growth": 19.8,
       "current_ratio": 1.26,
-      "market_cap": 82981634048,
+      "market_cap": 82966200320,
       "beta": null,
       "risk_level": {
         "level": "中",
@@ -251999,7 +252002,7 @@
       "operating_margin": 6.56,
       "revenue_growth": 18.6,
       "current_ratio": 1.88,
-      "market_cap": 130462031872,
+      "market_cap": 130799296512,
       "beta": 0.5,
       "risk_level": {
         "level": "中",
@@ -252258,7 +252261,7 @@
       "operating_margin": 25.9,
       "revenue_growth": 32.3,
       "current_ratio": 1.81,
-      "market_cap": 1292962758656,
+      "market_cap": 1292741902336,
       "beta": 0.36,
       "risk_level": {
         "level": "中",
@@ -253164,7 +253167,7 @@
       "operating_margin": 11.23,
       "revenue_growth": 14.8,
       "current_ratio": 2.24,
-      "market_cap": 165970100224,
+      "market_cap": 166351519744,
       "beta": 0.71,
       "risk_level": {
         "level": "中",
@@ -255946,7 +255949,7 @@
       "operating_margin": 4.67,
       "revenue_growth": 31.6,
       "current_ratio": 2.64,
-      "market_cap": 66236399616,
+      "market_cap": 66236592128,
       "beta": 0.41,
       "risk_level": {
         "level": "中",
@@ -256787,7 +256790,7 @@
       "operating_margin": 3.77,
       "revenue_growth": 9.1,
       "current_ratio": 1.42,
-      "market_cap": 125603143680,
+      "market_cap": 125600284672,
       "beta": 0.06,
       "risk_level": {
         "level": "低",
@@ -258385,6 +258388,71 @@
       }
     },
     {
+      "ticker": "4577.T",
+      "name": "DAITO PHARMACEUTICAL CO.LTD",
+      "sector": "Healthcare",
+      "industry": "Drug Manufacturers - Specialty & Generic",
+      "price": 1371.0,
+      "pbr": 0.74,
+      "roe": 6.07,
+      "dividend_yield": 3.28,
+      "equity_ratio": 86.1,
+      "operating_margin": 5.99,
+      "revenue_growth": -8.6,
+      "current_ratio": 2.64,
+      "market_cap": 38744215552,
+      "beta": null,
+      "risk_level": {
+        "level": "中",
+        "color": "yellow",
+        "reasons": [
+          "利益に対して配当負担がやや大きい可能性",
+          "【業種特性】薬価改定や規制動向の影響を受けやすい業種です"
+        ]
+      },
+      "score": 42.7,
+      "score_breakdown": [
+        {
+          "label": "割安度（PBR）",
+          "score": 30.6,
+          "max": 34
+        },
+        {
+          "label": "稼ぐ力（ROE）",
+          "score": 0,
+          "max": 33
+        },
+        {
+          "label": "配当利回り",
+          "score": 12.1,
+          "max": 33
+        }
+      ],
+      "sector_display": "Healthcare",
+      "nisa_fit": {
+        "level": "要検討",
+        "stars": 2,
+        "reasons": [
+          "配当が安定的",
+          "財務が健全（自己資本比率86.1%）",
+          "極端な割高ではない",
+          "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
+        ]
+      },
+      "detailed_comment": "自己資本比率86.1%と財務基盤が非常に安定しています。配当利回り3.28%と安定した配当が続いています。PBR0.74倍と資産価値より株価が割安な水準です。",
+      "sector_rank": {
+        "percentile_margin": 39.1,
+        "percentile_roe": 20.0,
+        "sector_count": 87,
+        "label_margin": "業種内では控えめ",
+        "label_roe": "業種内では控えめ",
+        "rank_margin": 54,
+        "rank_margin_total": 87,
+        "rank_roe": 69,
+        "rank_roe_total": 85
+      }
+    },
+    {
       "ticker": "7181.T",
       "name": "JAPAN POST INSURANCE CO LTD",
       "sector": "Financial Services",
@@ -258462,7 +258530,7 @@
       "operating_margin": 19.51,
       "revenue_growth": -7.4,
       "current_ratio": 1.6,
-      "market_cap": 120254595072,
+      "market_cap": 120286543872,
       "beta": 0.42,
       "risk_level": {
         "level": "中",
@@ -258768,71 +258836,6 @@
         "rank_margin_total": 139,
         "rank_roe": null,
         "rank_roe_total": null
-      }
-    },
-    {
-      "ticker": "4577.T",
-      "name": "DAITO PHARMACEUTICAL CO.LTD",
-      "sector": "Healthcare",
-      "industry": "Drug Manufacturers - Specialty & Generic",
-      "price": 1371.0,
-      "pbr": 0.75,
-      "roe": 6.07,
-      "dividend_yield": 3.28,
-      "equity_ratio": 86.1,
-      "operating_margin": 5.99,
-      "revenue_growth": -8.6,
-      "current_ratio": 2.64,
-      "market_cap": 38744215552,
-      "beta": null,
-      "risk_level": {
-        "level": "中",
-        "color": "yellow",
-        "reasons": [
-          "利益に対して配当負担がやや大きい可能性",
-          "【業種特性】薬価改定や規制動向の影響を受けやすい業種です"
-        ]
-      },
-      "score": 42.5,
-      "score_breakdown": [
-        {
-          "label": "割安度（PBR）",
-          "score": 30.4,
-          "max": 34
-        },
-        {
-          "label": "稼ぐ力（ROE）",
-          "score": 0,
-          "max": 33
-        },
-        {
-          "label": "配当利回り",
-          "score": 12.1,
-          "max": 33
-        }
-      ],
-      "sector_display": "Healthcare",
-      "nisa_fit": {
-        "level": "要検討",
-        "stars": 2,
-        "reasons": [
-          "配当が安定的",
-          "財務が健全（自己資本比率86.1%）",
-          "極端な割高ではない",
-          "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
-        ]
-      },
-      "detailed_comment": "自己資本比率86.1%と財務基盤が非常に安定しています。配当利回り3.28%と安定した配当が続いています。PBR0.75倍と資産価値より株価が割安な水準です。",
-      "sector_rank": {
-        "percentile_margin": 39.1,
-        "percentile_roe": 20.0,
-        "sector_count": 87,
-        "label_margin": "業種内では控えめ",
-        "label_roe": "業種内では控えめ",
-        "rank_margin": 54,
-        "rank_margin_total": 87,
-        "rank_roe": 69,
-        "rank_roe_total": 85
       }
     },
     {
@@ -259432,7 +259435,7 @@
       "operating_margin": 9.26,
       "revenue_growth": 22.0,
       "current_ratio": 1.81,
-      "market_cap": 4086202368000,
+      "market_cap": 4086202105856,
       "beta": 0.45,
       "risk_level": {
         "level": "中",
@@ -259819,7 +259822,7 @@
       "operating_margin": 1.91,
       "revenue_growth": -22.1,
       "current_ratio": 2.32,
-      "market_cap": 29917145088,
+      "market_cap": 29917241344,
       "beta": 0.56,
       "risk_level": {
         "level": "中",
@@ -260079,7 +260082,7 @@
       "operating_margin": 10.09,
       "revenue_growth": -6.4,
       "current_ratio": 3.85,
-      "market_cap": 82992603136,
+      "market_cap": 82990825472,
       "beta": 0.58,
       "risk_level": {
         "level": "中",
@@ -262544,7 +262547,7 @@
       "operating_margin": 3.77,
       "revenue_growth": 9.0,
       "current_ratio": 2.18,
-      "market_cap": 78578466816,
+      "market_cap": 78598037504,
       "beta": 0.71,
       "risk_level": {
         "level": "中",
@@ -262609,7 +262612,7 @@
       "operating_margin": 11.42,
       "revenue_growth": 63.7,
       "current_ratio": 1.14,
-      "market_cap": 2496761954304,
+      "market_cap": 2497352564736,
       "beta": 0.07,
       "risk_level": {
         "level": "中",
@@ -263308,6 +263311,70 @@
       }
     },
     {
+      "ticker": "7516.T",
+      "name": "KOHNAN SHOJI",
+      "sector": "Consumer Cyclical",
+      "industry": "Home Improvement Retail",
+      "price": 4660.0,
+      "pbr": 0.73,
+      "roe": 7.78,
+      "dividend_yield": 3.0,
+      "equity_ratio": 45.9,
+      "operating_margin": 5.16,
+      "revenue_growth": 8.4,
+      "current_ratio": 1.53,
+      "market_cap": 134636552192,
+      "beta": null,
+      "risk_level": {
+        "level": "中",
+        "color": "yellow",
+        "reasons": [
+          "【業種特性】景気動向や個人消費の変化の影響を受けやすい業種です"
+        ]
+      },
+      "score": 40.2,
+      "score_breakdown": [
+        {
+          "label": "割安度（PBR）",
+          "score": 30.8,
+          "max": 34
+        },
+        {
+          "label": "稼ぐ力（ROE）",
+          "score": 0,
+          "max": 33
+        },
+        {
+          "label": "配当利回り",
+          "score": 9.4,
+          "max": 33
+        }
+      ],
+      "sector_display": "Consumer Cyclical",
+      "nisa_fit": {
+        "level": "要検討",
+        "stars": 2,
+        "reasons": [
+          "配当が安定的",
+          "財務が健全（自己資本比率45.9%）",
+          "極端な割高ではない",
+          "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
+        ]
+      },
+      "detailed_comment": "自己資本比率45.9%と財務は概ね健全な水準です。配当利回り3.0%と安定した配当が続いています。PBR0.73倍と資産価値より株価が割安な水準です。",
+      "sector_rank": {
+        "percentile_margin": 42.9,
+        "percentile_roe": 42.1,
+        "sector_count": 261,
+        "label_margin": "業種内で平均的",
+        "label_roe": "業種内で平均的",
+        "rank_margin": 150,
+        "rank_margin_total": 261,
+        "rank_roe": 144,
+        "rank_roe_total": 247
+      }
+    },
+    {
       "ticker": "5233.T",
       "name": "TAIHEIYO CEMENT CORP",
       "sector": "Basic Materials",
@@ -263693,70 +263760,6 @@
         "rank_margin_total": 364,
         "rank_roe": 20,
         "rank_roe_total": 347
-      }
-    },
-    {
-      "ticker": "7516.T",
-      "name": "KOHNAN SHOJI",
-      "sector": "Consumer Cyclical",
-      "industry": "Home Improvement Retail",
-      "price": 4660.0,
-      "pbr": 0.74,
-      "roe": 7.78,
-      "dividend_yield": 3.0,
-      "equity_ratio": 45.9,
-      "operating_margin": 5.16,
-      "revenue_growth": 8.4,
-      "current_ratio": 1.53,
-      "market_cap": 134636552192,
-      "beta": null,
-      "risk_level": {
-        "level": "中",
-        "color": "yellow",
-        "reasons": [
-          "【業種特性】景気動向や個人消費の変化の影響を受けやすい業種です"
-        ]
-      },
-      "score": 40.0,
-      "score_breakdown": [
-        {
-          "label": "割安度（PBR）",
-          "score": 30.6,
-          "max": 34
-        },
-        {
-          "label": "稼ぐ力（ROE）",
-          "score": 0,
-          "max": 33
-        },
-        {
-          "label": "配当利回り",
-          "score": 9.4,
-          "max": 33
-        }
-      ],
-      "sector_display": "Consumer Cyclical",
-      "nisa_fit": {
-        "level": "要検討",
-        "stars": 2,
-        "reasons": [
-          "配当が安定的",
-          "財務が健全（自己資本比率45.9%）",
-          "極端な割高ではない",
-          "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
-        ]
-      },
-      "detailed_comment": "自己資本比率45.9%と財務は概ね健全な水準です。配当利回り3.0%と安定した配当が続いています。PBR0.74倍と資産価値より株価が割安な水準です。",
-      "sector_rank": {
-        "percentile_margin": 42.9,
-        "percentile_roe": 42.1,
-        "sector_count": 261,
-        "label_margin": "業種内で平均的",
-        "label_roe": "業種内で平均的",
-        "rank_margin": 150,
-        "rank_margin_total": 261,
-        "rank_roe": 144,
-        "rank_roe_total": 247
       }
     },
     {
@@ -264148,6 +264151,71 @@
       }
     },
     {
+      "ticker": "8167.T",
+      "name": "RETAIL PARTNERS CO LTD",
+      "sector": "Consumer Defensive",
+      "industry": "Grocery Stores",
+      "price": 1433.0,
+      "pbr": 0.66,
+      "roe": 5.01,
+      "dividend_yield": 2.79,
+      "equity_ratio": 87.6,
+      "operating_margin": 1.81,
+      "revenue_growth": 3.0,
+      "current_ratio": 1.07,
+      "market_cap": 59434655744,
+      "beta": null,
+      "risk_level": {
+        "level": "中",
+        "color": "yellow",
+        "reasons": [
+          "利益に対して配当負担がやや大きい可能性",
+          "【業種特性】比較的景気の影響を受けにくい安定した業種です"
+        ]
+      },
+      "score": 39.9,
+      "score_breakdown": [
+        {
+          "label": "割安度（PBR）",
+          "score": 32.5,
+          "max": 34
+        },
+        {
+          "label": "稼ぐ力（ROE）",
+          "score": 0,
+          "max": 33
+        },
+        {
+          "label": "配当利回り",
+          "score": 7.4,
+          "max": 33
+        }
+      ],
+      "sector_display": "Consumer Defensive",
+      "nisa_fit": {
+        "level": "要検討",
+        "stars": 2,
+        "reasons": [
+          "配当が安定的",
+          "財務が健全（自己資本比率87.6%）",
+          "極端な割高ではない",
+          "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
+        ]
+      },
+      "detailed_comment": "自己資本比率87.6%と財務基盤が非常に安定しています。配当利回り2.79%と安定した配当が続いています。PBR0.66倍と資産価値より株価が割安な水準です。",
+      "sector_rank": {
+        "percentile_margin": 16.3,
+        "percentile_roe": 22.7,
+        "sector_count": 123,
+        "label_margin": "業種内では控えめ",
+        "label_roe": "業種内では控えめ",
+        "rank_margin": 104,
+        "rank_margin_total": 123,
+        "rank_roe": 93,
+        "rank_roe_total": 119
+      }
+    },
+    {
       "ticker": "2726.T",
       "name": "PAL GROUP HOLDINGS CO LTD",
       "sector": "Consumer Cyclical",
@@ -264160,7 +264228,7 @@
       "operating_margin": 10.4,
       "revenue_growth": 3.8,
       "current_ratio": 2.59,
-      "market_cap": 251422048256,
+      "market_cap": 251451113472,
       "beta": 0.61,
       "risk_level": {
         "level": "中",
@@ -264793,71 +264861,6 @@
       }
     },
     {
-      "ticker": "8167.T",
-      "name": "RETAIL PARTNERS CO LTD",
-      "sector": "Consumer Defensive",
-      "industry": "Grocery Stores",
-      "price": 1433.0,
-      "pbr": 0.68,
-      "roe": 5.01,
-      "dividend_yield": 2.79,
-      "equity_ratio": 87.6,
-      "operating_margin": 1.81,
-      "revenue_growth": 3.0,
-      "current_ratio": 1.07,
-      "market_cap": 59434655744,
-      "beta": null,
-      "risk_level": {
-        "level": "中",
-        "color": "yellow",
-        "reasons": [
-          "利益に対して配当負担がやや大きい可能性",
-          "【業種特性】比較的景気の影響を受けにくい安定した業種です"
-        ]
-      },
-      "score": 39.5,
-      "score_breakdown": [
-        {
-          "label": "割安度（PBR）",
-          "score": 32.1,
-          "max": 34
-        },
-        {
-          "label": "稼ぐ力（ROE）",
-          "score": 0,
-          "max": 33
-        },
-        {
-          "label": "配当利回り",
-          "score": 7.4,
-          "max": 33
-        }
-      ],
-      "sector_display": "Consumer Defensive",
-      "nisa_fit": {
-        "level": "要検討",
-        "stars": 2,
-        "reasons": [
-          "配当が安定的",
-          "財務が健全（自己資本比率87.6%）",
-          "極端な割高ではない",
-          "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
-        ]
-      },
-      "detailed_comment": "自己資本比率87.6%と財務基盤が非常に安定しています。配当利回り2.79%と安定した配当が続いています。PBR0.68倍と資産価値より株価が割安な水準です。",
-      "sector_rank": {
-        "percentile_margin": 16.3,
-        "percentile_roe": 22.7,
-        "sector_count": 123,
-        "label_margin": "業種内では控えめ",
-        "label_roe": "業種内では控えめ",
-        "rank_margin": 104,
-        "rank_margin_total": 123,
-        "rank_roe": 93,
-        "rank_roe_total": 119
-      }
-    },
-    {
       "ticker": "2109.T",
       "name": "MITSUI DM SUGAR CO LTD",
       "sector": "Consumer Defensive",
@@ -264870,7 +264873,7 @@
       "operating_margin": 8.57,
       "revenue_growth": -3.3,
       "current_ratio": 1.83,
-      "market_cap": 117309759488,
+      "market_cap": 117309612032,
       "beta": 0.02,
       "risk_level": {
         "level": "中",
@@ -266552,7 +266555,7 @@
       "operating_margin": 31.01,
       "revenue_growth": 11.6,
       "current_ratio": 6.06,
-      "market_cap": 118073450496,
+      "market_cap": 0,
       "beta": 0.17,
       "risk_level": {
         "level": "中",
@@ -267261,7 +267264,7 @@
       "operating_margin": 17.07,
       "revenue_growth": 13.9,
       "current_ratio": 1.34,
-      "market_cap": 14211880960,
+      "market_cap": 13552583680,
       "beta": 0.22,
       "risk_level": {
         "level": "中",
@@ -267649,7 +267652,7 @@
       "operating_margin": 3.09,
       "revenue_growth": 15.7,
       "current_ratio": 4.07,
-      "market_cap": 221813997568,
+      "market_cap": 221972692992,
       "beta": 0.34,
       "risk_level": {
         "level": "中",
@@ -268037,7 +268040,7 @@
       "operating_margin": 20.3,
       "revenue_growth": 8.8,
       "current_ratio": 14.64,
-      "market_cap": 49458323456,
+      "market_cap": 49723912192,
       "beta": 0.31,
       "risk_level": {
         "level": "中",
@@ -269454,7 +269457,7 @@
       "operating_margin": 4.83,
       "revenue_growth": 14.1,
       "current_ratio": 1.4,
-      "market_cap": 336026107904,
+      "market_cap": 336025190400,
       "beta": 0.21,
       "risk_level": {
         "level": "低",
@@ -269648,7 +269651,7 @@
       "operating_margin": 9.53,
       "revenue_growth": -21.4,
       "current_ratio": 2.48,
-      "market_cap": 429566820352,
+      "market_cap": 428294537216,
       "beta": 0.22,
       "risk_level": {
         "level": "中",
@@ -269969,7 +269972,7 @@
       "operating_margin": 0.23,
       "revenue_growth": -1.7,
       "current_ratio": 3.08,
-      "market_cap": 67323580416,
+      "market_cap": 67322884096,
       "beta": 0.22,
       "risk_level": {
         "level": "中",
@@ -271511,7 +271514,7 @@
       "operating_margin": 12.5,
       "revenue_growth": 8.7,
       "current_ratio": 1.73,
-      "market_cap": 87530569728,
+      "market_cap": 88436957184,
       "beta": 0.23,
       "risk_level": {
         "level": "中",
@@ -274073,7 +274076,7 @@
       "operating_margin": 8.11,
       "revenue_growth": 5.4,
       "current_ratio": 2.12,
-      "market_cap": 90066395136,
+      "market_cap": 90367115264,
       "beta": 0.65,
       "risk_level": {
         "level": "中",
@@ -274651,7 +274654,7 @@
       "operating_margin": 8.35,
       "revenue_growth": 3.0,
       "current_ratio": 0.84,
-      "market_cap": 91206410240,
+      "market_cap": 91351064576,
       "beta": -0.02,
       "risk_level": {
         "level": "中",
@@ -274778,7 +274781,7 @@
       "operating_margin": 8.12,
       "revenue_growth": 10.1,
       "current_ratio": 1.64,
-      "market_cap": 44033773568,
+      "market_cap": 44031963136,
       "beta": 0.65,
       "risk_level": {
         "level": "中",
@@ -275482,7 +275485,7 @@
       "operating_margin": 5.11,
       "revenue_growth": 3.6,
       "current_ratio": 2.31,
-      "market_cap": 81875099648,
+      "market_cap": 81875263488,
       "beta": 0.34,
       "risk_level": {
         "level": "中",
@@ -276183,7 +276186,7 @@
       "operating_margin": 11.48,
       "revenue_growth": 36.0,
       "current_ratio": 1.94,
-      "market_cap": 112446046208,
+      "market_cap": 112632242176,
       "beta": 0.47,
       "risk_level": {
         "level": "中",
@@ -277280,7 +277283,7 @@
       "operating_margin": 47.09,
       "revenue_growth": 17.8,
       "current_ratio": 4.34,
-      "market_cap": 10455532699648,
+      "market_cap": 10454352003072,
       "beta": 0.56,
       "risk_level": {
         "level": "中",
@@ -278305,7 +278308,7 @@
       "operating_margin": 32.88,
       "revenue_growth": 40.8,
       "current_ratio": null,
-      "market_cap": 669109714944,
+      "market_cap": 666465337344,
       "beta": 0.14,
       "risk_level": {
         "level": "中",
@@ -279575,6 +279578,71 @@
       }
     },
     {
+      "ticker": "2157.T",
+      "name": "KOSHIDAKA HOLDINGS CO LTD",
+      "sector": "Consumer Cyclical",
+      "industry": "Leisure",
+      "price": 943.0,
+      "pbr": 1.93,
+      "roe": 16.38,
+      "dividend_yield": 3.18,
+      "equity_ratio": 81.6,
+      "operating_margin": 15.06,
+      "revenue_growth": 16.7,
+      "current_ratio": 0.83,
+      "market_cap": 81915731968,
+      "beta": -0.04,
+      "risk_level": {
+        "level": "中",
+        "color": "yellow",
+        "reasons": [
+          "【業種特性】景気動向や個人消費の変化の影響を受けやすい業種です"
+        ]
+      },
+      "score": 32.6,
+      "score_breakdown": [
+        {
+          "label": "割安度（PBR）",
+          "score": 1.7,
+          "max": 34
+        },
+        {
+          "label": "稼ぐ力（ROE）",
+          "score": 19.8,
+          "max": 33
+        },
+        {
+          "label": "配当利回り",
+          "score": 11.1,
+          "max": 33
+        }
+      ],
+      "sector_display": "Consumer Cyclical",
+      "nisa_fit": {
+        "level": "要検討",
+        "stars": 2,
+        "reasons": [
+          "配当が安定的",
+          "財務が健全（自己資本比率81.6%）",
+          "極端な割高ではない",
+          "収益性が安定",
+          "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
+        ]
+      },
+      "detailed_comment": "自己資本比率81.6%と財務基盤が非常に安定しています。ROE16.38%と収益力が優秀です。配当利回り3.18%と安定した配当が続いています。",
+      "sector_rank": {
+        "percentile_margin": 88.5,
+        "percentile_roe": 83.4,
+        "sector_count": 261,
+        "label_margin": "業種内で上位",
+        "label_roe": "業種内で上位",
+        "rank_margin": 31,
+        "rank_margin_total": 261,
+        "rank_roe": 42,
+        "rank_roe_total": 247
+      }
+    },
+    {
       "ticker": "4674.T",
       "name": "CRESCO LTD",
       "sector": "Technology",
@@ -279844,7 +279912,7 @@
       "operating_margin": 1.35,
       "revenue_growth": 4.7,
       "current_ratio": 1.28,
-      "market_cap": 639683002368,
+      "market_cap": 639683264512,
       "beta": -0.03,
       "risk_level": {
         "level": "中",
@@ -280864,7 +280932,7 @@
       "operating_margin": 23.52,
       "revenue_growth": 38.3,
       "current_ratio": null,
-      "market_cap": 343411884032,
+      "market_cap": 342660907008,
       "beta": 0.2,
       "risk_level": {
         "level": "中",
@@ -281569,7 +281637,7 @@
       "operating_margin": 16.18,
       "revenue_growth": 68.8,
       "current_ratio": null,
-      "market_cap": 172353273856,
+      "market_cap": 172352520192,
       "beta": 0.21,
       "risk_level": {
         "level": "中",
@@ -281632,7 +281700,7 @@
       "operating_margin": 5.14,
       "revenue_growth": 1.1,
       "current_ratio": 2.28,
-      "market_cap": 568455331840,
+      "market_cap": 568176345088,
       "beta": -0.08,
       "risk_level": {
         "level": "中",
@@ -283088,71 +283156,6 @@
         "rank_margin_total": 120,
         "rank_roe": 85,
         "rank_roe_total": 114
-      }
-    },
-    {
-      "ticker": "2157.T",
-      "name": "KOSHIDAKA HOLDINGS CO LTD",
-      "sector": "Consumer Cyclical",
-      "industry": "Leisure",
-      "price": 943.0,
-      "pbr": 2.0,
-      "roe": 16.38,
-      "dividend_yield": 3.18,
-      "equity_ratio": 81.6,
-      "operating_margin": 15.06,
-      "revenue_growth": 16.7,
-      "current_ratio": 0.83,
-      "market_cap": 81915731968,
-      "beta": -0.04,
-      "risk_level": {
-        "level": "中",
-        "color": "yellow",
-        "reasons": [
-          "【業種特性】景気動向や個人消費の変化の影響を受けやすい業種です"
-        ]
-      },
-      "score": 30.9,
-      "score_breakdown": [
-        {
-          "label": "割安度（PBR）",
-          "score": 0.0,
-          "max": 34
-        },
-        {
-          "label": "稼ぐ力（ROE）",
-          "score": 19.8,
-          "max": 33
-        },
-        {
-          "label": "配当利回り",
-          "score": 11.1,
-          "max": 33
-        }
-      ],
-      "sector_display": "Consumer Cyclical",
-      "nisa_fit": {
-        "level": "要検討",
-        "stars": 2,
-        "reasons": [
-          "配当が安定的",
-          "財務が健全（自己資本比率81.6%）",
-          "極端な割高ではない",
-          "収益性が安定",
-          "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
-        ]
-      },
-      "detailed_comment": "自己資本比率81.6%と財務基盤が非常に安定しています。ROE16.38%と収益力が優秀です。配当利回り3.18%と安定した配当が続いています。",
-      "sector_rank": {
-        "percentile_margin": 88.5,
-        "percentile_roe": 83.4,
-        "sector_count": 261,
-        "label_margin": "業種内で上位",
-        "label_roe": "業種内で上位",
-        "rank_margin": 31,
-        "rank_margin_total": 261,
-        "rank_roe": 42,
-        "rank_roe_total": 247
       }
     },
     {
@@ -284706,7 +284709,7 @@
       "operating_margin": 10.57,
       "revenue_growth": 32.0,
       "current_ratio": 2.82,
-      "market_cap": 77913948160,
+      "market_cap": 77841858560,
       "beta": 0.91,
       "risk_level": {
         "level": "中",
@@ -285287,7 +285290,7 @@
       "operating_margin": 18.18,
       "revenue_growth": 21.3,
       "current_ratio": 4.03,
-      "market_cap": 122525736960,
+      "market_cap": 122525556736,
       "beta": null,
       "risk_level": {
         "level": "中",
@@ -285988,7 +285991,7 @@
       "operating_margin": 7.84,
       "revenue_growth": 45.7,
       "current_ratio": 3.5,
-      "market_cap": 53791993856,
+      "market_cap": 53793103872,
       "beta": null,
       "risk_level": {
         "level": "中",
@@ -289891,7 +289894,7 @@
       "operating_margin": 3.5,
       "revenue_growth": 2.1,
       "current_ratio": 1.38,
-      "market_cap": 110979407872,
+      "market_cap": 110462599168,
       "beta": 0.29,
       "risk_level": {
         "level": "低",
@@ -290082,7 +290085,7 @@
       "operating_margin": 0.15,
       "revenue_growth": 37.2,
       "current_ratio": 7.93,
-      "market_cap": 75595816960,
+      "market_cap": 75595440128,
       "beta": 0.43,
       "risk_level": {
         "level": "中",
@@ -290394,7 +290397,7 @@
       "operating_margin": 9.56,
       "revenue_growth": 29.3,
       "current_ratio": 2.29,
-      "market_cap": 351353929728,
+      "market_cap": 351480709120,
       "beta": null,
       "risk_level": {
         "level": "中",
@@ -292121,7 +292124,7 @@
       "operating_margin": 30.68,
       "revenue_growth": 10.0,
       "current_ratio": 4.43,
-      "market_cap": 128323887104,
+      "market_cap": 128323452928,
       "beta": 0.86,
       "risk_level": {
         "level": "中",
@@ -296836,7 +296839,7 @@
       "operating_margin": 15.01,
       "revenue_growth": -7.4,
       "current_ratio": 2.92,
-      "market_cap": 77779484672,
+      "market_cap": 77786054656,
       "beta": -0.06,
       "risk_level": {
         "level": "中",
@@ -297479,7 +297482,7 @@
       "operating_margin": 13.51,
       "revenue_growth": 3.6,
       "current_ratio": 4.55,
-      "market_cap": 134172303360,
+      "market_cap": 134172262400,
       "beta": 0.35,
       "risk_level": {
         "level": "中",
@@ -297607,7 +297610,7 @@
       "operating_margin": 5.02,
       "revenue_growth": 3.6,
       "current_ratio": 3.31,
-      "market_cap": 28508461056,
+      "market_cap": 28546652160,
       "beta": 0.24,
       "risk_level": {
         "level": "中",
@@ -297979,70 +297982,6 @@
       }
     },
     {
-      "ticker": "7730.T",
-      "name": "MANI INC",
-      "sector": "Healthcare",
-      "industry": "Medical Instruments & Supplies",
-      "price": 1553.0,
-      "pbr": 2.59,
-      "roe": 12.86,
-      "dividend_yield": 2.64,
-      "equity_ratio": 99.9,
-      "operating_margin": 28.5,
-      "revenue_growth": 12.1,
-      "current_ratio": 7.16,
-      "market_cap": 152974540800,
-      "beta": null,
-      "risk_level": {
-        "level": "中",
-        "color": "yellow",
-        "reasons": [
-          "【業種特性】薬価改定や規制動向の影響を受けやすい業種です"
-        ]
-      },
-      "score": 17.5,
-      "score_breakdown": [
-        {
-          "label": "割安度（PBR）",
-          "score": 0,
-          "max": 34
-        },
-        {
-          "label": "稼ぐ力（ROE）",
-          "score": 11.5,
-          "max": 33
-        },
-        {
-          "label": "配当利回り",
-          "score": 6.0,
-          "max": 33
-        }
-      ],
-      "sector_display": "Healthcare",
-      "nisa_fit": {
-        "level": "要検討",
-        "stars": 2,
-        "reasons": [
-          "配当が安定的",
-          "財務が健全（自己資本比率99.9%）",
-          "収益性が安定",
-          "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
-        ]
-      },
-      "detailed_comment": "自己資本比率99.9%と財務基盤が非常に安定しています。ROE12.86%と収益力は合格水準です。配当利回り2.64%と安定した配当が続いています。",
-      "sector_rank": {
-        "percentile_margin": 92.0,
-        "percentile_roe": 71.8,
-        "sector_count": 87,
-        "label_margin": "業種内トップクラス",
-        "label_roe": "業種内で上位",
-        "rank_margin": 8,
-        "rank_margin_total": 87,
-        "rank_roe": 25,
-        "rank_roe_total": 85
-      }
-    },
-    {
       "ticker": "8306.T",
       "name": "MITSUBISHI UFJ FINANCIAL GROUP ",
       "sector": "Financial Services",
@@ -298119,7 +298058,7 @@
       "operating_margin": 4.06,
       "revenue_growth": 6.0,
       "current_ratio": 2.48,
-      "market_cap": 93709066240,
+      "market_cap": 93703757824,
       "beta": 0.73,
       "risk_level": {
         "level": "中",
@@ -298168,6 +298107,70 @@
         "rank_margin_total": 364,
         "rank_roe": 327,
         "rank_roe_total": 347
+      }
+    },
+    {
+      "ticker": "7730.T",
+      "name": "MANI INC",
+      "sector": "Healthcare",
+      "industry": "Medical Instruments & Supplies",
+      "price": 1553.0,
+      "pbr": 2.59,
+      "roe": 12.8,
+      "dividend_yield": 2.64,
+      "equity_ratio": 99.9,
+      "operating_margin": 28.5,
+      "revenue_growth": 12.1,
+      "current_ratio": 7.16,
+      "market_cap": 152974540800,
+      "beta": 0.4,
+      "risk_level": {
+        "level": "中",
+        "color": "yellow",
+        "reasons": [
+          "【業種特性】薬価改定や規制動向の影響を受けやすい業種です"
+        ]
+      },
+      "score": 17.3,
+      "score_breakdown": [
+        {
+          "label": "割安度（PBR）",
+          "score": 0,
+          "max": 34
+        },
+        {
+          "label": "稼ぐ力（ROE）",
+          "score": 11.3,
+          "max": 33
+        },
+        {
+          "label": "配当利回り",
+          "score": 6.0,
+          "max": 33
+        }
+      ],
+      "sector_display": "Healthcare",
+      "nisa_fit": {
+        "level": "要検討",
+        "stars": 2,
+        "reasons": [
+          "配当が安定的",
+          "財務が健全（自己資本比率99.9%）",
+          "収益性が安定",
+          "企業評価スコアは他の該当銘柄と比較して相対的に低い水準です"
+        ]
+      },
+      "detailed_comment": "自己資本比率99.9%と財務基盤が非常に安定しています。ROE12.8%と収益力は合格水準です。配当利回り2.64%と安定した配当が続いています。",
+      "sector_rank": {
+        "percentile_margin": 92.0,
+        "percentile_roe": 71.8,
+        "sector_count": 87,
+        "label_margin": "業種内トップクラス",
+        "label_roe": "業種内で上位",
+        "rank_margin": 8,
+        "rank_margin_total": 87,
+        "rank_roe": 25,
+        "rank_roe_total": 85
       }
     },
     {
@@ -299085,7 +299088,7 @@
       "operating_margin": 7.29,
       "revenue_growth": 10.0,
       "current_ratio": 1.43,
-      "market_cap": 858160824320,
+      "market_cap": 856725192704,
       "beta": 0.0,
       "risk_level": {
         "level": "低",
@@ -299408,7 +299411,7 @@
       "operating_margin": 7.72,
       "revenue_growth": 23.4,
       "current_ratio": 2.79,
-      "market_cap": 93358456832,
+      "market_cap": 93383999488,
       "beta": 1.19,
       "risk_level": {
         "level": "中",
@@ -300177,7 +300180,7 @@
       "operating_margin": 8.7,
       "revenue_growth": 18.4,
       "current_ratio": 1.19,
-      "market_cap": 1840386932736,
+      "market_cap": 1840372908032,
       "beta": 0.56,
       "risk_level": {
         "level": "中",
@@ -301007,7 +301010,7 @@
       "operating_margin": 4.29,
       "revenue_growth": 14.4,
       "current_ratio": 1.43,
-      "market_cap": 399909584896,
+      "market_cap": 400297885696,
       "beta": 0.28,
       "risk_level": {
         "level": "中",
@@ -303307,7 +303310,7 @@
       "operating_margin": 11.34,
       "revenue_growth": 23.6,
       "current_ratio": 3.4,
-      "market_cap": 1121431715840,
+      "market_cap": 1115583414272,
       "beta": 0.77,
       "risk_level": {
         "level": "中",
